@@ -1,0 +1,19 @@
+<suite name="Suite">
+    <test name = "Product Management" parallel = "methods" thread-count = "3" group-by-instances="false" >
+        <classes>
+            <class name="com.Module.ProductManagement.RemoveMultipleProductFromWebshop"/>
+            <class name="com.Module.ProductManagement.SearchOffers"/>
+            <class name="com.Module.ProductManagement.SUSPEND_UNSUSPEND_PRODUCTS"/>
+            <class name="com.Module.ProductManagement.Suspend_UnsuspendOffers"/>
+            <class name="com.Module.ProductManagement.UPDATE_PRODUCT"/>
+            <class name="com.Module.ProductManagement.UpdateOfferSettings"/>
+            <class name="com.Module.ProductManagement.UploadProduct"/>
+            <class name="com.Module.ProductManagement.ADD_PRODUCT"/>
+            <class name="com.Module.ProductManagement.AddMultipleCategoryToWorkShop"/>
+            <class name="com.Module.ProductManagement.AddMultipleProductToWebShop"/>
+            <class name="com.Module.ProductManagement.CreateOfferSettings"/>
+            <class name="com.Module.ProductManagement.PRODUCT_CATEGORY"/>
+            <class name="com.Module.ProductManagement.RemoveFromWebShop"/>
+        </classes>
+    </test>
+</suite>

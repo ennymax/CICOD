@@ -1,0 +1,27 @@
+<suite name="Suite">
+    <test name = "Order History" parallel = "methods" thread-count = "3" group-by-instances="false" >
+        <classes>
+            <class name="com.Module.OrderHistory.Downloadorderhistory"/>
+            <class name="com.Module.OrderHistory.VIEW_ORDER_HISTORY"/>
+        </classes>
+    </test>
+
+        <test name = "Sales Management" parallel = "methods" thread-count = "3" group-by-instances="false" >
+            <classes>
+                <class name="com.Module.SaleAgentManagement.CreateSaleTarget"/>
+                <class name="com.Module.SaleAgentManagement.CreateSalesCommissionOnOrder"/>
+                <class name="com.Module.SaleAgentManagement.CreateSalesCommissionOnTarget"/>
+            </classes>
+        </test>
+
+        <test name = "Administration" parallel = "methods" thread-count = "3" group-by-instances="false" >
+            <classes>
+                <class name="com.Module.Administration.ADD_ROLE"/>
+                <class name="com.Module.Administration.ADDUSER"/>
+                <class name="com.Module.Administration.DOWNLOAD_User"/>
+                <class name="com.Module.Administration.SUSPEND_UNSUSPEND_ROLE"/>
+                <class name="com.Module.Administration.UPDATE_ROLE"/>
+                <class name="com.Module.Administration.UPDATEUSER"/>
+            </classes>
+        </test>
+</suite>

@@ -1,0 +1,23 @@
+<suite name="Suite">
+    <test name = "Customer Management" parallel = "methods" thread-count = "3" group-by-instances="false" >
+        <classes>
+            <class name="com.Module.CustomerManagment.SusendCustomerFromCustomerManagementPage"/>
+            <class name="com.Module.CustomerManagment.UpdateCustomer"/>
+            <class name="com.Module.CustomerManagment.UploadCustomer"/>
+            <class name="com.Module.CustomerManagment.CreateCustomer"/>
+            <class name="com.Module.CustomerManagment.CreditHistory"/>
+            <class name="com.Module.CustomerManagment.DownloadCustomerDetails"/>
+            <class name="com.Module.CustomerManagment.DownLoadCreditLimit"/>
+            <class name="com.Module.CustomerManagment.SuspendUnsuspendCustomer"/>
+            <class name="com.Module.CustomerManagment.ViewCustomer"/>
+            <class name="com.Module.Settings.DELIVERY_RATE_CARD_EXIST_ALREADY"/>
+        </classes>
+    </test>
+
+    <test name = "Account" parallel = "methods" thread-count = "3" group-by-instances="false" >
+        <classes>
+            <class name="com.Module.Account.CustomerAccount"/>
+            <class name="com.Module.Account.DownLoadCustomerAccount"/>
+        </classes>
+    </test>
+</suite>
