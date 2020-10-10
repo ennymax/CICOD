@@ -1,5 +1,5 @@
 <suite name="Suite">
-    <test name = "Product Management" parallel = "methods" thread-count = "3" group-by-instances="false" >
+    <test name = "Product Management">
         <classes>
             <class name="com.Module.ProductManagement.RemoveMultipleProductFromWebshop"/>
             <class name="com.Module.ProductManagement.SearchOffers"/>

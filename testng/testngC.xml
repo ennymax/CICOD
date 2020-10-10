@@ -1,5 +1,5 @@
 <suite name="Suite">
-    <test name = "Customer Management" parallel = "methods" thread-count = "3" group-by-instances="false" >
+    <test name = "Customer Management">
         <classes>
             <class name="com.Module.CustomerManagment.SusendCustomerFromCustomerManagementPage"/>
             <class name="com.Module.CustomerManagment.UpdateCustomer"/>
@@ -14,7 +14,7 @@
         </classes>
     </test>
 
-    <test name = "Account" parallel = "methods" thread-count = "3" group-by-instances="false" >
+    <test name = "Account">
         <classes>
             <class name="com.Module.Account.CustomerAccount"/>
             <class name="com.Module.Account.DownLoadCustomerAccount"/>

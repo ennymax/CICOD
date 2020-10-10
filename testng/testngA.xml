@@ -1,11 +1,11 @@
 <suite name="Suite">
-    <test name = "WorkShop Configuration" parallel = "methods" thread-count = "3" group-by-instances="false" >
+    <test name = "WorkShop Configuration">
         <classes>
             <class name="com.Module.WorkShopConfiguration.CarouselBanner"/>
         </classes>
     </test>
 
-    <test name = "DashBoard" parallel = "methods" thread-count = "3" group-by-instances="false" >
+    <test name = "DashBoard">
         <classes>
             <class name="com.Module.DashBoard.OrderFufilment"/>
             <class name="com.Module.DashBoard.SalesTargetDashBoard"/>
@@ -15,7 +15,7 @@
         </classes>
     </test>
 
-    <test name = "Value Chain" parallel = "methods" thread-count = "3" group-by-instances="false" >
+    <test name = "Value Chain">
         <classes>
             <class name="com.Module.ValueChain.RequestValueChainUser"/>
             <class name="com.Module.ValueChain.BuyersInsight"/>

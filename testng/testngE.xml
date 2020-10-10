@@ -1,12 +1,12 @@
 <suite name="Suite">
-    <test name = "Order History" parallel = "methods" thread-count = "3" group-by-instances="false" >
+    <test name = "Order History">
         <classes>
             <class name="com.Module.OrderHistory.Downloadorderhistory"/>
             <class name="com.Module.OrderHistory.VIEW_ORDER_HISTORY"/>
         </classes>
     </test>
 
-        <test name = "Sales Management" parallel = "methods" thread-count = "3" group-by-instances="false" >
+        <test name = "Sales Management">
             <classes>
                 <class name="com.Module.SaleAgentManagement.CreateSaleTarget"/>
                 <class name="com.Module.SaleAgentManagement.CreateSalesCommissionOnOrder"/>
@@ -14,7 +14,7 @@
             </classes>
         </test>
 
-        <test name = "Administration" parallel = "methods" thread-count = "3" group-by-instances="false" >
+        <test name = "Administration">
             <classes>
                 <class name="com.Module.Administration.ADD_ROLE"/>
                 <class name="com.Module.Administration.ADDUSER"/>

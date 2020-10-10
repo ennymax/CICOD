@@ -25,10 +25,8 @@ public class SuspendUnsuspendDeliveryRate extends TestBase {
 
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int stt = rn.nextInt(34) + 1;
-        int sttt = rn.nextInt(13) + 1;
         Randomstuff randomstuff = new Randomstuff();
+        ScreenShot screenShot = new ScreenShot(driver);
 
         login.Login();
         test.log(Status.PASS, "Login Was Successful");
@@ -58,6 +56,7 @@ public class SuspendUnsuspendDeliveryRate extends TestBase {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
+        Thread.sleep(1400);
         driver.switchTo().alert().accept();
         test.log(Status.PASS, "suspend Delivery Rate was successful");
 
@@ -73,6 +72,8 @@ public class SuspendUnsuspendDeliveryRate extends TestBase {
         test.log(Status.PASS, "Unsuspend Delivery Rate Successful");
 
         Thread.sleep(2000);
+        screenShot.ScreenShotFullPage();
+
         System.out.println("********************SUSPEND UNSUSPEND DELIVERY RATE********************");
         driver.quit();
     }

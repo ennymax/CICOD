@@ -26,7 +26,7 @@ public class RavePay extends TestBase {
 
     public void RavePay2() throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
-        Thread.sleep(3000);
+        Thread.sleep(7000);
         driver.switchTo().frame(0);
 
         Thread.sleep(3500);

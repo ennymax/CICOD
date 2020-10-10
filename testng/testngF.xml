@@ -1,5 +1,5 @@
 <suite name="Suite">
-    <test name = "Settings" parallel = "methods" thread-count = "3" group-by-instances="false" >
+    <test name = "Settings">
         <classes>
             <class name="com.Module.Settings.THEME_AND_CONFIG"/>
             <class name="com.Module.Settings.CREATEDELIVERYRATE"/>
@@ -14,7 +14,7 @@
         </classes>
     </test>
 
-    <test name = "Loyalty" parallel = "methods" thread-count = "3" group-by-instances="false" >
+    <test name = "Loyalty">
         <classes>
             <class name="com.Module.Loyalty.CreateProductSpecificSpend"/>
             <class name="com.Module.Loyalty.CreateValueSpecificSpend"/>
