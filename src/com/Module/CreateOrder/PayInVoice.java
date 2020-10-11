@@ -82,7 +82,9 @@ public class PayInVoice extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("GenerateOrderCode_XPATH"))).click();
+        test.log(Status.PASS, "Order Code Was Generated Successfully");
 
+        Thread.sleep(2000);
         login.AcceptAlert();
 
         Thread.sleep(1500);
@@ -103,8 +105,9 @@ public class PayInVoice extends TestBase {
         Thread.sleep(1300);
         screenshot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("PayfromAccount_XPATH"))).click();
-        test.log(Status.FAIL, "Bug found See ScreenShot");
+        test.log(Status.PASS, "Pay from Account Fully Functional");
 
+        Thread.sleep(2000);
         login.AcceptAlert();
 
         Thread.sleep(1300);

@@ -49,8 +49,11 @@ public class CarouselBanner extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AddCoruselBanner_XPATH"))).click();
+        test.log(Status.PASS, "Add Carousel Banner was fully Functional");
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Caption_XPATH"))).sendKeys(Utility.fetchLocator("Caption_TEXT"));
+        test.log(Status.PASS, "Caption was Updated Successfully");
 
         Thread.sleep(1000);
         WebElement ele111c = driver.findElement(By.xpath(Utility.fetchLocator("DisplayLocation_XPATH")));
@@ -62,6 +65,7 @@ public class CarouselBanner extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CarouselSaveBtn_XPATH"))).click();
+        test.log(Status.PASS, "Carousel Banner was Updated Successfully");
 
         Thread.sleep(2000);
         System.out.println("********************CAROUSEL BANNER TEST IS COMPLETED********************");

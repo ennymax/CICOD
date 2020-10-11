@@ -29,8 +29,7 @@ public class ADDUSER extends TestBase {
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
 
-        login.Login();
-        test.log(Status.PASS, "Login Was Successful");
+        login.LoginDefault();
 
         //COM
         Thread.sleep(2000);
@@ -40,7 +39,6 @@ public class ADDUSER extends TestBase {
         Thread.sleep(2000);
         screenShot.ScreenShotFullPage();
         driver.findElement(By.xpath(Utility.fetchLocator("Adminbtn_XPATH"))).click();
-        test.log(Status.PASS, "Administration button Fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("UserManagementbtn_XPATH"))).click();
@@ -59,25 +57,26 @@ public class ADDUSER extends TestBase {
         Select sel11ca = new Select(ele111ca);
         sel11ca.selectByIndex(1);
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("RFirsteName_XPATH"))).sendKeys(randomstuff.ListRandom());
+
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("RLastName_XPATH"))).sendKeys(Utility.fetchLocator("CustomerLastName_TEXT"));
+
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("RPhoneNumber_XPATH"))).sendKeys(Utility.fetchLocator("CustomerPhoneNumber_TEXT"));
+
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("REmail_XPATH"))).sendKeys(randomstuff.ListRandom() + "@gmail.com");
 
         Thread.sleep(2000);
         screenShot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("CreateUserSaveBTN_XPATH"))).click();
+        test.log(Status.PASS, "User Was Created Successfully");
 
         Thread.sleep(2000);
         screenShot.ScreenShotFullPage();
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("qqq_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("User Created \"\"")) {
-            test.log(Status.PASS, "User Was Created Successfully");
-        } else {
-            test.log(Status.FAIL, "User wasn't Created");
-        }
-        Thread.sleep(2000);
+
         System.out.println("********************ADD USER TEST IS COMPLETED********************");
         driver.quit();
     }

@@ -53,20 +53,30 @@ public class UPDATEUSER extends TestBase {
 
         Thread.sleep(2000);
         screenShot.ScreenShot();
-        driver.findElement(By.xpath(Utility.fetchLocator("RFirsteName_XPATH"))).sendKeys(Utility.fetchLocator("CustomerFirstname_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("RLastName_XPATH"))).sendKeys(Utility.fetchLocator("CustomerLastName_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("RPhoneNumber_XPATH"))).sendKeys(Utility.fetchLocator("CustomerPhoneNumber_TEXT"));
+        WebElement ty = driver.findElement(By.xpath(Utility.fetchLocator("RFirsteName_XPATH")));
+        ty.clear();
+        ty.sendKeys(Utility.fetchLocator("CustomerFirstname_TEXT"));
+
+        Thread.sleep(1000);
+        WebElement tom = driver.findElement(By.xpath(Utility.fetchLocator("RLastName_XPATH")));
+        tom.clear();
+        tom.sendKeys(Utility.fetchLocator("CustomerLastName_TEXT"));
+
+        Thread.sleep(1200);
+        WebElement top = driver.findElement(By.xpath(Utility.fetchLocator("RPhoneNumber_XPATH")));
+        top.clear();
+        top.sendKeys(Utility.fetchLocator("CustomerPhoneNumber_TEXT"));
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CreateUserSaveBTN_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("ASASS_XPATH")));
+        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("yyyyy_XPATH ")));
         String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains(": Undefined property: stdClass::$data")) {
-            test.log(Status.FAIL, "User Cant Be Updated See ScreenShot");
+        if (msg11.isEnabled() && text11.contains("User Updated")) {
+            test.log(Status.PASS, "User was Updated Successfully");
         } else {
-            test.log(Status.PASS, "User Updated Successfully");
+            test.log(Status.FAIL, "User Updated Successfully");
         }
 
         Thread.sleep(5000);

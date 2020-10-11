@@ -16,9 +16,9 @@ import java.util.concurrent.TimeUnit;
 
 public class PurchaseProductViaValuechainPayonline extends TestBase {
     @Test
-    public void PURCHASE_PRODUCT_VIA_VALUE_CHAIN() throws IOException, InterruptedException {
+    public void PURCHASE_PRODUCT_VIA_VALUE_CHAIN_ONLINE() throws IOException, InterruptedException {
 
-        test = extent.createTest("PURCHASE PRODUCT VIA VALUE CHAIN");
+        test = extent.createTest("PURCHASE PRODUCT VIA VALUE CHAIN ONLINE");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");

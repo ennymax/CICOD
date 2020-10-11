@@ -76,8 +76,13 @@ public class CREATEDELIVERYRATE extends TestBase {
         Select sel11c = new Select(ele111c);
         sel11c.selectByIndex(sttt);
 
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("MiniDeliveryCharge_XPATH"))).sendKeys(Utility.fetchLocator("h_TEXT") + randomstuff.RandomNumbers());
+
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("PercentDeliveryRate_XPATH"))).sendKeys(Utility.fetchLocator("PercentageDeliveryCharge_TEXT"));
+
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("FreeDeliveryPrice_XPATH"))).sendKeys(Utility.fetchLocator("FreeeDeliveryPrice_TEXT"));
 
         Thread.sleep(1500);

@@ -78,6 +78,7 @@ public class DELIVERY_RATE_CARD_EXIST_ALREADY extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("PercentDeliveryRate_XPATH"))).sendKeys(Utility.fetchLocator("PercentageDeliveryCharge_TEXT"));
         driver.findElement(By.xpath(Utility.fetchLocator("FreeDeliveryPrice_XPATH"))).sendKeys(Utility.fetchLocator("FreeeDeliveryPrice_TEXT"));
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("DeliverySavebtn_XPATH"))).click();
 
         Thread.sleep(2000);

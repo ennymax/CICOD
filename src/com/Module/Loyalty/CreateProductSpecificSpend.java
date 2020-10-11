@@ -32,7 +32,6 @@ public class CreateProductSpecificSpend extends TestBase {
         int st = rn.nextInt(50) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -77,6 +76,7 @@ public class CreateProductSpecificSpend extends TestBase {
 
         Thread.sleep(2000);
         (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SaveCreateProductSpecificSpend_XPATH")))).click();
+        test.log(Status.PASS, "Product Specific Spend was created successfully");
 
         System.out.println("No Alert When Creating Product Specific Spend");
         Thread.sleep(2000);

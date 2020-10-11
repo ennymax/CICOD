@@ -85,6 +85,7 @@ public class CreateCustomer extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CussstomersaveBTN_XPATH"))).click();
+        test.log(Status.PASS, "Customer was Created successfully");
 
         System.out.println("********************CREATE CUSTOMER TEST IS COMPLETED********************");
         driver.quit();

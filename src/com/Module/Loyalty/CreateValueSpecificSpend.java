@@ -58,9 +58,11 @@ public class CreateValueSpecificSpend extends TestBase {
 
         Thread.sleep(2000);
         (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SaveProductSpecificEnd_XPATH")))).click();
+        test.log(Status.PASS, "Value Specific Spend was created successfully");
 
         Thread.sleep(4000);
         System.out.println("No Alert When Creating Value Specific Spend");
+
         System.out.println("********************CREATE VALUE SPECIFIC SPEND********************");
         driver.quit();
     }
