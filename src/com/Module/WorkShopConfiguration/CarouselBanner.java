@@ -9,12 +9,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
+import static org.testng.AssertJUnit.assertEquals;
 
 public class CarouselBanner extends TestBase {
 
@@ -28,6 +31,7 @@ public class CarouselBanner extends TestBase {
         FileUpload fileUpload = new FileUpload();
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
+        ScreenShot screenShot = new ScreenShot(driver);
 
         login.Login();
         test.log(Status.PASS, "Login Was Successful");
@@ -64,10 +68,25 @@ public class CarouselBanner extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("ActiUERL_XPATH"))).sendKeys(Utility.fetchLocator("ActionUrl_TEXT"));
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("CarouselSaveBtn_XPATH"))).click();
-        test.log(Status.PASS, "Carousel Banner was Updated Successfully");
+        WebElement ti11 = driver.findElement(By.xpath("//input[@type='file']"));
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].scrollIntoView();", ti11);
 
         Thread.sleep(2000);
+        Actions builder = new Actions(driver);
+        builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
+
+        Thread.sleep(4000);
+        fileUpload.UploadFileImage3MB();
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("CarouselSaveBtn_XPATH"))).click();
+        test.log(Status.PASS, "Carousel Banner was Created Successfully");
+
+        Thread.sleep(2000);
+        assertEquals("×\n" + "Frontend Banner Carousel created", driver.findElement(By.xpath(Utility.fetchLocator("AssertBanner_XPATH"))).getText());
+        test.log(Status.PASS, "Frontend Banner Carousel created");
+
         System.out.println("********************CAROUSEL BANNER TEST IS COMPLETED********************");
         driver.quit();
     }

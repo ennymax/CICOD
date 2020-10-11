@@ -40,7 +40,7 @@ public class CREATEDELIVERYRATE extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
         test.log(Status.PASS, "COM button fully functional");
 
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
 
         Thread.sleep(2000);

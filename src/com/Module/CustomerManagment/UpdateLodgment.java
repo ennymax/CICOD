@@ -20,10 +20,12 @@ import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
 
-public class AddLodgment extends TestBase {
+import static org.testng.AssertJUnit.assertEquals;
+
+public class UpdateLodgment extends TestBase {
     @Test
-    public void ADD_lODGMENT() throws IOException, InterruptedException {
-        test = extent.createTest("ADD LODGMENT");
+    public void Update_lODGMENT() throws IOException, InterruptedException {
+        test = extent.createTest("UPDATE LODGMENT");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
@@ -76,34 +78,21 @@ public class AddLodgment extends TestBase {
         builder.moveToElement(element1).build().perform();
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ADDLOG_XPATH"))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("UpateLodgenebt_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement fg = driver.findElement(By.xpath(Utility.fetchLocator("LodgementAmount_XPATH")));
+        WebElement fg = driver.findElement(By.xpath(Utility.fetchLocator("Up_XPATH")));
         fg.clear();
         fg.sendKeys(Utility.fetchLocator("aaaa_XPATH") + st);
 
         Thread.sleep(2000);
-        WebElement fgg = driver.findElement(By.xpath(Utility.fetchLocator("EnterDate_XPATH")));
-        fgg.click();
-        fgg.clear();
-        fgg.sendKeys(Utility.fetchLocator("Dateto_TEXT"));
-
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SaveLodgement_XPATH")))).click();
-
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("ClosePendingOrder_XPATH")))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("UpdateBTNLOdgement_XPATH"))).click();
+        test.log(Status.FAIL, "Unable to Update Lodgement See Screenshot");
 
         Thread.sleep(2000);
         screenshot.ScreenShotFullPage();
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogement_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Lodgement was made");
-        } else {
-            test.log(Status.FAIL, "Lodgement Failed");
-        }
 
-        System.out.println("********************ADD LODGEMENT********************");
+        System.out.println("********************UPDATE LODGEMENT********************");
         driver.quit();
     }
 }
