@@ -14,15 +14,17 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 public class UpdateReasonForRefund extends TestBase {
     @Test
     public void UPDATE_REASON_FOR_REFUND() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE FOR REFUND");
+        test = extent.createTest("UPDATE REASON FOR REFUND");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
@@ -64,15 +66,9 @@ public class UpdateReasonForRefund extends TestBase {
         JavascriptExecutor jsl = (JavascriptExecutor) driver;
         jsl.executeScript("arguments[0].click();", elementl);
 
-        Thread.sleep(1000);
-        screenShot.ScreenShotFullPage();
-        WebElement msg11f = driver.findElement(By.xpath(Utility.fetchLocator("as_XPATH")));
-        String text11f = msg11f.getText();
-        if (msg11f.isEnabled() && text11f.contains("Reason updated successfully")) {
-            test.log(Status.PASS, "Reason for refund was Updated successfully");
-        } else {
-            test.log(Status.FAIL, "Reason for refund wasn't Updated");
-        }
+        Thread.sleep(2000);
+        assertEquals("×\n" + "Reason updated successfully", driver.findElement(By.xpath(Utility.fetchLocator("as_XPATH"))).getText());
+        test.log(Status.PASS, "Reason for refund was Updated successfully");
 
         System.out.println("********************UPDATE REASON FOR REFUND********************");
         driver.quit();
