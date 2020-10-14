@@ -50,7 +50,7 @@ public class ReasonForRefund extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CreateNewReason_XPATH"))).click();
 
-        driver.findElement(By.xpath(Utility.fetchLocator("EnterReason4Refund_XPATH"))).sendKeys(Utility.fetchLocator("dec_TEXT") + randomstuff.RandomNumbers());
+        driver.findElement(By.xpath(Utility.fetchLocator("EnterReason4Refund_XPATH"))).sendKeys(Utility.fetchLocator("dec_TEXT"));
 
         Thread.sleep(2000);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("CreteR_XPATH")));

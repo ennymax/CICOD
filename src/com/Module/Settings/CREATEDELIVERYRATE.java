@@ -30,6 +30,7 @@ public class CREATEDELIVERYRATE extends TestBase {
         SecureRandom rn = new SecureRandom();
         int stt = rn.nextInt(34) + 1;
         int sttt = rn.nextInt(7) + 1;
+        int mone = rn.nextInt(700000000) + 1;
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
@@ -77,7 +78,7 @@ public class CREATEDELIVERYRATE extends TestBase {
         sel11c.selectByIndex(sttt);
 
         Thread.sleep(1200);
-        driver.findElement(By.xpath(Utility.fetchLocator("MiniDeliveryCharge_XPATH"))).sendKeys(Utility.fetchLocator("h_TEXT") + randomstuff.RandomNumbers());
+        driver.findElement(By.xpath(Utility.fetchLocator("MiniDeliveryCharge_XPATH"))).sendKeys(Utility.fetchLocator("h_TEXT") + mone );
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("PercentDeliveryRate_XPATH"))).sendKeys(Utility.fetchLocator("PercentageDeliveryCharge_TEXT"));

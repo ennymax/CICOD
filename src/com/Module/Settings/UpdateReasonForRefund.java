@@ -59,7 +59,7 @@ public class UpdateReasonForRefund extends TestBase {
 
        WebElement ttt = driver.findElement(By.xpath(Utility.fetchLocator("NewR_XPATH")));
        ttt.clear();
-       ttt.sendKeys(Utility.fetchLocator("dec_TEXT") + randomstuff.RandomNumbers());
+       ttt.sendKeys(Utility.fetchLocator("dec_TEXT"));
 
         Thread.sleep(2000);
         WebElement elementl = driver.findElement(By.xpath(Utility.fetchLocator("NewSave_XPATH")));

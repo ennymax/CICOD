@@ -16,11 +16,13 @@ import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
 
-public class UpdateCustomer extends TestBase {
+import static org.testng.AssertJUnit.assertEquals;
+
+public class VatExemptionforCustomer extends TestBase {
 
     @Test
-    public void UPDATE_CUSTOMER() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE CUSTOMER");
+    public void VatExemptionforCustomer() throws IOException, InterruptedException {
+        test = extent.createTest("VAT EXEMPTION FORM CUSTOMER");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
@@ -29,12 +31,14 @@ public class UpdateCustomer extends TestBase {
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
+        RavePay ravePay=new RavePay(driver);
         SecureRandom rn = new SecureRandom();
         int a = rn.nextInt(60000) + 1;
         int aa = rn.nextInt(60000) + 1;
         int tom = rn.nextInt(8) + 1;
         int tomm = rn.nextInt(30) + 1;
         int tommm = rn.nextInt(10) + 1;
+        int st = rn.nextInt(3) + 1;
 
         login.Login();
         test.log(Status.PASS, "Login Was Successful");
@@ -66,27 +70,30 @@ public class UpdateCustomer extends TestBase {
         jsq.executeScript("arguments[0].click();", elementq);
 
         Thread.sleep(2000);
+        WebElement elementqk = driver.findElement(By.xpath(Utility.fetchLocator("EnableVatExemption_XPATH")));
+        JavascriptExecutor jsqk = (JavascriptExecutor) driver;
+        jsqk.executeScript("arguments[0].click();", elementqk);
+
+        Thread.sleep(2000);
         WebElement ch = driver.findElement(By.xpath(Utility.fetchLocator("FirstName_XPATH")));
         JavascriptExecutor jsex = (JavascriptExecutor) driver;
         jsex.executeScript("arguments[0].scrollIntoView();", ch);
         ch.clear();
         ch.sendKeys(randomstuff.ListRandom());
 
+        Thread.sleep(2000);
         WebElement tt = driver.findElement(By.xpath(Utility.fetchLocator("LastName_XPATH")));
         tt.clear();
         tt.sendKeys(randomstuff.ListRandom());
 
-        WebElement ttt = driver.findElement(By.xpath(Utility.fetchLocator("CLandMark_XPATH")));
-        ttt.clear();
-        ttt.sendKeys(randomstuff.ListRandom());
-
-        WebElement tttt = driver.findElement(By.xpath(Utility.fetchLocator("ChouseN_XPATH")));
-        tttt.clear();
-        tttt.sendKeys(Utility.fetchLocator("h_TEXT")+ a );
-
-        WebElement ttk = driver.findElement(By.xpath(Utility.fetchLocator("CHouseNo_XPATH")));
-        ttk.clear();
-        ttk.sendKeys(Utility.fetchLocator("h_TEXT")+ aa );
+        Thread.sleep(2000);
+        WebElement checkBox1 = driver.findElement(By.xpath(Utility.fetchLocator("EnableVatExemption_XPATH")));
+        if (checkBox1.isSelected()) {
+            test.log(Status.PASS, "Enable VAT Exemption has been selected");
+        } else {
+            checkBox1.click();
+            test.log(Status.PASS, "Enable VAT Exemption has been selected");
+        }
 
         Thread.sleep(1000);
         WebElement ele111j = driver.findElement(By.xpath(Utility.fetchLocator("Country_XPATH")));
@@ -123,8 +130,50 @@ public class UpdateCustomer extends TestBase {
             test.log(Status.FAIL, "Customer Update failed");
         }
 
-        System.out.println("********************UPDATE CUSTOMER********************");
+        //Creating  Order To Verify Tax Exemption
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("CreatV_XPATH"))).click();
+
+        //SEARCH PRODUCT
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductinput_XPATH"))).sendKeys(Utility.fetchLocator("ID_TEXT"));
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductbtnq_XPATH"))).click();
+
+
+        //Add button
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddBTN_XPATH"))).click();
+
+        Thread.sleep(2000);
+        WebElement ti11p = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
+        JavascriptExecutor jsep = (JavascriptExecutor) driver;jse.executeScript("arguments[0].scrollIntoView();", ti11p);
+        ti11p.click();
+
+        Thread.sleep(2000);
+        WebElement ele111 = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
+        Select sel11 = new Select(ele111);
+        sel11.selectByIndex(st);
+
+        Thread.sleep(2000);
+        WebElement ti112 = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
+        JavascriptExecutor jse2 = (JavascriptExecutor) driver;
+        jse2.executeScript("arguments[0].scrollIntoView();", ti112);
+        ti112.click();
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("PayOnline_XPATH"))).click();
+
+        Thread.sleep(7000);
+        driver.switchTo().frame(0);
+
+        Thread.sleep(7000);
+        System.out.println(driver.findElement(By.id("option-payment-amount-xs")).getText());
+        assertEquals("NGN188.84", driver.findElement(By.id("option-payment-amount-xs")).getText());
+        test.log(Status.PASS, "Vat Exemption is confirmed");
+
+        System.out.println("********************VAT EXEMPTION FORM CUSTOMER********************");
         driver.quit();
     }
-
 }

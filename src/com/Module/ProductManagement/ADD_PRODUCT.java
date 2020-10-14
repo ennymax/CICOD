@@ -34,6 +34,9 @@ public class ADD_PRODUCT extends TestBase {
         SecureRandom rn = new SecureRandom();
         Randomstuff randomstuf = new Randomstuff();
         int st = rn.nextInt(9) + 1;
+        RavePay ravePay=new RavePay(driver);
+        int a = rn.nextInt(60000) + 1;
+        int aa = rn.nextInt(60000) + 1;
         FileUpload fileUpload = new FileUpload();
 
         login.Login();
@@ -62,9 +65,8 @@ public class ADD_PRODUCT extends TestBase {
 
         Thread.sleep(2000);
         WebElement menuOption1 = driver.findElement(By.xpath(Utility.fetchLocator("CreateProductpageassert_XPATH")));
-        String aa = menuOption1.getText();
-
-        if (aa.contains("Create Form")) {
+        String aaa = menuOption1.getText();
+        if (aaa.contains("Create Form")) {
             test.log(Status.PASS, "Page to add product has been opened");
         } else {
             test.log(Status.PASS, "Add product Page cant be opened");
@@ -85,8 +87,8 @@ public class ADD_PRODUCT extends TestBase {
         Thread.sleep(6000);
         test.log(Status.PASS, "Upload was successful");
 
-        driver.findElement(By.xpath(Utility.fetchLocator("ProductCode_XPATH"))).sendKeys(Utility.fetchLocator("h_TEXT") + randomstuf.RandomNumbers() + randomstuf.RandomNumbers());
-        driver.findElement(By.xpath(Utility.fetchLocator("ProductPrize_XPATH"))).sendKeys(Utility.fetchLocator("h_TEXT") + randomstuf.RandomNumbers());
+        driver.findElement(By.xpath(Utility.fetchLocator("ProductCode_XPATH"))).sendKeys(Utility.fetchLocator("h_TEXT") + a + a );
+        driver.findElement(By.xpath(Utility.fetchLocator("ProductPrize_XPATH"))).sendKeys(Utility.fetchLocator("h_TEXT") + a );
         driver.findElement(By.xpath(Utility.fetchLocator("AddToworkshoptCheckBox_XPATH"))).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ReservationDays_XPATH"))).sendKeys(Utility.fetchLocator("h_TEXT") + st );

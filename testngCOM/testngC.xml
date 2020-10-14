@@ -2,7 +2,6 @@
     <test name = "Customer Management">
         <classes>
             <class name="com.Module.CustomerManagment.SusendCustomerFromCustomerManagementPage"/>
-            <class name="com.Module.CustomerManagment.UpdateCustomer"/>
             <class name="com.Module.CustomerManagment.UploadCustomer"/>
             <class name="com.Module.CustomerManagment.CreateCustomer"/>
             <class name="com.Module.CustomerManagment.CreditHistory"/>

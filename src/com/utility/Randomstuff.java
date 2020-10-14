@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Randomstuff {
+
     private static Random rand = new Random();
 
     public String RandomWords() {
@@ -21,8 +22,7 @@ public class Randomstuff {
         String generatedString = RandomStringUtils.random(length, useLetters, useNumbers);
         return generatedString;
     }
-
-
+    
     public String ListRandom() {
 
         String fileName = System.getProperty("user.dir") + "\\Config\\words.txt";
@@ -49,11 +49,5 @@ public class Randomstuff {
         System.out.println(s);
         return s;
     }
-    public long RandomNumbers() {
-        LocalDateTime date = LocalDateTime.now();
-        long seconds;
-        seconds = Duration.between(date.withSecond(0).withMinute(0).withHour(0), date).getSeconds();
-        System.out.println(seconds);
-        return seconds;
-    }
+
 }

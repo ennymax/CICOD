@@ -28,7 +28,7 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
-        RavePay ravePay=new RavePay(driver);
+        RavePay ravePay = new RavePay(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;
 
