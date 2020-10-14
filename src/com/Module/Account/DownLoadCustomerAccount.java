@@ -9,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -20,8 +21,8 @@ public class DownLoadCustomerAccount extends TestBase {
     @Test
     public void DOWNLOAD_CUSTOMER_ACCOUNT() throws IOException, InterruptedException {
         test = extent.createTest("DOWNLOAD CUSTOMER ACCOUNT");
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriverManager.firefoxdriver().setup();
+        WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);

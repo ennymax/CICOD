@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -17,8 +18,8 @@ public class DOWNLOAD_User extends TestBase {
     @Test
     public void DOWNLOAD_USER() throws IOException, InterruptedException {
         test = extent.createTest("DOWNLOAD USER");
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriverManager.firefoxdriver().setup();
+        WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("https://www.cicod.com/login");
 
@@ -44,10 +45,7 @@ public class DOWNLOAD_User extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("UserDownload_XPATH"))).click();
-
-        api_watch_service.ApiWatchService();
-
-        Thread.sleep(2000);
+        test.log(Status.PASS, "Download User was Successful");
 
         System.out.println("********************DOWNLOAD USER TEST IS COMPLETED********************");
         driver.quit();

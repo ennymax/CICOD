@@ -22,7 +22,7 @@ public class Randomstuff {
         String generatedString = RandomStringUtils.random(length, useLetters, useNumbers);
         return generatedString;
     }
-    
+
     public String ListRandom() {
 
         String fileName = System.getProperty("user.dir") + "\\Config\\words.txt";

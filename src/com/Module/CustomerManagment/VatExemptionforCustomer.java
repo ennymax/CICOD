@@ -81,10 +81,6 @@ public class VatExemptionforCustomer extends TestBase {
         ch.clear();
         ch.sendKeys(randomstuff.ListRandom());
 
-        Thread.sleep(2000);
-        WebElement tt = driver.findElement(By.xpath(Utility.fetchLocator("LastName_XPATH")));
-        tt.clear();
-        tt.sendKeys(randomstuff.ListRandom());
 
         Thread.sleep(2000);
         WebElement checkBox1 = driver.findElement(By.xpath(Utility.fetchLocator("EnableVatExemption_XPATH")));
@@ -94,6 +90,21 @@ public class VatExemptionforCustomer extends TestBase {
             checkBox1.click();
             test.log(Status.PASS, "Enable VAT Exemption has been selected");
         }
+
+        Thread.sleep(1200);
+        WebElement ttn = driver.findElement(By.xpath(Utility.fetchLocator("Houshhh_XPATH")));
+        ttn.clear();
+        ttn.sendKeys("4544");
+
+        Thread.sleep(2000);
+        WebElement ttss = driver.findElement(By.xpath(Utility.fetchLocator("Strrrr_XPATH")));
+        ttss.clear();
+        ttss.sendKeys(randomstuff.ListRandom());
+
+        Thread.sleep(2000);
+        WebElement ttaa = driver.findElement(By.xpath(Utility.fetchLocator("cLan_XPATH")));
+        ttaa.clear();
+        ttaa.sendKeys(randomstuff.ListRandom());
 
         Thread.sleep(1000);
         WebElement ele111j = driver.findElement(By.xpath(Utility.fetchLocator("Country_XPATH")));

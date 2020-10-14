@@ -105,7 +105,7 @@ public class PayAccount extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayOnline_XPATH"))).click();
 
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         ravePay.RavePay2();
 
         Thread.sleep(2000);

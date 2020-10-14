@@ -9,6 +9,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -18,8 +19,8 @@ public class DownloadStatementOFAccount extends TestBase {
     @Test
     public void DOWNLOAD_STATEMENT_OF_ACCOUNT() throws IOException, InterruptedException {
         test = extent.createTest("DOWNLOAD STATEMENT OF ACCOUNT");
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriverManager.firefoxdriver().setup();
+        WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("https://www.cicod.com/login");
 
@@ -102,8 +103,6 @@ public class DownloadStatementOFAccount extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("DownloadAsSpreadSheet_XPATH"))).click();
-
-        api_watch_service.ApiWatchService();
         test.log(Status.PASS, "Download as SpreadSheet was Successful");
 
         System.out.println("**************************DOWNLOAD STATEMENT OF ACCOUNT*********************************");

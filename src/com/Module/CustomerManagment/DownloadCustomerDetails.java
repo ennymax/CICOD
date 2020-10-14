@@ -7,6 +7,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -18,8 +19,8 @@ public class DownloadCustomerDetails extends TestBase {
     @Test
     public void DOWNLOAD_CUSTOMER_DETAILS() throws IOException, InterruptedException {
         test = extent.createTest("DOWNLOAD CUSTOMER DETAILS");
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriverManager.firefoxdriver().setup();
+        WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("https://www.cicod.com/login");
 
@@ -47,8 +48,6 @@ public class DownloadCustomerDetails extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("DownloadCUstomerdbtn_XPATH"))).click();
         test.log(Status.PASS, "Customer Detail was downloaded");
-
-        api_watch_service_c.ApiWatchService();
 
         System.out.println("********************DOWNLOAD CUSTOMER DETAILS TEST IS COMPLETED********************");
         driver.quit();

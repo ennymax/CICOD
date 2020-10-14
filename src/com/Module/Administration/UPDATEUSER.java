@@ -71,7 +71,7 @@ public class UPDATEUSER extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("CreateUserSaveBTN_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("yyyyy_XPATH ")));
+        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("yyggg_XPATH")));
         String text11 = msg11.getText();
         if (msg11.isEnabled() && text11.contains("User Updated")) {
             test.log(Status.PASS, "User was Updated Successfully");
