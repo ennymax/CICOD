@@ -32,7 +32,7 @@ public class RequestValueChainUser extends TestBase {
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(1000000) + 1;
 
-        login.Login();
+        login.LoginDefault();
         test.log(Status.PASS, "Login Was Successful");
 
         //COM
@@ -63,7 +63,7 @@ public class RequestValueChainUser extends TestBase {
         Thread.sleep(1000);
         WebElement msgl =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("MerchantName_XPATH"))));
         String textl = msgl.getText();
-        if (msgl.isEnabled() && textl.contains("emaxkemiyop")) {
+        if (msgl.isEnabled() && textl.contains("lupinwilliams")) {
             test.log(Status.PASS, "Merchant name was displayed");
         } else {
             test.log(Status.FAIL, "Failed to display Merchant Name");
@@ -72,16 +72,16 @@ public class RequestValueChainUser extends TestBase {
         Thread.sleep(1000);
         WebElement msgk =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("MerchantID_XPATH"))));
         String textk = msgk.getText();
-        if (msgk.isEnabled() && textk.contains("emaxkemiyop")) {
+        if (msgk.isEnabled() && textk.contains("lupinwilliams")) {
             test.log(Status.PASS, "Merchant ID was displayed");
         } else {
             test.log(Status.FAIL, "Failed to display Merchant ID");
         }
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         WebElement msg =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("BizzSext_XPATH"))));
         String text = msg.getText();
-        if (msg.isEnabled() && text.contains("Media")) {
+        if (msg.isEnabled() && text.contains("Others")) {
             test.log(Status.PASS, "Merchant Business Sector was displayed");
         } else {
             test.log(Status.FAIL, "Failed to display Merchant Business Sector");
@@ -104,17 +104,15 @@ public class RequestValueChainUser extends TestBase {
         driver.navigate().to("https://www.cicod.com/login");
 
         Thread.sleep(2000);
-        login.LoginDefault();
+        login.Loginlupin();
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ValuechainBTN_XPATH"))).click();

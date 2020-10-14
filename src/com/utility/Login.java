@@ -39,6 +39,16 @@ public class Login {
         driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
     }
 
+    public void Loginlupin() throws IOException, InterruptedException {
+
+        driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("lupinDomainName_TEXT"));
+        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("lupinEmail_TEXT"));
+        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("lupinPass_TEXT"));
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
+    }
+
     public void Login() throws IOException, InterruptedException {
 
         driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("UcgDomainName1_TEXT"));
