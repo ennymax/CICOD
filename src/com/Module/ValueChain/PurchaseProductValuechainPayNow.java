@@ -10,22 +10,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
+import static org.testng.AssertJUnit.assertEquals;
 
-public class PayAccountValueChain extends TestBase {
-
+public class PurchaseProductValuechainPayNow extends TestBase {
     @Test
-    public void PURCHASE_PRODUCT_VIA_VALUE_CHAIN() throws IOException, InterruptedException {
+    public void PURCHASE_PRODUCT_VIA_VALUE_CHAIN_PAYNOW() throws IOException, InterruptedException {
 
-        test = extent.createTest("PURCHASE PRODUCT VIA VALUE CHAIN");
+        test = extent.createTest("PURCHASE PRODUCT VIA VALUE CHAIN PAY NOW");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
+        BrokenLink brokenLink = new BrokenLink(driver);
+        ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(1000000) + 1;
@@ -79,25 +80,63 @@ public class PayAccountValueChain extends TestBase {
         JavascriptExecutor jsel = (JavascriptExecutor) driver;
         jsel.executeScript("arguments[0].scrollIntoView();", ti11l);
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ValuchainPay_XPATH"))).click();
+        WebElement ti112 = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
+        JavascriptExecutor jse2 = (JavascriptExecutor) driver;
+        jse2.executeScript("arguments[0].scrollIntoView();", ti112);
+        ti112.click();
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayOnline_XPATH"))).click();
+        test.log(Status.PASS, "PayOnline Button is displayed and enabled");
 
-        Thread.sleep(5000);
-        ravePay.RavePay2();
+        Thread.sleep(7000);
+        driver.switchTo().frame(0);
+
+        Thread.sleep(7000);
+        System.out.println(driver.findElement(By.id("option-payment-amount-xs")).getText());
+        assertEquals("NGN609.00", driver.findElement(By.id("option-payment-amount-xs")).getText());
+        test.log(Status.PASS, "PayOnline Was Successful");
 
         Thread.sleep(2000);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("Auth_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Enter your 4-digit card pin to authorize this payment")) {
-            test.log(Status.PASS, "Flutterwave Payment Portal Fully Functional");
-        } else {
-            test.log(Status.FAIL, "Payment Portal down");
-        }
+        screenshot.ScreenShotFullPage();
+        test.log(Status.INFO, "MAKE PAYMENT WITH POS");
 
-        System.out.println("********************PAY ACCOUNT VALUE CHAIN********************");
+        Thread.sleep(2000);
+        driver.get("https://emaxkemiyop.cicod.com/cuorma/web/value-chain/order?id=10147");
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("ProductCategoryPlus_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("SelectBeverages_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(2000);
+        WebElement ti11lxx = driver.findElement(By.xpath(Utility.fetchLocator("mdd_XPATH")));
+        JavascriptExecutor jselxx = (JavascriptExecutor) driver;
+        jselxx.executeScript("arguments[0].scrollIntoView();", ti11lxx);
+
+        WebElement ti112aa = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
+        JavascriptExecutor jse2aa = (JavascriptExecutor) driver;
+        jse2aa.executeScript("arguments[0].scrollIntoView();", ti112aa);
+        ti112aa.click();
+
+        Thread.sleep(2000);
+        WebElement ti112ll = driver.findElement(By.xpath(Utility.fetchLocator("POS_XPATH")));
+        JavascriptExecutor jse2ll = (JavascriptExecutor) driver;
+        jse2ll.executeScript("arguments[0].scrollIntoView();", ti112ll);
+        ti112ll.click();
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("ConfirmPAymantPOS_XPATH"))).click();
+        test.log(Status.PASS, "Payment Via POS Successful");
+
+        System.out.println("********************PURCHASE PRODUCT VIA VALUE CHAIN PAY NOW********************");
         driver.quit();
     }
 }

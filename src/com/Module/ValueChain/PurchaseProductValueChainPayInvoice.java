@@ -13,12 +13,13 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
+import static org.testng.AssertJUnit.assertEquals;
 
-public class PurchaseProductViaValuechainPayonline extends TestBase {
+public class PurchaseProductValueChainPayInvoice extends TestBase {
     @Test
-    public void PURCHASE_PRODUCT_VIA_VALUE_CHAIN_ONLINE() throws IOException, InterruptedException {
+    public void PURCHASE_PRODUCT_VIA_VALUE_CHAIN_PAYINVOICE() throws IOException, InterruptedException {
 
-        test = extent.createTest("PURCHASE PRODUCT VIA VALUE CHAIN ONLINE");
+        test = extent.createTest("PURCHASE PRODUCT VIA VALUE CHAIN PAY INVOICE");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
@@ -80,24 +81,23 @@ public class PurchaseProductViaValuechainPayonline extends TestBase {
         jsel.executeScript("arguments[0].scrollIntoView();", ti11l);
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ValuchainPay_XPATH"))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("vpAymetnOPY_XPATH"))).click();
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayOnline_XPATH"))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("Vpayin_XPATH"))).click();
 
-        Thread.sleep(5000);
-        ravePay.RavePay2();
+        WebElement tid = driver.findElement(By.xpath(Utility.fetchLocator("Vgenr_XPATH")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", tid);
 
         Thread.sleep(2000);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("Auth_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Enter your 4-digit card pin to authorize this payment")) {
-            test.log(Status.PASS, "Flutterwave Payment Portal Fully Functional");
-        } else {
-            test.log(Status.FAIL, "Payment Portal down");
-        }
+        driver.findElement(By.xpath(Utility.fetchLocator("Vgenr_XPATH"))).click();
+        test.log(Status.PASS, "Order Code Was Generated Successfully");
 
-        System.out.println("********************PURCHASE PRODUCT VIA VALUE CHAIN********************");
+        Thread.sleep(2000);
+        assertEquals("08155341117", driver.findElement(By.xpath(Utility.fetchLocator("ValAsseetPayinv_XPATH"))).getText());
+        test.log(Status.PASS, "PayInVoice was Successful");
+
+        System.out.println("********************PURCHASE PRODUCT VIA VALUE CHAIN PAY INVOICE********************");
         driver.quit();
     }
 }
