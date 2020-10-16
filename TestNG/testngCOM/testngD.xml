@@ -1,0 +1,36 @@
+<suite name="Suite">
+    <test name = "Settings">
+        <classes>
+            <class name="CICOD.ModuleCOM.Settings.THEME_AND_CONFIG"/>
+            <class name="CICOD.ModuleCOM.Settings.CREATEDELIVERYRATE"/>
+            <class name="CICOD.ModuleCOM.Settings.DELIVERY_RATE_CARD_EXIST_ALREADY"/>
+            <class name="CICOD.ModuleCOM.Settings.ReasonForRefund"/>
+            <class name="CICOD.ModuleCOM.Settings.SUSPEND_UNSUSPEND_TAX"/>
+            <class name="CICOD.ModuleCOM.Settings.SuspendUnsuspendDeliveryRate"/>
+            <class name="CICOD.ModuleCOM.Settings.UPDATE_TAX"/>
+            <class name="CICOD.ModuleCOM.Settings.UpdateDeliveryRate"/>
+            <class name="CICOD.ModuleCOM.Settings.UpdateReasonForRefund"/>
+            <class name="CICOD.ModuleCOM.Settings.SuspendUnsuspendReasonforRefund"/>
+        </classes>
+    </test>
+
+    <test name = "Administration">
+        <classes>
+            <class name="CICOD.ModuleCOM.Administration.ADD_ROLE"/>
+            <class name="CICOD.ModuleCOM.Administration.ADDUSER"/>
+            <class name="CICOD.ModuleCOM.Administration.DOWNLOAD_User"/>
+            <class name="CICOD.ModuleCOM.Administration.SUSPEND_UNSUSPEND_ROLE"/>
+            <class name="CICOD.ModuleCOM.Administration.UPDATE_ROLE"/>
+            <class name="CICOD.ModuleCOM.Administration.UPDATEUSER"/>
+        </classes>
+    </test>
+
+    <test name = "Loyalty">
+        <classes>
+            <class name="CICOD.ModuleCOM.Loyalty.CreateProductSpecificSpend"/>
+            <class name="CICOD.ModuleCOM.Loyalty.CreateValueSpecificSpend"/>
+            <class name="CICOD.ModuleCOM.Loyalty.Suspend_Unsuspend_PointSetUp"/>
+            <class name="CICOD.ModuleCOM.Loyalty.UpdatePointSetUp"/>
+        </classes>
+    </test>
+</suite>

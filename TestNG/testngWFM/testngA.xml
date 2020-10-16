@@ -1,0 +1,15 @@
+<suite name="Suite">
+    <test name = "Manage Department" parallel = "methods" thread-count = "2" group-by-instances="false" >
+    <classes>
+            <class name="CICOD.ModuleWFM.DepartmentManagement.CreateDepartment"/>
+            <class name="CICOD.ModuleWFM.ManageWorkOrder.AddRemark"/>
+            <class name="CICOD.ModuleWFM.ManageWorkOrder.AdvancedSearch"/>
+            <class name="CICOD.ModuleWFM.ManageWorkOrder.ChangePriorities"/>
+            <class name="CICOD.ModuleWFM.ManageWorkOrder.ViewWorkOrder"/>
+            <class name="CICOD.ModuleWFM.ManageWorkOrder.UpDateStatus"/>
+            <class name="CICOD.ModuleWFM.ManageWorkOrder.UpdateWorkOrder"/>
+            <class name="CICOD.ModuleWFM.ManageWorkOrder.CreateWorkOrder"/>
+            <class name="CICOD.ModuleWFM.ManageWorkOrder.Suspend_Unsuspend_WorkOrder"/>
+        </classes>
+    </test>
+</suite>

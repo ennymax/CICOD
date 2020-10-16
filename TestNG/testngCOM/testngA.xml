@@ -1,0 +1,37 @@
+<suite name="Suite">
+
+    <test name = "DashBoard">
+        <classes>
+            <class name="CICOD.ModuleCOM.DashBoard.OrderFufilment"/>
+            <class name="CICOD.ModuleCOM.DashBoard.SalesTargetDashBoard"/>
+            <class name="CICOD.ModuleCOM.DashBoard.VarianceReportDashboard"/>
+            <class name="CICOD.ModuleCOM.DashBoard.View_DashBoard_By_Date"/>
+            <class name="CICOD.ModuleCOM.DashBoard.ProductDashboard"/>
+        </classes>
+    </test>
+
+    <test name = "Order History">
+        <classes>
+            <class name="CICOD.ModuleCOM.OrderHistory.Downloadorderhistory"/>
+            <class name="CICOD.ModuleCOM.OrderHistory.VIEW_ORDER_HISTORY"/>
+        </classes>
+    </test>
+    <test name = "Customer Management">
+        <classes>
+            <class name="CICOD.ModuleCOM.CustomerManagment.SusendCustomerFromCustomerManagementPage"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.UploadCustomer"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.CreateCustomer"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.CreditHistory"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.DownloadCustomerDetails"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.DownLoadCreditLimit"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.SuspendUnsuspendCustomer"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.AddLodgment"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.EnableFreeDelivery"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.UpdateCustomer"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.UpdateLodgment"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.VatExemptionforCustomer"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.ViewCustomer"/>
+        </classes>
+    </test>
+
+</suite>

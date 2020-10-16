@@ -1,0 +1,22 @@
+<suite name="Suite">
+    <test name = "Product Management">
+        <classes>
+            <class name="CICOD.ModuleLYTE.ProductManagement.ADD_PRODUCT"/>
+            <class name="CICOD.ModuleLYTE.ProductManagement.PRODUCT_CATEGORY"/>
+            <class name="CICOD.ModuleLYTE.ProductManagement.UPDATE_PRODUCT"/>
+            <class name="CICOD.ModuleLYTE.ProductManagement.UPLOAD_PRODUCT"/>
+            <class name="CICOD.ModuleLYTE.ProductManagement.SUSPEND_UNSUSPEND_PRODUCTS"/>
+        </classes>
+    </test>
+
+    <test name = "Setting Up WebShop">
+        <classes>
+            <class name="CICOD.ModuleLYTE.SettingUpWorkShop.CAROUSELBANNER"/>
+            <class name="CICOD.ModuleLYTE.SettingUpWorkShop.CREATEPRODUCT"/>
+            <class name="CICOD.ModuleLYTE.SettingUpWorkShop.CREATE_PRODUCT_CATEGORY"/>
+            <class name="CICOD.ModuleLYTE.SettingUpWorkShop.SUSPEND_UNSUSPEND_TAX"/>
+            <class name="CICOD.ModuleLYTE.SettingUpWorkShop.THEME_AND_CONFIG"/>
+            <class name="CICOD.ModuleLYTE.SettingUpWorkShop.UPDATE_TAX"/>
+        </classes>
+    </test>
+</suite>

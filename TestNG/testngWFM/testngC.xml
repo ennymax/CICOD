@@ -1,0 +1,21 @@
+<suite name="Suite">
+    <test name = "File Management" parallel = "methods" thread-count = "2" group-by-instances="false" >
+        <classes>
+            <class name="CICOD.ModuleWFM.FileManagement.UploadFile"/>
+            <class name="CICOD.ModuleWFM.FileManagement.DeleteAttachedFile"/>
+            <class name="CICOD.ModuleWFM.FileManagement.DownloadAttachedFile"/>
+            <class name="CICOD.ModuleWFM.FileManagement.ViewAttachedFile"/>
+        </classes>
+    </test>
+
+    <test name = "Schedule Management" parallel = "methods" thread-count = "2" group-by-instances="false" >
+        <classes>
+            <class name="CICOD.ModuleWFM.SheduleManagement.CreateResourceShift"/>
+            <class name="CICOD.ModuleWFM.SheduleManagement.CreateResourseShedule"/>
+            <class name="CICOD.ModuleWFM.SheduleManagement.Suspend_UnsuspendResourceShedule"/>
+            <class name="CICOD.ModuleWFM.SheduleManagement.Suspend_UnsuspendResourceShift"/>
+            <class name="CICOD.ModuleWFM.SheduleManagement.UpdateResourceShedule"/>
+            <class name="CICOD.ModuleWFM.SheduleManagement.UpdateResourceShift"/>
+        </classes>
+    </test>
+</suite>

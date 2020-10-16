@@ -1,0 +1,32 @@
+<suite name="Suite">
+    <test name = "Delivery Rate SetUp">
+        <classes>
+            <class name="CICOD.ModuleLYTE.DeliveryRateCardSetUp.DELIVERY_RATE_CARD_SetUp"/>
+        </classes>
+    </test>
+
+    <test name = "Order History">
+        <classes>
+            <class name="CICOD.ModuleLYTE.OrderHistory.Downloadorderhistory"/>
+            <class name="CICOD.ModuleLYTE.OrderHistory.VIEW_ORDER_HISTORY"/>
+        </classes>
+    </test>
+
+    <test name = "Create Order">
+        <classes>
+            <class name="CICOD.ModuleLYTE.CreateOrder.CREATECUSTOMER"/>
+            <class name="CICOD.ModuleLYTE.CreateOrder.CREATE_ORDER_FROM_EXISTING_CUSTOMER"/>
+            <class name="CICOD.ModuleLYTE.CreateOrder.SEARCH_EXISTING_CUSTOMER"/>
+            <class name="CICOD.ModuleLYTE.CreateOrder.SELECT_DELIVERY_DETAILS"/>
+            <class name="CICOD.ModuleLYTE.CreateOrder.VIEW_CUSTOMER_DETAIL"/>
+        </classes>
+    </test>
+
+    <test name = "DashBoard">
+        <classes>
+            <class name="CICOD.ModuleLYTE.DashBoard.View_DashBoard_By_Date"/>
+            <class name="CICOD.ModuleLYTE.DashBoard.OrderFufilment"/>
+            <class name="CICOD.ModuleLYTE.DashBoard.Variance_Report_Dashboard"/>
+        </classes>
+    </test>
+</suite>

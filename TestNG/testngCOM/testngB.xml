@@ -1,0 +1,37 @@
+<suite name="Suite">
+    <test name = "Value Chain">
+        <classes>
+            <class name="CICOD.ModuleCOM.ValueChain.PurchaseProductValuechainPayNow"/>
+            <class name="CICOD.ModuleCOM.ValueChain.PurchaseProductValueChainPayInvoice"/>
+            <class name="CICOD.ModuleCOM.ValueChain.RequestValueChainUser"/>
+            <class name="CICOD.ModuleCOM.ValueChain.BuyersInsight"/>
+            <class name="CICOD.ModuleCOM.ValueChain.Suspend_UnSuspendBuyer"/>
+            <class name="CICOD.ModuleCOM.ValueChain.ViewOrderHistoryViaValueChain"/>
+        </classes>
+    </test>
+    <test name = "Create Order">
+        <classes>
+            <class name="CICOD.ModuleCOM.CreateOrder.SEARCH_EXISTING_CUSTOMER"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.CREATE_ORDER_FROM_EXISTING_CUSTOMER"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.ApplyDiscount"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.ContinueSavedOrder"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.PayAccount"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.PayInVoice"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.SaveOrder"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.SelectDeliveryDetails"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.VatInclusiveNonInClusive"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.VIEW_CUSTOMER_DETAIL"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.ViewFreebies"/>
+            <class name="CICOD.ModuleCOM.CreateOrder.PayNow"/>
+        </classes>
+    </test>
+
+    <test name = "Sales Management">
+        <classes>
+            <class name="CICOD.ModuleCOM.SaleAgentManagement.CreateSaleTarget"/>
+            <class name="CICOD.ModuleCOM.SaleAgentManagement.CreateSalesCommissionOnOrder"/>
+            <class name="CICOD.ModuleCOM.SaleAgentManagement.CreateSalesCommissionOnTarget"/>
+        </classes>
+    </test>
+
+</suite>

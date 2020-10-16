@@ -1,0 +1,23 @@
+<suite name="Suite">
+    <test name = "Resource Allocation Management" parallel = "methods" thread-count = "2" group-by-instances="false" >
+        <classes>
+            <class name="CICOD.ModuleWFM.ResourceAllocationManagement.CreateNewResource"/>
+            <class name="CICOD.ModuleWFM.ResourceAllocationManagement.CreateResourceLevel"/>
+            <class name="CICOD.ModuleWFM.ResourceAllocationManagement.UpdateResouceLevel"/>
+            <class name="CICOD.ModuleWFM.ResourceAllocationManagement.CreateResourceType"/>
+            <class name="CICOD.ModuleWFM.ResourceAllocationManagement.Suspend_UnsuspendResourceType"/>
+            <class name="CICOD.ModuleWFM.ResourceAllocationManagement.Suspend_UnsuspendResourceLevel"/>
+            <class name="CICOD.ModuleWFM.ResourceAllocationManagement.UpdateResourceType"/>
+            <class name="CICOD.ModuleWFM.ResourceAllocationManagement.CreateSourceComplaint"/>
+        </classes>
+    </test>
+
+    <test name = "Source Complaint" parallel = "methods" thread-count = "2" group-by-instances="false" >
+        <classes>
+            <class name="CICOD.ModuleWFM.SourceComplaint.CreateSourceComplaint"/>
+            <class name="CICOD.ModuleWFM.SourceComplaint.UpdateSourceComplain"/>
+            <class name="CICOD.ModuleWFM.SourceComplaint.Suspend_UnsuspendSourceComplain"/>
+
+        </classes>
+    </test>
+</suite>

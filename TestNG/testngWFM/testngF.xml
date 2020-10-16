@@ -1,0 +1,25 @@
+<suite name="Suite">
+    <test name = "Right Template" parallel = "methods" thread-count = "2" group-by-instances="false" >
+        <classes>
+            <class name="CICOD.ModuleWFM.RightTemplate.Suspend_UnsuspendRightTemplate"/>
+            <class name="CICOD.ModuleWFM.RightTemplate.UpdateRightTemplate"/>
+            <class name="CICOD.ModuleWFM.RightTemplate.CreateRightTemplate"/>
+            <class name="CICOD.ModuleWFM.RightTemplate.CreateUsers"/>
+        </classes>
+    </test>
+
+    <test name = "Pages" parallel = "methods" thread-count = "2" group-by-instances="false" >
+        <classes>
+            <class name="CICOD.ModuleWFM.Pages.AssertDepartment"/>
+            <class name="CICOD.ModuleWFM.Pages.AssertEscalation"/>
+            <class name="CICOD.ModuleWFM.Pages.AssertManageQueue"/>
+            <class name="CICOD.ModuleWFM.Pages.AssertQueueType"/>
+            <class name="CICOD.ModuleWFM.Pages.AssertResourcePage"/>
+            <class name="CICOD.ModuleWFM.Pages.AssertRigntTemplate"/>
+            <class name="CICOD.ModuleWFM.Pages.AssertScheduleManagement"/>
+            <class name="CICOD.ModuleWFM.Pages.AssertSourceComplaint"/>
+            <class name="CICOD.ModuleWFM.Pages.AssertWorkOrderStatus"/>
+            <class name="CICOD.ModuleWFM.Pages.Dashboard"/>
+        </classes>
+    </test>
+</suite>

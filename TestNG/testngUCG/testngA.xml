@@ -1,0 +1,22 @@
+<suite name="Suite">
+    <test name = "UCG A" parallel = "methods" thread-count = "2" group-by-instances="false" >
+        <classes>
+            <class name="CICOD.ModuleUCG.ViewAllCollection"/>
+            <class name="CICOD.ModuleUCG.FilterAllCollectionByProvider"/>
+            <class name="CICOD.ModuleUCG.FilterAllCollectionUsingStartDateAndEndDate"/>
+            <class name="CICOD.ModuleUCG.SearchAllCollectionWithCorrectCredentila"/>
+            <class name="CICOD.ModuleUCG.SearchAllCollectionWithIncorrectCedentials"/>
+            <class name="CICOD.ModuleUCG.DownloadAllCollections"/>
+            <class name="CICOD.ModuleUCG.ReprintRecipt"/>
+        </classes>
+    </test>
+
+    <test name = "UCG B" parallel = "methods" thread-count = "2" group-by-instances="false" >
+        <classes>
+            <class name="CICOD.ModuleUCG.LoginWithCorrectDetails"/>
+            <class name="CICOD.ModuleUCG.LoginWithWrongDomain"/>
+            <class name="CICOD.ModuleUCG.LoginWithWrongPassword"/>
+            <class name="CICOD.ModuleUCG.LoginWithWrongEmail"/>
+        </classes>
+    </test>
+</suite>

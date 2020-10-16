@@ -1,0 +1,19 @@
+<suite name="Suite">
+    <test name = "Parallel Tests" parallel = "methods" thread-count = "3" group-by-instances="false" >
+        <classes>
+            <class name="CICOD.ModuleIMS.ManageRole.AddNewRole"/>
+            <class name="CICOD.ModuleIMS.ManageRole.RemoveRole"/>
+            <class name="CICOD.ModuleIMS.ManageRole.UpdateRole"/>
+            <class name="CICOD.ModuleIMS.ManageRole.ViewRole"/>
+
+            <class name="CICOD.ModuleIMS.ManageUsers.AddNewUser"/>
+            <class name="CICOD.ModuleIMS.ManageUsers.DownloadLastUserLogin"/>
+            <class name="CICOD.ModuleIMS.ManageUsers.DownloadUser"/>
+            <class name="CICOD.ModuleIMS.ManageUsers.RemoveUser"/>
+            <class name="CICOD.ModuleIMS.ManageUsers.UpdateUser"/>
+            <class name="CICOD.ModuleIMS.ManageUsers.ViewUsers"/>
+            <class name="CICOD.ModuleIMS.ManageUsers.RemoveUser"/>
+
+        </classes>
+    </test>
+</suite>
