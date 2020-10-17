@@ -5,11 +5,14 @@ import CICOD.utility.*;
 import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class AssertSourceComplaint  extends TestBase {
     @Test
@@ -19,6 +22,7 @@ public class AssertSourceComplaint  extends TestBase {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
+        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         BrokenLink brokenLink = new BrokenLink(driver);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);

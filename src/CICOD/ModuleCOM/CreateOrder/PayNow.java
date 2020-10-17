@@ -135,7 +135,7 @@ public class PayNow extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayPoS_XPATH"))).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         driver.findElement(By.xpath(Utility.fetchLocator("ConfirmPAymantPOS_XPATH"))).click();
 
         Thread.sleep(200);

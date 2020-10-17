@@ -1,5 +1,5 @@
 <suite name="Suite">
-    <test name = "Resource Allocation Management" parallel = "methods" thread-count = "2" group-by-instances="false" >
+    <test name = "Resource Allocation Management">
         <classes>
             <class name="CICOD.ModuleWFM.ResourceAllocationManagement.CreateNewResource"/>
             <class name="CICOD.ModuleWFM.ResourceAllocationManagement.CreateResourceLevel"/>
@@ -12,12 +12,23 @@
         </classes>
     </test>
 
-    <test name = "Source Complaint" parallel = "methods" thread-count = "2" group-by-instances="false" >
+    <test name = "Source Complaint">
         <classes>
             <class name="CICOD.ModuleWFM.SourceComplaint.CreateSourceComplaint"/>
             <class name="CICOD.ModuleWFM.SourceComplaint.UpdateSourceComplain"/>
             <class name="CICOD.ModuleWFM.SourceComplaint.Suspend_UnsuspendSourceComplain"/>
 
+        </classes>
+    </test>
+
+    <test name = "Schedule Management">
+        <classes>
+            <class name="CICOD.ModuleWFM.SheduleManagement.CreateResourceShift"/>
+            <class name="CICOD.ModuleWFM.SheduleManagement.CreateResourseShedule"/>
+            <class name="CICOD.ModuleWFM.SheduleManagement.Suspend_UnsuspendResourceShedule"/>
+            <class name="CICOD.ModuleWFM.SheduleManagement.Suspend_UnsuspendResourceShift"/>
+            <class name="CICOD.ModuleWFM.SheduleManagement.UpdateResourceShedule"/>
+            <class name="CICOD.ModuleWFM.SheduleManagement.UpdateResourceShift"/>
         </classes>
     </test>
 </suite>

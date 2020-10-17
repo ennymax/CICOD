@@ -1,5 +1,5 @@
 <suite name="Suite">
-    <test name = "Queue Management" parallel = "methods" thread-count = "3" group-by-instances="false" >
+    <test name = "Queue Management">
     <classes>
             <class name="CICOD.ModuleWFM.QueueManagement.SUSPEND_AND_UNSUSPEND_QUEUE"/>
             <class name="CICOD.ModuleWFM.QueueManagement.CreateQueue"/>
@@ -7,7 +7,7 @@
         </classes>
     </test>
 
-    <test name = "QueueTypeManagement" parallel = "methods" thread-count = "2" group-by-instances="false" >
+    <test name = "QueueTypeManagement" >
         <classes>
             <class name="CICOD.ModuleWFM.QueueTypeManagement.CreateQueueType"/>
             <class name="CICOD.ModuleWFM.QueueTypeManagement.AddStatusToQueueType"/>
@@ -20,7 +20,7 @@
         </classes>
     </test>
 
-    <test name = "Manage WorkOrder Status" parallel = "methods" thread-count = "2" group-by-instances="false" >
+    <test name = "Manage WorkOrder Status">
         <classes>
             <class name="CICOD.ModuleWFM.ManageWorkOrderStatus.Suspend_UnsuspenStatus"/>
             <class name="CICOD.ModuleWFM.ManageWorkOrderStatus.UpdateStatus"/>

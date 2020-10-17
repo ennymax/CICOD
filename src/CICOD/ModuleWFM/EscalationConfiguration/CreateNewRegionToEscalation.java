@@ -61,7 +61,7 @@ public class CreateNewRegionToEscalation extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("Clicker_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement ele1111 = driver.findElement(By.xpath(Utility.fetchLocator("Role_XPATH")));
+        WebElement ele1111 = driver.findElement(By.xpath(Utility.fetchLocator("escalRole_XPATH")));
         Select sel111 = new Select(ele1111);
         sel111.selectByIndex(resourceshedule);
 

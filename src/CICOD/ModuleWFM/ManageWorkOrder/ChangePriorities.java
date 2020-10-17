@@ -63,7 +63,7 @@ public class ChangePriorities extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SubMitPriorities_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement msg =(new WebDriverWait(driver, 15)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssertChangePriorities_XPATH"))));
+        WebElement msg =(new WebDriverWait(driver, 15)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssrtUpdateWorKOrder_XPATH"))));
         String text = msg.getText();
         if (msg.isEnabled() && text.contains("Successful")) {
             test.log(Status.PASS, "Change Priorities was successful");

@@ -15,11 +15,13 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 public class SUSPEND_UNSUSPEND_PRODUCTS extends TestBase {
 
     @Test
-    public void SUSPEND_PRODUCT() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND PRODUCT");
+    public void SUSPEND_UNSUSPEND_PRODUCT() throws IOException, InterruptedException {
+        test = extent.createTest("SUSPEND UNSUSPEND PRODUCT");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
@@ -52,6 +54,7 @@ public class SUSPEND_UNSUSPEND_PRODUCTS extends TestBase {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
+        Thread.sleep(2000);
         driver.switchTo().alert().accept();
 
         Thread.sleep(2000);
@@ -75,16 +78,12 @@ public class SUSPEND_UNSUSPEND_PRODUCTS extends TestBase {
         JavascriptExecutor js2 = (JavascriptExecutor) driver;
         js2.executeScript("arguments[0].click();", element2);
 
+        Thread.sleep(2000);
         driver.switchTo().alert().accept();
 
         Thread.sleep(2000);
-        WebElement msg = driver.findElement(By.xpath(Utility.fetchLocator("AssertUnsus_XPATH")));
-        String text = msg.getText();
-        if (msg.isEnabled() && text.contains("Product unsuspended")) {
-            test.log(Status.PASS, "Product Unsuspended successfully");
-        } else {
-            test.log(Status.FAIL, "Unsuspension Failed");
-        }
+        assertEquals("×\n" + "Product unsuspended", driver.findElement(By.xpath(Utility.fetchLocator("Assertsusp_XPATH"))).getText());
+        test.log(Status.PASS, "Product Unsuspended successfully");
 
         System.out.println("********************SUSPEND PRODUCT TEST IS COMPLETED********************");
         driver.quit();

@@ -31,12 +31,16 @@ public class Suspend_UnsuspendCategory extends TestBase {
             test.log(Status.FAIL, "Login failed");
         }
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("IMS_XPATH"))).click();
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ManageCATEGORYBTN_XPATH"))).click();
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CategoryActionBTN_XPATH"))).click();
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SuspendCategoryBTN_XPATH"))).click();
 
         login.AcceptAlert();

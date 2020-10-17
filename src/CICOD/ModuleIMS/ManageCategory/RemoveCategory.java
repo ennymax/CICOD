@@ -23,20 +23,22 @@ public class RemoveCategory extends TestBase {
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
-
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successfull");
+            test.log(Status.PASS, "Login was successful");
         } else {
             test.log(Status.FAIL, "Login failed");
         }
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("IMS_XPATH"))).click();
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ManageCATEGORYBTN_XPATH"))).click();
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CategoryActionBTN_XPATH"))).click();
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("RemoveCAtegory_XPATH"))).click();
 
         login.AlertDismis();

@@ -51,7 +51,8 @@ public class ADD_ROLE extends TestBase {
         test.log(Status.PASS, "Role button fully Functional ");
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("AddRolebtn_XPATH"))).click();
+        String a = "AddRolebtn_XPATH";
+        driver.findElement(By.xpath(Utility.fetchLocator(a))).click();
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("RoleName_XPATH"))).sendKeys(randomStuff.ListRandom());

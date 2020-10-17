@@ -1,0 +1,187 @@
+        
+       //Video Recording
+        VideoRecorder.startRecording("IMSBUG");
+        VideoRecorder.stopRecording();
+
+        test.log(Status.INFO, "BASIC SELECTED");
+
+        WebDriverWait w = new WebDriverWait(driver, 30);
+        w.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("0"));
+
+       <test name = "File Management" parallel = "methods" thread-count = "2" group-by-instances="false" >
+        <classes>
+            <class name="CICOD.ModuleWFM.FileManagement.UploadFile"/>
+            <class name="CICOD.ModuleWFM.FileManagement.DeleteAttachedFile"/>
+            <class name="CICOD.ModuleWFM.FileManagement.DownloadAttachedFile"/>
+            <class name="CICOD.ModuleWFM.FileManagement.ViewAttachedFile"/>
+        </classes>
+       </test>
+
+        Thread.sleep(2000);
+        assertEquals("Frontend Banner Carousel created", driver.findElement(By.xpath(Utility.fetchLocator("AssertBanner_XPATH"))).getText());
+        test.log(Status.PASS, "Frontend Banner Carousel created");
+
+        Thread.sleep(2000);
+ 
+        String title = driver.getTitle();
+      
+        System.out.println(title);
+
+ 
+        if (driver.getTitle() == "Welcome to Central Pay") {
+      
+           test.log(Status.PASS, "Central Pay was Displayed and Enabled");
+   
+           } else {
+          
+           test.log(Status.FAIL, "Central Pay page wasnt displayed and enabled");
+     
+           }
+
+           54.194.49.238
+           Password:int3ractiv3
+
+          SecureRandom rn = new SecureRandom();
+          int resourceshedule = rn.nextInt(3) + 1;
+
+         String regex = "\\w{10}\\@gmail\\.com";
+         String regex1 = "2637(1|3|7|8)\\d{7}";
+         Thread.sleep(2000);
+         driver.findElement(By.xpath(Utility.fetchLocator("RegionEmail_XPATH"))).sendKeys(new Generex(regex).random());
+
+
+        cicodsaasstaging.com/lyte
+        Cicodsaasdev.com
+
+
+        Actions builder = new Actions(driver);
+        builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
+
+        String title = driver.getTitle();
+        System.out.println(title);
+        if (driver.getTitle() == "Google") {
+            System.out.println("Test case has been passed.");
+        } else {
+            System.out.println("Test case has been failed.");
+        }
+
+
+        String extentReportImageqm11 = System.getProperty("user.dir") + "\\ScreenShot\\ScreenShot" + System.currentTimeMillis() + ".png";
+        WebElement logo = driver.findElement(By.id("nav-logo")); // Get entire page screenshot     
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        BufferedImage fullScreen = ImageIO.read(screenshot); //Find location of the webelement logo on the page     
+        Point location = logo.getLocation(); //Find width and height of the located element logo          
+        int width = logo.getSize().getWidth();
+        int height = logo.getSize().getHeight();
+        //Now the main point, which is cropping the full image to get only the logo screenshot     
+        BufferedImage logoImage = fullScreen.getSubimage(location.getX(), location.getY(), width, height);
+        ImageIO.write(logoImage, "png", screenshot); //copy the file to the desired location     
+        FileUtils.copyFile(screenshot, new File("path of file"));
+    
+
+        String extentReportImageqm11 = System.getProperty("user.dir") + "\\ScreenShot\\ScreenShot" + System.currentTimeMillis() + ".png";
+        Screenshot screenshot=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+        ImageIO.write(screenshot.getImage(),"PNG",new File(extentReportImageqm11));
+        test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
+
+
+        Thread.sleep(2000)
+        Actions builder = new Actions(driver);
+        builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
+
+        SecureRandom rn = new SecureRandom();
+        int tom = rn.nextInt(15) + 1; 
+
+        WebElement mcj = driver.findElement(By.xpath(Utility.fetchLocator("QueueDescription_XPATH")));
+        mcj.clear();
+        mcj.sendKeys(Utility.fetchLocator("Decrib_TEXT"));      
+
+        Thread.sleep(2000);
+        WebElement msg =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssertSuccessfullPayment_XPATH"))));
+        String text = msg.getText();
+        if (msg.isEnabled() && text.contains("Payment successful")) {
+            test.log(Status.PASS, "Payment Was successful");
+        } else {
+            test.log(Status.FAIL, "Payment Failed");
+        }
+
+
+       if (driver.findElements(By.xpath(Utility.fetchLocator("AssertRavPayPage_XPATH"))).size() != 0) {
+            test.log(Status.PASS, "RavePayment Page was successfully Displayed ");
+        } else {
+            test.log(Status.FAIL, "RavePayment Page wasn't displayed");
+        }
+
+
+        Thread.sleep(2000);
+        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH")));
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].scrollIntoView();", ti11);
+        ti11.click(); 
+
+
+        Thread.sleep(1000);
+        WebElement ele111j = driver.findElement(By.xpath(Utility.fetchLocator("MarchantState_XPATH")));
+        Select sel11j = new Select(ele111j);
+        sel11j.selectByIndex(stt);   
+
+
+PRODUCTION_PRODUCTION
+
+litetest
+litetest@yopmail.com
+Crown@123
+
+magstore
+mag@sharklasers.com
+Crown@123
+
+maxag
+maxag35716@votavk.com
+@Ecomax1759
+
+emaxkemiyop
+emaxkemi@yopmail.com
+@Ecomax1759
+ 
+nexusnigeria
+nexus@sharklasers.com
+Crown@123
+
+lupinwilliams
+lupinwilliams0@gmail.com
+Crown@123
+
+STAGING_STAGING_STAGING
+ndanitv
+ndanitv@sharklasers.com
+Ndanitv@123
+
+shop Name ::Emaxkemi 
+Email:emaxkemi@yopmail.com
+Password:@Ecomax1759
+
+syhop name::emaxcicod
+Email ::emaxcicod@yopmail.com
+Password:@Ecomax1759
+
+stratoscorp
+stratoscorp@yopmail.com
+Crown@123
+
+
+DEV_DEV_DEV
+Domain: blakesshawn
+Email: blakesandshawn@yopmail.com
+Password: Crown@123
+
+Domain=emaxkemi
+Email:emaxkemi@yopmail.com
+Password=@Ecomax1759
+
+ctrl + shift + f
+
+step 1
+5061 4604 1012 0223 210
+cvv=780
+pin=3310

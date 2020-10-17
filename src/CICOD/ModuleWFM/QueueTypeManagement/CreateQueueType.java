@@ -30,7 +30,7 @@ public class CreateQueueType extends TestBase {
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
         SecureRandom rn = new SecureRandom();
-        int tom = rn.nextInt(150000) + 1;
+        int tom = rn.nextInt(15) + 1;
 
         login.LoginPremium();
 

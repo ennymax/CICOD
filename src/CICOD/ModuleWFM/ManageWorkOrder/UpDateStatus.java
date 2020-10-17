@@ -66,7 +66,7 @@ public class UpDateStatus extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SaveCommentBTN_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement msg =(new WebDriverWait(driver, 15)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssertUpdateStatus_XPATH"))));
+        WebElement msg =(new WebDriverWait(driver, 15)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssrtUpdateWorKOrder_XPATH"))));
         String text = msg.getText();
         if (msg.isEnabled() && text.contains("Successful")) {
             test.log(Status.PASS, "Status Update Was Successful");
@@ -74,6 +74,7 @@ public class UpDateStatus extends TestBase {
             test.log(Status.FAIL, "Status Update failed");
         }
 
+        Thread.sleep(2000);
         screenShot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("OkBTN_XPATH"))).click();
 

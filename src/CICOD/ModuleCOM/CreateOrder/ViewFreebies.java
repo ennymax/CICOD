@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 public class ViewFreebies extends TestBase {
     @Test
     public void VIEW_FREEBIES() throws IOException, InterruptedException {
@@ -88,6 +90,19 @@ public class ViewFreebies extends TestBase {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SelectFreebiesone_XPATH")))).click();
         test.log(Status.PASS, "Freebies can be Viewed and added");
+
+        Thread.sleep(2000);
+        WebElement ti11k = driver.findElement(By.xpath(Utility.fetchLocator("AddFreeBee_XPATH")));
+        JavascriptExecutor jsek = (JavascriptExecutor) driver;
+        jsek.executeScript("arguments[0].scrollIntoView();", ti11k);
+        ti11k.click();
+
+        Thread.sleep(2000);
+        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("CheckOffer_XPATH")))).click();
+
+        Thread.sleep(2000);
+        assertEquals("Math set\n" + "Delete\n" + "Quantity\n" + "1\n" + "₦0.00", driver.findElement(By.xpath(Utility.fetchLocator("Assertfreebies_XPATH"))).getText());
+        test.log(Status.PASS, "Confirmed Freebies was added Successfully");
 
         System.out.println("********************VIEW FREEBIES********************");
         driver.quit();

@@ -65,7 +65,7 @@ public class Show_HideStatusFromResource extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("CreateNewStatusa_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement msg =(new WebDriverWait(driver, 25)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("aaaaa_XPATH"))));
+        WebElement msg =(new WebDriverWait(driver, 25)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("Assertsuccessfulstatuscreation_XPATH"))));
         String text = msg.getText();
         if (msg.isEnabled() && text.contains("Successful")) {
             test.log(Status.PASS, "New Status Added Successful");

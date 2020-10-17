@@ -33,7 +33,7 @@ public class UpdateQueueType extends TestBase {
         TabHandle tabHandle = new TabHandle(driver);
         Randomstuff randomNumbers = new Randomstuff();
         SecureRandom rn = new SecureRandom();
-        int tom = rn.nextInt(150000) + 1;
+        int tom = rn.nextInt(15) + 1;
 
         login.LoginPremium();
 

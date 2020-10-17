@@ -69,16 +69,24 @@ public class CreateWorkOrder extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("ContactNumber_XPATH"))).sendKeys(Utility.fetchLocator("ContactPhoneNumber_TEXT"));
         driver.findElement(By.xpath(Utility.fetchLocator("AddressLine1_XPATH"))).sendKeys(Utility.fetchLocator("AddressLine1_TEXT"));
         driver.findElement(By.xpath(Utility.fetchLocator("AddressLine2_XPATH"))).sendKeys(Utility.fetchLocator("AddressLine1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("city_XPATH"))).sendKeys(randomStuff.ListRandom());
 
-        WebElement ele11lg = driver.findElement(By.xpath(Utility.fetchLocator("Region_XPATH")));
+        Thread.sleep(2000);
+        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("city_XPATH")));
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].scrollIntoView();", ti11);
+        ti11.sendKeys(randomStuff.ListRandom());
+
+        Thread.sleep(2000);
+        WebElement ele11lg = driver.findElement(By.xpath(Utility.fetchLocator("WorkOrderRegion_XPATH")));
         Select sel1lg = new Select(ele11lg);
         sel1lg.selectByIndex(1);
 
+        Thread.sleep(2000);
         WebElement ele11l = driver.findElement(By.xpath(Utility.fetchLocator("Priority_XPATH")));
         Select sel1l = new Select(ele11l);
         sel1l.selectByIndex(1);
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CreateBtn_XPATH"))).click();
 
         Thread.sleep(2000);
@@ -89,6 +97,7 @@ public class CreateWorkOrder extends TestBase {
             test.log(Status.FAIL, "Work Order Cant be Created");
         }
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("OkBTN_XPATH"))).click();
 
         driver.quit();

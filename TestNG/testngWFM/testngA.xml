@@ -1,5 +1,16 @@
 <suite name="Suite">
-    <test name = "Manage Department" parallel = "methods" thread-count = "2" group-by-instances="false" >
+    <test name = "Escalation Configuration">
+        <classes>
+            <class name="CICOD.ModuleWFM.EscalationConfiguration.CreateEscalationRole"/>
+            <class name="CICOD.ModuleWFM.EscalationConfiguration.CreateNewRegionToEscalation"/>
+            <class name="CICOD.ModuleWFM.EscalationConfiguration.Suspend_UnsuspendEscalationRole"/>
+            <class name="CICOD.ModuleWFM.EscalationConfiguration.Suspend_UnsuspendRegionToRole"/>
+            <class name="CICOD.ModuleWFM.EscalationConfiguration.UpdateEscalationRole"/>
+            <class name="CICOD.ModuleWFM.EscalationConfiguration.UpdateRegionToRole"/>
+        </classes>
+    </test>
+
+    <test name = "Manage WorkOrder">
     <classes>
             <class name="CICOD.ModuleWFM.DepartmentManagement.CreateDepartment"/>
             <class name="CICOD.ModuleWFM.ManageWorkOrder.AddRemark"/>
@@ -12,4 +23,5 @@
             <class name="CICOD.ModuleWFM.ManageWorkOrder.Suspend_Unsuspend_WorkOrder"/>
         </classes>
     </test>
+
 </suite>
