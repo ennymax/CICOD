@@ -29,10 +29,11 @@ public class tommy extends TestBase {
 
         Utility utility = new Utility(driver);
 
-        utility.SendKeyS("DomainName_XPATH", "DefaultShop_TEXT");
-        utility.SendKeyS("Email_XPATH", "Defem_TEXT");
-        utility.SendKeyS("Password_XPATH", "defpass_TEXT");
-        utility.clickWhenReady("LoginBTN_XPATH", 50);
+        utility.DoSendKeysByActionClass("DomainName_XPATH", "DefaultShop_TEXT");
+        utility.DoSendKeysByActionClass("Email_XPATH", "Defem_TEXT");
+        utility.DoSendKeysByActionClass("Password_XPATH", "defpass_TEXT");
+        utility.DoscrolltoViewClick("LoginBTN_XPATH");
+        utility.DoGetPageCurrentUrl( 45 , "yyyy_TEXT");
 
     }
 }

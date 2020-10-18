@@ -48,41 +48,118 @@ public class Utility extends TestBase {
         actionp.moveToElement(element11p).doubleClick().perform();
     }
 
-    public void DoClick(String clickXPATH) throws IOException, InterruptedException {
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator(clickXPATH))).click();
+    public void DoClick(String locator) throws IOException, InterruptedException {
+        driver.findElement(By.xpath(Utility.fetchLocator(locator))).click();
     }
 
-    public void Dohover(String action) throws IOException, InterruptedException {
+    public void Dohover(String locator) throws IOException, InterruptedException {
         Thread.sleep(2000);
         Actions builder = new Actions(driver);
-        WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator(action)));
+        WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         builder.moveToElement(element1).build().perform();
     }
 
-    public void DoscrolltoViewClick(String jamy) throws IOException, InterruptedException {
-        Thread.sleep(2000);
-        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator(jamy)));
+    public void DohoverWhenReady(String locator, int timeOut) throws IOException {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        Actions builder = new Actions(driver);
+        WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        builder.moveToElement(element1).build().perform();
+    }
+
+    public void DoscrolltoViewClick(String locator) throws IOException, InterruptedException {
+        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].scrollIntoView();", ti11);
         ti11.click();
     }
 
-    public void DoAssert(String assertionString, String assertXPATH) throws IOException, InterruptedException {
-        Thread.sleep(2000);
-        assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(assertXPATH))).getText());
-        test.log(Status.PASS, "Successful Assertion Passed");
+    public void DoscrolltoViewClickWhenReady(String locator, int timeOut) throws IOException {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].scrollIntoView();", ti11);
+        ti11.click();
     }
 
-    public void DosendKeyS(String SendKeyXPATH, String actualText) throws IOException {
-        WebElement mcj = driver.findElement(By.xpath(Utility.fetchLocator(SendKeyXPATH)));
+    public void DoAssertTittleWhenReady(int timeOut, String TittleText, String DisplayFailmsg, String DisplayPassmsg) throws IOException, InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        String title = driver.getTitle();
+        System.out.println(title);
+        if (title == Utility.fetchLocator(TittleText) ) {
+            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
+        } else {
+            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmsg));
+        }
+    }
+
+    public void DoAssertTittle(String TittleText, String DisplayFailmsg, String DisplayPassmsg) throws IOException, InterruptedException {
+        String title = driver.getTitle();
+        System.out.println(title);
+        if (title == Utility.fetchLocator(TittleText) ) {
+            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
+        } else {
+            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmsg));
+        }
+    }
+
+    public void DoAssertContains(String locator, String ContainsText, String DisplayFailmsg, String DisplayPassmsg) throws IOException, InterruptedException {
+        WebElement msg = (WebElement) driver.findElements(By.xpath(Utility.fetchLocator(locator)));
+        String text = msg.getText();
+        if (msg.isEnabled() && text.contains(Utility.fetchLocator(ContainsText))) {
+            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
+        } else {
+            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmsg));
+        }
+    }
+
+    public void DoAssertContainsWhenReady(int timeOut, String locator, String ContainsText, String DisplayFailmsg, String DisplayPassmsg) throws IOException, InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement msg = (WebElement) driver.findElements(By.xpath(Utility.fetchLocator(locator)));
+        String text = msg.getText();
+        if (msg.isEnabled() && text.contains(Utility.fetchLocator(ContainsText))) {
+            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
+        } else {
+            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmsg));
+        }
+    }
+
+    public void DoAssertXpathPresent(String locator, String DisplayPassmsg, String DisplayFailmsg) throws IOException, InterruptedException {
+        if (driver.findElements(By.xpath(Utility.fetchLocator(locator))).size() != 0) {
+            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
+        } else {
+            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmsg));
+        }
+    }
+
+    public void DoAssertXpathPresentWhenReady(int timeOut, String locator, String DisplayPassmsg, String DisplayFailmsg) throws IOException, InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        if (driver.findElements(By.xpath(Utility.fetchLocator(locator))).size() != 0) {
+            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
+        } else {
+            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmsg));
+        }
+    }
+
+    public void DoAssertEquals(String assertionString, String locator, String Displayedmsg) throws IOException, InterruptedException {
+        assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
+        test.log(Status.PASS, Utility.fetchLocator(Displayedmsg));
+    }
+
+    public void DoAssertEqualWhenReady(String assertionString, String locator, String Displayedmsg, int timeOut) throws IOException, InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
+        test.log(Status.PASS, Utility.fetchLocator(Displayedmsg));
+    }
+
+    public void DosendKey(String locator, String actualText) throws IOException {
+        WebElement mcj = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         mcj.clear();
         mcj.sendKeys(Utility.fetchLocator(actualText));
     }
 
-    public void DoCheckBox(String checkboxXPATH) throws IOException, InterruptedException {
+    public void DoCheckBox(String locator) throws IOException, InterruptedException {
         Thread.sleep(2000);
-        WebElement check_box = driver.findElement(By.xpath(Utility.fetchLocator(checkboxXPATH)));
+        WebElement check_box = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         if(check_box.isDisplayed()) {
             test.log(Status.PASS, "Successful CheckBox is Displayed");
         }
@@ -105,9 +182,9 @@ public class Utility extends TestBase {
         }
     }
 
-    public void DoRadioButton(String checkboxXPATH) throws IOException, InterruptedException {
+    public void DoRadioButton(String locator) throws IOException, InterruptedException {
         Thread.sleep(2000);
-        WebElement check_box = driver.findElement(By.xpath(Utility.fetchLocator(checkboxXPATH)));
+        WebElement check_box = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         if(check_box.isDisplayed()) {
             test.log(Status.PASS, "Successful Radio button is Displayed");
         }
@@ -130,6 +207,15 @@ public class Utility extends TestBase {
         }
     }
 
+    public void DoacceptAlertWhenReady(int timeOut) throws IOException {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        if (driver.switchTo().alert() != null)
+        {
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        }
+    }
+
     public void DoacceptAlert(){
         if (driver.switchTo().alert() != null)
         {
@@ -145,136 +231,101 @@ public class Utility extends TestBase {
         }
     }
 
-    public WebElement getElement(By locator) {
-        WebElement element = null;
-        try {
-            element = driver.findElement(locator);
-        } catch (Exception e) {
-            System.out.println("element could not be created..." + locator);
+    public void DoalertDismisWhenReady(int timeOut) throws IOException {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        if (driver.switchTo().alert() != null) {
+            Alert alert = driver.switchTo().alert();
+            alert.dismiss();
         }
-
-        return element;
-    }
-
-    public boolean doIsDisplayed(By locator){
-        return getElement(locator).isDisplayed();
     }
 
 
     //**********************Actions Methods ********************
-    public void doActionsClick(String sel) throws IOException {
-        WebElement locator = driver.findElement(By.xpath(Utility.fetchLocator(sel)));
+    public void DoClickActionclass(String locator) throws IOException {
+        WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         Actions ac = new Actions(driver);
-        ac.click(locator).perform();
+        ac.click(locat).perform();
     }
 
-    public void SendKeysByActionClass(String StringLocator, String value){
+    public void DoSendKeysByActionClass(String locator, String value) throws IOException {
         Actions ac = new Actions(driver);
-        ac.sendKeys((StringLocator), value).perform();
+        ac.sendKeys((driver.findElement(By.xpath(Utility.fetchLocator(locator)))), Utility.fetchLocator(value)).perform();
     }
 
     //********************drop down utils **************************
 
-    public void doSelectValuesByVisibleText(String sel, String value) throws IOException {
-        WebElement locator = driver.findElement(By.xpath(Utility.fetchLocator(sel)));
-        Select select = new Select(locator);
-        select.selectByVisibleText(value);
+    public void DoSelectValuesByVisibleText(String locator, String value) throws IOException {
+        WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        Select select = new Select(locat);
+        select.selectByVisibleText(Utility.fetchLocator(value));
     }
 
-    public void doSelectValuesByIndex(String sel, int index) throws IOException {
-        WebElement locator = driver.findElement(By.xpath(Utility.fetchLocator(sel)));
-        Select select = new Select(locator);
+    public void DoSelectValuesByIndex(String locator, int index) throws IOException {
+        WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        Select select = new Select(locat);
         select.selectByIndex(index);
     }
 
-    public void doSelectValuesByValue(String sel, String value) throws IOException {
-        WebElement locator = driver.findElement(By.xpath(Utility.fetchLocator(sel)));
-        Select select = new Select(locator);
-        select.selectByValue(value);
+    public void DoSelectValuesByValue(String locator, String value) throws IOException {
+        WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        Select select = new Select(locat);
+        select.selectByValue(Utility.fetchLocator(value));
     }
-
-    public List<String> getDropDownOptionsValues(String sel) throws IOException {
-        WebElement locator = driver.findElement(By.xpath(Utility.fetchLocator(sel)));
-        List<String> optionsList = new ArrayList<String>();
-
-        Select select = new Select(locator);
-
-        List<WebElement> dropList = select.getOptions();
-        System.out.println(dropList.size());
-
-        for (int i = 0; i < dropList.size(); i++) {
-            String text = dropList.get(i).getText();
-            optionsList.add(text);
-        }
-
-        return optionsList;
-    }
-
-    /**
-     *
-     * @param locator
-     * @param value
-     */
-    public void selectValuesFromDropDown(By locator, String value){
-        List<WebElement> daysList = driver.findElements(locator);
-
-        for(int i=0; i<daysList.size(); i++){
-            String text  = daysList.get(i).getText();
-            if(text.equals(value)){
-                daysList.get(i).click();
-                break;
-            }
-        }
-    }
-
 
     //***************************wait utils ******************************
-    public String doGetPageTitleWithContains(int timeOut, String title) {
+    public String DoGetPageTitleWithContains(int timeOut, String title) throws IOException {
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        wait.until(ExpectedConditions.titleContains(title));
+        wait.until(ExpectedConditions.titleContains(Utility.fetchLocator(title)));
         return driver.getTitle();
     }
 
-    public String doGetPageTitleWithIsTitle(int timeOut, String title) {
+    public String DoGetPageTitleWithIsTitle(int timeOut, String title) throws IOException {
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        wait.until(ExpectedConditions.titleIs(title));
+        wait.until(ExpectedConditions.titleIs(Utility.fetchLocator(title)));
         return driver.getTitle();
     }
 
-    public String doGetPageCurrentUrl(int timeOut, String urlValue) {
+    public String DoGetPageCurrentUrl(int timeOut, String urlValue) throws IOException {
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        wait.until(ExpectedConditions.urlContains(urlValue));
+        wait.until(ExpectedConditions.urlContains(Utility.fetchLocator(urlValue)));
         return  driver.getCurrentUrl();
     }
 
-    public WebElement waitForElementPresent(By locator, int timeOut){
+    public WebElement DowaitForElementPresent(String locator, int timeOut) throws IOException {
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        return wait.until(ExpectedConditions.presenceOfElementLocated((By) driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
     }
 
-    public WebElement waitForElementToBeClickable(By locator, int timeOut){
+    public WebElement DowaitForElementToBeClickable(String locator, int timeOut) throws IOException {
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+        return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
     }
 
-    public WebElement waitForElementToBeVisible(By locator, int timeOut){
-        WebElement element = getElement(locator);
+    public WebElement DowaitForElementToBeVisible(String locator, int timeOut) throws IOException {
+        WebElement element = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public List<WebElement> visibilityOfAllElements(By locator, int timeOut){
+    public List<WebElement> DovisibilityOfAllElements(String locator, int timeOut) throws IOException {
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy((By) driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
     }
 
-    public void clickWhenReady(String locator, int timeOut) throws IOException {
+    public void DoclickWhenReady(String locator, int timeOut) throws IOException {
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
         element.click();
     }
 
-    public Alert waitForAlertPresent(int timeOut){
+    public void DoSendKeysWhenReady(String locator, String actualText, int timeOut) throws IOException {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        element.clear();
+        element.sendKeys(Utility.fetchLocator(actualText));
+    }
+
+    public Alert DowaitForAlertPresent(int timeOut){
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         return wait.until(ExpectedConditions.alertIsPresent());
     }
@@ -303,7 +354,7 @@ public class Utility extends TestBase {
     }
 
     //******************* FluentWait Utils ***********************
-    public WebElement waitForElementWithFluentWaitConcept(String locator, int timeOut) throws IOException {
+    public WebElement DowaitForElementWithFluentWaitConcept(String locator, int timeOut) throws IOException {
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(timeOut))
                 .pollingEvery(Duration.ofSeconds(2))
@@ -312,7 +363,7 @@ public class Utility extends TestBase {
         return wait.until(ExpectedConditions.presenceOfElementLocated((By) driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
     }
 
-    public WebElement waitForElementWithFluentWait(final String locator, int timeOut) throws IOException{
+    public WebElement DowaitForElementWithFluentWait(final String locator, int timeOut) throws IOException{
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(timeOut))
                 .pollingEvery(Duration.ofSeconds(2))
