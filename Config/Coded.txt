@@ -1,4 +1,28 @@
-        
+
+         public void createContact(String emailId, String jobTitle) {
+         Thread.sleep(1000);
+         String extentReportImageqm11 = System.getProperty("user.dir") + "\\ScreenShot\\ScreenShot" + System.currentTimeMillis() + ".png";
+         WebElement logo = driver.findElement(By.xpath(Utility.fetchLocator("AccountBTN_XPATH")));
+         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+         BufferedImage fullScreen = ImageIO.read(screenshot);
+         Point location = logo.getLocation();
+         int width = logo.getSize().getWidth();
+         int height = logo.getSize().getHeight();
+
+         BufferedImage logoImage = fullScreen.getSubimage(location.getX(), location.getY(), width, height);
+         ImageIO.write(logoImage, "png", screenshot);
+         FileUtils.copyFile(screenshot, new File(extentReportImageqm11));
+         test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
+
+               	}
+
+
+                Thread.sleep(2000);
+                Actions builder = new Actions(driver);
+                WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("Lodg_XPATH")));
+                builder.moveToElement(element1).build().perform();
+
+
        //Video Recording
         VideoRecorder.startRecording("IMSBUG");
         VideoRecorder.stopRecording();

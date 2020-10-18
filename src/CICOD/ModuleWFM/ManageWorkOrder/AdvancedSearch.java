@@ -3,6 +3,7 @@ package CICOD.ModuleWFM.ManageWorkOrder;
 import CICOD.base.TestBase;
 import CICOD.utility.Login;
 import CICOD.utility.ScreenShot;
+import CICOD.utility.TabHandle;
 import CICOD.utility.Utility;
 import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -10,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,6 +31,7 @@ public class AdvancedSearch extends TestBase {
 
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
+        TabHandle tabHandle = new TabHandle(driver);
 
         login.LoginPremium();
 
@@ -91,6 +94,30 @@ public class AdvancedSearch extends TestBase {
         assertEquals("1041", driver.findElement(By.xpath(Utility.fetchLocator("AssertAdvancedSearchewo_XPATH"))).getText());
         test.log(Status.PASS, "Confirmed Advanced Search was successful");
 
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("Exporttoexcel_XPATH"))).click();
+
+        tabHandle.TabHandle();
+
+        Thread.sleep(2000);
+        assertEquals("Excel generation in progress, You'll get a notification when it is done. Thank You!", driver.findElement(By.xpath(Utility.fetchLocator("AssertExcelgenerationinprocess_XPATH"))).getText());
+        test.log(Status.PASS, "Moved to new Tab Excel generation in progress");
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("clickOKexcelgeneration_XPATH"))).click();
+
+        Thread.sleep(2000);
+        Actions builder = new Actions(driver);
+        WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("HverDownload_XPATH")));
+        builder.moveToElement(element1).build().perform();
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("ShowPendingDownload_XPATH"))).click();
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("Downloadit_XPATH"))).click();
+
+        Thread.sleep(7000);
         driver.quit();
         System.out.println("********************ADVANCED SEARCH TEST********************");
     }
