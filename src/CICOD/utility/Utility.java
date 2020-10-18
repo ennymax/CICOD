@@ -48,19 +48,19 @@ public class Utility extends TestBase {
         actionp.moveToElement(element11p).doubleClick().perform();
     }
 
-    public void NormalClicker(String clickXPATH) throws IOException, InterruptedException {
+    public void DoClick(String clickXPATH) throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator(clickXPATH))).click();
     }
 
-    public void ActionClass(String action) throws IOException, InterruptedException {
+    public void Dohover(String action) throws IOException, InterruptedException {
         Thread.sleep(2000);
         Actions builder = new Actions(driver);
         WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator(action)));
         builder.moveToElement(element1).build().perform();
     }
 
-    public void ScrolltoViewClick(String jamy) throws IOException, InterruptedException {
+    public void DoscrolltoViewClick(String jamy) throws IOException, InterruptedException {
         Thread.sleep(2000);
         WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator(jamy)));
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -68,19 +68,19 @@ public class Utility extends TestBase {
         ti11.click();
     }
 
-    public void Assertion(String assertionString, String assertXPATH) throws IOException, InterruptedException {
+    public void DoAssert(String assertionString, String assertXPATH) throws IOException, InterruptedException {
         Thread.sleep(2000);
         assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(assertXPATH))).getText());
         test.log(Status.PASS, "Successful Assertion Passed");
     }
 
-    public void SendKeyS(String SendKeyXPATH, String actualText) throws IOException {
+    public void DosendKeyS(String SendKeyXPATH, String actualText) throws IOException {
         WebElement mcj = driver.findElement(By.xpath(Utility.fetchLocator(SendKeyXPATH)));
         mcj.clear();
         mcj.sendKeys(Utility.fetchLocator(actualText));
     }
 
-    public void CheckBox(String checkboxXPATH) throws IOException, InterruptedException {
+    public void DoCheckBox(String checkboxXPATH) throws IOException, InterruptedException {
         Thread.sleep(2000);
         WebElement check_box = driver.findElement(By.xpath(Utility.fetchLocator(checkboxXPATH)));
         if(check_box.isDisplayed()) {
@@ -105,7 +105,32 @@ public class Utility extends TestBase {
         }
     }
 
-    public void AcceptAlert(){
+    public void DoRadioButton(String checkboxXPATH) throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        WebElement check_box = driver.findElement(By.xpath(Utility.fetchLocator(checkboxXPATH)));
+        if(check_box.isDisplayed()) {
+            test.log(Status.PASS, "Successful Radio button is Displayed");
+        }
+        else {
+            test.log(Status.FAIL, "Failed Radio button Not Displayed");
+        }
+        if(check_box.isEnabled()) {
+            test.log(Status.PASS, "Successful Radio button is Enabled");
+        }
+        else {
+            test.log(Status.FAIL, "Failed Radio button is not Enabled");
+        }
+
+        if(check_box.isSelected()) {
+            test.log(Status.PASS, "Successful Radio button is Selected");
+        }
+        else {
+            test.log(Status.PASS, "Successful Radio button is Selected");
+            check_box.click();
+        }
+    }
+
+    public void DoacceptAlert(){
         if (driver.switchTo().alert() != null)
         {
             Alert alert = driver.switchTo().alert();
@@ -113,7 +138,7 @@ public class Utility extends TestBase {
         }
     }
 
-    public void AlertDismis(){
+    public void DoalertDismis(){
         if (driver.switchTo().alert() != null) {
             Alert alert = driver.switchTo().alert();
             alert.dismiss();
