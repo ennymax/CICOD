@@ -34,39 +34,20 @@ public class ViewFreebies extends TestBase {
         RavePay ravePay = new RavePay(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;
+        Utility utility = new Utility(driver);
 
         login.Login();
         test.log(Status.PASS, "Login Was Successful");
 
-        //COM
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
+        utility.DoclickWhenReady("Createorderbtn_XPATH", "CreateOrder_TEXT",40);
+        utility.DoclickWhenReady("SearchByName_XPATH", "SearchBox_TEXT",40);
+        utility.DoSendKeysWhenReady("SeaerchInput_XPATH","CustomerFirstname_TEXT" ,"CustomerName_TEXT", 40);
+        utility.DoclickWhenReady("Searchbtn_XPATH", "SearchBTN_TEXT",40);
+        utility.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", "Cus_TEXT",40);
 
-        //CREATE ORDER BUTTON
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Createorderbtn_XPATH"))).click();
 
-        //SEARCH BY NAME
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchByName_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SeaerchInput_XPATH"))).sendKeys(Utility.fetchLocator("CustomerName_TEXT"));
-
-        driver.findElement(By.xpath(Utility.fetchLocator("Searchbtn_XPATH"))).click();
-        Thread.sleep(2000);
-
-        driver.findElement(By.xpath(Utility.fetchLocator("ViewDetails_XPATH"))).click();
-
-        Thread.sleep(2000);
-        WebElement msg1 = driver.findElement(By.xpath(Utility.fetchLocator("AssertSearchByName_XPATH")));
-        String text1 = msg1.getText();
-        if (msg1.isEnabled() && text1.contains("Email Address")) {
-            test.log(Status.PASS, "Search By Name Success");
-        } else {
-            test.log(Status.FAIL, "Search By Name Failed");
-        }
+        utility.DoAssertContainsWhenReady("AssertSearchByName_XPATH", "Searched_TEXT","em_TEXT", "SBN_TEXT",30);
 
         //SEARCH PRODUCT
         Thread.sleep(2000);

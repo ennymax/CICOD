@@ -20,7 +20,7 @@ import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
 
 public class PayAccount extends TestBase {
-    @Test
+    @Test(invocationCount = 2)
     public void Pay_Account() throws IOException, InterruptedException {
         test = extent.createTest("PAY ACCOUNT");
         WebDriverManager.firefoxdriver().setup();
@@ -30,87 +30,33 @@ public class PayAccount extends TestBase {
         driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
         Login login = new Login(driver);
         RavePay ravePay = new RavePay(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(3) + 1;
         ScreenShot screenShot = new ScreenShot(driver);
+        Utility utility = new Utility(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
-        //COM
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
-
-        //CREATE ORDER BUTTON
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Createorderbtn_XPATH"))).click();
-
-        //SEARCH BY NAME
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchByName_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SeaerchInput_XPATH"))).sendKeys(Utility.fetchLocator("CustomerName_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Searchbtn_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ViewDetails_XPATH"))).click();
-
-        //SEARCH PRODUCT
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductinput_XPATH"))).sendKeys(Utility.fetchLocator("ID_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductbtnq_XPATH"))).click();
-
-        //Add button
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("AddBTN_XPATH"))).click();
-
-        Thread.sleep(2000);
-        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", ti11);
-        ti11.click();
-
-        WebElement ele111 = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
-        Select sel11 = new Select(ele111);
-        sel11.selectByIndex(st);
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewPayAccount_XPATH"))).click();
-
-
-        Thread.sleep(2000);
-        WebElement ti112 = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
-        JavascriptExecutor jse2 = (JavascriptExecutor) driver;
-        jse2.executeScript("arguments[0].scrollIntoView();", ti112);
-        ti112.click();
-
-        login.AcceptAlert();
-
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("AssertOrdeIDgenerated_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Order Generated")) {
-            test.log(Status.PASS, "Order ID was generated");
-        } else {
-            test.log(Status.FAIL, "Fail to generate Order ID");
-        }
-
-        Thread.sleep(1300);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayNowPayAccount_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayOnline_XPATH"))).click();
-
-        Thread.sleep(7000);
-        ravePay.RavePay2();
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
+        utility.DoclickWhenReady("Createorderbtn_XPATH", "CreateOrder_TEXT",40);
+        utility.DoclickWhenReady("SearchByName_XPATH", "SearchBox_TEXT",40);
+        utility.DoSendKeysWhenReady("SeaerchInput_XPATH", "CustomerName_TEXT","CustomerName_TEXT", 40);
+        utility.DoclickWhenReady("Searchbtn_XPATH", "SearchBTN_TEXT",40);
+        utility.DoclickWhenReady("ViewDetails_XPATH", "ViewD_TEXT",40);
+        utility.DoSendKeysWhenReady("SearchProductinput_XPATH", "ID_TEXT","ID_TEXT", 40);
+        utility.DoclickWhenReady("SearchProductbtnq_XPATH", "SearchProductBTN_TEXT",40);
+        utility.DoclickWhenReady("AddBTN_XPATH", "add_TEXT",40);
+        utility.DoscrolltoViewClickWhenReady("jjregion_XPATH", "jjregion_TEXT",40);
+        utility.DoSelectValuesByIndex("SelectRegion_XPATH", "Sele_TEXT",3,20);
+        utility.DoscrolltoViewClickWhenReady("jjregion_XPATH", "jjregion_TEXT",40);
+        utility.DoSelectValuesByIndex("SelectRegion_XPATH", "Sele_TEXT",3,20);
+        utility.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH","PaymentOPT_TEXT",50);
+        utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT",40);
+        utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT",40);
+        utility.DoacceptAlert(20);
+        utility.DoAssertContainsWhenReady("AssertOrdeIDgenerated_XPATH", "OrDerID_TEXT","OrDerID_TEXT", "OrderIDPass_TEXT",30);
+        utility.DoclickWhenReady("PayNowPayAccount_XPATH", "PayAcct_TEXT",40);
+        utility.DoclickWhenReady("PayOnline_XPATH", "PAyOnline_TEXT",40);
+        utility.DoswitchtoframeWhenReady(0, 13000);
+        ravePay.RavePay3();
 
         Thread.sleep(2000);
         screenShot.ScreenShotFullPage();

@@ -20,6 +20,7 @@ import org.testng.annotations.Test;
 import java.awt.*;
 import java.io.IOException;
 import java.security.SecureRandom;
+import java.util.concurrent.TimeUnit;
 
 public class CreateUsers extends TestBase {
     @Test
@@ -29,88 +30,37 @@ public class CreateUsers extends TestBase {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
+        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        Randomstuff randomStuff = new Randomstuff();
         FileUpload fileUpload = new FileUpload();
-        Randomstuff randomNumbers = new Randomstuff();
+        Utility utility = new Utility(driver);
 
         SecureRandom rn = new SecureRandom();
         int resourcetype = rn.nextInt(3) + 1;
 
         login.LoginNexus();
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("UserManagement_XPATH"))).click();
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Usr_XPATH"))).click();
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("RightTemplateUser_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewUserFname_XPATH"))).sendKeys(randomStuff.ListRandom());
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewUserLastName_XPATH"))).sendKeys(randomStuff.ListRandom());
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewUserEmail_XPATH"))).sendKeys(randomStuff.ListRandom() + "@gmail.com");
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewUserPhone_XPATH"))).sendKeys(Utility.fetchLocator("ContactPhoneNumber_TEXT"));
-
-        Thread.sleep(1000);
-        WebElement ele1111 = driver.findElement(By.xpath(Utility.fetchLocator("NewUserRightTemplate_XPATH")));
-        Select sel111 = new Select(ele1111);
-        sel111.selectByIndex(resourcetype);
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewUserDepartment_XPATH"))).click();
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewUserA1_XPATH"))).click();
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewUserA2_XPATH"))).click();
-
-        Thread.sleep(2000);
-        Actions builder = new Actions(driver);
-        builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
-
+        utility.DoclickWhenReady("Wfm_XPATH", "wfm_TEXT",50);
+        utility.DoclickWhenReady("UserManagement_XPATH", "Usermgt_TEXT",50);
+        utility.DoclickWhenReady("Usr_XPATH", "UsersBTN_TEXT",50);
+        utility.DoclickWhenReady("RightTemplateUser_XPATH", "RightT_TEXT",50);
+        utility.DosendKeysRandomListwordsWhenReady("NewUserFname_XPATH", "NewUser_TEXT",50);
+        utility.DosendKeysRandomListwordsWhenReady("NewUserLastName_XPATH", "FirstNa_TEXT",50);
+        utility.DosendKeysRandomEmailsWhenReady("NewUserEmail_XPATH", "LastNameField_TEXT",50 );
+        utility.DosendKeyRRWhenReady("NewUserPhone_XPATH", "ContactPhoneNumber_TEXT", "Ph_TEXT",20);
+        utility.DoSelectValuesByIndex("NewUserRightTemplate_XPATH", "ResourceT_TEXT",resourcetype, 20);
+        utility.DoclickWhenReady("NewUserDepartment_XPATH", "Seler_TEXT",50);
+        utility.DoclickWhenReady("NewUserA1_XPATH", "A_TEXT",50);
+        utility.DoclickWhenReady("NewUserA2_XPATH", "A_TEXT",50);
+        utility.DoFileUpWhenReady("FileUpload_XPATH", "3mb_TEXT",50);
         fileUpload.UploadFileImage3MB();
-        test.log(Status.PASS, "Profile Picture Of Resource Uploaded Successfully");
-
-        int tom = rn.nextInt(1500000) + 1;
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewUserStaffID_XPATH"))).sendKeys(Utility.fetchLocator("High_TEXT") + tom );
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewserJobTittle_XPATH"))).sendKeys(Utility.fetchLocator("High_TEXT") + randomStuff.ListRandom());
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("NewUserRegion_XPATH"))).click();
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Newq11_XPATH"))).click();
-
-        Thread.sleep(1000);
-        driver.findElement(By.xpath(Utility.fetchLocator("CreateNewUser_XPATH"))).click();
-
-        Thread.sleep(2000);
-        WebElement msg =(new WebDriverWait(driver, 15)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssertNewUserCreation_XPATH"))));
-        String text = msg.getText();
-        if (msg.isEnabled() && text.contains("Successfully created")) {
-            test.log(Status.PASS, "New User Created successfully");
-        } else {
-            test.log(Status.FAIL, "User Creation Failed");
-        }
-
-        driver.findElement(By.xpath(Utility.fetchLocator("NewUserOKBTN_XPATH"))).click();
+        utility.DosendKeysRandomNumberWhenReady("NewUserStaffID_XPATH", "StaffID_TEXT",500000 , 60);
+        utility.DosendKeysRandomListwordsWhenReady("NewserJobTittle_XPATH", "JobT_TEXT",50);
+        utility.DoclickWhenReady("NewUserRegion_XPATH", "U1_TEXT",50);
+        utility.DoclickWhenReady("Newq11_XPATH", "u2_TEXT",50);
+        utility.DoclickWhenReady("CreateNewUser_XPATH", "Creta_TEXT",50);
+        utility.DoAssertContainsWhenReady("AssertNewUserCreation_XPATH","Su_TEXT" ,"Cont_TEXT", "DplPass_XPATH",30);
+        utility.DoclickWhenReady("NewUserOKBTN_XPATH","Ok_TEXT",40);
 
         driver.quit();
         System.out.println("********************CREATE USER********************");

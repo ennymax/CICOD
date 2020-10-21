@@ -18,9 +18,17 @@ import java.util.function.Function;
 public class RavePay extends TestBase {
 
     WebDriver driver;
-
     public RavePay(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public void RavePay3() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysWhenReady("RavePayCardnumber_XPATH", "Ca_TEXT","CardNumber_TEXT",60);
+        utility.DoSendKeysWhenReady("RavePayValidTill_XPATH", "ValidTm_TEXT","e1_TEXT", 60);
+        utility.DoSendKeysWhenReady("RavePayValidTill_XPATH","V_TEXT" ,"e2_TEXT", 60);
+        utility.DoSendKeysWhenReady("RavPayCVV_XPATH", "CVVd_TEXT","CVV_TEXT", 60);
+        utility.DoclickWhenReady("fg_XPATH","P_TEXT",60);
     }
 
 

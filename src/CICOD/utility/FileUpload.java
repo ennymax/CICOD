@@ -1,5 +1,7 @@
 package CICOD.utility;
 
+import CICOD.base.TestBase;
+import com.aventstack.extentreports.Status;
 import org.openqa.selenium.StaleElementReferenceException;
 
 import java.awt.*;
@@ -7,7 +9,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
-public class FileUpload {
+public class FileUpload extends TestBase {
 
     public void UploadCarouselBanner() throws IOException, InterruptedException, AWTException {
 
@@ -92,6 +94,7 @@ public class FileUpload {
         } catch (StaleElementReferenceException e) {
             System.out.println("An Error Occur but Test will continue");
         }
+        test.log(Status.PASS, "Profile Picture Of Resource Uploaded Successfully");
     }
 
 

@@ -29,7 +29,7 @@ public class PayNow extends TestBase {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         RavePay ravePay = new RavePay(driver);

@@ -3,7 +3,6 @@ package CICOD.utility;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -30,21 +29,20 @@ public class Login {
     }
 
     public void LoginDef1()  throws IOException, InterruptedException  {
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("DomainName_XPATH"))).sendKeys(Utility.fetchLocator("DefaultShop_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("Defem_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("defpass_TEXT"));
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("LoginBTN_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClass("DomainName_XPATH", "DefaultShop_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClass("Email_XPATH", "Defem_TEXT","Emailf_TEXT" ,20);
+        utility.DoSendKeysByActionClass("Password_XPATH", "defpass_TEXT", "Passw_TEXT",20);
+        utility.DoscrolltoViewClickWhenReady("LoginBTN_XPATH", "Logi_TEXT",30);
+        utility.DoGetPageCurrentUrl( 45 , "yyyy_TEXT");
     }
 
     public void LoginNexus()  throws IOException, InterruptedException  {
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("DomainName_XPATH"))).sendKeys(Utility.fetchLocator("NexusDomainName1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("NexusEmail1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("NexusPassword1_TEXT"));
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("LoginBTN_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClass("DomainName_XPATH", "NexusDomainName1_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClass("Email_XPATH", "NexusEmail1_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClass("Password_XPATH", "NexusPassword1_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void LoginPremium() throws IOException, InterruptedException {
@@ -119,7 +117,6 @@ public class Login {
     }
 
     public void Login() throws IOException, InterruptedException {
-
         driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("UcgDomainName1_TEXT"));
         driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("UcgEmail1_TEXT"));
         driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("UcgPassword1_TEXT"));

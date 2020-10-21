@@ -22,37 +22,18 @@ public class OrderFufilment extends TestBase {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
         Login login = new Login(driver);
+        Utility utility = new Utility(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
-        //Com
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
-
-        //DashBoard
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Dashboard_XPATH"))).click();
-        test.log(Status.PASS, "Dashboard button fully functional");
-
-        driver.findElement(By.xpath(Utility.fetchLocator("Datefrom_XPATH"))).clear();
-        driver.findElement(By.xpath(Utility.fetchLocator("Datefrom_XPATH"))).sendKeys(Utility.fetchLocator("Datefrom_TEXT"));
-
-        driver.findElement(By.xpath(Utility.fetchLocator("Dateto_XPATH"))).clear();
-        driver.findElement(By.xpath(Utility.fetchLocator("Dateto_XPATH"))).sendKeys(Utility.fetchLocator("Dateto_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Dispalybtn_XPATH"))).click();
-
-        Thread.sleep(1000);
-        if (driver.findElements(By.xpath(Utility.fetchLocator("TotalOrder_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Total Order was displayed and enabled");
-        } else {
-            test.log(Status.FAIL, "Total order wasnt displayed and enabled");
-        }
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
+        utility.DoclickWhenReady("Dashboard_XPATH", "DashBoardBTN_TEXT",50);
+        utility.DoSendKeysWhenReady("Datefrom_XPATH", "Datefrom_TEXT","Datefrom_TEXT", 50);
+        utility.DoSendKeysWhenReady("Dateto_XPATH", "Dateto_TEXT","Dateto_TEXT", 50);
+        utility.DoclickWhenReady("Dispalybtn_XPATH", "DD_TEXT",50);
+        utility.DoAssertXpathPresentWhenReady("TotalOrder_XPATH", "TotalOrderPassMsg_TEXT","TotalOrderPassMsg_TEXT", 20);
 
         Thread.sleep(1000);
         if (driver.findElements(By.xpath(Utility.fetchLocator("PaidOrder_XPATH"))).size() != 0) {

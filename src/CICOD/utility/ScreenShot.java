@@ -21,10 +21,9 @@ public class ScreenShot extends TestBase {
         this.driver = driver;
     }
 
-    public void ScreenShotWebElement(String emailId) throws IOException, InterruptedException {
-        Thread.sleep(1000);
+    public void ScreenShotWebElement(String locator) throws IOException {
         String extentReportImageqm11 = System.getProperty("user.dir") + "\\ScreenShot\\ScreenShot" + System.currentTimeMillis() + ".png";
-        WebElement logo = driver.findElement(By.xpath(Utility.fetchLocator(emailId)));
+        WebElement logo = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         BufferedImage fullScreen = ImageIO.read(screenshot);
         Point location = logo.getLocation();
