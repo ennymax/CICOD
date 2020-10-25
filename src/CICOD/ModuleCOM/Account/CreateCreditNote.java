@@ -37,59 +37,22 @@ public class CreateCreditNote extends TestBase {
         driver.get("https://www.cicod.com/login");
 
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int a = rn.nextInt(60000) + 1;
         int aa = rn.nextInt(60000) + 1;
         FileUpload fileUpload = new FileUpload();
+        Utility utility = new Utility(driver);
 
         login.Login();
         test.log(Status.PASS, "Login Was Successful");
 
-        //Com
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
-
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("AccountBTN_XPATH")))).click();
-
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("CreditNote_XPATH")))).click();
-
-
-        Thread.sleep(2000);
-        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("CreateCreditNote_XPATH")));
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", ti11);
-        ti11.click();
-
-
-        Thread.sleep(2000);
-        WebElement element11p = driver.findElement(By.xpath(Utility.fetchLocator("CCustomer_XPATH")));
-        element11p.click();
-        Actions actionp = new Actions(driver);
-        actionp.moveToElement(element11p).doubleClick().perform();
-
-        Robot r = new Robot();
-        String text =  "Tope";
-        StringSelection stringSelection = new StringSelection(text);
-        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-        clipboard.setContents(stringSelection, stringSelection);
-
-        r.keyPress(KeyEvent.VK_CONTROL);
-        r.keyPress(KeyEvent.VK_V);
-        r.keyRelease(KeyEvent.VK_V);
-        r.keyRelease(KeyEvent.VK_CONTROL);
-
-        Thread.sleep(2000);
-        r.keyPress(KeyEvent.VK_ENTER);
-
-        Thread.sleep(1000);
-        WebElement ele111j = driver.findElement(By.xpath(Utility.fetchLocator("cReason_XPATH")));
-        Select sel11j = new Select(ele111j);
-        sel11j.selectByIndex(2);
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
+        utility.DoclickWhenReady("AccountBTN_XPATH", "AcctBTN_TEXT",60);
+        utility.DoclickWhenReady("CreditNote_XPATH", "CreditN_TEXT",60);
+        utility.DoscrolltoViewClickFluentWait("CreateCreditNote_XPATH","CreateCN_TEXT",60);
+        utility.DoSendKeysRobotClassFluentWait("CCustomer_XPATH","EnterName_TEXT","EnterName_TEXT",60);
+        utility.DoSelectValuesByIndex("cReason_XPATH","SS_TEXT",2,60);
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("InvoiceNum_XPATH"))).sendKeys(Utility.fetchLocator("h_TEXT") + aa );
@@ -102,19 +65,8 @@ public class CreateCreditNote extends TestBase {
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("Cdes_XPATH"))).sendKeys("Testing Credit note");
+        utility.DoFileUpWhenReady("FileUpload_XPATH", "3mb_TEXT",50);
 
-        Thread.sleep(2000);
-        WebElement ti11s = driver.findElement(By.xpath("//input[@type='file']"));
-        JavascriptExecutor jses = (JavascriptExecutor) driver;
-        jses.executeScript("arguments[0].scrollIntoView();", ti11s);
-
-        Thread.sleep(2000);
-        Actions builder = new Actions(driver);
-        builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
-
-        Thread.sleep(4000);
-        fileUpload.UploadFileImage3MB();
-        test.log(Status.PASS, "Attach Image for Credit Note was Successful");
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("Senddd_XPATH"))).click();

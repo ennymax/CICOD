@@ -30,18 +30,18 @@ public class Login {
 
     public void LoginDef1()  throws IOException, InterruptedException  {
         Utility utility = new Utility(driver);
-        utility.DoSendKeysByActionClass("DomainName_XPATH", "DefaultShop_TEXT", "DOma_TEXT",20);
-        utility.DoSendKeysByActionClass("Email_XPATH", "Defem_TEXT","Emailf_TEXT" ,20);
-        utility.DoSendKeysByActionClass("Password_XPATH", "defpass_TEXT", "Passw_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "DefaultShop_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "Defem_TEXT","Emailf_TEXT" ,20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "defpass_TEXT", "Passw_TEXT",20);
         utility.DoscrolltoViewClickWhenReady("LoginBTN_XPATH", "Logi_TEXT",30);
         utility.DoGetPageCurrentUrl( 45 , "yyyy_TEXT");
     }
 
     public void LoginNexus()  throws IOException, InterruptedException  {
         Utility utility = new Utility(driver);
-        utility.DoSendKeysByActionClass("DomainName_XPATH", "NexusDomainName1_TEXT", "DOma_TEXT",20);
-        utility.DoSendKeysByActionClass("Email_XPATH", "NexusEmail1_TEXT", "Emailf_TEXT",20);
-        utility.DoSendKeysByActionClass("Password_XPATH", "NexusPassword1_TEXT", "Passw_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "NexusDomainName1_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "NexusEmail1_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "NexusPassword1_TEXT", "Passw_TEXT",20);
         utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 

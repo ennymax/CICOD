@@ -70,7 +70,7 @@ public class AddUser extends TestBase {
         if (msg11.isEnabled() && text11.contains("Error creating user: \"MAXIMUM_USER_LICENSE_REACHED\"")) {
             test.log(Status.PASS, "Add User fully Functional");
         } else {
-            test.log(Status.FAIL, "Add User ModuleCOM failed");
+            test.log(Status.FAIL, "Add User ModuleEKEDC failed");
         }
 
         Thread.sleep(2000);

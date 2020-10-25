@@ -51,7 +51,7 @@ public class PayAccount extends TestBase {
         utility.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH","PaymentOPT_TEXT",50);
         utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT",40);
         utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT",40);
-        utility.DoacceptAlert(20);
+        utility.DowaitandAcceptAlerwhenReady(60);
         utility.DoAssertContainsWhenReady("AssertOrdeIDgenerated_XPATH", "OrDerID_TEXT","OrDerID_TEXT", "OrderIDPass_TEXT",30);
         utility.DoclickWhenReady("PayNowPayAccount_XPATH", "PayAcct_TEXT",40);
         utility.DoclickWhenReady("PayOnline_XPATH", "PAyOnline_TEXT",40);

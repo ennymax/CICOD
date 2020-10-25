@@ -5,6 +5,11 @@ import com.aventstack.extentreports.Status;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.SecureRandom;
@@ -31,7 +36,7 @@ public class Utility extends TestBase {
     }
 
     //**********************Alert ********************
-    public void DoacceptAlert(int timeOut) throws InterruptedException {
+    public void DowaitandAcceptAlerwhenReady(int timeOut) throws InterruptedException {
         Utility utility = new Utility(driver);
         utility.DowaitForAlertPresent(timeOut);
         Thread.sleep(1000);
@@ -130,14 +135,14 @@ public class Utility extends TestBase {
         mcj.sendKeys(actualText);
     }
 
-    public void DoSendKeysByActionClassWhenReady(String locator, String value, String ObjectName, int timeOut) throws IOException, InterruptedException {
+    public void DoSendKeysByActionClassWhenReady(String locator, String actualText, String ObjectName, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         Utility utility = new Utility(driver);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
         Actions ac = new Actions(driver);
         utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
-        ac.sendKeys((locat), Utility.fetchLocator(value)).perform();
+        ac.sendKeys((locat), Utility.fetchLocator(actualText)).perform();
     }
 
     public void DoSendKeysWhenReady(String locator, String ObjectName, String actualText, int timeOut) throws IOException, InterruptedException {
@@ -187,6 +192,30 @@ public class Utility extends TestBase {
         element.sendKeys(a + randomstuff.ListRandom());
     }
 
+    public void DoSendKeysRobotClassFluentWait(String locator, String ObjectName, String actualText, int timeOut) throws IOException, InterruptedException, AWTException {
+        Thread.sleep(1200);
+        Robot r = new Robot();
+        Utility utility = new Utility(driver);
+        utility.DowaitForElementWithFluentWait(locator, timeOut);
+
+        WebElement element = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
+        element.click();
+        Actions actionp = new Actions(driver);
+        actionp.moveToElement(element).doubleClick().perform();
+
+        StringSelection stringSelection = new StringSelection(Utility.fetchLocator(actualText));
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, stringSelection);
+
+        r.keyPress(KeyEvent.VK_CONTROL);
+        r.keyPress(KeyEvent.VK_V);
+        r.keyRelease(KeyEvent.VK_V);
+        r.keyRelease(KeyEvent.VK_CONTROL);
+
+        Thread.sleep(2000);
+        r.keyPress(KeyEvent.VK_ENTER);
+    }
 
     //**********************Special ********************
     public void DoFileUpWhenReady(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {

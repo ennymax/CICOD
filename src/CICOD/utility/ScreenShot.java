@@ -21,7 +21,9 @@ public class ScreenShot extends TestBase {
         this.driver = driver;
     }
 
-    public void ScreenShotWebElement(String locator) throws IOException {
+    public void ScreenShotWebElement(String locator, int timeOut) throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DowaitForElementWithFluentWait(locator, timeOut);
         String extentReportImageqm11 = System.getProperty("user.dir") + "\\ScreenShot\\ScreenShot" + System.currentTimeMillis() + ".png";
         WebElement logo = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

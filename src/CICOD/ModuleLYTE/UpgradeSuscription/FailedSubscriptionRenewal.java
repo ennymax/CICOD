@@ -32,6 +32,7 @@ public class FailedSubscriptionRenewal extends TestBase {
         RavePay ravePay = new RavePay(driver);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
+        Utility utility = new Utility(driver);
 
         login.LoginUpgrade();
         test.log(Status.PASS, "Login Was Successful");
@@ -59,14 +60,12 @@ public class FailedSubscriptionRenewal extends TestBase {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Paynow_XPATH")))).click();
 
-        Thread.sleep(13000);
         ravePay.RavePay1();
 
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("CloseFluterWave_XPATH")))).click();
 
-        Thread.sleep(10000);
-        login.AcceptAlert();
+        utility.DowaitandAcceptAlerwhenReady(60);
 
         Thread.sleep(2000);
         driver.switchTo().defaultContent();

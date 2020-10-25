@@ -95,6 +95,7 @@ public class ApplyDiscount extends TestBase {
         JavascriptExecutor jse = (JavascriptExecutor) driver;jse.executeScript("arguments[0].scrollIntoView();", ti11);
         ti11.click();
 
+        Thread.sleep(2000);
         WebElement ele111 = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
         Select sel11 = new Select(ele111);
         sel11.selectByIndex(st);
@@ -108,7 +109,6 @@ public class ApplyDiscount extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayOnline_XPATH"))).click();
 
-        Thread.sleep(5000);
         ravePay.RavePay2();
 
         Thread.sleep(2000);
@@ -120,7 +120,6 @@ public class ApplyDiscount extends TestBase {
         } else {
             test.log(Status.FAIL, "Payment Portal down");
         }
-
 
         System.out.println("********************APPLY DISCOUNT********************");
         driver.quit();

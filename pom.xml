@@ -23,11 +23,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>.\\testngCOM\\testngA.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                    <suiteXmlFiles>src\TestNG\testngCOM\testngA.xml</suiteXmlFiles>
+                    <suiteXmlFiles>src\TestNG\testngCOM\testngA.xml</suiteXmlFiles>
                 </configuration>
             </plugin>
+
 
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
@@ -37,7 +37,6 @@
         </plugins>
     </build>
     <dependencies>
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -60,11 +59,6 @@
             <groupId>com.sun.activation</groupId>
             <artifactId>javax.activation</artifactId>
             <version>1.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>4.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -109,12 +103,6 @@
             <groupId>ru.yandex.qatools.ashot</groupId>
             <artifactId>ashot</artifactId>
             <version>1.5.4</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>3.1.5</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
