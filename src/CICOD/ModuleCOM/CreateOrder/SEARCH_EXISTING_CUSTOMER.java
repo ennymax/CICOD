@@ -51,9 +51,6 @@ public class SEARCH_EXISTING_CUSTOMER extends TestBase {
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("SearchByNameAssertion_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Search By Name was Successful");
-            test.log(Status.PASS, "Search By Phone Number was Successful");
-            test.log(Status.PASS, "Search By Email was Successful");
-
         } else {
             test.log(Status.FAIL, "Search Failed");
         }

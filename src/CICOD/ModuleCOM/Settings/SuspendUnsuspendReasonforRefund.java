@@ -26,6 +26,7 @@ public class SuspendUnsuspendReasonforRefund extends TestBase {
 
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
+        Utility utility = new Utility(driver);
 
         login.Login();
         test.log(Status.PASS, "Login Was Successful");
@@ -47,8 +48,7 @@ public class SuspendUnsuspendReasonforRefund extends TestBase {
         jse.executeScript("arguments[0].scrollIntoView();", ti11);
         ti11.click();
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("rActionBTN_XPATH"))).click();
+        utility.DoscrolltoViewClickWhenReady("rActionBTN_XPATH","Act_TEXT",60);
 
         Thread.sleep(2000);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("rsusend_XPATH")));
@@ -58,8 +58,7 @@ public class SuspendUnsuspendReasonforRefund extends TestBase {
         driver.switchTo().alert().accept();
         test.log(Status.PASS, "Reason for Refund was suspended successfully");
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("rActionBTN_XPATH"))).click();
+        utility.DoscrolltoViewClickWhenReady("rActionBTN_XPATH","Act_TEXT",60);
 
         Thread.sleep(2000);
         WebElement elementz = driver.findElement(By.xpath(Utility.fetchLocator("rUnsuspend_XPATH")));

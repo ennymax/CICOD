@@ -64,8 +64,6 @@ public class DownLoadCustomerAccount extends TestBase {
         jse.executeScript("arguments[0].scrollIntoView();", ti11);
         ti11.click();
 
-        api_watch_service.ApiWatchService();
-
         System.out.println("**************************DOWNLOAD CUSTOMER ACCOUNT*********************************");
         driver.quit();
     }

@@ -65,10 +65,8 @@ public class CreateCreditNote extends TestBase {
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("Cdes_XPATH"))).sendKeys("Testing Credit note");
-        utility.DoFileUpWhenReady("FileUpload_XPATH", "3mb_TEXT",50);
 
-
-        Thread.sleep(1200);
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Senddd_XPATH"))).click();
 
         Thread.sleep(2000);

@@ -23,7 +23,7 @@
             <class name="CICOD.ModuleCOM.CustomerManagment.SusendCustomerFromCustomerManagementPage"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.UploadCustomer"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.CreateCustomer"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.CreditHistory"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.ViewCreditHistory"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.DownloadCustomerDetails"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.DownLoadCreditLimit"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.SuspendUnsuspendCustomer"/>

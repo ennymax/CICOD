@@ -242,9 +242,8 @@ public class EnableFreeDelivery extends TestBase {
         driver.switchTo().frame(0);
 
         Thread.sleep(2000);
-        System.out.println(driver.findElement(By.id("option-payment-amount-xs")).getText());
-        assertEquals("NGN203.00", driver.findElement(By.id("option-payment-amount-xs")).getText());
-        test.log(Status.PASS, "Free Delivery is confirmed");
+        Utility utility = new Utility(driver);
+        utility.DoAssertEqualWhenReady("ASSenable_XPATH","NGN203.00",70);
 
         System.out.println("********************Enable Free free Delivery********************");
         driver.quit();

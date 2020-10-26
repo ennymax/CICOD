@@ -98,7 +98,7 @@ public class PayNow extends TestBase {
         screenshot.ScreenShotFullPage();
         test.log(Status.INFO, "MAKE PAYMENT WITH POS");
 
-        Thread.sleep(200000000);
+        Thread.sleep(2000);
         driver.get("https://nexusnigeria.cicod.com/cuorma/web/index.php/site/order-product?inv_search_text=Tomatoes");
 
         //SEARCH BY NAME
