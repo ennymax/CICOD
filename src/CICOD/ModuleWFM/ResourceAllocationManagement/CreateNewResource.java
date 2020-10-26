@@ -56,6 +56,7 @@ public class CreateNewResource extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("NewREsourcs_XPATH"))).click();
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ResourceFirstName_XPATH"))).sendKeys(randomStuff.ListRandom());
 
         Thread.sleep(1000);

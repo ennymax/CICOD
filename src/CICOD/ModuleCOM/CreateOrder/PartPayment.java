@@ -14,15 +14,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
 
-public class PayInVoice extends TestBase {
+public class PartPayment extends TestBase {
     @Test
-    public void Pay_Invoice() throws IOException, InterruptedException {
-        test = extent.createTest("Pay Invoice");
+    public void PartPayment() throws IOException, InterruptedException {
+        test = extent.createTest("PART PAYMENT");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
@@ -76,7 +75,7 @@ public class PayInVoice extends TestBase {
         Select sel11 = new Select(ele111);
         sel11.selectByIndex(st);
 
-        Thread.sleep(2000);
+        Thread.sleep(200000000);
         driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH"))).click();
 
         Thread.sleep(2000);

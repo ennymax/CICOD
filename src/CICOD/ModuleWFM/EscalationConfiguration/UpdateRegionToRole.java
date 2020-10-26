@@ -54,11 +54,6 @@ public class UpdateRegionToRole extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("UpdateRegionToRole_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement ele1111 = driver.findElement(By.xpath(Utility.fetchLocator("Role_XPATH")));
-        Select sel111 = new Select(ele1111);
-        sel111.selectByIndex(resourceshedule);
-
-        Thread.sleep(2000);
         WebElement as = driver.findElement(By.xpath(Utility.fetchLocator("RegionEmail_XPATH")));
         as.clear();
         as.sendKeys(new Generex(regex).random());
