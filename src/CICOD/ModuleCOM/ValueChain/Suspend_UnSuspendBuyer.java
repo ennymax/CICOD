@@ -35,40 +35,16 @@ public class Suspend_UnSuspendBuyer extends TestBase {
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(1000000) + 1;
+        Utility utility = new Utility(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
-        //COM
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
-
-        //CUSTOMER MANAGEMENT BUTTON
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functional");
-
-        Thread.sleep(1300);
-        driver.findElement(By.xpath(Utility.fetchLocator("ValuechainBTN_XPATH"))).click();
-
-        Thread.sleep(1400);
-        driver.findElement(By.xpath(Utility.fetchLocator("ValuechainByers_XPATH"))).click();
-
-        Thread.sleep(1400);
-        driver.findElement(By.xpath(Utility.fetchLocator("BuyerActionBTN_XPATH"))).click();
-
-        Thread.sleep(1400);
-        driver.findElement(By.xpath(Utility.fetchLocator("ProductAvailableForBuy_XPATH"))).click();
-
-        Thread.sleep(1000);
-        WebElement msgoo =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssertProductCode_XPATH"))));
-        String textoo = msgoo.getText();
-        if (msgoo.isEnabled() && textoo.contains("T74623454")) {
-            test.log(Status.PASS, "Products Of the Supplier Is Displayed and Enabled");
-        } else {
-            test.log(Status.FAIL, "Product Of Buyers is not displayed and enabled");
-        }
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
+        utility.DoclickWhenReady("ValuechainBTN_XPATH", "VChainbtn_TEXT",60);
+        utility.DoclickWhenReady("ValuechainByers_XPATH", "Buyersbtn_TEXT",60);
+        utility.DoclickWhenReady("BuyerActionBTN_XPATH", "BuyerActbtn_TEXT",60);
+        utility.DoclickWhenReady("ProductAvailableForBuy_XPATH", "Productav_TEXT",60);
+        utility.DoAssertContainsWhenReady("AssertProductCode_XPATH","cont_TEXT","vpass_TEXT","vfail_TEXT",60);
 
         driver.navigate().back();
 
@@ -172,16 +148,6 @@ public class Suspend_UnSuspendBuyer extends TestBase {
 
         driver.findElement(By.xpath(Utility.fetchLocator("Suppliers_XPATH"))).click();
 
-        /*
-        Thread.sleep(100000000);
-        WebElement msgoommmm =(new WebDriverWait(driver, 12)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssertSuspended_XPATH"))));
-        String textoommmm = msgoommmm.getText();
-        if (msgoommmm.isEnabled() && textoommmm.contains("Access Suspended")) {
-            test.log(Status.PASS, "Access Suspended was Successful");
-        } else {
-            test.log(Status.FAIL, "Suspension Failed");
-        }
-        */
 
         System.out.println("********************SUSPEND UNSUSPEND BUYER********************");
         driver.quit();
