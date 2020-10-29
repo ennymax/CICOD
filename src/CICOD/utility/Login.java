@@ -29,6 +29,7 @@ public class Login {
     }
 
     public void LoginDef1()  throws IOException, InterruptedException  {
+        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
         utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "DefaultShop_TEXT", "DOma_TEXT",20);
         utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "Defem_TEXT","Emailf_TEXT" ,20);
@@ -38,6 +39,7 @@ public class Login {
     }
 
     public void LoginNexus()  throws IOException, InterruptedException  {
+        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
         utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "NexusDomainName1_TEXT", "DOma_TEXT",20);
         utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "NexusEmail1_TEXT", "Emailf_TEXT",20);
@@ -47,135 +49,117 @@ public class Login {
 
     public void LoginPremium() throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("DomainName_XPATH"))).sendKeys(Utility.fetchLocator("PshopName_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("Pemail_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("Ppassword_TEXT"));
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("LoginBTN_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "PshopName_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "Pemail_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "Ppassword_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
-    public void LoginWFM() throws IOException, InterruptedException {
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("interEmail_XPATH"))).sendKeys(Utility.fetchLocator("WfmEmail1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("interPassword_XPATH"))).sendKeys(Utility.fetchLocator("WfmPassword1_TEXT"));
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("interLoginBTN_XPATH"))).click();
-    }
     public void LoginWrongDomainName() throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("Domain_XPATH"))).sendKeys(Utility.fetchLocator("DefaultShopName_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("UcgEmail1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("UcgPassword1_TEXT"));
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("LoginBTN_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "DefaultShopName_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "UcgEmail1_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "UcgPassword1_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void LoginWrongEmail() throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("Domain_XPATH"))).sendKeys(Utility.fetchLocator("UcgDomainName1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("DefaultEmail_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("UcgPassword1_TEXT"));
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("LoginBTN_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "UcgDomainName1_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "DefaultEmail_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "UcgPassword1_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void LoginWrongPassWord() throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("Domain_XPATH"))).sendKeys(Utility.fetchLocator("UcgDomainName1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("UcgEmail1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("DefaultPassWord_TEXT"));
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("LoginBTN_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "UcgDomainName1_TEXT", "UcgDomainName1_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "UcgEmail1_TEXT", "UcgEmail1_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "DefaultPassWord_TEXT", "UcgPassword1_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void LoginCorrectDetails() throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("Domain_XPATH"))).sendKeys(Utility.fetchLocator("UcgDomainName1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("UcgEmail1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("UcgPassword1_TEXT"));
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("LoginBTN_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "UcgDomainName1_TEXT", "UcgDomainName1_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "UcgEmail1_TEXT", "UcgEmail1_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "UcgPassword1_TEXT", "UcgPassword1_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
     public void LoginDefault()  throws IOException, InterruptedException  {
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("DefaultShop_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("Defem_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("defpass_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
+        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "DefaultShop_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "Defem_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "defpass_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void Loginlupin() throws IOException, InterruptedException {
-
-        driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("lupinDomainName_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("lupinEmail_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("lupinPass_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
+        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "lupinDomainName_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "lupinEmail_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "lupinPass_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void Login() throws IOException, InterruptedException {
-        driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("UcgDomainName1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("UcgEmail1_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("UcgPassword1_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
+        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "NexusDomainName1_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "NexusEmail1_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "NexusPassword1_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void LoginActiveAccount() throws IOException, InterruptedException {
-
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("ActShopName_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("ActEmail_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("UpPassword_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "ActShopName_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "ActEmail_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "UpPassword_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void LoginExpiredAccount() throws IOException, InterruptedException {
-
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("Cshopname_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("Cemail_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("Cpassword_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "Cshopname_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "Cemail_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "Cpassword_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void LoginUpgrade() throws IOException, InterruptedException {
-
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("TestShopName_XPATH"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("TestEmail_XPATH"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("UpPassword_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "TestShopName_XPATH", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "TestEmail_XPATH", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "UpPassword_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void LoginTestAccount() throws IOException, InterruptedException {
-
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("Shopname_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("Email_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("Password_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "Shopname_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "Email_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "Password_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
     public void LoginTestAccountSetUp() throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        driver.findElement(By.xpath(Utility.fetchLocator("shop_XPATH"))).sendKeys(Utility.fetchLocator("Ashop_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Email_XPATH"))).sendKeys(Utility.fetchLocator("Aemail_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Password_XPATH"))).sendKeys(Utility.fetchLocator("Apassword_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
+        Utility utility = new Utility(driver);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "Ashop_TEXT", "DOma_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "Aemail_TEXT", "Emailf_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "Apassword_TEXT", "Passw_TEXT",20);
+        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 }

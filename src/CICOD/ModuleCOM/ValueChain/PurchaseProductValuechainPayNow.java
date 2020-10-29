@@ -77,11 +77,27 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         Thread.sleep(1300);
         driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
 
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
         Thread.sleep(2000);
         WebElement ti11l = driver.findElement(By.xpath(Utility.fetchLocator("mdd_XPATH")));
         JavascriptExecutor jsel = (JavascriptExecutor) driver;
         jsel.executeScript("arguments[0].scrollIntoView();", ti11l);
 
+        Thread.sleep(2000);
         WebElement ti112 = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
         JavascriptExecutor jse2 = (JavascriptExecutor) driver;
         jse2.executeScript("arguments[0].scrollIntoView();", ti112);
