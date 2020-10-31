@@ -153,6 +153,14 @@ public class Utility extends TestBase {
         System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
     }
 
+    public void DoClearActionclassWhenReady(String locator, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(1200);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        Actions ac = new Actions(driver);
+        ac.sendKeys((locat), Keys.DELETE ).perform();
+    }
+
     public void DoSendKeysWhenReady(String locator, String ObjectName, String actualText, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         Utility utility = new Utility(driver);
@@ -161,6 +169,17 @@ public class Utility extends TestBase {
         utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
         element.clear();
         element.sendKeys(Utility.fetchLocator(actualText));
+        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
+    }
+
+    public void DoSendKeysWhenReadyEnter(String locator, String ObjectName, String actualText, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(1200);
+        Utility utility = new Utility(driver);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
+        element.clear();
+        element.sendKeys(Utility.fetchLocator(actualText) + Keys.ENTER + Keys.ENTER + Keys.ENTER );
         System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
     }
 

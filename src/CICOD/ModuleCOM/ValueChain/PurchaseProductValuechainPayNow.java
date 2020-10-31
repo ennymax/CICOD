@@ -112,7 +112,8 @@ public class PurchaseProductValuechainPayNow extends TestBase {
 
         Thread.sleep(2000);
         System.out.println(driver.findElement(By.id("option-payment-amount-xs")).getText());
-        assertEquals("NGN609.00", driver.findElement(By.id("option-payment-amount-xs")).getText());
+
+        assertEquals("NGN2,131.50", driver.findElement(By.id("option-payment-amount-xs")).getText());
         test.log(Status.PASS, "PayOnline Was Successful");
 
         Thread.sleep(2000);
@@ -127,6 +128,24 @@ public class PurchaseProductValuechainPayNow extends TestBase {
 
         Thread.sleep(1300);
         driver.findElement(By.xpath(Utility.fetchLocator("SelectBeverages_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
 
         Thread.sleep(1300);
         driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
@@ -155,6 +174,62 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         JavascriptExecutor jsepp = (JavascriptExecutor) driver;
         jsepp.executeScript("arguments[0].scrollIntoView();", ti11pp);
         ti11pp.click();
+        test.log(Status.PASS, "Payment Via POS Successful");
+
+        Thread.sleep(2000);
+        driver.get("https://emaxkemiyop.cicod.com/cuorma/web/value-chain/order?id=10147");
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("ProductCategoryPlus_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("SelectBeverages_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(1300);
+        driver.findElement(By.xpath(Utility.fetchLocator("AddProduct_XPATH"))).click();
+
+        Thread.sleep(2000);
+        WebElement ti11lxxo = driver.findElement(By.xpath(Utility.fetchLocator("mdd_XPATH")));
+        JavascriptExecutor jselxxo = (JavascriptExecutor) driver;
+        jselxxo.executeScript("arguments[0].scrollIntoView();", ti11lxxo);
+
+        WebElement ti112aao = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
+        JavascriptExecutor jse2aao = (JavascriptExecutor) driver;
+        jse2aao.executeScript("arguments[0].scrollIntoView();", ti112aao);
+        ti112aao.click();
+
+        Thread.sleep(2000);
+        WebElement ti112llm = driver.findElement(By.xpath(Utility.fetchLocator("ValueChainPayUSSD_XPATH")));
+        JavascriptExecutor jse2llm = (JavascriptExecutor) driver;
+        jse2llm.executeScript("arguments[0].scrollIntoView();", ti112llm);
+        ti112llm.click();
+
+        Thread.sleep(300000000);
+        WebElement ti11ppmm = driver.findElement(By.xpath(Utility.fetchLocator("ConfirmPAymantPOS_XPATH")));
+        JavascriptExecutor jseppmm = (JavascriptExecutor) driver;
+        jseppmm.executeScript("arguments[0].scrollIntoView();", ti11pp);
+        ti11ppmm.click();
         test.log(Status.PASS, "Payment Via POS Successful");
 
         System.out.println("********************PURCHASE PRODUCT VIA VALUE CHAIN PAY NOW********************");

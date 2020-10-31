@@ -34,12 +34,6 @@ public class RemoveInventoryStatusRule extends TestBase {
 
         login.LoginCorrectDetails();
 
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-
         driver.findElement(By.xpath(Utility.fetchLocator("IMS_XPATH"))).click();
 
         Thread.sleep(2000);
@@ -62,6 +56,7 @@ public class RemoveInventoryStatusRule extends TestBase {
         JavascriptExecutor jstg = (JavascriptExecutor) driver;
         jstg.executeScript("arguments[0].click();", elementtg);
 
+        Thread.sleep(2000);
         WebElement elementtgn = driver.findElement(By.xpath(Utility.fetchLocator("RemoverBTN_XPATH")));
         JavascriptExecutor jstgn = (JavascriptExecutor) driver;
         jstgn.executeScript("arguments[0].click();", elementtgn);

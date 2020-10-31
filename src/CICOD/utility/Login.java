@@ -118,15 +118,6 @@ public class Login {
         utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
     }
 
-    public void LoginActiveAccount() throws IOException, InterruptedException {
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
-        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "ActShopName_TEXT", "DOma_TEXT",20);
-        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "ActEmail_TEXT", "Emailf_TEXT",20);
-        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "UpPassword_TEXT", "Passw_TEXT",20);
-        utility.DoclickWhenReady("LoginBTN_XPATH","Logi_TEXT" ,30);
-    }
-
     public void LoginExpiredAccount() throws IOException, InterruptedException {
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
