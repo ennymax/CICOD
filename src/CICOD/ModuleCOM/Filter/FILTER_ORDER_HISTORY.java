@@ -164,11 +164,6 @@ public class FILTER_ORDER_HISTORY extends TestBase {
         utility.DoSelectValuesByVisibleText("FilterByOrderStatus_XPATH", "OStatus1_TEXT", "OStatus1_TEXT", 30);
         utility.DoAssertXpathPresentWhenReady("Asserending_XPATH", "FilterOpasOSTA1_TEXT", "FilterOfaiOsat1_TEXT", 15);
 
-
-
-
-
-        Thread.sleep(999999999);
         System.out.println("********************FILTER ORDER HISTORY********************");
         driver.quit();
     }

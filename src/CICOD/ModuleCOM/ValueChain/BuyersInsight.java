@@ -60,7 +60,7 @@ public class BuyersInsight extends TestBase {
         Thread.sleep(1000);
         WebElement msgoo =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssertProductCode_XPATH"))));
         String textoo = msgoo.getText();
-        if (msgoo.isEnabled() && textoo.contains("T746234")) {
+        if (msgoo.isEnabled() && textoo.contains("B920")) {
             test.log(Status.PASS, "Products Of the Supplier Is Displayed and Enabled");
         } else {
             test.log(Status.FAIL, "Product Of Buyers is not displayed and enabled");

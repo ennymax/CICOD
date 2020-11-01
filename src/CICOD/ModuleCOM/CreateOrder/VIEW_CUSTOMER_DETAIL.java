@@ -4,15 +4,10 @@ import CICOD.base.TestBase;
 import CICOD.utility.Login;
 import CICOD.utility.ScreenShot;
 import CICOD.utility.Utility;
-import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -43,7 +38,6 @@ public class VIEW_CUSTOMER_DETAIL extends TestBase {
         utility.DoAssertXpathPresentWhenReady("assertdisplayeddetails_XPATH","Cus_TEXT","DisMessag_TEXT", 20);
         screenshot.ScreenShotWebElement("assertdisplayeddetails_XPATH", 30);
 
-        System.out.println("********************VIEW CUSTOMER DETAIL TEST SUCCESSFULLY IS COMPLETED********************");
         driver.quit();
     }
 }

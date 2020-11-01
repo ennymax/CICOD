@@ -26,6 +26,7 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
+        Utility utility =new Utility(driver);
         driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
         BrokenLink brokenLink = new BrokenLink(driver);
         ScreenShot screenshot = new ScreenShot(driver);
@@ -176,6 +177,7 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         ti11pp.click();
         test.log(Status.PASS, "Payment Via POS Successful");
 
+        test.log(Status.INFO, "MAKE PAYMENT WITH USSD");
         Thread.sleep(2000);
         driver.get("https://emaxkemiyop.cicod.com/cuorma/web/value-chain/order?id=10147");
 
@@ -214,6 +216,7 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         JavascriptExecutor jselxxo = (JavascriptExecutor) driver;
         jselxxo.executeScript("arguments[0].scrollIntoView();", ti11lxxo);
 
+        Thread.sleep(1200);
         WebElement ti112aao = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
         JavascriptExecutor jse2aao = (JavascriptExecutor) driver;
         jse2aao.executeScript("arguments[0].scrollIntoView();", ti112aao);
@@ -225,14 +228,8 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         jse2llm.executeScript("arguments[0].scrollIntoView();", ti112llm);
         ti112llm.click();
 
-        Thread.sleep(300000000);
-        WebElement ti11ppmm = driver.findElement(By.xpath(Utility.fetchLocator("ConfirmPAymantPOS_XPATH")));
-        JavascriptExecutor jseppmm = (JavascriptExecutor) driver;
-        jseppmm.executeScript("arguments[0].scrollIntoView();", ti11pp);
-        ti11ppmm.click();
-        test.log(Status.PASS, "Payment Via POS Successful");
+        utility.DoAssertXpathPresentWhenReady("con1_XPATH","UssdPass_TEXT","UssdFail_TEXT",30);
 
-        System.out.println("********************PURCHASE PRODUCT VIA VALUE CHAIN PAY NOW********************");
         driver.quit();
     }
 }

@@ -32,7 +32,5 @@ public class LoginWithWrongPassword extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************LOGIN WITH WRONG PASSWORD********************");
     }
-
 }

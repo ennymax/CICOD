@@ -68,12 +68,12 @@ public class ADD_ROLE extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SaveRoleBTN_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("Sorry_XPATH")));
+        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("AlertRoleSSS_XPATH")));
         String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains(": Invalid argument supplied for foreach()")) {
-            test.log(Status.FAIL, "Bug In Add Role See ScreenShot");
+        if (msg11.isEnabled() && text11.contains("Role Saved")) {
+            test.log(Status.PASS, "ROle has been Added Successfully");
         } else {
-            test.log(Status.PASS, "Add Role Successful");
+            test.log(Status.FAIL, "Fail to Add Role");
         }
 
         Thread.sleep(500);
