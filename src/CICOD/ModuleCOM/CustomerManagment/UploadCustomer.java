@@ -63,8 +63,6 @@ public class UploadCustomer extends TestBase {
         jsq.executeScript("arguments[0].click();", elementq);
 
         fileUpload.UploadXLSX1();
-
-        Thread.sleep(3000);
         test.log(Status.PASS, "Customer(s) uploaded successfully");
 
         System.out.println("********************UPLOAD CUSTOMER IS COMPLETED********************");

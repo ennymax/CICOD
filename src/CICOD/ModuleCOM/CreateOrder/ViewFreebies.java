@@ -37,7 +37,6 @@ public class ViewFreebies extends TestBase {
         Utility utility = new Utility(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
         utility.DoclickWhenReady("Createorderbtn_XPATH", "CreateOrder_TEXT",40);

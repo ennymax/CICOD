@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
 
-public class ApplyDiscount extends TestBase {
+public class  ApplyDiscount extends TestBase {
     @Test
     public void APPLY_DISCOUNT() throws IOException, InterruptedException {
         test = extent.createTest("APPLY DISCOUNT");

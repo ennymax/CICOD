@@ -4,7 +4,7 @@
 
     <test name = "DashBoard">
         <classes>
-            <class name="CICOD.ModuleCOM.DashBoard.OrderFufilment"/>
+            <class name="CICOD.ModuleCOM.DashBoard.OrderFufilmentDashboard"/>
             <class name="CICOD.ModuleCOM.DashBoard.SalesTargetDashBoard"/>
             <class name="CICOD.ModuleCOM.DashBoard.VarianceReportDashboard"/>
             <class name="CICOD.ModuleCOM.DashBoard.View_DashBoard_By_Date"/>
@@ -27,10 +27,9 @@
             <class name="CICOD.ModuleCOM.CustomerManagment.DownloadCustomerDetails"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.DownLoadCreditLimit"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.SuspendUnsuspendCustomer"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.AddLodgment"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.EnableFreeDelivery"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.UpdateCustomer"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.UpdateLodgment"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.Lodgment"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.VatExemptionforCustomer"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.ViewCustomer"/>
         </classes>

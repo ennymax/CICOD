@@ -20,7 +20,7 @@ import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
 
 public class PayAccount extends TestBase {
-    @Test(invocationCount = 2)
+    @Test
     public void Pay_Account() throws IOException, InterruptedException {
         test = extent.createTest("PAY ACCOUNT");
         WebDriverManager.firefoxdriver().setup();
@@ -46,8 +46,7 @@ public class PayAccount extends TestBase {
         utility.DoclickWhenReady("AddBTN_XPATH", "add_TEXT",40);
         utility.DoscrolltoViewClickWhenReady("jjregion_XPATH", "jjregion_TEXT",40);
         utility.DoSelectValuesByIndex("SelectRegion_XPATH", "Sele_TEXT",3,20);
-        utility.DoscrolltoViewClickWhenReady("jjregion_XPATH", "jjregion_TEXT",40);
-        utility.DoSelectValuesByIndex("SelectRegion_XPATH", "Sele_TEXT",3,20);
+
         utility.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH","PaymentOPT_TEXT",50);
         utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT",40);
         utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT",40);

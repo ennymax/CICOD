@@ -12,6 +12,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -20,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class UpdateLodgment extends TestBase {
+public class Lodgment extends TestBase {
     @Test
     public void Update_lODGMENT() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE LODGMENT");
@@ -28,7 +30,7 @@ public class UpdateLodgment extends TestBase {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
@@ -77,23 +79,50 @@ public class UpdateLodgment extends TestBase {
         WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("Lodg_XPATH")));
         builder.moveToElement(element1).build().perform();
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("UpateLodgenebt_XPATH"))).click();
+        if (driver.findElements(By.xpath(Utility.fetchLocator("UpateLodgenebt_XPATH"))).size() != 0) {
+            Thread.sleep(2000);
+            WebElement fg = driver.findElement(By.xpath(Utility.fetchLocator("Up_XPATH")));
+            fg.clear();
+            fg.sendKeys("1000000");
+
+            Thread.sleep(2000);
+            driver.findElement(By.xpath(Utility.fetchLocator("UpdateBTNLOdgement_XPATH"))).click();
+
+            Thread.sleep(100);
+            assertEquals("×\n" + "N1,000,000.00 successfully updated on customer account", driver.findElement(By.xpath(Utility.fetchLocator("AssertLodgment_XPATH"))).getText());
+            test.log(Status.PASS, "Update Lodgement was successful");
+
+            Thread.sleep(200);
+            screenshot.ScreenShotFullPage();
+        }
 
         Thread.sleep(2000);
-        WebElement fg = driver.findElement(By.xpath(Utility.fetchLocator("Up_XPATH")));
+        driver.findElement(By.xpath(Utility.fetchLocator("ADDLOG_XPATH"))).click();
+
+        Thread.sleep(2000);
+        WebElement fg = driver.findElement(By.xpath(Utility.fetchLocator("LodgementAmount_XPATH")));
         fg.clear();
-        fg.sendKeys("1000000");
+        fg.sendKeys(Utility.fetchLocator("aaaa_XPATH") + st);
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("UpdateBTNLOdgement_XPATH"))).click();
+        WebElement fgg = driver.findElement(By.xpath(Utility.fetchLocator("EnterDate_XPATH")));
+        fgg.click();
+        fgg.clear();
+        fgg.sendKeys(Utility.fetchLocator("Dateto_TEXT"));
 
-        Thread.sleep(100);
-        assertEquals("×\n" + "N1,000,000.00 successfully updated on customer account", driver.findElement(By.xpath(Utility.fetchLocator("AssertLodgment_XPATH"))).getText());
-        test.log(Status.PASS, "Update Lodgement was successful");
+        Thread.sleep(2000);
+        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SaveLodgement_XPATH")))).click();
 
-        Thread.sleep(200);
+        Thread.sleep(2000);
+        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("ClosePendingOrder_XPATH")))).click();
+
+        Thread.sleep(2000);
         screenshot.ScreenShotFullPage();
+        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogement_XPATH"))).size() != 0) {
+            test.log(Status.PASS, "Lodgement was made");
+        } else {
+            test.log(Status.FAIL, "Lodgement Failed");
+        }
 
         System.out.println("********************UPDATE LODGEMENT********************");
         driver.quit();

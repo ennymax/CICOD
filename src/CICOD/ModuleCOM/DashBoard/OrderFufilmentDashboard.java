@@ -13,11 +13,11 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class OrderFufilment extends TestBase {
+public class OrderFufilmentDashboard extends TestBase {
 
     @Test
     public void ORDER_FUFILLMENT() throws IOException, InterruptedException {
-        test = extent.createTest("ORDER FULFILMENT");
+        test = extent.createTest("ORDER FULFILMENT DASHBOARD");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
