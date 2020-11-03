@@ -81,6 +81,8 @@ public class Lodgment extends TestBase {
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("UpateLodgenebt_XPATH"))).size() != 0) {
             Thread.sleep(2000);
+            driver.findElement(By.xpath(Utility.fetchLocator("UpateLodgenebt_XPATH"))).click();
+            Thread.sleep(2000);
             WebElement fg = driver.findElement(By.xpath(Utility.fetchLocator("Up_XPATH")));
             fg.clear();
             fg.sendKeys("1000000");

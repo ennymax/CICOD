@@ -34,6 +34,8 @@ public class AddRemark extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();
 
+        brokenLink.BrokenLink();
+
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("WorkOrderManager_XPATH"))).click();
 

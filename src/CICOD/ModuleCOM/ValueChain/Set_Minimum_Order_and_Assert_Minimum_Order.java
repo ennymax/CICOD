@@ -48,7 +48,6 @@ public class Set_Minimum_Order_and_Assert_Minimum_Order extends TestBase {
         utility.DoscrolltoViewClickWhenReady("ProductCategoryPlus_XPATH","ProductCa_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("SelectBeverages_XPATH","SelectBeve_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("AddProduct_XPATH","Addpro_TEXT",60);
-        Thread.sleep(99999999);
         utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH","Makepa_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("PayOnline_XPATH","Payoo_TEXT",60);
         utility.DoswitchtoframeWhenReady(0,13000);

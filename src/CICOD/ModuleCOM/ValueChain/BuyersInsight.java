@@ -90,7 +90,7 @@ public class BuyersInsight extends TestBase {
         Thread.sleep(1500);
         driver.findElement(By.xpath(Utility.fetchLocator("SendConfirmationOrder_XPATH"))).click();
 
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         WebElement msgoom =(new WebDriverWait(driver, 12)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssertSendConfirmationID_XPATH"))));
         String textoom = msgoom.getText();
         if (msgoom.isEnabled() && textoom.contains("Order confirmation sent")) {
@@ -99,9 +99,7 @@ public class BuyersInsight extends TestBase {
             test.log(Status.FAIL, "Failed to Send Confirmation Email");
         }
 
-        Thread.sleep(2000);
         driver.navigate().back();
-
         Thread.sleep(2000);
         driver.navigate().back();
 
