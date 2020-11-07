@@ -76,7 +76,6 @@ public class Upgrade_Suscription_After_Expiration extends TestBase {
         Thread.sleep(2000);
         screenShot.ScreenShotFullPage();
 
-        System.out.println("********************Upgrade Subscription After Expiration Test is Completed********************");
         driver.quit();
     }
 }

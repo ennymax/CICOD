@@ -71,7 +71,7 @@ public class FailedSubscriptionRenewal extends TestBase {
         driver.switchTo().defaultContent();
 
         Thread.sleep(2000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.linkText("Try again")));
+        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[1]/div/div/section/div/div/div/div[2]/div/div/a")));
         if (driver.findElements(By.linkText("Try again")).size() != 0) {
             test.log(Status.PASS, "Failed SubSubscription Page was successfully Displayed");
         } else {

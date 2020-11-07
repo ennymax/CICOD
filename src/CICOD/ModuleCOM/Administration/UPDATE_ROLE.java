@@ -29,8 +29,7 @@ public class UPDATE_ROLE extends TestBase {
         Login login = new Login(driver);
         ScreenShot screenShot = new ScreenShot(driver);
 
-        login.Login();
-        test.log(Status.PASS, "Login Was Successful");
+        login.Loginlupin();
 
         //COM
         Thread.sleep(2000);
@@ -53,7 +52,8 @@ public class UPDATE_ROLE extends TestBase {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
-        Thread.sleep(2000);
+
+        Thread.sleep(200000000);
         driver.findElement(By.xpath(Utility.fetchLocator("SaveRoleBTN_XPATH"))).click();
 
         Thread.sleep(2000);

@@ -39,6 +39,7 @@ public class DownloadAllCollections extends TestBase {
 
         screenShot.ScreenShot();
 
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
 
         Thread.sleep(2000);

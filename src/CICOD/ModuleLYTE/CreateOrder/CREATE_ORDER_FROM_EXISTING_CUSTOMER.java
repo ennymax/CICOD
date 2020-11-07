@@ -64,8 +64,8 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
         } else {
             test.log(Status.FAIL, "Product wasnt added to customer Cart");
         }
+        Thread.sleep(2000);
 
-        System.out.println("********************CREATE ORDER FROM EXISTING CUSTOMER TEST SUCCESSFULLY IS COMPLETED********************");
         driver.quit();
     }
 }

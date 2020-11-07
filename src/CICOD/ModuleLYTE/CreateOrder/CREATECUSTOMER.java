@@ -92,7 +92,6 @@ public class CREATECUSTOMER extends TestBase {
         }
 
         Thread.sleep(3000);
-        System.out.println("********************CUSTOMER WAS CREATED SUCCESSFULLY IS COMPLETED********************");
         driver.quit();
     }
 }
