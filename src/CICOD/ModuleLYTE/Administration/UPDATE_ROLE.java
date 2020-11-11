@@ -1,28 +1,23 @@
 package CICOD.ModuleLYTE.Administration;
 
 import CICOD.base.TestBase;
-import CICOD.utility.ClickAll;
 import CICOD.utility.Login;
 import CICOD.utility.Utility;
 import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 import org.testng.annotations.Test;
-
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.IOException;
-import java.security.SecureRandom;
-import java.util.List;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class UPDATE_ROLE extends TestBase {
 
-    @Test(invocationCount = 10)
+    @Test
     public void UPDATE_ROLE() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("UPDATE ROLE");
         WebDriverManager.firefoxdriver().setup();
@@ -58,8 +53,6 @@ public class UPDATE_ROLE extends TestBase {
 
 
         driver.findElement(By.xpath(Utility.fetchLocator("rolesaveLyte_XPATH"))).click();
-
-
         driver.quit();
     }
 }

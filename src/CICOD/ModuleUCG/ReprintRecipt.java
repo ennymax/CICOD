@@ -34,31 +34,30 @@ public class ReprintRecipt extends TestBase {
 
         login.LoginCorrectDetails();
 
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
 
+        Thread.sleep(1200);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("CollectionBTN_XPATH")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
+        Thread.sleep(1200);
         WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionBTN_XPATH")));
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
         js1.executeScript("arguments[0].click();", element1);
 
         //SEARCH WITH INVOICE NUMBER
+        Thread.sleep(1200);
         WebElement ele11p = driver.findElement(By.xpath(Utility.fetchLocator("DropDown_XPATH")));
         Select sel1p = new Select(ele11p);
         sel1p.selectByVisibleText("TRANSACTION ID");
 
+        Thread.sleep(1200);
         WebElement jjla = driver.findElement(By.xpath(Utility.fetchLocator("SearchCollectionInputBox_XPATH")));
         jjla.clear();
         jjla.sendKeys(Utility.fetchLocator("TransactionID_TEXT"));
 
-        Thread.sleep(3000);
+        Thread.sleep(1200);
         WebElement elementPPO = driver.findElement(By.xpath(Utility.fetchLocator("jj_XPATH")));
         JavascriptExecutor jsPPO = (JavascriptExecutor) driver;
         jsPPO.executeScript("arguments[0].click();", elementPPO);
@@ -82,6 +81,5 @@ public class ReprintRecipt extends TestBase {
         */
 
         driver.quit();
-        System.out.println("********************REPRINT RECEIPT********************");
     }
 }

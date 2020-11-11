@@ -32,12 +32,7 @@ public class SearchPendingCollectionWithCorrectCredentials extends TestBase {
 
         login.LoginCorrectDetails();
 
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-        Thread.sleep(12000);
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
 
         Thread.sleep(1200);
@@ -67,6 +62,7 @@ public class SearchPendingCollectionWithCorrectCredentials extends TestBase {
             test.log(Status.FAIL, "Search By Transaction ID Failed");
         }
 
+        Thread.sleep(1200);
         WebElement Elementl = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jskl = (JavascriptExecutor) driver;
         jskl.executeScript("arguments[0].scrollIntoView();", Elementl);

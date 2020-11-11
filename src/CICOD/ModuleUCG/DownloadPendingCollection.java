@@ -28,15 +28,8 @@ public class DownloadPendingCollection extends TestBase {
 
         login.LoginCorrectDetails();
 
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
-
-        screenShotB.ScreenShot();
 
         Thread.sleep(2000);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("CollectionBTN_XPATH")));
@@ -47,8 +40,6 @@ public class DownloadPendingCollection extends TestBase {
         WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("PendingCollection_XPATH")));
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
         js1.executeScript("arguments[0].click();", element1);
-
-        screenShotB.ScreenShot();
 
         Thread.sleep(2000);
         WebElement element13 = driver.findElement(By.xpath(Utility.fetchLocator("DownloadCollectionBTN_XPATH")));
@@ -70,6 +61,5 @@ public class DownloadPendingCollection extends TestBase {
         }
 
         driver.quit();
-        System.out.println("*******************DOWNLOAD PENDING COLLECTION********************");
     }
 }

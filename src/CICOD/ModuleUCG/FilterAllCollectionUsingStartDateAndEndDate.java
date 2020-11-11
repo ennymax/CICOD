@@ -26,7 +26,6 @@ public class FilterAllCollectionUsingStartDateAndEndDate extends TestBase {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
-        BrokenLink brokenLink = new BrokenLink(driver);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
@@ -75,17 +74,11 @@ public class FilterAllCollectionUsingStartDateAndEndDate extends TestBase {
 
         driver.findElement(By.xpath(Utility.fetchLocator("DisplayBTN_XPATH"))).click();
 
-        Thread.sleep(2000);
-        screenShot.ScreenShot();
-
+        Thread.sleep(1200);
         WebElement Elementl = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jskl = (JavascriptExecutor) driver;
         jskl.executeScript("arguments[0].scrollIntoView();", Elementl);
 
-        Thread.sleep(3000);
-        screenShot.ScreenShot();
-
         driver.quit();
-        System.out.println("********************FILTER ALL COLLECTION USING START DATE AND END DATE********************");
     }
 }

@@ -33,7 +33,7 @@ public class CREATECUSTOMER extends TestBase {
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(1000000) + 1;
 
-        login.LoginTestAccount();
+        login.LoginTestAccountSetUp();
         test.log(Status.PASS, "Login Was Successful");
 
         //COM

@@ -32,37 +32,30 @@ public class FilterAllCollectionByProvider extends TestBase {
 
         login.LoginCorrectDetails();
 
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
 
+        Thread.sleep(1000);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("CollectionBTN_XPATH")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
+        Thread.sleep(1000);
         WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionBTN_XPATH")));
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
         js1.executeScript("arguments[0].click();", element1);
 
+        Thread.sleep(1000);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH"))).size() != 0) {
             test.log(Status.PASS, "All Collection Page Displayed");
         } else {
             test.log(Status.FAIL, "All Collection Page not Displayed");
         }
 
-        Thread.sleep(2000);
-        screenShot.ScreenShot();
-
+        Thread.sleep(1200);
         WebElement Element1 = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jsk1 = (JavascriptExecutor) driver;
         jsk1.executeScript("arguments[0].scrollIntoView();", Element1);
-
-        Thread.sleep(2000);
-        screenShot.ScreenShot();
 
         //FILTER BY CASH
         WebElement ele11 = driver.findElement(By.xpath(Utility.fetchLocator("Privders_XPATH")));
@@ -73,8 +66,10 @@ public class FilterAllCollectionByProvider extends TestBase {
         jj.clear();
         jj.sendKeys(Utility.fetchLocator("Date_TEXT"));
 
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("DisplayBTN_XPATH"))).click();
 
+        Thread.sleep(1200);
         WebElement Element = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jsk = (JavascriptExecutor) driver;
         jsk.executeScript("arguments[0].scrollIntoView();", Element);
@@ -119,11 +114,11 @@ public class FilterAllCollectionByProvider extends TestBase {
         Thread.sleep(2000);
         screenShot.ScreenShotFullPage();
 
+        Thread.sleep(1200);
         WebElement ElementlN = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jsklN = (JavascriptExecutor) driver;
         jsklN.executeScript("arguments[0].scrollIntoView();", ElementlN);
 
         driver.quit();
-        System.out.println("********************FILTER ALL COLLECTION USING PROVIDERS********************");
     }
 }

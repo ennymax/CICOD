@@ -32,46 +32,44 @@ public class SearchAllCollectionWithIncorrectCedentials extends TestBase {
 
         login.LoginCorrectDetails();
 
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
 
+        Thread.sleep(1200);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("CollectionBTN_XPATH")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
+        Thread.sleep(1200);
         WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionBTN_XPATH")));
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
         js1.executeScript("arguments[0].click();", element1);
 
+        Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH"))).size() != 0) {
             test.log(Status.PASS, "All Collection Page Displayed");
         } else {
             test.log(Status.FAIL, "All Collection Page not Displayed");
         }
 
+        Thread.sleep(1200);
         WebElement jjl = driver.findElement(By.xpath(Utility.fetchLocator("SearchCollectionInputBox_XPATH")));
         jjl.clear();
         jjl.sendKeys(Utility.fetchLocator("WTransactionID_TEXT"));
 
         Thread.sleep(1000);
-
         WebElement elementPP = driver.findElement(By.xpath(Utility.fetchLocator("SearchBTN_XPATH")));
         JavascriptExecutor jsPP = (JavascriptExecutor) driver;
         jsPP.executeScript("arguments[0].click();", elementPP);
 
         Thread.sleep(1000);
-
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertOluwaseun_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Search By Transaction ID Successful");
         } else {
             test.log(Status.FAIL, "Search By Transaction ID Failed");
         }
 
+        Thread.sleep(1200);
         WebElement Elementl = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jskl = (JavascriptExecutor) driver;
         jskl.executeScript("arguments[0].scrollIntoView();", Elementl);
@@ -101,14 +99,11 @@ public class SearchAllCollectionWithIncorrectCedentials extends TestBase {
             test.log(Status.FAIL, "Search By Invoice Number Failed");
         }
 
+        Thread.sleep(1200);
         WebElement Elementlb = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jsklb = (JavascriptExecutor) driver;
         jsklb.executeScript("arguments[0].scrollIntoView();", Elementlb);
 
-        Thread.sleep(1000);
-        screenShot.ScreenShot();
-
         driver.quit();
-        System.out.println("********************SEARCH ALL COLLECTION WITH INCORRECT CREDENTIALS********************");
     }
 }

@@ -30,36 +30,31 @@ public class ViewSettlementReport extends TestBase {
 
         login.LoginCorrectDetails();
 
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
 
+        Thread.sleep(1200);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("CollectionBTN_XPATH")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
+        Thread.sleep(1200);
         WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("SettlementReport_XPATH")));
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
         js1.executeScript("arguments[0].click();", element1);
 
+        Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("SettlementScrowlView_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Settlement report Page was Displayed");
         } else {
             test.log(Status.FAIL, "Settlement report Page wasn't Displayed");
         }
 
+        Thread.sleep(1200);
         WebElement Elementlb = driver.findElement(By.xpath(Utility.fetchLocator("SettlementScrowlView_XPATH")));
         JavascriptExecutor jsklb = (JavascriptExecutor) driver;
         jsklb.executeScript("arguments[0].scrollIntoView();", Elementlb);
 
-        Thread.sleep(2000);
-        screenShot.ScreenShotFullPage();
-
         driver.quit();
-        System.out.println("********************VIEW SETTLEMENT REPORT********************");
     }
 }

@@ -28,18 +28,15 @@ public class ViewPendingCollections extends TestBase {
 
         login.LoginCorrectDetails();
 
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
 
+        Thread.sleep(1200);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("CollectionBTN_XPATH")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
+        Thread.sleep(1200);
         WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("PendingCollection_XPATH")));
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
         js1.executeScript("arguments[0].click();", element1);
@@ -51,11 +48,11 @@ public class ViewPendingCollections extends TestBase {
             test.log(Status.FAIL, "Pending Collection Page wasn't Displayed");
         }
 
+        Thread.sleep(1200);
         WebElement Elementlb = driver.findElement(By.xpath(Utility.fetchLocator("PendingCollectionlist_XPATH")));
         JavascriptExecutor jsklb = (JavascriptExecutor) driver;
         jsklb.executeScript("arguments[0].scrollIntoView();", Elementlb);
 
         driver.quit();
-        System.out.println("********************VIEW PENDING COLLECTION********************");
     }
 }

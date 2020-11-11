@@ -1,10 +1,7 @@
 package CICOD.ModuleCOM.Account;
 
 import CICOD.base.TestBase;
-import CICOD.utility.FileUpload;
-import CICOD.utility.Login;
-import CICOD.utility.ScreenShot;
-import CICOD.utility.Utility;
+import CICOD.utility.*;
 import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -48,7 +45,7 @@ public class CreateCreditNote extends TestBase {
         test.log(Status.PASS, "Login Was Successful");
 
         utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
-        utility.DoclickWhenReady("AccountBTN_XPATH", "AcctBTN_TEXT",60);
+        utility.DoclickWhenReady("AccountBTN_XPATH","CreditN_TEXT",60);
         utility.DoclickWhenReady("CreditNote_XPATH", "CreditN_TEXT",60);
         utility.DoscrolltoViewClickFluentWait("CreateCreditNote_XPATH","CreateCN_TEXT",60);
         utility.DoSendKeysRobotClassFluentWait("CCustomer_XPATH","EnterName_TEXT","EnterName_TEXT",60);
@@ -73,7 +70,6 @@ public class CreateCreditNote extends TestBase {
         assertEquals("×\n" + "Credit note created successfully", driver.findElement(By.xpath(Utility.fetchLocator("AssertBanner_XPATH"))).getText());
         test.log(Status.PASS, "Credit Note was Created");
 
-        System.out.println("**************************Create Credit Note*********************************");
         driver.quit();
     }
 }

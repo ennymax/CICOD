@@ -31,14 +31,6 @@ public class DownloadAllCollections extends TestBase {
 
         login.LoginCorrectDetails();
 
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-
-        screenShot.ScreenShot();
-
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
 
@@ -52,8 +44,7 @@ public class DownloadAllCollections extends TestBase {
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
         js1.executeScript("arguments[0].click();", element1);
 
-        screenShot.ScreenShot();
-
+        Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH"))).size() != 0) {
             test.log(Status.PASS, "All Collection Page Displayed");
         } else {
@@ -65,20 +56,20 @@ public class DownloadAllCollections extends TestBase {
         JavascriptExecutor js13 = (JavascriptExecutor) driver;
         js13.executeScript("arguments[0].click();", element13);
 
+        Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertSentEmail_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Report Sent To mail was Displayed");
         } else {
             test.log(Status.FAIL, "Report Sent Mail was not Displayed");
         }
 
+        Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertSentEmail_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Download was successful");
         } else {
             test.log(Status.FAIL, "Download was Failed");
         }
 
-        Thread.sleep(3000);
         driver.quit();
-        System.out.println("********************DOWNLOAD ALL COLLECTION********************");
     }
 }

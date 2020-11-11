@@ -29,12 +29,6 @@ public class SearchSettlementReportUsingCorrectCredential extends TestBase {
 
         login.LoginCorrectDetails();
 
-        if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful");
-        } else {
-            test.log(Status.FAIL, "Login failed");
-        }
-
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("UcgBTN_XPATH"))).click();
 
@@ -43,6 +37,7 @@ public class SearchSettlementReportUsingCorrectCredential extends TestBase {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
+        Thread.sleep(1200);
         WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("SettlementReport_XPATH")));
         JavascriptExecutor js1 = (JavascriptExecutor) driver;
         js1.executeScript("arguments[0].click();", element1);
@@ -64,6 +59,5 @@ public class SearchSettlementReportUsingCorrectCredential extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SearchBTN1_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SEARCH SETTLEMENT REPORT WITH CORRECT CREDENTIALS********************");
     }
 }

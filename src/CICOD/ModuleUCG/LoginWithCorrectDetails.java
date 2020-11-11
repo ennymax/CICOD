@@ -29,6 +29,7 @@ public class LoginWithCorrectDetails extends TestBase {
 
         login.LoginCorrectDetails();
 
+        Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertLogin_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful");
         } else {
@@ -36,6 +37,5 @@ public class LoginWithCorrectDetails extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************LOGIN WITH CORRECT DETAILS********************");
     }
 }

@@ -5,6 +5,7 @@ import com.aventstack.extentreports.Status;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.ITestListener;
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
@@ -17,7 +18,7 @@ import java.util.Properties;
 import java.util.function.Function;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class Utility extends TestBase {
+public class Utility extends TestBase implements ITestListener {
 
     WebDriver driver;
 

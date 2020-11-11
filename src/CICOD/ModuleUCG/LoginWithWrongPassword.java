@@ -25,6 +25,7 @@ public class LoginWithWrongPassword extends TestBase {
 
         login.LoginWrongPassWord();
 
+        Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertInvalidEmailOrPassword_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Login was successful FAILED");
         } else {
