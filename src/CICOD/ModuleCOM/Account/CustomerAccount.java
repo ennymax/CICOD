@@ -30,7 +30,6 @@ public class CustomerAccount extends TestBase {
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
@@ -56,10 +55,6 @@ public class CustomerAccount extends TestBase {
         } else {
             test.log(Status.FAIL, "Value of Account in Credit is not displayed and enabled");
         }
-
-        screenshot.ScreenShot();
-
-        System.out.println("**************************CUSTOMER ACCOUNT*********************************");
         driver.quit();
     }
 }

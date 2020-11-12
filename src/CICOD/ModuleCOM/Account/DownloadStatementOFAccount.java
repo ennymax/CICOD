@@ -32,7 +32,6 @@ public class DownloadStatementOFAccount extends TestBase {
         ScreenShot screenShot = new ScreenShot(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -107,7 +106,6 @@ public class DownloadStatementOFAccount extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("DownloadAsSpreadSheet_XPATH"))).click();
         test.log(Status.PASS, "Download as SpreadSheet was Successful");
 
-        System.out.println("**************************DOWNLOAD STATEMENT OF ACCOUNT*********************************");
         driver.quit();
     }
 }

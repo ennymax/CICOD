@@ -1,6 +1,7 @@
 package CICOD.ModuleCOM.Administration;
 
 import CICOD.base.TestBase;
+import CICOD.utility.ClickAll;
 import CICOD.utility.Login;
 import CICOD.utility.ScreenShot;
 import CICOD.utility.Utility;
@@ -13,13 +14,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.security.SecureRandom;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class UPDATE_ROLE extends TestBase {
 
     @Test
-    public void UPDATE_ROLE() throws IOException, InterruptedException {
+    public void UPDATE_ROLE() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("UPDATE ROLE");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
@@ -28,17 +33,16 @@ public class UPDATE_ROLE extends TestBase {
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
         ScreenShot screenShot = new ScreenShot(driver);
+        ClickAll clickAll = new ClickAll(driver);
 
         login.Loginlupin();
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Adminbtn_XPATH"))).click();
-        test.log(Status.PASS, "Administration button Fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Rolemanagementbtn_XPATH"))).click();
@@ -52,8 +56,9 @@ public class UPDATE_ROLE extends TestBase {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
+        clickAll.ClickAll("aa_CLASS");
 
-        Thread.sleep(200000000);
+        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("SaveRoleBTN_XPATH"))).click();
 
         Thread.sleep(2000);
@@ -63,10 +68,6 @@ public class UPDATE_ROLE extends TestBase {
             test.log(Status.FAIL, "Role cant be update");
         }
 
-        Thread.sleep(4000);
-        screenShot.ScreenShotFullPage();
-
-        System.out.println("********************UPDATE ROLE TEST IS COMPLETED********************");
         driver.quit();
     }
 }

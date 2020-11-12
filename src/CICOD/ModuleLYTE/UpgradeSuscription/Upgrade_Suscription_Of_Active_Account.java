@@ -60,7 +60,9 @@ public class Upgrade_Suscription_Of_Active_Account extends TestBase {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Paynow_XPATH")))).click();
 
-        Thread.sleep(13000);
+        Thread.sleep(2000);
+        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SubPayOnline_XPATH")))).click();
+
         ravePay.RavePay1();
 
         Thread.sleep(2000);
@@ -72,10 +74,6 @@ public class Upgrade_Suscription_Of_Active_Account extends TestBase {
             test.log(Status.FAIL, "Flutter wave page not Functional");
         }
 
-        Thread.sleep(4000);
-        screenShot.ScreenShotFullPage();
-
-        System.out.println("********************Upgrade Subscription  Test is Completed********************");
         driver.quit();
     }
 }

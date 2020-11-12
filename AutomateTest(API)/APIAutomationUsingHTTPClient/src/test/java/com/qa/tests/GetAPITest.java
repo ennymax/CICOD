@@ -5,7 +5,6 @@ import java.util.HashMap;
 import main.java.com.qa.base.TestBase;
 import main.java.com.qa.client.RestClient;
 import main.java.com.qa.util.TestUtil;
-import main.java.com.qa.util.TestUtilRestassured;
 import org.apache.http.Header;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;

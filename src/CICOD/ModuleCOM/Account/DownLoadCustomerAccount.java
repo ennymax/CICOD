@@ -31,7 +31,6 @@ public class DownLoadCustomerAccount extends TestBase {
         API_Watch_Service api_watch_service = new API_Watch_Service();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
@@ -64,7 +63,6 @@ public class DownLoadCustomerAccount extends TestBase {
         jse.executeScript("arguments[0].scrollIntoView();", ti11);
         ti11.click();
 
-        System.out.println("**************************DOWNLOAD CUSTOMER ACCOUNT*********************************");
         driver.quit();
     }
 }

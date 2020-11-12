@@ -67,10 +67,6 @@ public class ViewCreditNote extends TestBase {
         assertEquals("Credit Note", driver.findElement(By.xpath(Utility.fetchLocator("AssertViewCrerditNote_XPATH"))).getText());
         test.log(Status.PASS, "Credit Note can be Viewed");
 
-        Thread.sleep(2000);
-        screenshot.ScreenShotFullPage();
-
-        System.out.println("**************************View Credit Note*********************************");
         driver.quit();
     }
 }

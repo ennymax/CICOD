@@ -30,7 +30,6 @@ public class ViewStatementOfAccount extends TestBase {
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -108,7 +107,6 @@ public class ViewStatementOfAccount extends TestBase {
             test.log(Status.FAIL, "Send Statement of account not fully Functional");
         }
 
-        System.out.println("**************************VIEW STATEMENT OF ACCOUNT*********************************");
         driver.quit();
     }
 }

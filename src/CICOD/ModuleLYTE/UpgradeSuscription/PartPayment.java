@@ -19,16 +19,13 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class UpgradeSuscriptionOnFreeTrial extends TestBase {
-
+public class PartPayment extends TestBase {
     @Test
-    public void UPGRADE_SUBSCRIPTION() throws IOException, InterruptedException {
-        test = extent.createTest("UPGRADE SUBSCRIPTION");
+    public void UPGRADE_SUBSCRIPTION_AFTER_EXPIRATION() throws IOException, InterruptedException {
+        test = extent.createTest("UPGRADE SUBSCRIPTION AFTER EXPIRATION");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-
 
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         RavePay ravePay = new RavePay(driver);
@@ -36,7 +33,6 @@ public class UpgradeSuscriptionOnFreeTrial extends TestBase {
         Login login = new Login(driver);
 
         login.LoginUpgrade();
-        test.log(Status.PASS, "Login Was Successful");
 
         Thread.sleep(2000);
         WebElement element1 = (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Billing1_XPATH"))));
@@ -61,7 +57,7 @@ public class UpgradeSuscriptionOnFreeTrial extends TestBase {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Paynow_XPATH")))).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(200000000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SubPayOnline_XPATH")))).click();
 
         ravePay.RavePay1();

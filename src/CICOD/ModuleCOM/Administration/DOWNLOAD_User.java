@@ -48,7 +48,6 @@ public class DOWNLOAD_User extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("UserDownload_XPATH"))).click();
         test.log(Status.PASS, "Download User was Successful");
 
-        System.out.println("********************DOWNLOAD USER TEST IS COMPLETED********************");
         driver.quit();
     }
 }

@@ -32,7 +32,7 @@ public class ADDUSER extends TestBase {
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
 
-        login.LoginDefault();
+        login.Login();
 
         //COM
         Thread.sleep(2000);
@@ -75,12 +75,7 @@ public class ADDUSER extends TestBase {
         Thread.sleep(2000);
         screenShot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("CreateUserSaveBTN_XPATH"))).click();
-        test.log(Status.PASS, "User Was Created Successfully");
 
-        Thread.sleep(2000);
-        screenShot.ScreenShotFullPage();
-
-        System.out.println("********************ADD USER TEST IS COMPLETED********************");
         driver.quit();
     }
 }

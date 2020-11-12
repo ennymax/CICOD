@@ -60,6 +60,9 @@ public class FailedSubscriptionRenewal extends TestBase {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Paynow_XPATH")))).click();
 
+        Thread.sleep(2000);
+        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SubPayOnline_XPATH")))).click();
+
         ravePay.RavePay1();
 
         Thread.sleep(2000);

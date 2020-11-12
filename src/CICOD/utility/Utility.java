@@ -18,7 +18,7 @@ import java.util.Properties;
 import java.util.function.Function;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class Utility extends TestBase implements ITestListener {
+public class Utility extends TestBase{
 
     WebDriver driver;
 

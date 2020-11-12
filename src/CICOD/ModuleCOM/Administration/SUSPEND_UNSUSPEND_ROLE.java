@@ -89,8 +89,6 @@ public class SUSPEND_UNSUSPEND_ROLE extends TestBase {
             test.log(Status.FAIL, "Role Unsuspension failed");
         }
 
-        Thread.sleep(2000);
-        System.out.println("********************SUSPEND UNSUSPEND ROLE TEST IS COMPLETED********************");
         driver.quit();
     }
 }

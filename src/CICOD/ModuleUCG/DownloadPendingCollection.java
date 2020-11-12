@@ -53,7 +53,7 @@ public class DownloadPendingCollection extends TestBase {
             test.log(Status.FAIL, "Report Sent Mail was not Displayed");
         }
 
-        Thread.sleep(2000);
+        Thread.sleep(200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertSentEmail_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Download was successful");
         } else {

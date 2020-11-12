@@ -34,7 +34,6 @@ public class Upgrade_Suscription_After_Expiration extends TestBase {
         Login login = new Login(driver);
 
         login.LoginUpgrade();
-        test.log(Status.PASS, "Login Was Successful");
 
         Thread.sleep(2000);
         WebElement element1 = (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Billing1_XPATH"))));
@@ -59,10 +58,10 @@ public class Upgrade_Suscription_After_Expiration extends TestBase {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Paynow_XPATH")))).click();
 
-        Thread.sleep(5000);
-        ravePay.RavePay1();
+        Thread.sleep(2000);
+        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SubPayOnline_XPATH")))).click();
 
-        screenShot.ScreenShot();
+        ravePay.RavePay1();
 
         Thread.sleep(2000);
         WebElement msg =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("Assssss_XPATH"))));

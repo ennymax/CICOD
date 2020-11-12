@@ -10,7 +10,7 @@ public class ExcelUtil {
 
     static {
         try {
-            workbook = new XSSFWorkbook(System.getProperty("user.dir") + "\\Config\\Book1.xlsx");
+            workbook = new XSSFWorkbook(System.getProperty("user.dir") + "\\Config\\TestData.xlsx");
         } catch (IOException e) {
             e.printStackTrace();
         }

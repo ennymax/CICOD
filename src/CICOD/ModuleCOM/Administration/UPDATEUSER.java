@@ -35,7 +35,6 @@ public class UPDATEUSER extends TestBase {
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Adminbtn_XPATH"))).click();
@@ -81,10 +80,6 @@ public class UPDATEUSER extends TestBase {
             test.log(Status.FAIL, "User Updated Successfully");
         }
 
-        Thread.sleep(5000);
-        screenShot.ScreenShotFullPage();
-
-        System.out.println("********************UPDATE USER TEST IS COMPLETED********************");
         driver.quit();
     }
 }
