@@ -372,7 +372,6 @@ public class Utility extends TestBase{
         } else {
             test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmsg));
         }
-        test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
     }
 
     public void DoAssertXpathPresentWhenReady(String locator, String DisplayPassmessage, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {

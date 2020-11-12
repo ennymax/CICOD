@@ -4,6 +4,7 @@ import CICOD.base.TestBase;
 import CICOD.utility.Login;
 import CICOD.utility.Randomstuff;
 import CICOD.utility.Utility;
+import CICOD.utility.aaa;
 import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -28,6 +29,7 @@ public class SetUpWizard extends TestBase {
         Randomstuff randomStuff = new Randomstuff();
 
         login.LoginPremium();
+
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();

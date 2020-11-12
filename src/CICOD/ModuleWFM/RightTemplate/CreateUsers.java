@@ -1,10 +1,7 @@
 package CICOD.ModuleWFM.RightTemplate;
 
 import CICOD.base.TestBase;
-import CICOD.utility.FileUpload;
-import CICOD.utility.Login;
-import CICOD.utility.Randomstuff;
-import CICOD.utility.Utility;
+import CICOD.utility.*;
 import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -63,6 +60,5 @@ public class CreateUsers extends TestBase {
         utility.DoclickWhenReady("NewUserOKBTN_XPATH","Ok_TEXT",40);
 
         driver.quit();
-        System.out.println("********************CREATE USER********************");
     }
 }
