@@ -18,7 +18,7 @@
     </test>
     <test name = "Customer Management">
         <classes>
-            <class name="CICOD.ModuleCOM.CustomerManagment.SusendCustomerFromCustomerManagementPage"/>
+            <class name="CICOD.ModuleCOM.CustomerManagment.Suspend_UnsuspendCustomerFromCustomerManagementPage"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.UploadCustomer"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.CreateCustomer"/>
             <class name="CICOD.ModuleCOM.CustomerManagment.ViewCreditHistory"/>

@@ -40,28 +40,23 @@ public class ADD_PRODUCT extends TestBase {
         FileUpload fileUpload = new FileUpload();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         Thread.sleep(2000);
         WebElement ti11o = driver.findElement(By.xpath(Utility.fetchLocator("Productbtn_XPATH")));
         JavascriptExecutor jseo = (JavascriptExecutor) driver;
         jseo.executeScript("arguments[0].scrollIntoView();", ti11o);
         ti11o.click();
-        test.log(Status.PASS, "Product button fully Functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Add_Producttn_XPATH"))).click();
-        test.log(Status.PASS, "Add Product button fully Functional");
 
         Thread.sleep(2000);
         WebElement menuOption1 = driver.findElement(By.xpath(Utility.fetchLocator("CreateProductpageassert_XPATH")));
@@ -111,7 +106,6 @@ public class ADD_PRODUCT extends TestBase {
             test.log(Status.FAIL, "Add Product Failed");
         }
 
-        System.out.println("********************ADD PRODUCT TEST IS COMPLETED********************");
         driver.quit();
     }
 }

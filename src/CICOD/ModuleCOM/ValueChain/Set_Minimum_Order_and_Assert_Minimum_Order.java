@@ -68,7 +68,6 @@ public class Set_Minimum_Order_and_Assert_Minimum_Order extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("enterminiOre_XPATH"))).sendKeys("1");
         utility.DoscrolltoViewClickWhenReady("saveminiOrder_XPATH","SaveMiniOrder_TEXT",60);
 
-        System.out.println("********************Set Minimum Order and Assert Minimum Order********************");
         driver.quit();
     }
 }

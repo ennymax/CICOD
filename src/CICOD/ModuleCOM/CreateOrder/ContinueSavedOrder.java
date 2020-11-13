@@ -38,6 +38,7 @@ public class ContinueSavedOrder extends TestBase {
         int st = rn.nextInt(3) + 1;
         Utility utility = new Utility(driver);
         ScreenShot screenshot = new ScreenShot(driver);
+
         login.Login();
 
         utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
@@ -128,10 +129,6 @@ public class ContinueSavedOrder extends TestBase {
             test.log(Status.FAIL, "Pay with POS Failed");
         }
 
-        Thread.sleep(1000);
-        screenshot.ScreenShotFullPage();
-
         driver.quit();
-        System.out.println("********************CONTINUE SAVED ORDER********************");
     }
 }

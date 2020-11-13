@@ -33,12 +33,10 @@ public class UpdateReasonForRefund extends TestBase {
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -60,9 +58,9 @@ public class UpdateReasonForRefund extends TestBase {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
-       WebElement ttt = driver.findElement(By.xpath(Utility.fetchLocator("NewR_XPATH")));
-       ttt.clear();
-       ttt.sendKeys(Utility.fetchLocator("dec_TEXT"));
+        WebElement ttt = driver.findElement(By.xpath(Utility.fetchLocator("NewR_XPATH")));
+        ttt.clear();
+        ttt.sendKeys(Utility.fetchLocator("dec_TEXT"));
 
         Thread.sleep(2000);
         WebElement elementl = driver.findElement(By.xpath(Utility.fetchLocator("NewSave_XPATH")));
@@ -73,7 +71,6 @@ public class UpdateReasonForRefund extends TestBase {
         assertEquals("×\n" + "Reason updated successfully", driver.findElement(By.xpath(Utility.fetchLocator("as_XPATH"))).getText());
         test.log(Status.PASS, "Reason for refund was Updated successfully");
 
-        System.out.println("********************UPDATE REASON FOR REFUND********************");
         driver.quit();
     }
 }

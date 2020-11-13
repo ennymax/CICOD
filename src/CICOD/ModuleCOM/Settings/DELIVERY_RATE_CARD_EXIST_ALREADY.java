@@ -31,12 +31,10 @@ public class DELIVERY_RATE_CARD_EXIST_ALREADY extends TestBase {
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -91,7 +89,6 @@ public class DELIVERY_RATE_CARD_EXIST_ALREADY extends TestBase {
             test.log(Status.FAIL, "Delivery Rate Card wasn't setUp");
         }
 
-        System.out.println("********************DELIVERY RATE CARD SETUP TEST IS COMPLETED********************");
         driver.quit();
     }
 }

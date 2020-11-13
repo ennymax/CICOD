@@ -34,12 +34,10 @@ public class VatInclusiveNonInClusive extends TestBase {
         int st = rn.nextInt(3) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);
@@ -103,7 +101,6 @@ public class VatInclusiveNonInClusive extends TestBase {
             test.log(Status.FAIL, "VAT applicable");
         }
 
-        System.out.println("********************VAT INCLUSIVE AND NON INCLUSIVE********************");
         driver.quit();
     }
 }

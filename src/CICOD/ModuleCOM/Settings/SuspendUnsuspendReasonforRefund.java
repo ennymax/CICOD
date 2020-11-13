@@ -68,7 +68,6 @@ public class SuspendUnsuspendReasonforRefund extends TestBase {
         driver.switchTo().alert().accept();
         test.log(Status.PASS, "Reason for Refund was Unsuspended successfully");
 
-        System.out.println("********************SUSPEND UNSUSPEND REASON FOR REFUND********************");
         driver.quit();
     }
 }

@@ -18,7 +18,8 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class RemoveMultipleProductFromWebshop extends TestBase {
+public class
+RemoveMultipleProductFromWebshop extends TestBase {
     @Test
     public void REMOVE_MULTIPLE_PRODUCT_FROM_WEBSHO() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("REMOVE MULTIPLE PRODUCT FROM WEBSHO");
@@ -32,17 +33,14 @@ public class RemoveMultipleProductFromWebshop extends TestBase {
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementProduct_XPATH"))).click();
@@ -50,13 +48,11 @@ public class RemoveMultipleProductFromWebshop extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("RemoveProduct_XPATH"))).click();
 
+        Thread.sleep(1200);
         WebElement ele111 = driver.findElement(By.xpath(Utility.fetchLocator("ProductBulkAction_XPATH")));
         Select sel11 = new Select(ele111);
         sel11.selectByIndex(2);
 
-        Thread.sleep(2000);
-
-        System.out.println("********************REMOVE MULTIPLE PRODUCT FROM WEBSHOP*******************");
         driver.quit();
     }
 }

@@ -26,7 +26,7 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
-        Utility utility =new Utility(driver);
+        Utility utility = new Utility(driver);
         driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
         BrokenLink brokenLink = new BrokenLink(driver);
         ScreenShot screenshot = new ScreenShot(driver);
@@ -36,17 +36,14 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         RavePay ravePay = new RavePay(driver);
 
         login.LoginDefault();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functional");
 
         Thread.sleep(1300);
         driver.findElement(By.xpath(Utility.fetchLocator("ValuechainBTN_XPATH"))).click();
@@ -114,6 +111,7 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         Thread.sleep(2000);
         System.out.println(driver.findElement(By.id("option-payment-amount-xs")).getText());
 
+        Thread.sleep(5000);
         assertEquals("NGN2,131.50", driver.findElement(By.id("option-payment-amount-xs")).getText());
         test.log(Status.PASS, "PayOnline Was Successful");
 
@@ -228,7 +226,7 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         jse2llm.executeScript("arguments[0].scrollIntoView();", ti112llm);
         ti112llm.click();
 
-        utility.DoAssertXpathPresentWhenReady("con1_XPATH","UssdPass_TEXT","UssdFail_TEXT",30);
+        utility.DoAssertXpathPresentWhenReady("con1_XPATH", "UssdPass_TEXT", "UssdFail_TEXT", 30);
 
         driver.quit();
     }

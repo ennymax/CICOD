@@ -34,17 +34,14 @@ public class SearchOffers extends TestBase {
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("OffersBTN_XPATH"))).click();
@@ -70,7 +67,6 @@ public class SearchOffers extends TestBase {
             test.log(Status.FAIL, "Offer List not Displayed");
         }
 
-        System.out.println("********************SEARCH OFFERS*******************");
         driver.quit();
     }
 }

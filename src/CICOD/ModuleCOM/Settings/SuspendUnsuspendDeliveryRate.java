@@ -32,12 +32,10 @@ public class SuspendUnsuspendDeliveryRate extends TestBase {
         ScreenShot screenShot = new ScreenShot(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -74,10 +72,6 @@ public class SuspendUnsuspendDeliveryRate extends TestBase {
         driver.switchTo().alert().accept();
         test.log(Status.PASS, "Unsuspend Delivery Rate Successful");
 
-        Thread.sleep(2000);
-        screenShot.ScreenShotFullPage();
-
-        System.out.println("********************SUSPEND UNSUSPEND DELIVERY RATE********************");
         driver.quit();
     }
 }

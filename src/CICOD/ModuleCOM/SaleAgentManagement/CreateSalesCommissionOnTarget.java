@@ -34,7 +34,6 @@ public class CreateSalesCommissionOnTarget extends TestBase {
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -76,7 +75,6 @@ public class CreateSalesCommissionOnTarget extends TestBase {
             test.log(Status.FAIL, "Create Sales Commission On Target Failed");
         }
 
-        System.out.println("********************CREATE SALE COMMISSION ON TARGET********************");
         driver.quit();
     }
 }

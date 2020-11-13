@@ -27,18 +27,13 @@ public class Downloadorderhistory extends TestBase {
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("OrderHistorybtn_XPATH"))).click();
-        test.log(Status.PASS, "Order history Button fully Functional");
-
-        screenshot.ScreenShot();
 
         driver.findElement(By.xpath(Utility.fetchLocator("DownloadOrderHistorybtn_XPATH"))).click();
         test.log(Status.PASS, "Document Successfully Downloaded");
@@ -46,7 +41,6 @@ public class Downloadorderhistory extends TestBase {
         Thread.sleep(2000);
         screenshot.ScreenShotFullPage();
 
-        System.out.println("********************DOWNLOAD ORDER HISTORY TEST IS COMPLETED********************");
         driver.quit();
     }
 }

@@ -84,7 +84,6 @@ public class ViewFreebies extends TestBase {
         assertEquals("Math set\n" + "Delete\n" + "Quantity\n" + "1\n" + "₦0.00", driver.findElement(By.xpath(Utility.fetchLocator("Assertfreebies_XPATH"))).getText());
         test.log(Status.PASS, "Confirmed Freebies was added Successfully");
 
-        System.out.println("********************VIEW FREEBIES********************");
         driver.quit();
     }
 }

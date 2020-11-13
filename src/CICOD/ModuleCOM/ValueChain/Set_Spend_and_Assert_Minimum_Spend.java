@@ -73,7 +73,6 @@ public class Set_Spend_and_Assert_Minimum_Spend extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("InputMiniSp_XPATH"))).sendKeys("1");
         utility.DoscrolltoViewClickWhenReady("SaveMiniSpend_XPATH","Savem_TEXT",60);
 
-        System.out.println("********************Set Minimum Spend and Assert Minimum Spend********************");
         driver.quit();
     }
 }

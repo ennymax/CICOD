@@ -81,7 +81,6 @@ public class OrderFufilmentDashboard extends TestBase {
             test.log(Status.FAIL, "Top 10 Product is not displayed and Enabled");
         }
 
-        System.out.println("********************Order fulfillment Test is Completed********************");
         driver.quit();
     }
 }

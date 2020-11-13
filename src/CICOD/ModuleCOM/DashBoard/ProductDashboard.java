@@ -82,9 +82,6 @@ public class ProductDashboard extends TestBase {
             test.log(Status.FAIL, "Total cash and total is not displayed and enabled");
         }
 
-        Thread.sleep(2000);
-        screenshot.ScreenShot();
-        System.out.println("********************PRODUCT DASHBOARD********************");
         driver.quit();
     }
 }

@@ -148,8 +148,6 @@ public class Suspend_UnSuspendBuyer extends TestBase {
 
         driver.findElement(By.xpath(Utility.fetchLocator("Suppliers_XPATH"))).click();
 
-
-        System.out.println("********************SUSPEND UNSUSPEND BUYER********************");
         driver.quit();
     }
 }

@@ -44,8 +44,17 @@ public class PayAccount extends TestBase {
         utility.DoSendKeysWhenReady("SearchProductinput_XPATH", "ID_TEXT","ID_TEXT", 40);
         utility.DoclickWhenReady("SearchProductbtnq_XPATH", "SearchProductBTN_TEXT",40);
         utility.DoclickWhenReady("AddBTN_XPATH", "add_TEXT",40);
-        utility.DoscrolltoViewClickWhenReady("jjregion_XPATH", "jjregion_TEXT",40);
-        utility.DoSelectValuesByIndex("SelectRegion_XPATH", "Sele_TEXT",3,20);
+
+        Thread.sleep(2000);
+        WebElement ti11kk = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
+        JavascriptExecutor jsekk = (JavascriptExecutor) driver;
+        jsekk.executeScript("arguments[0].scrollIntoView();", ti11kk);
+        ti11kk.click();
+
+        Thread.sleep(2000);
+        WebElement ele111ll = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
+        Select sel11ll = new Select(ele111ll);
+        sel11ll.selectByIndex(2);
 
         utility.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH","PaymentOPT_TEXT",50);
         utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT",40);
@@ -57,10 +66,6 @@ public class PayAccount extends TestBase {
         utility.DoswitchtoframeWhenReady(0, 13000);
         ravePay.RavePay3();
 
-        Thread.sleep(2000);
-        screenShot.ScreenShotFullPage();
-
-        System.out.println("********************PAY ACCOUNT********************");
         driver.quit();
     }
 }

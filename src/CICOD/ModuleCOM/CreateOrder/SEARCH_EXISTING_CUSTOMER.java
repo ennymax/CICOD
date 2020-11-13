@@ -28,12 +28,10 @@ public class SEARCH_EXISTING_CUSTOMER extends TestBase {
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);
@@ -55,9 +53,6 @@ public class SEARCH_EXISTING_CUSTOMER extends TestBase {
             test.log(Status.FAIL, "Search Failed");
         }
 
-        screenshot.ScreenShotFullPage();
-
-        System.out.println("********************CUSTUMER WAS CREATED SUCCESSFULLY IS COMPLETED********************");
         driver.quit();
     }
 }

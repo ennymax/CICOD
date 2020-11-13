@@ -23,21 +23,17 @@ public class VIEW_ORDER_HISTORY extends TestBase {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
+        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         BrokenLink brokenLink = new BrokenLink(driver);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("OrderHistorybtn_XPATH"))).click();
-        test.log(Status.PASS, "Order history Button fully Functional");
 
         Thread.sleep(2000);
         screenshot.ScreenShot();
@@ -51,10 +47,6 @@ public class VIEW_ORDER_HISTORY extends TestBase {
             test.log(Status.FAIL, "The Order history cant be viewed");
         }
 
-        Thread.sleep(2000);
-        screenshot.ScreenShotFullPage();
-
-        System.out.println("********************VIEW ORDER HISTORY TEST IS COMPLETED********************");
         driver.quit();
     }
 

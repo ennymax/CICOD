@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class SusendCustomerFromCustomerManagementPage extends TestBase {
+public class Suspend_UnsuspendCustomerFromCustomerManagementPage extends TestBase {
     @Test
     public void SUSPEND_UNSUSPEND_CUSTOMER_FROM_CUSTOMER_MANAGEMENT_PAGE() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND CUSTOMER FROM CUSTOMER MANAGEMENT PAGE");
@@ -29,7 +29,6 @@ public class SusendCustomerFromCustomerManagementPage extends TestBase {
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -73,20 +72,12 @@ public class SusendCustomerFromCustomerManagementPage extends TestBase {
         login.AcceptAlert();
 
         Thread.sleep(2000);
-        test.log(Status.PASS, "Customer Suspended Successfully");
-
-        Thread.sleep(2000);
         WebElement elementqll = driver.findElement(By.xpath(Utility.fetchLocator("UnsuspendfromCustomerPage_XPATH")));
         JavascriptExecutor jsqll = (JavascriptExecutor) driver;
         jsqll.executeScript("arguments[0].click();", elementqll);
 
         login.AcceptAlert();
 
-        Thread.sleep(2000);
-        test.log(Status.PASS, "Customer Unsuspended Successfully");
-
-        Thread.sleep(2000);
-        System.out.println("********************SUSPEND UNSUSPEND CUSTOMER FROM CUSTOMER MANAGEMENT PAGE********************");
         driver.quit();
     }
 }

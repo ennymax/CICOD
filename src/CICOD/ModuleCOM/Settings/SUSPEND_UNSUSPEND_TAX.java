@@ -27,12 +27,10 @@ public class SUSPEND_UNSUSPEND_TAX extends TestBase {
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -83,7 +81,6 @@ public class SUSPEND_UNSUSPEND_TAX extends TestBase {
             test.log(Status.FAIL, "Tax Unsuspension Failed");
         }
 
-        System.out.println("********************SUSPEND UNSUSPEND TAX TEST IS COMPLETED********************");
         driver.quit();
     }
 }

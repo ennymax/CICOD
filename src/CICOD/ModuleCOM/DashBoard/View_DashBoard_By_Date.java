@@ -70,7 +70,6 @@ public class View_DashBoard_By_Date extends TestBase {
             test.log(Status.FAIL, "Pending Orders for selected period is not displayed");
         }
 
-        System.out.println("********************View DashBoard Test is Completed********************");
         driver.quit();
     }
 }

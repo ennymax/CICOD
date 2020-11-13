@@ -33,11 +33,10 @@ public class SaveOrder extends TestBase {
         int st = rn.nextInt(3) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
+
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);
@@ -89,7 +88,6 @@ public class SaveOrder extends TestBase {
             test.log(Status.FAIL, "Order cant be Saved");
         }
 
-        System.out.println("********************SAVE ORDER********************");
         driver.quit();
     }
 }

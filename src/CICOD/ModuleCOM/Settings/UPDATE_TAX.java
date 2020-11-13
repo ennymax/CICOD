@@ -32,12 +32,10 @@ public class UPDATE_TAX extends TestBase {
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -68,14 +66,12 @@ public class UPDATE_TAX extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("TaxSavebtn_XPATH"))).click();
 
-
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertUpdateTax_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Tax was Updated Successfully");
         } else {
             test.log(Status.FAIL, "Tax Want Updated");
         }
 
-        System.out.println("********************UPDATE TAX TEST IS COMPLETED********************");
         driver.quit();
     }
 }

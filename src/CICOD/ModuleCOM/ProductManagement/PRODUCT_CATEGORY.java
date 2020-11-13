@@ -34,21 +34,17 @@ public class PRODUCT_CATEGORY extends TestBase {
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("productCategory_XPATH"))).click();
-        test.log(Status.PASS, "Product Category button fully functional");
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("ProductCategoryConfirm_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Product Category Page is opened");
@@ -83,7 +79,6 @@ public class PRODUCT_CATEGORY extends TestBase {
             test.log(Status.FAIL, "Product Category wasn't Created");
         }
 
-        System.out.println("********************PRODUCT CATEGORY*******************");
         driver.quit();
     }
 }

@@ -141,10 +141,10 @@
 
 
         Thread.sleep(2000);
-        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH")));
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", ti11);
-        ti11.click(); 
+               WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH")));
+               JavascriptExecutor jse = (JavascriptExecutor) driver;
+               jse.executeScript("arguments[0].scrollIntoView();", ti11);
+               ti11.click();
 
 
         Thread.sleep(1000);

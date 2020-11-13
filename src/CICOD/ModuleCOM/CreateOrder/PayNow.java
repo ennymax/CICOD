@@ -23,7 +23,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class PayNow extends TestBase {
     @Test
-    public void Payment() throws IOException, InterruptedException {
+    public void Paynow() throws IOException, InterruptedException {
         test = extent.createTest("Payment");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
@@ -37,11 +37,10 @@ public class PayNow extends TestBase {
         int st = rn.nextInt(3) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
+
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);
@@ -147,10 +146,6 @@ public class PayNow extends TestBase {
             test.log(Status.FAIL, "Pay with POS Failed");
         }
 
-        Thread.sleep(1000);
-        screenshot.ScreenShotFullPage();
-
-        System.out.println("********************Payment********************");
         driver.quit();
     }
 }

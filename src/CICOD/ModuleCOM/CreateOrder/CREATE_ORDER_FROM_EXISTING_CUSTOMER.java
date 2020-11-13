@@ -36,11 +36,10 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
         int st = rn.nextInt(3) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
+
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);
@@ -54,7 +53,6 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("Searchbtn_XPATH"))).click();
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ViewDetails_XPATH"))).click();
-
 
         //SEARCH PRODUCT
         Thread.sleep(2000);
@@ -98,7 +96,6 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
             test.log(Status.FAIL, "Payment Portal down");
         }
 
-        System.out.println("********************CREATE ORDER FROM EXISTING CUSTOMER TEST SUCCESSFULLY IS COMPLETED********************");
         driver.quit();
     }
 }

@@ -34,7 +34,6 @@ public class CreateSaleTarget extends TestBase {
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -81,8 +80,7 @@ public class CreateSaleTarget extends TestBase {
             test.log(Status.FAIL, "Failed to create Sales Target");
         }
 
-        Thread.sleep(4000);
-        System.out.println("********************CREATE VALUE SPECIFIC SPEND********************");
+
         driver.quit();
     }
 }

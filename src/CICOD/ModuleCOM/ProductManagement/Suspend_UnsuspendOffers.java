@@ -35,17 +35,14 @@ public class Suspend_UnsuspendOffers extends TestBase {
         int st = rn.nextInt(9) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         Thread.sleep(2000);
         WebElement ti11o = driver.findElement(By.xpath(Utility.fetchLocator("OffersBTN_XPATH")));
@@ -93,7 +90,6 @@ public class Suspend_UnsuspendOffers extends TestBase {
             test.log(Status.FAIL, "Unsuspension failed");
         }
 
-        System.out.println("********************Suspend and Unsuspend Offers*******************");
         driver.quit();
     }
 }

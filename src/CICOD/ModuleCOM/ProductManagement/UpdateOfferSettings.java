@@ -38,17 +38,14 @@ public class UpdateOfferSettings extends TestBase {
         int st = rn.nextInt(9) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("OffersBTN_XPATH"))).click();
@@ -68,7 +65,6 @@ public class UpdateOfferSettings extends TestBase {
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SaveOffer_XPATH")))).click();
         test.log(Status.PASS, "Offer settings Update");
 
-        System.out.println("********************Update Offer settings*******************");
         driver.quit();
     }
 }

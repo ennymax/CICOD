@@ -35,17 +35,14 @@ public class UploadProduct extends TestBase {
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementProduct_XPATH"))).click();
@@ -74,10 +71,6 @@ public class UploadProduct extends TestBase {
             test.log(Status.FAIL, "Product cant be Uploaded");
         }
 
-        WebElement jj = driver.findElement(By.xpath((Utility.fetchLocator("ScrowlIntoViewUploadList_XPATH"))));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", jj);
-
-        System.out.println("********************UPLOAD PRODUCT*******************");
         driver.quit();
     }
 }

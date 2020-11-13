@@ -30,21 +30,17 @@ public class SUSPEND_UNSUSPEND_PRODUCTS extends TestBase {
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         //Click On Product
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Productbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product button fully Functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ActionSuspendbtn_XPATH"))).click();
@@ -85,7 +81,6 @@ public class SUSPEND_UNSUSPEND_PRODUCTS extends TestBase {
         assertEquals("×\n" + "Product unsuspended", driver.findElement(By.xpath(Utility.fetchLocator("Assertsusp_XPATH"))).getText());
         test.log(Status.PASS, "Product Unsuspended successfully");
 
-        System.out.println("********************SUSPEND PRODUCT TEST IS COMPLETED********************");
         driver.quit();
     }
 }

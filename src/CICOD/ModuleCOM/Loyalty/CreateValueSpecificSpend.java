@@ -64,7 +64,6 @@ public class CreateValueSpecificSpend extends TestBase {
         Thread.sleep(4000);
         System.out.println("No Alert When Creating Value Specific Spend");
 
-        System.out.println("********************CREATE VALUE SPECIFIC SPEND********************");
         driver.quit();
     }
 }

@@ -84,7 +84,6 @@ public class VarianceReportDashboard extends TestBase {
             test.log(Status.FAIL, "Total Amount in Q3 is not Displayed and enabled");
         }
 
-        System.out.println("********************View Variance report DashBoard Test is Completed********************");
         driver.quit();
     }
 }

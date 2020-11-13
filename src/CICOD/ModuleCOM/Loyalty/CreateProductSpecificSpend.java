@@ -82,7 +82,6 @@ public class CreateProductSpecificSpend extends TestBase {
         System.out.println("No Alert When Creating Product Specific Spend");
         Thread.sleep(2000);
 
-        System.out.println("********************CREATE PRODUCT SPECIFIC SPEND********************");
         driver.quit();
     }
 }

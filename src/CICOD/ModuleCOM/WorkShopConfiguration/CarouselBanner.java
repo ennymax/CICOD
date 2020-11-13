@@ -37,19 +37,19 @@ public class CarouselBanner extends TestBase {
         ScreenShot screenShot = new ScreenShot(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("WorkShopConfiguration_XPATH"))).click();
 
+        Thread.sleep(800);
         WebElement ti = driver.findElement(By.xpath(Utility.fetchLocator("WorkShopConfiguration_XPATH")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", ti);
 
+        Thread.sleep(900);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("CarouselBanner_XPATH")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
@@ -67,7 +67,10 @@ public class CarouselBanner extends TestBase {
         Select sel11c = new Select(ele111c);
         sel11c.selectByIndex(1);
 
+        Thread.sleep(999);
         driver.findElement(By.xpath(Utility.fetchLocator("OrderOfAppearance_XPATH"))).sendKeys(Utility.fetchLocator("OrderOfPreference_TEXT"));
+
+        Thread.sleep(900);
         driver.findElement(By.xpath(Utility.fetchLocator("ActiUERL_XPATH"))).sendKeys(Utility.fetchLocator("ActionUrl_TEXT"));
 
         Thread.sleep(2000);
@@ -90,7 +93,6 @@ public class CarouselBanner extends TestBase {
         assertEquals("×\n" + "Frontend Banner Carousel created", driver.findElement(By.xpath(Utility.fetchLocator("AssertBanner_XPATH"))).getText());
         test.log(Status.PASS, "Frontend Banner Carousel created");
 
-        System.out.println("********************CAROUSEL BANNER TEST IS COMPLETED********************");
         driver.quit();
     }
 }

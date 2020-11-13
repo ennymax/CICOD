@@ -4,7 +4,6 @@ import CICOD.base.TestBase;
 import CICOD.utility.Login;
 import CICOD.utility.Randomstuff;
 import CICOD.utility.Utility;
-import CICOD.utility.aaa;
 import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -14,7 +13,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class SetUpWizard extends TestBase {

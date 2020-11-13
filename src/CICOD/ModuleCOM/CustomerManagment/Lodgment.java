@@ -42,16 +42,17 @@ public class Lodgment extends TestBase {
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         screenshot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functionsl");
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH"))).click();
+        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH")));
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("arguments[0].scrollIntoView();", ti11);
+        ti11.click();
 
         //SELECT ACTION
         Thread.sleep(2000);

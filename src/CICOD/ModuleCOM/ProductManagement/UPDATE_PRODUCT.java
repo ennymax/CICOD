@@ -32,12 +32,10 @@ public class UPDATE_PRODUCT extends TestBase {
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         Thread.sleep(2000);
         WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("Productbtn_XPATH")));
@@ -61,7 +59,6 @@ public class UPDATE_PRODUCT extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("isave_XPATH"))).click();
 
-        System.out.println("********************UPDATE PRODUCT TEST IS COMPLETED********************");
         driver.quit();
     }
 }

@@ -35,11 +35,10 @@ public class PayInVoice extends TestBase {
         int st = rn.nextInt(3) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
+
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);
@@ -115,10 +114,6 @@ public class PayInVoice extends TestBase {
         Thread.sleep(2000);
         login.AcceptAlert();
 
-        Thread.sleep(1300);
-        screenshot.ScreenShotFullPage();
-
-        System.out.println("********************Pay Invoice********************");
         driver.quit();
     }
 }

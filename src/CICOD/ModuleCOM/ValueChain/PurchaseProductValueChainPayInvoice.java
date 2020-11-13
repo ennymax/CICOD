@@ -35,17 +35,14 @@ public class PurchaseProductValueChainPayInvoice extends TestBase {
         RavePay ravePay = new RavePay(driver);
 
         login.LoginDefault();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functional");
 
         Thread.sleep(1300);
         driver.findElement(By.xpath(Utility.fetchLocator("ValuechainBTN_XPATH"))).click();
@@ -111,7 +108,6 @@ public class PurchaseProductValueChainPayInvoice extends TestBase {
         assertEquals("08155341117", driver.findElement(By.xpath(Utility.fetchLocator("ValAsseetPayinv_XPATH"))).getText());
         test.log(Status.PASS, "PayInVoice was Successful");
 
-        System.out.println("********************PURCHASE PRODUCT VIA VALUE CHAIN PAY INVOICE********************");
         driver.quit();
     }
 }

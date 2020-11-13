@@ -37,17 +37,14 @@ public class ViewOrderHistoryViaValueChain extends TestBase {
         int st = rn.nextInt(1000000) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functional");
 
         Thread.sleep(1300);
         driver.findElement(By.xpath(Utility.fetchLocator("ValuechainBTN_XPATH"))).click();
@@ -73,7 +70,6 @@ public class ViewOrderHistoryViaValueChain extends TestBase {
             test.log(Status.FAIL, "Failed to view Order History Page");
         }
 
-        System.out.println("********************VIEW ORDER HISTORY********************");
         driver.quit();
     }
 }

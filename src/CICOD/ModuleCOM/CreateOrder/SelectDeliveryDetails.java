@@ -38,12 +38,10 @@ public class SelectDeliveryDetails extends TestBase {
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);
@@ -121,7 +119,6 @@ public class SelectDeliveryDetails extends TestBase {
             test.log(Status.FAIL, "Delivery Details wasn't created");
         }
 
-        System.out.println("********************SELECT DELIVERY DETAILS********************");
         driver.quit();
     }
 }

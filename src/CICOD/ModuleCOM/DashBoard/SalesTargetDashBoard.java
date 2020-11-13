@@ -96,10 +96,6 @@ public class SalesTargetDashBoard extends TestBase {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
 
-        Thread.sleep(5000);
-        screenshot.ScreenShotFullPage();
-
-        System.out.println("********************Order fulfillment Test is Completed********************");
         driver.quit();
     }
 }

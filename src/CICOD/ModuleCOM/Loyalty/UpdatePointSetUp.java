@@ -30,7 +30,6 @@ public class UpdatePointSetUp extends TestBase {
         int st = rn.nextInt(50) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -69,7 +68,6 @@ public class UpdatePointSetUp extends TestBase {
             test.log(Status.FAIL, "Update Point SetUp Failed");
         }
 
-        System.out.println("********************UPDATE POINT SETUP********************");
         driver.quit();
     }
 }

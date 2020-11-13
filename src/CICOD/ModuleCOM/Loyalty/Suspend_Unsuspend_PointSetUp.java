@@ -30,7 +30,6 @@ public class Suspend_Unsuspend_PointSetUp extends TestBase {
         int st = rn.nextInt(50) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -76,8 +75,6 @@ public class Suspend_Unsuspend_PointSetUp extends TestBase {
             test.log(Status.FAIL, "Unsuspend Point SetUp Failed");
         }
 
-        Thread.sleep(2000);
-        System.out.println("********************SUSPEND UNSUSPEND POINT SETUP********************");
         driver.quit();
     }
 }

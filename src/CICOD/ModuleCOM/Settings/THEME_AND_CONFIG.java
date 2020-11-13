@@ -29,12 +29,10 @@ public class THEME_AND_CONFIG extends TestBase {
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -65,7 +63,6 @@ public class THEME_AND_CONFIG extends TestBase {
             test.log(Status.FAIL, "Theme cant be updated");
         }
 
-        System.out.println("********************THEME AND CONFIG TEST IS COMPLETED********************");
         driver.quit();
     }
 }

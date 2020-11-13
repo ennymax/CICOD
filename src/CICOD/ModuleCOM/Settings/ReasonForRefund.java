@@ -32,12 +32,10 @@ public class ReasonForRefund extends TestBase {
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -62,7 +60,6 @@ public class ReasonForRefund extends TestBase {
         js.executeScript("arguments[0].click();", element);
         test.log(Status.PASS, "Reason for refund was created successfully");
 
-        System.out.println("********************REASON FOR REFUND********************");
         driver.quit();
     }
 }
