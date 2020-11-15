@@ -56,12 +56,5 @@ public class RestClient {
 			CloseableHttpResponse closebaleHttpResponse = httpClient.execute(httppost);
 			return closebaleHttpResponse;
 			
-			
 		}
-	
-		
-	
-	
-	
-
 }

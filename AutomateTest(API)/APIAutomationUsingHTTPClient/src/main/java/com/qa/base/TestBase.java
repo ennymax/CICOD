@@ -14,8 +14,7 @@ public class TestBase {
 	public int RESPONSE_STATUS_CODE_201 = 201;
 
 	public Properties prop;
-	
-	
+
 	public TestBase(){
 		try {
 			prop = new Properties();
@@ -28,9 +27,4 @@ public class TestBase {
 		}
 		
 	}
-	
-	
-	
-	
-
 }

@@ -64,6 +64,5 @@ public class CreateSourceComplaint extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN4_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************CREATE SOURCE COMPLAIN********************");
     }
 }

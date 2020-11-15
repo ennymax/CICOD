@@ -142,21 +142,6 @@ public class GetAPITest extends TestBase{
 			allHeaders.put(header.getName(), header.getValue());
 		}	
 		System.out.println("Headers Array-->"+allHeaders);
-		
-		
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

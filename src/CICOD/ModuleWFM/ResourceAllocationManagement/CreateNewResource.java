@@ -145,6 +145,5 @@ public class CreateNewResource extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("CreateOKBTN_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************CREATE NEW RESOURCE********************");
     }
 }

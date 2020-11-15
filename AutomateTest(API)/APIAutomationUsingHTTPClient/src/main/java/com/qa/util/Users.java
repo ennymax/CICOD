@@ -55,13 +55,4 @@ public class Users {
 	public void setCreatedDate(String createdAt) {
 		this.createdAt = createdAt;
 	}
-
-
-	
-	
-	
-	
-	
-	
-
 }

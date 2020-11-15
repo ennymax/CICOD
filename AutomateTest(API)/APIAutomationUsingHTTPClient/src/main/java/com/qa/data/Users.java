@@ -10,8 +10,6 @@ public class Users {
 	String job;
 	String id;
 	String createdAt;
-	
-	
 
 	public Users() {
 
@@ -55,13 +53,4 @@ public class Users {
 	public void setCreatedAt(String createdAt) {
 		this.createdAt = createdAt;
 	}
-
-	
-	
-	
-	
-	
-	
-	
-
 }
