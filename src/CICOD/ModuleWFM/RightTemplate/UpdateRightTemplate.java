@@ -67,6 +67,5 @@ public class UpdateRightTemplate extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("UpdateRightTemplateOKBTN_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************UPDATE RIGHT TEMPLATE********************");
     }
 }

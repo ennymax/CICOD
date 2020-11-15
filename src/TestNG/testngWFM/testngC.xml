@@ -19,7 +19,7 @@
             <class name="CICOD.ModuleWFM.Pages.AssertScheduleManagement"/>
             <class name="CICOD.ModuleWFM.Pages.AssertSourceComplaint"/>
             <class name="CICOD.ModuleWFM.Pages.AssertWorkOrderStatus"/>
-            <class name="CICOD.ModuleWFM.Pages.Dashboard"/>
+            <class name="CICOD.ModuleWFM.Pages.AssertDashboard"/>
         </classes>
     </test>
 </suite>

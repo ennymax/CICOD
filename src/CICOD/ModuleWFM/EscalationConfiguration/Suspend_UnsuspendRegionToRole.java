@@ -73,6 +73,5 @@ public class Suspend_UnsuspendRegionToRole extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN6_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SUSPEND UNSUSPEND ESCALATION ROLE********************");
     }
 }

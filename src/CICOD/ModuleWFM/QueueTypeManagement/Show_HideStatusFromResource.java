@@ -109,6 +109,5 @@ public class Show_HideStatusFromResource extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************SHOW/HIDE STATUS FROM RESOURCE********************");
     }
 }

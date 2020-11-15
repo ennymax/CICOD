@@ -82,6 +82,5 @@ public class Suspend_UnsuspendQueueType extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SUSPEND AND UNSUSPENDED QUEUE TYPE STATUS********************");
     }
 }

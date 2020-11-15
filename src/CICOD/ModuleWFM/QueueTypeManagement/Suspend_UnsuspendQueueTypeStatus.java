@@ -66,6 +66,5 @@ public class Suspend_UnsuspendQueueTypeStatus extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************ADD STATUSES TO QUEUE TYPE********************");
     }
 }

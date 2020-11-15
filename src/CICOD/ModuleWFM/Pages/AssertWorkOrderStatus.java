@@ -91,6 +91,5 @@ public class AssertWorkOrderStatus extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************ASSERT WORK ORDER STATUS********************");
     }
 }

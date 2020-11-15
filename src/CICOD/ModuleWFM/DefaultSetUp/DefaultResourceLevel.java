@@ -82,6 +82,5 @@ public class DefaultResourceLevel extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************DEFAULT RESOURCE LEVEL********************");
     }
 }

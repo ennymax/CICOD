@@ -84,6 +84,5 @@ public class SUSPEND_AND_UNSUSPEND_QUEUE extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OOOk_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SUSPEND AND UNSUSPEND QUEUE********************");
     }
 }

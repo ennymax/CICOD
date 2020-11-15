@@ -392,7 +392,6 @@ public class Utility extends TestBase{
         assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
     }
 
-
     //**********************CheckBox and Radio Button********************
     public void DoCheckBoxWhenReady(String locator, String NameOfEvent, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(600);

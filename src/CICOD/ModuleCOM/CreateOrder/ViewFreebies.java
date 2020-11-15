@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
@@ -50,13 +51,13 @@ public class ViewFreebies extends TestBase {
 
         //SEARCH PRODUCT
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductinput_XPATH"))).sendKeys(Utility.fetchLocator("ID_TEXT"));
+        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductinput_XPATH"))).sendKeys(Utility.fetchLocator("ql_TEXT"));
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SearchProductbtnq_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement ti11z = driver.findElement(By.xpath(Utility.fetchLocator("AddBTN_XPATH")));
+        WebElement ti11z = driver.findElement(By.xpath(Utility.fetchLocator("AddBTNQ_XPATH")));
         JavascriptExecutor jsez = (JavascriptExecutor) driver;
         jsez.executeScript("arguments[0].scrollIntoView();", ti11z);
         ti11z.click();
@@ -68,22 +69,72 @@ public class ViewFreebies extends TestBase {
         ti11.click();
 
         Thread.sleep(2000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SelectFreebiesone_XPATH")))).click();
-        test.log(Status.PASS, "Freebies can be Viewed and added");
+        driver.findElement(By.xpath(Utility.fetchLocator("quiCheck_XPATH"))).click();
 
         Thread.sleep(2000);
-        WebElement ti11k = driver.findElement(By.xpath(Utility.fetchLocator("AddFreeBee_XPATH")));
-        JavascriptExecutor jsek = (JavascriptExecutor) driver;
-        jsek.executeScript("arguments[0].scrollIntoView();", ti11k);
-        ti11k.click();
+        driver.findElement(By.xpath(Utility.fetchLocator("AddQui_XPATH"))).click();
 
         Thread.sleep(2000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("CheckOffer_XPATH")))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("Offer1_XPATH"))).click();
+
+        Thread.sleep(900);
+        if (driver.findElements(By.xpath(Utility.fetchLocator("assFreebies_XPATH"))).size() != 0) {
+            test.log(Status.PASS, "FreeBies can be Viewed");
+        } else {
+            test.log(Status.FAIL, "FeeBies cant be viewed");
+        }
 
         Thread.sleep(2000);
-        assertEquals("Math set\n" + "Delete\n" + "Quantity\n" + "1\n" + "₦0.00", driver.findElement(By.xpath(Utility.fetchLocator("Assertfreebies_XPATH"))).getText());
+        assertEquals("quill (Soft drinks)\n" + "Delete\n" + "Quantity\n" + "1\n" + "₦0.00", driver.findElement(By.xpath(Utility.fetchLocator("Assertfreebies_XPATH"))).getText());
         test.log(Status.PASS, "Confirmed Freebies was added Successfully");
 
+        Thread.sleep(2000);
+        WebElement ti11kk = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
+        JavascriptExecutor jsekk = (JavascriptExecutor) driver;jse.executeScript("arguments[0].scrollIntoView();", ti11kk);
+        ti11kk.click();
+
+        Thread.sleep(2000);
+        WebElement ele111ll = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
+        Select sel11ll = new Select(ele111ll);
+        sel11ll.selectByIndex(st);
+
+        Thread.sleep(2000);
+        WebElement ti112lll = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
+        JavascriptExecutor jse2lll = (JavascriptExecutor) driver;
+        jse2lll.executeScript("arguments[0].scrollIntoView();", ti112lll);
+        ti112lll.click();
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("PayPoS_XPATH"))).click();
+
+        Thread.sleep(4000);
+        driver.findElement(By.xpath(Utility.fetchLocator("ConfirmPAymantPOS_XPATH"))).click();
+
+        Thread.sleep(200);
+        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("ComfirmPOSPayment_XPATH")));
+        String text11 = msg11.getText();
+        if (msg11.isEnabled() && text11.contains("Payment yet to be received on Order")) {
+            test.log(Status.PASS, "Pay with POS Functional");
+        } else {
+            test.log(Status.FAIL, "Pay with POS Failed");
+        }
+
+        Thread.sleep(2000);
+        WebElement ti11kkp = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
+        JavascriptExecutor jsekkp = (JavascriptExecutor) driver;
+        jsekkp.executeScript("arguments[0].scrollIntoView();", ti11kkp);
+        ti11kkp.click();
+
+        Thread.sleep(2000);
+        WebElement ele111llq = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
+        Select sel11lla = new Select(ele111llq);
+        sel11lla.selectByIndex(2);
+
+        utility.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH","PaymentOPT_TEXT",50);
+        utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT",40);
+        utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT",40);
+        utility.DowaitandAcceptAlerwhenReady(60);
+        utility.DoAssertContainsWhenReady("AssertOrdeIDgenerated_XPATH", "OrDerID_TEXT","OrDerID_TEXT", "OrderIDPass_TEXT",30);
         driver.quit();
     }
 }

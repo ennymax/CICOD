@@ -79,6 +79,5 @@ public class Suspend_UnsuspendRightTemplate extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SuspendRightTemplateOKBTN_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SUSPEND UNSUSPENDED RIGHT TEMPLATE********************");
     }
 }

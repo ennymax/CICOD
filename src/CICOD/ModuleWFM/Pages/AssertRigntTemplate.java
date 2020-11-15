@@ -89,6 +89,5 @@ public class AssertRigntTemplate extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************ASSERT RIGHT TEMPLATE********************");
     }
 }

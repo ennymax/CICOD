@@ -63,6 +63,5 @@ public class UpdateResourceShedule extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN3_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************UPDATE RESOURCE SCHEDULE********************");
     }
 }

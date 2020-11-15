@@ -1,6 +1,7 @@
 
          (invocationCount = 5)
 
+         https://www.youtube.com/playlist?list=PLoX0sUafNGbH9bmbIANk3D50FNUmuJIF3
 
          public void createContact(String emailId, String jobTitle) {
          Thread.sleep(1000);
@@ -212,3 +213,10 @@ step 1
 5061 4604 1012 0223 210
 cvv=780
 pin=3310
+
+Good Morning @all
+12/11/2020
+1. Update Test Script for cicod(On going)
+2. Prepare TestPlan for Trial SignUp(Done)
+13/11/2020
+1. Update Test Script for cicod(On going)

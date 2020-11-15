@@ -82,6 +82,5 @@ public class Suspend_UnsuspendResourceShift extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SUSPEND UNSUSPEND RESOURCE SHIFT********************");
     }
 }

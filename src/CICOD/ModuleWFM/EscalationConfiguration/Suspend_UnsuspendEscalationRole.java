@@ -71,6 +71,5 @@ public class Suspend_UnsuspendEscalationRole extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SUSPEND UNSUSPEND ESCALATION ROLE********************");
     }
 }

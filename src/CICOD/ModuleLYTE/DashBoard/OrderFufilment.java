@@ -37,7 +37,7 @@ public class OrderFufilment extends TestBase {
         //DashBoard
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("Dashboard_XPATH"))).click();
-        test.log(Status.PASS, "Dashboard button fully functional");
+        test.log(Status.PASS, "AssertDashboard button fully functional");
 
         driver.findElement(By.xpath(Utility.fetchLocator("Datefrom_XPATH"))).clear();
         driver.findElement(By.xpath(Utility.fetchLocator("Datefrom_XPATH"))).sendKeys(Utility.fetchLocator("Datefrom_TEXT"));

@@ -89,6 +89,5 @@ public class AssertDepartment extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************ASSERT DEPARTMENT********************");
     }
 }

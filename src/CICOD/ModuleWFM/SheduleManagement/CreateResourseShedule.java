@@ -32,7 +32,6 @@ public class CreateResourseShedule extends TestBase {
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(150000) + 1;
 
-
         login.LoginPremium();
 
         Thread.sleep(2000);
@@ -89,6 +88,5 @@ public class CreateResourseShedule extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN3_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************CREATE RESOURCE SCHEDULE********************");
     }
 }

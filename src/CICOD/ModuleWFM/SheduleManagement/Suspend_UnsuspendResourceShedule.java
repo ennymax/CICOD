@@ -76,6 +76,5 @@ public class Suspend_UnsuspendResourceShedule extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN3_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SUSPEND UNSUSPEND RESOURCE SCHEDULE********************");
     }
 }

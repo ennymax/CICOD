@@ -81,6 +81,5 @@ public class Suspend_UnsuspendSourceComplain extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKSOU_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SUSPEND AND UNSUSPEND SOURCE COMPLAIN********************");
     }
 }

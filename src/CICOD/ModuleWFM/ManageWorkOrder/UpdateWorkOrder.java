@@ -61,6 +61,5 @@ public class UpdateWorkOrder extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OkBTN_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************UPDATE WORK ORDER TEST********************");
     }
 }

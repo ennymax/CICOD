@@ -90,6 +90,5 @@ public class ViewWorkOrder extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************VIEW WORK ORDER********************");
     }
 }

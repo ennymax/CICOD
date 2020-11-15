@@ -125,7 +125,6 @@ public class AdvancedSearch extends TestBase {
 
         Thread.sleep(7000);
         driver.quit();
-        System.out.println("********************ADVANCED SEARCH TEST********************");
     }
 
 }

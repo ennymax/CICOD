@@ -93,7 +93,6 @@ public class AssertScheduleManagement extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************ASSERT SCHEDULE MANAGEMENT********************");
     }
 
 }

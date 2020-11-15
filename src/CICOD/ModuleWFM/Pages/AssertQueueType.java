@@ -91,6 +91,5 @@ public class AssertQueueType extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************ASSERT QUEUE TYPE********************");
     }
 }

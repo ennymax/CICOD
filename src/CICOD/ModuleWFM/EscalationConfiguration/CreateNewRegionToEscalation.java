@@ -83,6 +83,5 @@ public class CreateNewRegionToEscalation extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN5_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************CREATE NEW ROLE ESCALATION ROLE********************");
     }
 }

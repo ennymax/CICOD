@@ -94,9 +94,6 @@ public class DefaultQueueType extends TestBase {
             test.log(Status.FAIL, "Complaint Billing Queue Type is not present as Default");
         }
 
-        Thread.sleep(999);
-
         driver.quit();
-        System.out.println("********************DEFAULT QUEUE TYPE********************");
     }
 }

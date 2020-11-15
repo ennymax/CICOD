@@ -76,6 +76,5 @@ public class AssertSourceComplaint  extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************ASSERT SOURCE COMPLAINT********************");
     }
 }

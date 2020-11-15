@@ -70,6 +70,5 @@ public class UpdateSourceComplain extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN4_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************UPDATE SOURCE COMPLAIN********************");
     }
 }

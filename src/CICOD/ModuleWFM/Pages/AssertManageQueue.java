@@ -97,6 +97,5 @@ public class AssertManageQueue extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************ASSERT MANAGE QUEUE********************");
     }
 }

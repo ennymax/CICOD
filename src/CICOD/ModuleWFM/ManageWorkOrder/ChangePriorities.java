@@ -74,6 +74,5 @@ public class ChangePriorities extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OkBTN_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************Change Priorities********************");
     }
 }

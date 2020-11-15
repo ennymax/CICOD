@@ -65,6 +65,5 @@ public class CreateRightTemplate extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("RightTemplatOKBTN_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************CREATE RIGHT TEMPLATE********************");
     }
 }

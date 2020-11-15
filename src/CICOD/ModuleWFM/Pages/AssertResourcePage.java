@@ -90,6 +90,5 @@ public class AssertResourcePage extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************ASSERT RESOURCE PAGE********************");
     }
 }

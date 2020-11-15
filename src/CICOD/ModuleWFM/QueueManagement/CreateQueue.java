@@ -65,6 +65,5 @@ public class CreateQueue extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTNZ_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************CREATE QUEUE********************");
     }
 }

@@ -60,6 +60,5 @@ public class SetUpWizard extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SETUP WIZARD********************");
     }
 }

@@ -55,6 +55,5 @@ public class DefaultQueue extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************DEFAULT QUEUE********************");
     }
 }

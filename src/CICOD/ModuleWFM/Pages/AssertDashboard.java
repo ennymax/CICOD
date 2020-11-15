@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class Dashboard extends TestBase {
+public class AssertDashboard extends TestBase {
 
     @Test
     public void ASSERT_DASHBOARD() throws IOException, InterruptedException {
@@ -79,6 +79,5 @@ public class Dashboard extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************ASSERT DASHBOARD********************");
     }
 }

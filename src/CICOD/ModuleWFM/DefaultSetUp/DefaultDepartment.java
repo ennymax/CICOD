@@ -24,7 +24,7 @@ public class DefaultDepartment extends TestBase {
 
         login.LoginDef1();
 
-        Thread.sleep(200000000);
+        Thread.sleep(200);
         driver.findElement(By.xpath(Utility.fetchLocator("Wfm_XPATH"))).click();
 
         Thread.sleep(2000);
@@ -53,6 +53,5 @@ public class DefaultDepartment extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************DEFAULT TEAMS********************");
     }
 }

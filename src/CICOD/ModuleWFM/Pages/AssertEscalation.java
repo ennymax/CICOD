@@ -70,6 +70,5 @@ public class AssertEscalation extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************ASSERT ESCALATION********************");
     }
 }

@@ -85,6 +85,5 @@ public class DefaultStatus extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************DEFAULT QUEUE STATUES********************");
     }
 }

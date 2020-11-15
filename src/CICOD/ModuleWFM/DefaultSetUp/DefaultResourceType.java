@@ -84,6 +84,5 @@ public class DefaultResourceType extends TestBase {
         }
 
         driver.quit();
-        System.out.println("********************DEFAULT RESOURCE TYPE********************");
     }
 }

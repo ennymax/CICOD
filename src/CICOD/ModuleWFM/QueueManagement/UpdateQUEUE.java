@@ -68,6 +68,5 @@ public class UpdateQUEUE extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OK_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************UPDATE QUEUE********************");
     }
 }

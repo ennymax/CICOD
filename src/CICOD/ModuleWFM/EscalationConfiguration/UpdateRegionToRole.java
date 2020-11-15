@@ -74,6 +74,5 @@ public class UpdateRegionToRole extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN6_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************UPDATE ESCALATION ROLE********************");
     }
 }

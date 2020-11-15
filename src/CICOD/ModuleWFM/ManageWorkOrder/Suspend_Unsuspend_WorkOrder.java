@@ -71,6 +71,5 @@ public class Suspend_Unsuspend_WorkOrder extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("WorkOrderOKBTN_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************SUSPEND UNSUSPEND WORKORDER********************");
     }
 }
