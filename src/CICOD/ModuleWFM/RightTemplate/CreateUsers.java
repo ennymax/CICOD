@@ -27,10 +27,11 @@ public class CreateUsers extends TestBase {
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         Login login = new Login(driver);
         FileUpload fileUpload = new FileUpload();
         Utility utility = new Utility(driver);
+        ExcelUtil excelUtil = new ExcelUtil(driver);
 
         SecureRandom rn = new SecureRandom();
         int resourcetype = rn.nextInt(3) + 1;
@@ -49,16 +50,20 @@ public class CreateUsers extends TestBase {
         utility.DoclickWhenReady("NewUserDepartment_XPATH", "Seler_TEXT",50);
         utility.DoclickWhenReady("NewUserA1_XPATH", "A_TEXT",50);
         utility.DoclickWhenReady("NewUserA2_XPATH", "A_TEXT",50);
+        excelUtil.DoclickWhenReady("Cll_XPATH",60);
         utility.DoFileUpWhenReady("FileUpload_XPATH", "3mb_TEXT",50);
         fileUpload.UploadFileImage3MB();
         utility.DosendKeysRandomNumberWhenReady("NewUserStaffID_XPATH", "StaffID_TEXT",500000 , 60);
         utility.DosendKeysRandomListwordsWhenReady("NewserJobTittle_XPATH", "JobT_TEXT",50);
+        excelUtil.DoclickWhenReady("Cll_XPATH",60);
         utility.DoclickWhenReady("NewUserRegion_XPATH", "U1_TEXT",50);
         utility.DoclickWhenReady("Newq11_XPATH", "u2_TEXT",50);
+        excelUtil.DoclickWhenReady("Cll_XPATH",60);
         utility.DoclickWhenReady("CreateNewUser_XPATH", "Creta_TEXT",50);
         utility.DoAssertContainsWhenReady("AssertNewUserCreation_XPATH","Su_TEXT" ,"Cont_TEXT", "DplPass_XPATH",30);
         utility.DoclickWhenReady("NewUserOKBTN_XPATH","Ok_TEXT",40);
 
+        //Thread.sleep(99999999);
         driver.quit();
     }
 }

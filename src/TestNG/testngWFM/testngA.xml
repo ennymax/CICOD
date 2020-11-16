@@ -10,9 +10,17 @@
         </classes>
     </test>
 
+    <test name = "Manage Department">
+        <classes>
+            <class name="CICOD.ModuleWFM.ManageDepartment.CreateDepartment"/>
+            <class name="CICOD.ModuleWFM.ManageDepartment.Suspend_Unsuspend_Department"/>
+            <class name="CICOD.ModuleWFM.ManageDepartment.UpdateDepartment"/>
+        </classes>
+    </test>
+
     <test name = "Manage WorkOrder">
     <classes>
-            <class name="CICOD.ModuleWFM.DepartmentManagement.CreateDepartment"/>
+            <class name="CICOD.ModuleWFM.ManageDepartment.CreateDepartment"/>
             <class name="CICOD.ModuleWFM.ManageWorkOrder.AddRemark"/>
             <class name="CICOD.ModuleWFM.ManageWorkOrder.AdvancedSearch"/>
             <class name="CICOD.ModuleWFM.ManageWorkOrder.ChangePriorities"/>

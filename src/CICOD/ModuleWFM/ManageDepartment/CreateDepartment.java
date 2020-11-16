@@ -1,4 +1,4 @@
-package CICOD.ModuleWFM.DepartmentManagement;
+package CICOD.ModuleWFM.ManageDepartment;
 
 import CICOD.base.TestBase;
 import CICOD.utility.Login;
@@ -51,7 +51,7 @@ public class CreateDepartment extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CreateTeamBTN_XPATH"))).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(200);
         WebElement msg =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssertCreateDepartment_XPATH"))));
         String text = msg.getText();
         if (msg.isEnabled() && text.contains("Successful")) {

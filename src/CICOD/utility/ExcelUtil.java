@@ -310,7 +310,6 @@ public class ExcelUtil extends TestBase {
         jse.executeScript("arguments[0].scrollIntoView();", ti11);
         ti11.click();
     }
-    ExcelUtil excelUtil = new ExcelUtil(driver);
 
     //**********************Assertion********************
     public void DoAssertEqualWhenReady(String locator, String assertionString, int timeOut) throws IOException, InterruptedException {
@@ -319,7 +318,6 @@ public class ExcelUtil extends TestBase {
         WebElement msg11 = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
         assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
     }
-
 
     //**********************CheckBox and Radio Button********************
     public void DoCheckBoxWhenReady(String locator, String NameOfEvent, int timeOut) throws IOException, InterruptedException {
