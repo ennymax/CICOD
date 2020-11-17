@@ -96,7 +96,7 @@ public class AdvancedSearch extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AvSearchh_XPATH"))).click();
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         assertEquals("1041", driver.findElement(By.xpath(Utility.fetchLocator("AssertAdvancedSearchewo_XPATH"))).getText());
         test.log(Status.PASS, "Confirmed Advanced Search was successful");
 
@@ -123,7 +123,7 @@ public class AdvancedSearch extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Downloadit_XPATH"))).click();
 
-        Thread.sleep(7000);
+        Thread.sleep(2000);
         driver.quit();
     }
 

@@ -31,9 +31,9 @@ public class Login {
     public void LoginDef1()  throws IOException, InterruptedException  {
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
-        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "DefaultShop_TEXT", "DOma_TEXT",20);
-        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "Defem_TEXT","Emailf_TEXT" ,20);
-        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "defpass_TEXT", "Passw_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("DomainName_XPATH", "DefShopName_TEXT", "DefShopName_TEXT",20);
+        utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "DefEmail_TEXT","DefEmail_TEXT" ,20);
+        utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "DefPassword_TEXT", "DefPassword_TEXT",20);
         utility.DoscrolltoViewClickWhenReady("LoginBTN_XPATH", "Logi_TEXT",30);
         utility.DoGetPageCurrentUrl( 45 , "yyyy_TEXT");
     }

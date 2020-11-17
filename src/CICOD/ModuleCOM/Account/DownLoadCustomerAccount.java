@@ -1,9 +1,7 @@
 package CICOD.ModuleCOM.Account;
 
 import CICOD.base.TestBase;
-import CICOD.utility.API_Watch_Service;
-import CICOD.utility.Login;
-import CICOD.utility.Utility;
+import CICOD.utility.*;
 import com.aventstack.extentreports.Status;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -28,8 +26,7 @@ public class DownLoadCustomerAccount extends TestBase {
 
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        API_Watch_Service api_watch_service = new API_Watch_Service();
-
+        Utility utility = new Utility(driver);
         login.Login();
 
         //Com

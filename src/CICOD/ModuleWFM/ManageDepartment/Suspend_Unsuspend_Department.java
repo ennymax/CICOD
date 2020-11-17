@@ -18,7 +18,7 @@ import java.security.SecureRandom;
 public class Suspend_Unsuspend_Department extends TestBase {
 
     @Test
-    public void CREATE_DEPARTMENT() throws IOException, InterruptedException {
+    public void Suspend_Unsuspend_Department() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND DEPARTMENT");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
@@ -27,7 +27,6 @@ public class Suspend_Unsuspend_Department extends TestBase {
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(1500000) + 1;
-
 
         login.LoginPremium();
 

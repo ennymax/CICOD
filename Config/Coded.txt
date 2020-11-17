@@ -2,6 +2,8 @@
          (invocationCount = 5)
 
          https://www.youtube.com/playlist?list=PLoX0sUafNGbH9bmbIANk3D50FNUmuJIF3
+         https://www.youtube.com/watch?v=qqmyAxfGV9c
+         elezabeth
 
          public void createContact(String emailId, String jobTitle) {
          Thread.sleep(1000);
@@ -26,6 +28,7 @@
                 WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("Lodg_XPATH")));
                 builder.moveToElement(element1).build().perform();
 
+08033987879
 
        //Video Recording
         VideoRecorder.startRecording("IMSBUG");
@@ -141,7 +144,7 @@
         }
 
 
-        Thread.sleep(2000);
+               Thread.sleep(2000);
                WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH")));
                JavascriptExecutor jse = (JavascriptExecutor) driver;
                jse.executeScript("arguments[0].scrollIntoView();", ti11);
@@ -179,6 +182,10 @@ Crown@123
 lupinwilliams
 lupinwilliams0@gmail.com
 Crown@123
+
+demotestng
+DefEmail_TEXT=demotestng@yopmail.com
+DefPassword_TEXT=@Ecomax1759
 
 STAGING_STAGING_STAGING
 ndanitv
