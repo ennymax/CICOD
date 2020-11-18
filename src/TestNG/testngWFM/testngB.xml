@@ -22,9 +22,9 @@
 
     <test name = "Manage WorkOrder Status">
         <classes>
+            <class name="CICOD.ModuleWFM.ManageWorkOrderStatus.CreateStatus"/>
             <class name="CICOD.ModuleWFM.ManageWorkOrderStatus.Suspend_UnsuspenStatus"/>
             <class name="CICOD.ModuleWFM.ManageWorkOrderStatus.UpdateStatus"/>
-            <class name="CICOD.ModuleWFM.ManageWorkOrderStatus.CreateStatus"/>
         </classes>
     </test>
 </suite>

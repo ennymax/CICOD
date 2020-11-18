@@ -1,4 +1,14 @@
 <suite name="Suite">
+    <test name = "Default SetUp">
+        <classes>
+            <class name="CICOD.ModuleWFM.DefaultSetUp.DefaultDepartment"/>
+            <class name="CICOD.ModuleWFM.DefaultSetUp.DefaultQueue"/>
+            <class name="CICOD.ModuleWFM.DefaultSetUp.DefaultQueueType"/>
+            <class name="CICOD.ModuleWFM.DefaultSetUp.DefaultResourceLevel"/>
+            <class name="CICOD.ModuleWFM.DefaultSetUp.DefaultResourceType"/>
+            <class name="CICOD.ModuleWFM.DefaultSetUp.DefaultStatus"/>
+        </classes>
+    </test>
     <test name = "Right Template">
         <classes>
             <class name="CICOD.ModuleWFM.RightTemplate.Suspend_UnsuspendRightTemplate"/>

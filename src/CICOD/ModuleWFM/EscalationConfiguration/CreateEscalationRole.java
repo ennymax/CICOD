@@ -37,7 +37,7 @@ public class CreateEscalationRole extends TestBase {
         Thread.sleep(1500);
         driver.findElement(By.xpath(Utility.fetchLocator("EscalationMainMenue_XPATH"))).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(200);
         driver.findElement(By.xpath(Utility.fetchLocator("EscalationTorole_XPATH"))).click();
 
         Thread.sleep(2000);

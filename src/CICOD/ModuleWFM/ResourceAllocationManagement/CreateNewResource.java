@@ -30,7 +30,6 @@ public class CreateNewResource extends TestBase {
         driver.get("https://www.cicod.com/login");
 
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
         FileUpload fileUpload = new FileUpload();
 
         SecureRandom rn = new SecureRandom();
