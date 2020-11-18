@@ -131,7 +131,7 @@ public class FILTER_ORDER_HISTORY extends TestBase {
         utility.DoSelectValuesByIndex("OrderHDeli_XPATH", "Order3_TEXT", 0, 30);
 
         /*
-        //Filter PartPayment
+        //Filter Pay_By_Bank_Transfer
         utility.DoSelectValuesByVisibleText("FilterPartpayment_XPATH","Part1_TEXT","Part1_TEXT",30);
         //utility.DoAssertXpathPresentWhenReady("AssertPart1_XPATH", "FilterOpassiParti3_TEXT", "FilterOfailiPart3_TEXT", 15);
 

@@ -19,17 +19,18 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class PartPayment extends TestBase {
+import static org.junit.Assert.assertEquals;
+
+public class Pay_By_Bank_Transfer extends TestBase {
     @Test
-    public void UPGRADE_SUBSCRIPTION_AFTER_EXPIRATION() throws IOException, InterruptedException {
-        test = extent.createTest("UPGRADE SUBSCRIPTION AFTER EXPIRATION");
+    public void Pay_by_bank_transfer() throws IOException, InterruptedException {
+        test = extent.createTest("PAY BY BANK TRANSFER");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
 
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         RavePay ravePay = new RavePay(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginUpgrade();
@@ -57,18 +58,31 @@ public class PartPayment extends TestBase {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Paynow_XPATH")))).click();
 
-        Thread.sleep(200000000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SubPayOnline_XPATH")))).click();
+        Thread.sleep(120);
+        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("PaybyTransfer_XPATH")))).click();
 
-        ravePay.RavePay1();
+        Thread.sleep(1000);
+        assertEquals("Providus Bank", driver.findElement(By.xpath(Utility.fetchLocator("providousbank_XPATH"))).getText());
+        test.log(Status.PASS, "Providus Bank Is Present");
 
-        Thread.sleep(2000);
-        WebElement msg =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("Assssss_XPATH"))));
-        String text = msg.getText();
-        if (msg.isEnabled() && text.contains("Enter your 4-digit card pin to authorize this payment")) {
-            test.log(Status.PASS, "Flutter wave Page fully Functional");
+        Thread.sleep(1000);
+        assertEquals("Offer Subscription", driver.findElement(By.xpath(Utility.fetchLocator("AccountName_XPATH"))).getText());
+        test.log(Status.PASS, "Account Name is Present");
+
+        Thread.sleep(1500);
+        driver.findElement(By.xpath(Utility.fetchLocator("BackNT_XPATH"))).click();
+
+        Thread.sleep(120);
+        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("PaybyTransfer_XPATH")))).click();
+
+        Thread.sleep(1500);
+        driver.findElement(By.xpath(Utility.fetchLocator("closebtn_XPATH"))).click();
+
+        Thread.sleep(120);
+        if (driver.findElements(By.xpath(Utility.fetchLocator("PaybyTransfer_XPATH"))).size() != 0) {
+            test.log(Status.PASS, "Closed Payment Page Successfully");
         } else {
-            test.log(Status.FAIL, "Flutter wave page not Functional");
+            test.log(Status.FAIL, "Failed to close payment Page");
         }
 
         driver.quit();

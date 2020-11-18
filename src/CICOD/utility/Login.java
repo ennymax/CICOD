@@ -35,7 +35,6 @@ public class Login {
         utility.DoSendKeysByActionClassWhenReady("Email_XPATH", "DefEmail_TEXT","DefEmail_TEXT" ,20);
         utility.DoSendKeysByActionClassWhenReady("Password_XPATH", "DefPassword_TEXT", "DefPassword_TEXT",20);
         utility.DoscrolltoViewClickWhenReady("LoginBTN_XPATH", "Logi_TEXT",30);
-        utility.DoGetPageCurrentUrl( 45 , "yyyy_TEXT");
     }
 
     public void LoginNexus()  throws IOException, InterruptedException  {
