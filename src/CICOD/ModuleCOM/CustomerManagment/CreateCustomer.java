@@ -35,17 +35,14 @@ public class CreateCustomer extends TestBase {
         int st = rn.nextInt(1000000) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functionsl");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH"))).click();
@@ -88,9 +85,7 @@ public class CreateCustomer extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CussstomersaveBTN_XPATH"))).click();
-        test.log(Status.PASS, "Customer was Created successfully");
 
-        System.out.println("********************CREATE CUSTOMER TEST IS COMPLETED********************");
         driver.quit();
     }
 }

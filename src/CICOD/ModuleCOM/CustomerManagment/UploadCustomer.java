@@ -32,18 +32,15 @@ public class UploadCustomer extends TestBase {
         FileUpload fileUpload = new FileUpload();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         screenshot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functionsl");
 
         Thread.sleep(2000);
         WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH")));
@@ -65,7 +62,6 @@ public class UploadCustomer extends TestBase {
         fileUpload.UploadXLSX1();
         test.log(Status.PASS, "Customer(s) uploaded successfully");
 
-        System.out.println("********************UPLOAD CUSTOMER IS COMPLETED********************");
         driver.quit();
     }
 }

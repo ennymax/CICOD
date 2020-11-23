@@ -34,13 +34,11 @@ public class ViewCustomer extends TestBase {
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         screenshot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functionsl");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH"))).click();
@@ -65,7 +63,6 @@ public class ViewCustomer extends TestBase {
             test.log(Status.FAIL, "Customer cant be viewed");
         }
 
-        System.out.println("********************VIEW CUSTOMER********************");
         driver.quit();
     }
 }

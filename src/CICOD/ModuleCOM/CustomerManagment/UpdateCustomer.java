@@ -40,21 +40,17 @@ public class UpdateCustomer extends TestBase {
         int tommm = rn.nextInt(10) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         screenshot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH"))).click();
-        screenshot.ScreenShot();
 
         //SELECT ACTION
         Thread.sleep(2000);
@@ -74,18 +70,22 @@ public class UpdateCustomer extends TestBase {
         ch.clear();
         ch.sendKeys(randomstuff.ListRandom());
 
+        Thread.sleep(1200);
         WebElement tt = driver.findElement(By.xpath(Utility.fetchLocator("LastName_XPATH")));
         tt.clear();
         tt.sendKeys(randomstuff.ListRandom());
 
+        Thread.sleep(1200);
         WebElement ttt = driver.findElement(By.xpath(Utility.fetchLocator("CLandMark_XPATH")));
         ttt.clear();
         ttt.sendKeys(randomstuff.ListRandom());
 
+        Thread.sleep(1200);
         WebElement tttt = driver.findElement(By.xpath(Utility.fetchLocator("ChouseN_XPATH")));
         tttt.clear();
         tttt.sendKeys(Utility.fetchLocator("h_TEXT")+ a );
 
+        Thread.sleep(1200);
         WebElement ttk = driver.findElement(By.xpath(Utility.fetchLocator("CHouseNo_XPATH")));
         ttk.clear();
         ttk.sendKeys(Utility.fetchLocator("h_TEXT")+ aa );
@@ -125,7 +125,6 @@ public class UpdateCustomer extends TestBase {
             test.log(Status.FAIL, "Customer Update failed");
         }
 
-        System.out.println("********************UPDATE CUSTOMER********************");
         driver.quit();
     }
 

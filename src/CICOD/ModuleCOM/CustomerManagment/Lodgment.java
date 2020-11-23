@@ -37,7 +37,6 @@ public class Lodgment extends TestBase {
         int st = rn.nextInt(1000000) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -127,7 +126,6 @@ public class Lodgment extends TestBase {
             test.log(Status.FAIL, "Lodgement Failed");
         }
 
-        System.out.println("********************UPDATE LODGEMENT********************");
         driver.quit();
     }
 }

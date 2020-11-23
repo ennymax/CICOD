@@ -25,20 +25,16 @@ public class ViewCreditHistory extends TestBase {
         driver.get("https://www.cicod.com/login");
 
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
-
 
         utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
         utility.DoclickWhenReady("Customermanagmentbtn_XPATH", "Commana_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("CreditLimi_XPATH","creditlimit_TEXT",60);
         utility.DoAssertContainsWhenReady("AssertViewCreditLimi_XPATH","assertcredit_TEXT","creditpass_TEXT","creditfail_TEXT",60);
 
-        System.out.println("********************VIEW CREDIT HISTORY********************");
         driver.quit();
     }
 }

@@ -80,7 +80,6 @@ public class SuspendUnsuspendCustomer extends TestBase {
         Thread.sleep(2000);
         screenShot.ScreenShotFullPage();
 
-        System.out.println("********************SUSPEND UNSUSPEND CUSTOMER IS COMPLETED********************");
         driver.quit();
     }
 }

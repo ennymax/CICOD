@@ -41,12 +41,10 @@ public class VatExemptionforCustomer extends TestBase {
         int st = rn.nextInt(3) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
@@ -184,7 +182,6 @@ public class VatExemptionforCustomer extends TestBase {
         assertEquals("NGN188.84", driver.findElement(By.id("option-payment-amount-xs")).getText());
         test.log(Status.PASS, "Vat Exemption is confirmed");
 
-        System.out.println("********************VAT EXEMPTION FORM CUSTOMER********************");
         driver.quit();
     }
 }

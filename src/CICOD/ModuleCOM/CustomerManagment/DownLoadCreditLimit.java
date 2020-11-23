@@ -29,20 +29,16 @@ public class DownLoadCreditLimit extends TestBase {
 
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        API_Watch_Service api_watch_service_c = new API_Watch_Service();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CreditLimi_XPATH"))).click();
@@ -60,9 +56,7 @@ public class DownLoadCreditLimit extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("DownloadCreditHistory_XPATH"))).click();
-        test.log(Status.PASS, "Download Credit Limit was Successful");
 
-        System.out.println("********************DOWNLOAD CREDIT HISTORY********************");
         driver.quit();
     }
 }

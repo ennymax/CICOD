@@ -56,7 +56,6 @@ public class AddCreditlimt extends TestBase {
         utility.DowaitandAcceptAlerwhenReady(60);
         utility.DoAssertContainsWhenReady("AssertCreditlimitCreation_XPATH","Contcc_TEXT","AssertCreditlimitCreationpass_TEXT","AssertCreditlimitCreationfail_TEXT",60);
 
-        System.out.println("********************ADD CREDIT LIMIT********************");
         driver.quit();
     }
     

@@ -30,22 +30,17 @@ public class EnableFreeDelivery extends TestBase {
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
-        RavePay ravePay=new RavePay(driver);
-        SecureRandom rn = new SecureRandom();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         screenshot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH"))).click();
@@ -245,7 +240,6 @@ public class EnableFreeDelivery extends TestBase {
         Utility utility = new Utility(driver);
         utility.DoAssertEqualWhenReady("ASSenable_XPATH","NGN203.00",70);
 
-        System.out.println("********************Enable Free free Delivery********************");
         driver.quit();
     }
 }
