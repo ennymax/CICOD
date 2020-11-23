@@ -60,10 +60,9 @@ public class CreateUsers extends TestBase {
         utility.DoclickWhenReady("Newq11_XPATH", "u2_TEXT",50);
         excelUtil.DoclickWhenReady("Cll_XPATH",60);
         utility.DoclickWhenReady("CreateNewUser_XPATH", "Creta_TEXT",50);
-        utility.DoAssertContainsWhenReady("AssertNewUserCreation_XPATH","Su_TEXT" ,"Cont_TEXT", "DplPass_XPATH",30);
+        utility.DoAssertContainsWhenReady("AssertNewUserCreation_XPATH","Su_TEXT" ,"DplPass_XPATH", "DplFail_XPATH",30);
         utility.DoclickWhenReady("NewUserOKBTN_XPATH","Ok_TEXT",40);
 
-        //Thread.sleep(99999999);
         driver.quit();
     }
 }

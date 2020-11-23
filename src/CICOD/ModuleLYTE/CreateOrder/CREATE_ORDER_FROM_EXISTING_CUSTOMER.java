@@ -57,7 +57,6 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
         Thread.sleep(1000);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertProductAddedtoCustomerCert_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Product was Added to Customer Cart");
-
         } else {
             test.log(Status.FAIL, "Product wasnt added to customer Cart");
         }

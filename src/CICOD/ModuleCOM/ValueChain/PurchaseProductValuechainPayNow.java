@@ -95,7 +95,7 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         JavascriptExecutor jsel = (JavascriptExecutor) driver;
         jsel.executeScript("arguments[0].scrollIntoView();", ti11l);
 
-        Thread.sleep(2000);
+        Thread.sleep(200);
         WebElement ti112 = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
         JavascriptExecutor jse2 = (JavascriptExecutor) driver;
         jse2.executeScript("arguments[0].scrollIntoView();", ti112);

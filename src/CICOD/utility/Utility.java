@@ -405,7 +405,17 @@ public class Utility extends TestBase{
         Utility utility = new Utility(driver);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        if (driver.findElements(By.xpath(Utility.fetchLocator(locator))).size() != 0) {
+        if ( wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator))))).isDisplayed()) {
+            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmessage));
+        } else {
+            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmessage));
+        }
+    }
+
+    public void DoAssertXpathAbsentWhenReady(String locator, String DisplayPassmessage, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(1100);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        if (driver.findElements(By.xpath(Utility.fetchLocator(locator))).size() == 0) {
             test.log(Status.PASS, Utility.fetchLocator(DisplayPassmessage));
         } else {
             test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmessage));

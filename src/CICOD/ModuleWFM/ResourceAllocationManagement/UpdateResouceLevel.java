@@ -68,6 +68,5 @@ public class UpdateResouceLevel extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("ResourceLevelOKBTN_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************UPDATE RESOURCE LEVEL********************");
     }
 }

@@ -30,7 +30,6 @@ public class RequestValueChainUser extends TestBase {
         driver.get("https://www.cicod.com/login");
 
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        BrokenLink brokenLink = new BrokenLink(driver);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
@@ -99,7 +98,6 @@ public class RequestValueChainUser extends TestBase {
         } else {
             test.log(Status.FAIL, "Failed to send Request");
         }
-
 
         Thread.sleep(2000);
         driver.navigate().to("https://www.cicod.com/login");

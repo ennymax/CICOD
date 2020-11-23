@@ -25,19 +25,16 @@ public class VIEW_TRANSACTION_DETAILS extends TestBase {
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         driver.findElement(By.xpath(Utility.fetchLocator("Ucgbtn_XPATH"))).click();
-        test.log(Status.PASS, "UCG Successfully Opened");
 
+        Thread.sleep(9999);
         if (driver.findElements(By.xpath(Utility.fetchLocator("mjj_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Transaction Details was successfully Displayed");
         } else {
             test.log(Status.FAIL, "Transaction Details Failed to load");
         }
 
-        Thread.sleep(5000);
-        System.out.println("********************VIEW TRANSACTION DETAILS********************");
         driver.quit();
     }
 }

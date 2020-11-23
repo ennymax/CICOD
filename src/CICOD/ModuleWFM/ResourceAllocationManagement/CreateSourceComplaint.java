@@ -26,7 +26,6 @@ public class CreateSourceComplaint extends TestBase {
         driver.get("https://www.cicod.com/login");
 
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
         Randomstuff randomStuff = new Randomstuff();
 
         login.LoginPremium();

@@ -24,7 +24,6 @@ public class CreateResourceLevel extends TestBase {
         driver.get("https://www.cicod.com/login");
 
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
         Randomstuff randomStuff = new Randomstuff();
 
         login.LoginPremium();
@@ -55,6 +54,5 @@ public class CreateResourceLevel extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("ResourceLevelOKBTN_XPATH"))).click();
 
         driver.quit();
-        System.out.println("********************CREATE RESOURCE LEVEL********************");
     }
 }

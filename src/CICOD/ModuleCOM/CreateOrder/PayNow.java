@@ -23,8 +23,8 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class PayNow extends TestBase {
     @Test
-    public void Paynow() throws IOException, InterruptedException {
-        test = extent.createTest("Payment");
+    public void PayNow() throws IOException, InterruptedException {
+        test = extent.createTest("PAYNOW");
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.cicod.com/login");
