@@ -1,4 +1,19 @@
-
+<test name = "EKEDC D" parallel = "methods" thread-count = "2" >
+        <classes>
+            <class name="com.ModuleEKEDC.WhistleBlowing"/>
+            <class name="com.ModuleEKEDC.Edit_PhoneNumber_On_Profile_Page"/>
+            <class name="com.ModuleEKEDC.View_Profile"/>
+            <class name="com.ModuleEKEDC.View_Usage_PostPaid"/>
+            <class name="com.ModuleEKEDC.View_usage_PrePaid"/>
+            <class name="com.ModuleEKEDC.View_DashBoard_PostPaid"/>
+            <class name="com.ModuleEKEDC.View_DashBoard_PrePaid"/>
+            <class name="com.ModuleEKEDC.Search_Payment_History"/>
+            <class name="com.ModuleEKEDC.View_Payment_History"/>
+            <class name="com.ModuleEKEDC.Login_with_Registered_Email"/>
+            <class name="com.ModuleEKEDC.View_Service_Alert_District"/>
+            <class name="com.ModuleEKEDC.Pay_By_OrderID_User_Not_Logged_In_Card"/>
+        </classes>
+    </test>
          (invocationCount = 5)
 
          https://github.com/naveenanimation20/PageObjectModel.git
@@ -24,7 +39,6 @@
          test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
 
                	}
-
 
                 Thread.sleep(2000);
                 Actions builder = new Actions(driver);
