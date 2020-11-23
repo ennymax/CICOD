@@ -1,6 +1,9 @@
 
          (invocationCount = 5)
 
+         https://github.com/naveenanimation20/PageObjectModel.git
+         https://github.com/naveenanimation20/July2020SeleniumSessions.git
+
          https://www.youtube.com/playlist?list=PLoX0sUafNGbH9bmbIANk3D50FNUmuJIF3
          https://www.youtube.com/watch?v=qqmyAxfGV9c
          elezabeth
@@ -208,7 +211,7 @@ Crown@123
 DEV_DEV_DEV
 Domain: blakesshawn
 Email: blakesandshawn@yopmail.com
-Password: Crown@123
+Password:Crown@123
 
 Domain=emaxkemi
 Email:emaxkemi@yopmail.com

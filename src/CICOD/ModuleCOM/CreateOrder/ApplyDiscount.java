@@ -72,7 +72,7 @@ public class  ApplyDiscount extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SearchProductbtnq_XPATH"))).click();
 
         //Add button
-        Thread.sleep(2000);
+        Thread.sleep(200000000);
         driver.findElement(By.xpath(Utility.fetchLocator("AddBTN_XPATH"))).click();
 
         Thread.sleep(2000);

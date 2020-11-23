@@ -15,12 +15,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
 
-public class Suspend_UnSuspendBuyer extends TestBase {
+public class Suspend_UnSuspendBuyer extends TestBase{
 
     @Test
     public void SUSPEND_UNSUSPEND_BUYER() throws IOException, InterruptedException {

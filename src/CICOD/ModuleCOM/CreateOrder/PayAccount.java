@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
 
-public class PayAccount extends TestBase {
+public class PayAccount extends TestBase{
     @Test
     public void Pay_Account() throws IOException, InterruptedException {
         test = extent.createTest("PAY ACCOUNT");
@@ -30,7 +30,6 @@ public class PayAccount extends TestBase {
         driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
         Login login = new Login(driver);
         RavePay ravePay = new RavePay(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
         Utility utility = new Utility(driver);
 
         login.Login();
