@@ -17,11 +17,6 @@ public class FILTER_PRODUCT_SPECIFIC_SPEND extends TestBase {
     @Test
     public void FILTER_PRODUCT_SPECIFIC_SPEND() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("FILTER PRODUCT SPECIFIC SPEND");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
@@ -44,7 +39,5 @@ public class FILTER_PRODUCT_SPECIFIC_SPEND extends TestBase {
         utility.DoSendKeysWhenReadyEnter("ProductPoint_XPATH", "Productpoint_XPATH", "Productpoint_XPATH", 40);
         utility.DoAssertXpathPresentWhenReady("AssertPa_XPATH", "pppassmsg_TEXT", "ppailmsg_TEXT", 15);
         driver.findElement(By.xpath(Utility.fetchLocator("Productspend_XPATH"))).clear();
-
-        driver.quit();
     }
 }

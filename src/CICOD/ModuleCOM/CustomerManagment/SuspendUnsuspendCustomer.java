@@ -21,22 +21,15 @@ public class SuspendUnsuspendCustomer extends TestBase {
     @Test
     public void SUSPEND_UNSUSPEND_CUSTOMER() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND CUSTOMER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         ScreenShot screenShot = new ScreenShot(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
@@ -45,7 +38,6 @@ public class SuspendUnsuspendCustomer extends TestBase {
         JavascriptExecutor jsez = (JavascriptExecutor) driver;
         jsez.executeScript("arguments[0].scrollIntoView();", ti11z);
         ti11z.click();
-        test.log(Status.PASS, "Customer Management button fully Functional");
 
         Thread.sleep(2000);
         WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH")));
@@ -79,7 +71,5 @@ public class SuspendUnsuspendCustomer extends TestBase {
 
         Thread.sleep(2000);
         screenShot.ScreenShotFullPage();
-
-        driver.quit();
     }
 }

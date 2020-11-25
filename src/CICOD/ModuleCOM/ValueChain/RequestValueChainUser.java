@@ -25,15 +25,8 @@ public class RequestValueChainUser extends TestBase {
     @Test
     public void REQUEST_VALUE_CHAIN_USER() throws IOException, InterruptedException {
         test = extent.createTest("REQUEST VALUE CHAIN USER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(1000000) + 1;
 
         login.LoginDefault();
 
@@ -143,8 +136,5 @@ public class RequestValueChainUser extends TestBase {
         } else {
             test.log(Status.FAIL, "Decline Failed");
         }
-
-        driver.quit();
     }
-
 }

@@ -22,11 +22,6 @@ public class DELIVERY_RATE_CARD_EXIST_ALREADY extends TestBase {
     @Test
     public void DELIVERY_RATE_CARD_SETUP() throws IOException, InterruptedException {
         test = extent.createTest("DELIVERY RATE CARD SETUP");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
@@ -88,7 +83,5 @@ public class DELIVERY_RATE_CARD_EXIST_ALREADY extends TestBase {
         } else {
             test.log(Status.FAIL, "Delivery Rate Card wasn't setUp");
         }
-
-        driver.quit();
     }
 }

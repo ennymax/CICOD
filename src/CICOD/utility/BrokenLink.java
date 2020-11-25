@@ -2,10 +2,16 @@ package CICOD.utility;
 
 import CICOD.base.TestBase;
 import com.aventstack.extentreports.Status;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;

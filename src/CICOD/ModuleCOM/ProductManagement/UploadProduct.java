@@ -25,14 +25,8 @@ public class UploadProduct extends TestBase {
     @Test
     public void UPLOAD_PRODUCT() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("UPLOAD PRODUCT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
         FileUpload fileUpload = new FileUpload();
-        Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
 
@@ -70,7 +64,5 @@ public class UploadProduct extends TestBase {
         } else {
             test.log(Status.FAIL, "Product cant be Uploaded");
         }
-
-        driver.quit();
     }
 }

@@ -23,18 +23,12 @@ public class CREATEDELIVERYRATE extends TestBase {
     @Test
     public void DELIVERY_RATE_CARD_SETUP() throws IOException, InterruptedException {
         test = extent.createTest("CREATE DELIVERY RATE CARD SETUP");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int stt = rn.nextInt(34) + 1;
         int sttt = rn.nextInt(7) + 1;
         int mone = rn.nextInt(700000000) + 1;
-        Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
 
@@ -99,7 +93,5 @@ public class CREATEDELIVERYRATE extends TestBase {
         } else {
             test.log(Status.FAIL, "Delivery Rate Card wasn't Created");
         }
-
-        driver.quit();
     }
 }

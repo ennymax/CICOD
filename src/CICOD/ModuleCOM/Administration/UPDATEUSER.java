@@ -21,16 +21,10 @@ public class UPDATEUSER extends TestBase {
     @Test
     public void UPDATE_USER() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE USER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -79,7 +73,5 @@ public class UPDATEUSER extends TestBase {
         } else {
             test.log(Status.FAIL, "User Updated Successfully");
         }
-
-        driver.quit();
     }
 }

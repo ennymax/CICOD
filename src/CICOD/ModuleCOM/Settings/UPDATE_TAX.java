@@ -22,13 +22,6 @@ public class UPDATE_TAX extends TestBase {
     @Test
     public void UPDATE_Tax() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE TAX");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.Login();
@@ -71,7 +64,5 @@ public class UPDATE_TAX extends TestBase {
         } else {
             test.log(Status.FAIL, "Tax Want Updated");
         }
-
-        driver.quit();
     }
 }

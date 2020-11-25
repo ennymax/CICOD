@@ -16,11 +16,6 @@ public class Set_Spend_and_Assert_Minimum_Spend extends TestBase {
     @Test
     public void Set_Spend_and_Assert_Minimum_Spend() throws IOException, InterruptedException {
         test = extent.createTest("Set Minimum Spend and Assert Minimum Spend");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
@@ -72,7 +67,5 @@ public class Set_Spend_and_Assert_Minimum_Spend extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("InputMiniSp_XPATH"))).clear();
         driver.findElement(By.xpath(Utility.fetchLocator("InputMiniSp_XPATH"))).sendKeys("1");
         utility.DoscrolltoViewClickWhenReady("SaveMiniSpend_XPATH","Savem_TEXT",60);
-
-        driver.quit();
     }
 }

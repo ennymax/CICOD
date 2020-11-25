@@ -23,21 +23,14 @@ public class ADDUSER extends TestBase {
     @Test
     public void ADD_USER() throws IOException, InterruptedException {
         test = extent.createTest("ADD USER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
 
-        //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         screenShot.ScreenShotFullPage();

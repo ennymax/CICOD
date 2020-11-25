@@ -25,13 +25,7 @@ public class SelectDeliveryDetails extends TestBase {
     @Test
     public void SELECT_DELIVERY_DETAILS() throws IOException, InterruptedException {
         test = extent.createTest("SELECT DELIVERY DETAILS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        RavePay ravePay = new RavePay(driver);
         SecureRandom rn = new SecureRandom();
         int stt = rn.nextInt(34) + 1;
         int sttt = rn.nextInt(13) + 1;
@@ -119,6 +113,5 @@ public class SelectDeliveryDetails extends TestBase {
             test.log(Status.FAIL, "Delivery Details wasn't created");
         }
 
-        driver.quit();
     }
 }

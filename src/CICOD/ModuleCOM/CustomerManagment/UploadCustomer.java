@@ -22,11 +22,6 @@ public class UploadCustomer extends TestBase {
     @Test
     public void UPLOAD_CUSTOMER() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("UPLOAD CUSTOMER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         FileUpload fileUpload = new FileUpload();
@@ -60,8 +55,5 @@ public class UploadCustomer extends TestBase {
         jsq.executeScript("arguments[0].click();", elementq);
 
         fileUpload.UploadXLSX1();
-        test.log(Status.PASS, "Customer(s) uploaded successfully");
-
-        driver.quit();
     }
 }

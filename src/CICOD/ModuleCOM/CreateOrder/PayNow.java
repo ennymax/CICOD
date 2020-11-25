@@ -25,11 +25,6 @@ public class PayNow extends TestBase {
     @Test
     public void PayNow() throws IOException, InterruptedException {
         test = extent.createTest("PAYNOW");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
@@ -145,6 +140,5 @@ public class PayNow extends TestBase {
             test.log(Status.FAIL, "Pay with POS Failed");
         }
 
-        driver.quit();
     }
 }

@@ -20,21 +20,14 @@ public class SuspendUnsuspendReasonforRefund extends TestBase {
     @Test
     public void SUSPEND_UNSUSPEND_REASON_FOR_REFUND() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND REASON FOR REFUND");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -67,7 +60,5 @@ public class SuspendUnsuspendReasonforRefund extends TestBase {
 
         driver.switchTo().alert().accept();
         test.log(Status.PASS, "Reason for Refund was Unsuspended successfully");
-
-        driver.quit();
     }
 }

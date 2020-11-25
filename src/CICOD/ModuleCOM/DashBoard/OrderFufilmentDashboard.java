@@ -18,11 +18,6 @@ public class OrderFufilmentDashboard extends TestBase {
     @Test
     public void ORDER_FUFILLMENT() throws IOException, InterruptedException {
         test = extent.createTest("ORDER FULFILMENT DASHBOARD");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
@@ -80,8 +75,6 @@ public class OrderFufilmentDashboard extends TestBase {
         } else {
             test.log(Status.FAIL, "Top 10 Product is not displayed and Enabled");
         }
-
-        driver.quit();
     }
 }
 

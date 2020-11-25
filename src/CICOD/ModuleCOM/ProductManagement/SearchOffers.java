@@ -24,14 +24,7 @@ public class SearchOffers extends TestBase {
     @Test
     public void SEARCH_OFFERS() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("SEARCH OFFERS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        FileUpload fileUpload = new FileUpload();
-        Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
 
@@ -66,7 +59,5 @@ public class SearchOffers extends TestBase {
         } else {
             test.log(Status.FAIL, "Offer List not Displayed");
         }
-
-        driver.quit();
     }
 }

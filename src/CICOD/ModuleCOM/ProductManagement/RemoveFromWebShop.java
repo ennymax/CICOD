@@ -24,14 +24,7 @@ public class RemoveFromWebShop extends TestBase {
     @Test
     public void REMOVE_FROM_WEBSHOP() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("REMOVE FROM WEBSHOP");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        FileUpload fileUpload = new FileUpload();
-        Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
 
@@ -70,8 +63,5 @@ public class RemoveFromWebShop extends TestBase {
         } else {
             test.log(Status.FAIL, "Product Category Removed Created");
         }
-
-        driver.quit();
     }
-
 }

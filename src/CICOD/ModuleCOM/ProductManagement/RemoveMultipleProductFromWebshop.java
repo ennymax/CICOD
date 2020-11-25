@@ -23,14 +23,7 @@ RemoveMultipleProductFromWebshop extends TestBase {
     @Test
     public void REMOVE_MULTIPLE_PRODUCT_FROM_WEBSHO() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("REMOVE MULTIPLE PRODUCT FROM WEBSHO");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        FileUpload fileUpload = new FileUpload();
-        Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
 
@@ -52,7 +45,5 @@ RemoveMultipleProductFromWebshop extends TestBase {
         WebElement ele111 = driver.findElement(By.xpath(Utility.fetchLocator("ProductBulkAction_XPATH")));
         Select sel11 = new Select(ele111);
         sel11.selectByIndex(2);
-
-        driver.quit();
     }
 }

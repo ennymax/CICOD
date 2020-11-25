@@ -23,11 +23,6 @@ public class PartPayment extends TestBase {
     @Test
     public void PartPayment() throws IOException, InterruptedException {
         test = extent.createTest("PART PAYMENT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;
@@ -250,8 +245,5 @@ public class PartPayment extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayNowBTN_XPATH"))).click();
-
-        Thread.sleep(999999999);
-        driver.quit();
     }
 }

@@ -22,15 +22,8 @@ public class SaveOrder extends TestBase {
     @Test
     public void SAVE_ORDER() throws IOException, InterruptedException {
         test = extent.createTest("SAVE ORDER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        RavePay ravePay = new RavePay(driver);
         SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(3) + 1;
 
         login.Login();
 
@@ -88,6 +81,5 @@ public class SaveOrder extends TestBase {
             test.log(Status.FAIL, "Order cant be Saved");
         }
 
-        driver.quit();
     }
 }

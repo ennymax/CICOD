@@ -23,14 +23,8 @@ public class PayInVoice extends TestBase {
     @Test
     public void Pay_Invoice() throws IOException, InterruptedException {
         test = extent.createTest("Pay Invoice");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
-        RavePay ravePay = new RavePay(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;
 
@@ -114,6 +108,5 @@ public class PayInVoice extends TestBase {
         Thread.sleep(2000);
         login.AcceptAlert();
 
-        driver.quit();
     }
 }

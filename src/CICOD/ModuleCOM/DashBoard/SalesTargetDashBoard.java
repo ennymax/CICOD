@@ -22,21 +22,13 @@ public class SalesTargetDashBoard extends TestBase {
     @Test
     public void SALES_TARGET_DASHBOARD() throws IOException, InterruptedException {
         test = extent.createTest("SALES TARGET DASHBOARDS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SaleTarget_XPATH")))).click();
@@ -95,7 +87,5 @@ public class SalesTargetDashBoard extends TestBase {
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("FilterBTN_XPATH")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
-
-        driver.quit();
     }
 }

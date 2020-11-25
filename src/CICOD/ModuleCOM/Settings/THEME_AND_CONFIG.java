@@ -21,11 +21,6 @@ public class THEME_AND_CONFIG extends TestBase {
     @Test
     public void THEME_CONFIG() throws IOException, InterruptedException {
         test = extent.createTest("THEME AND CONFIG");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.Login();
@@ -62,7 +57,5 @@ public class THEME_AND_CONFIG extends TestBase {
         } else {
             test.log(Status.FAIL, "Theme cant be updated");
         }
-
-        driver.quit();
     }
 }

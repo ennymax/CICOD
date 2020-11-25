@@ -22,11 +22,6 @@ public class EnableFreeDelivery extends TestBase {
     @Test
     public void Enable_free_Delivery() throws IOException, InterruptedException {
         test = extent.createTest("Enable free Delivery");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
@@ -239,7 +234,5 @@ public class EnableFreeDelivery extends TestBase {
         Thread.sleep(2000);
         Utility utility = new Utility(driver);
         utility.DoAssertEqualWhenReady("ASSenable_XPATH","NGN203.00",70);
-
-        driver.quit();
     }
 }

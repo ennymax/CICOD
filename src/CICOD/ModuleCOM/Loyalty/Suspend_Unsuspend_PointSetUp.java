@@ -21,13 +21,8 @@ public class Suspend_Unsuspend_PointSetUp extends TestBase {
     @Test
     public void USUSPEND_UNSUSPEND_POINT_SETUP() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND POINT SETUP");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(50) + 1;
 
         login.Login();
 
@@ -74,7 +69,5 @@ public class Suspend_Unsuspend_PointSetUp extends TestBase {
         } else {
             test.log(Status.FAIL, "Unsuspend Point SetUp Failed");
         }
-
-        driver.quit();
     }
 }

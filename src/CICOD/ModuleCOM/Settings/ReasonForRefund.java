@@ -22,14 +22,7 @@ public class ReasonForRefund extends TestBase {
     @Test
     public void REASON_FOR_REFUND() throws IOException, InterruptedException {
         test = extent.createTest("REASON FOR REFUND");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
-        Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
 
@@ -59,7 +52,5 @@ public class ReasonForRefund extends TestBase {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
         test.log(Status.PASS, "Reason for refund was created successfully");
-
-        driver.quit();
     }
 }

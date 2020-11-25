@@ -22,11 +22,6 @@ public class UpdateDeliveryRate  extends TestBase {
     @Test
     public void UPDATE_DELIVERY_RATE() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE DELIVERY RATE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
@@ -98,7 +93,5 @@ public class UpdateDeliveryRate  extends TestBase {
         } else {
             test.log(Status.FAIL, "Delivery Rate Card wasn't Updated");
         }
-
-        driver.quit();
     }
 }

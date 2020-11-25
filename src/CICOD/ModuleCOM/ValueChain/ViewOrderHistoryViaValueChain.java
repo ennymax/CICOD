@@ -25,16 +25,7 @@ public class ViewOrderHistoryViaValueChain extends TestBase {
     @Test
     public void VIEW_OREDER_HISTORY() throws IOException, InterruptedException {
         test = extent.createTest("VIEW ORDER HISTORY VALUE CHAIN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(1000000) + 1;
 
         login.Login();
 
@@ -69,7 +60,5 @@ public class ViewOrderHistoryViaValueChain extends TestBase {
         } else {
             test.log(Status.FAIL, "Failed to view Order History Page");
         }
-
-        driver.quit();
     }
 }

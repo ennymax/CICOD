@@ -19,17 +19,10 @@ public class AddCreditlimt extends TestBase {
     @Test
     public void ADD_CREDIT_LIMIT() throws IOException, InterruptedException {
         test = extent.createTest("ADD CREDIT LIMIT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        ScreenShot screenshot = new ScreenShot(driver);
         Utility utility = new Utility(driver);
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
         utility.DoclickWhenReady("Customermanagmentbtn_XPATH", "Commana_TEXT",60);
@@ -56,7 +49,5 @@ public class AddCreditlimt extends TestBase {
         utility.DowaitandAcceptAlerwhenReady(60);
         utility.DoAssertContainsWhenReady("AssertCreditlimitCreation_XPATH","Contcc_TEXT","AssertCreditlimitCreationpass_TEXT","AssertCreditlimitCreationfail_TEXT",60);
 
-        driver.quit();
     }
-    
 }

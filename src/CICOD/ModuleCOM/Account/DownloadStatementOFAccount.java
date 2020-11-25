@@ -21,24 +21,14 @@ public class DownloadStatementOFAccount extends TestBase {
     @Test
     public void DOWNLOAD_STATEMENT_OF_ACCOUNT() throws IOException, InterruptedException {
         test = extent.createTest("DOWNLOAD STATEMENT OF ACCOUNT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        API_Watch_Service api_watch_service = new API_Watch_Service();
         ScreenShot screenShot = new ScreenShot(driver);
 
         login.Login();
 
-        //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
-        //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
         test.log(Status.PASS, "Customer Management button fully Functionsl");
@@ -105,7 +95,5 @@ public class DownloadStatementOFAccount extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("DownloadAsSpreadSheet_XPATH"))).click();
         test.log(Status.PASS, "Download as SpreadSheet was Successful");
-
-        driver.quit();
     }
 }

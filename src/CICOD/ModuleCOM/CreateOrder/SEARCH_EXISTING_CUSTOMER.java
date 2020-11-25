@@ -19,11 +19,6 @@ public class SEARCH_EXISTING_CUSTOMER extends TestBase {
     @Test
     public void SEARCH_EXISTING_customer() throws IOException, InterruptedException {
         test = extent.createTest("SEARCH EXISTING CUSTOMER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
@@ -53,6 +48,5 @@ public class SEARCH_EXISTING_CUSTOMER extends TestBase {
             test.log(Status.FAIL, "Search Failed");
         }
 
-        driver.quit();
     }
 }

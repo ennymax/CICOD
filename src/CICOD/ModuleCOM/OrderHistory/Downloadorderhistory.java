@@ -19,10 +19,6 @@ public class Downloadorderhistory extends TestBase {
     @Test
     public void DOWNLOAD_ORDER_HISTORY() throws IOException, InterruptedException {
         test = extent.createTest("DOWNLOAD ORDER HISTORY");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

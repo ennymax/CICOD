@@ -22,22 +22,14 @@ public class VarianceReportDashboard extends TestBase {
     @Test
     public void View_Variance_report_DashBoard() throws IOException, InterruptedException {
         test = extent.createTest("View Variance report DashBoard");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        BrokenLink brokenLink = new BrokenLink(driver);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("VarianceBTN_XPATH")))).click();
@@ -83,7 +75,5 @@ public class VarianceReportDashboard extends TestBase {
         } else {
             test.log(Status.FAIL, "Total Amount in Q3 is not Displayed and enabled");
         }
-
-        driver.quit();
     }
 }

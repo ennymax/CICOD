@@ -25,14 +25,7 @@ public class AddMultipleProductToWebShop extends TestBase {
     @Test
     public void ADD_MULTIPLE_PRODUCT_TO_WEBSHOP() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("ADD MULTIPLE PRODUCT TO WEBSHOP");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        FileUpload fileUpload = new FileUpload();
-        Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
 
@@ -61,8 +54,6 @@ public class AddMultipleProductToWebShop extends TestBase {
         sel11.selectByIndex(1);
 
         Thread.sleep(2000);
-
-        driver.quit();
     }
 
 }

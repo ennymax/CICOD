@@ -27,13 +27,7 @@ public class ContinueSavedOrder extends TestBase {
     @Test
     public void CONTINUE_SAVE_ORDER() throws IOException, InterruptedException {
         test = extent.createTest("CONTINUE SAVED ORDER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        RavePay ravePay = new RavePay(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;
         Utility utility = new Utility(driver);
@@ -128,7 +122,5 @@ public class ContinueSavedOrder extends TestBase {
         } else {
             test.log(Status.FAIL, "Pay with POS Failed");
         }
-
-        driver.quit();
     }
 }

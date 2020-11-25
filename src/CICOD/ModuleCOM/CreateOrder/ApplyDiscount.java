@@ -25,11 +25,6 @@ public class  ApplyDiscount extends TestBase {
     @Test
     public void APPLY_DISCOUNT() throws IOException, InterruptedException {
         test = extent.createTest("APPLY DISCOUNT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         RavePay ravePay = new RavePay(driver);
@@ -72,7 +67,7 @@ public class  ApplyDiscount extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SearchProductbtnq_XPATH"))).click();
 
         //Add button
-        Thread.sleep(200000000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AddBTN_XPATH"))).click();
 
         Thread.sleep(2000);
@@ -118,7 +113,5 @@ public class  ApplyDiscount extends TestBase {
         } else {
             test.log(Status.FAIL, "Payment Portal down");
         }
-
-        driver.quit();
     }
 }

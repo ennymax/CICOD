@@ -26,14 +26,7 @@ public class CreateOfferSettings extends TestBase {
     @Test
     public void CREATE_OFFER_SETTINGS() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("CREATE OFFER SETTINGS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        FileUpload fileUpload = new FileUpload();
-        Randomstuff randomstuff = new Randomstuff();
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(9) + 1;
 
@@ -83,6 +76,5 @@ public class CreateOfferSettings extends TestBase {
             test.log(Status.FAIL, "Offer settings not Created");
         }
 
-        driver.quit();
     }
 }

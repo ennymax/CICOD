@@ -20,19 +20,9 @@ import static org.testng.AssertJUnit.assertEquals;
 public class PurchaseProductValueChainPayInvoice extends TestBase {
     @Test
     public void PURCHASE_PRODUCT_VIA_VALUE_CHAIN_PAYINVOICE() throws IOException, InterruptedException {
-
         test = extent.createTest("PURCHASE PRODUCT VIA VALUE CHAIN PAY INVOICE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(1000000) + 1;
-        RavePay ravePay = new RavePay(driver);
 
         login.LoginDefault();
 
@@ -107,7 +97,5 @@ public class PurchaseProductValueChainPayInvoice extends TestBase {
         Thread.sleep(2000);
         assertEquals("08155341117", driver.findElement(By.xpath(Utility.fetchLocator("ValAsseetPayinv_XPATH"))).getText());
         test.log(Status.PASS, "PayInVoice was Successful");
-
-        driver.quit();
     }
 }

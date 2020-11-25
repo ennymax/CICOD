@@ -24,19 +24,11 @@ public class ADD_PRODUCT extends TestBase {
     @Test
     public void ADD_PRODUCTs() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("ADD PRODUCT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
         SecureRandom rn = new SecureRandom();
-        Randomstuff randomstuf = new Randomstuff();
         int st = rn.nextInt(9) + 1;
-        RavePay ravePay=new RavePay(driver);
         int a = rn.nextInt(60000) + 1;
-        int aa = rn.nextInt(60000) + 1;
         FileUpload fileUpload = new FileUpload();
 
         login.Login();
@@ -105,7 +97,5 @@ public class ADD_PRODUCT extends TestBase {
         } else {
             test.log(Status.FAIL, "Add Product Failed");
         }
-
-        driver.quit();
     }
 }

@@ -19,12 +19,6 @@ public class VIEW_ORDER_HISTORY extends TestBase {
     @Test
     public void VIEW_ORDER_history() throws IOException, InterruptedException {
         test = extent.createTest("VIEW ORDER HISTORY");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        BrokenLink brokenLink = new BrokenLink(driver);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
@@ -46,8 +40,5 @@ public class VIEW_ORDER_HISTORY extends TestBase {
         } else {
             test.log(Status.FAIL, "The Order history cant be viewed");
         }
-
-        driver.quit();
     }
-
 }

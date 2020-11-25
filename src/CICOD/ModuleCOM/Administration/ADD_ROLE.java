@@ -19,11 +19,6 @@ public class ADD_ROLE extends TestBase {
     @Test
     public void Add_Role() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("ADD ROLE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
         ScreenShot screenShot = new ScreenShot(driver);
@@ -31,7 +26,6 @@ public class ADD_ROLE extends TestBase {
 
         login.Login();
 
-        //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
 
@@ -62,6 +56,5 @@ public class ADD_ROLE extends TestBase {
             test.log(Status.FAIL, "Fail to Add Role");
         }
 
-        driver.quit();
     }
 }

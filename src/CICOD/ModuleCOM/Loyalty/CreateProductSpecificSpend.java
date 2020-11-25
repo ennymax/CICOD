@@ -24,10 +24,6 @@ public class CreateProductSpecificSpend extends TestBase {
     @Test
     public void CREATE_PRODUCT_SPECIFIC_SPEND() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("CREATE PRODUCT SPECIFIC SPEND");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(50) + 1;
@@ -81,7 +77,5 @@ public class CreateProductSpecificSpend extends TestBase {
 
         System.out.println("No Alert When Creating Product Specific Spend");
         Thread.sleep(2000);
-
-        driver.quit();
     }
 }

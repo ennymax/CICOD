@@ -15,11 +15,6 @@ public class Set_Minimum_Order_and_Assert_Minimum_Order extends TestBase {
     @Test
     public void Set_Minimum_Order_and_Assert_Minimum_Order() throws IOException, InterruptedException {
         test = extent.createTest("Set Minimum Order and Assert Minimum Order");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
@@ -67,7 +62,5 @@ public class Set_Minimum_Order_and_Assert_Minimum_Order extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("enterminiOre_XPATH"))).clear();
         driver.findElement(By.xpath(Utility.fetchLocator("enterminiOre_XPATH"))).sendKeys("1");
         utility.DoscrolltoViewClickWhenReady("saveminiOrder_XPATH","SaveMiniOrder_TEXT",60);
-
-        driver.quit();
     }
 }

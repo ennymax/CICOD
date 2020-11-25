@@ -27,14 +27,8 @@ public class CarouselBanner extends TestBase {
     @Test
     public void CAROUSEL_BANNER() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("CAROUSEL BANNER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         FileUpload fileUpload = new FileUpload();
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
 
         login.Login();
 
@@ -92,7 +86,5 @@ public class CarouselBanner extends TestBase {
         Thread.sleep(2000);
         assertEquals("×\n" + "Frontend Banner Carousel created", driver.findElement(By.xpath(Utility.fetchLocator("AssertBanner_XPATH"))).getText());
         test.log(Status.PASS, "Frontend Banner Carousel created");
-
-        driver.quit();
     }
 }

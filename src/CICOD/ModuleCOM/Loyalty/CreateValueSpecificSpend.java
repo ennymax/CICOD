@@ -22,16 +22,10 @@ public class CreateValueSpecificSpend extends TestBase {
     @Test
     public void CREATE_VALUE_SPECIFIC_SPEND() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("CREATE VALUE SPECIFIC SPEND");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(50) + 1;
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -63,7 +57,5 @@ public class CreateValueSpecificSpend extends TestBase {
 
         Thread.sleep(4000);
         System.out.println("No Alert When Creating Value Specific Spend");
-
-        driver.quit();
     }
 }

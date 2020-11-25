@@ -21,10 +21,6 @@ public class UpdatePointSetUp extends TestBase {
     @Test
     public void UPDATE_POINT_SETUP() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE POINT SETUP");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(50) + 1;
@@ -67,7 +63,5 @@ public class UpdatePointSetUp extends TestBase {
         } else {
             test.log(Status.FAIL, "Update Point SetUp Failed");
         }
-
-        driver.quit();
     }
 }

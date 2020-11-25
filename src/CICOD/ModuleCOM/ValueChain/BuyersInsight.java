@@ -23,14 +23,7 @@ public class BuyersInsight extends TestBase {
     @Test
     public void BUYERS_INSIGHT() throws IOException, InterruptedException {
         test = extent.createTest("BUYERS INSIGHT VALUE CHAIN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(1000000) + 1;
 
         login.Login();
 
@@ -136,7 +129,5 @@ public class BuyersInsight extends TestBase {
         } else {
             test.log(Status.FAIL, "Product Update Failed");
         }
-
-        driver.quit();
     }
 }

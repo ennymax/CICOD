@@ -23,14 +23,7 @@ public class UpdateReasonForRefund extends TestBase {
     @Test
     public void UPDATE_REASON_FOR_REFUND() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE REASON FOR REFUND");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
-        Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
 
@@ -70,7 +63,5 @@ public class UpdateReasonForRefund extends TestBase {
         Thread.sleep(2000);
         assertEquals("×\n" + "Reason updated successfully", driver.findElement(By.xpath(Utility.fetchLocator("as_XPATH"))).getText());
         test.log(Status.PASS, "Reason for refund was Updated successfully");
-
-        driver.quit();
     }
 }

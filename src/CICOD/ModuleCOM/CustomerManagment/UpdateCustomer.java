@@ -24,18 +24,12 @@ public class UpdateCustomer extends TestBase {
     @Test
     public void UPDATE_CUSTOMER() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE CUSTOMER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
         SecureRandom rn = new SecureRandom();
         int a = rn.nextInt(60000) + 1;
         int aa = rn.nextInt(60000) + 1;
-        int tom = rn.nextInt(8) + 1;
         int tomm = rn.nextInt(30) + 1;
         int tommm = rn.nextInt(10) + 1;
 
@@ -124,8 +118,5 @@ public class UpdateCustomer extends TestBase {
         } else {
             test.log(Status.FAIL, "Customer Update failed");
         }
-
-        driver.quit();
     }
-
 }

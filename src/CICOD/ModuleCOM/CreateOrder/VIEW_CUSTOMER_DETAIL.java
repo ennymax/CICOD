@@ -16,11 +16,6 @@ public class VIEW_CUSTOMER_DETAIL extends TestBase {
     @Test
     public void VIEW_CUSTOMER_DETAILS() throws IOException, InterruptedException {
         test = extent.createTest("VIEW CUSTOMER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
@@ -37,7 +32,5 @@ public class VIEW_CUSTOMER_DETAIL extends TestBase {
         utility.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", "Cus_TEXT",40);
         utility.DoAssertXpathPresentWhenReady("assertdisplayeddetails_XPATH","Cus_TEXT","DisMessag_TEXT", 20);
         screenshot.ScreenShotWebElement("assertdisplayeddetails_XPATH", 30);
-
-        driver.quit();
     }
 }

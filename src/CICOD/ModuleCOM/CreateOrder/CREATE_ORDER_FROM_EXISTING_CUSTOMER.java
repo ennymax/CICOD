@@ -24,11 +24,6 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
     @Test
     public void CREATE_ORDER_FROM_EXISTING_CUSTOMERS() throws IOException, InterruptedException {
         test = extent.createTest("CREATE ORDER FROM EXISTING CUSTOMER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         RavePay ravePay = new RavePay(driver);
@@ -37,7 +32,6 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
 
         login.Login();
 
-        //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
 
@@ -97,6 +91,5 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
             test.log(Status.FAIL, "Payment Portal down");
         }
 
-        driver.quit();
     }
 }

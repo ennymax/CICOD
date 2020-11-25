@@ -20,11 +20,6 @@ public class Suspend_UnsuspendCustomerFromCustomerManagementPage extends TestBas
     @Test
     public void SUSPEND_UNSUSPEND_CUSTOMER_FROM_CUSTOMER_MANAGEMENT_PAGE() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND CUSTOMER FROM CUSTOMER MANAGEMENT PAGE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
@@ -75,7 +70,5 @@ public class Suspend_UnsuspendCustomerFromCustomerManagementPage extends TestBas
         jsqll.executeScript("arguments[0].click();", elementqll);
 
         login.AcceptAlert();
-
-        driver.quit();
     }
 }

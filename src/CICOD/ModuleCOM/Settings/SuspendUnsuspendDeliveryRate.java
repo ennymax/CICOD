@@ -22,14 +22,7 @@ public class SuspendUnsuspendDeliveryRate extends TestBase {
     @Test
     public void DELIVERY_RATE_CARD_SETUP() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND DELIVERY RATE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        Randomstuff randomstuff = new Randomstuff();
-        ScreenShot screenShot = new ScreenShot(driver);
 
         login.Login();
 
@@ -71,7 +64,5 @@ public class SuspendUnsuspendDeliveryRate extends TestBase {
 
         driver.switchTo().alert().accept();
         test.log(Status.PASS, "Unsuspend Delivery Rate Successful");
-
-        driver.quit();
     }
 }

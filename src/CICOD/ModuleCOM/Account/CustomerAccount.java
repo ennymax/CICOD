@@ -21,20 +21,12 @@ public class CustomerAccount extends TestBase {
     @Test
     public void CUSTOMER_ACCOUNT() throws IOException, InterruptedException {
         test = extent.createTest("CUSTOMER ACCOUNT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.Login();
 
-        //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("AccountBTN_XPATH")))).click();
@@ -55,6 +47,5 @@ public class CustomerAccount extends TestBase {
         } else {
             test.log(Status.FAIL, "Value of Account in Credit is not displayed and enabled");
         }
-        driver.quit();
     }
 }

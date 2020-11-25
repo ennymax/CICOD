@@ -20,11 +20,6 @@ public class ViewCreditHistory extends TestBase {
     @Test
     public void VIEW_CREDIT_HISTORY() throws IOException, InterruptedException {
         test = extent.createTest("VIEW CREDIT HISTORY");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
@@ -34,7 +29,5 @@ public class ViewCreditHistory extends TestBase {
         utility.DoclickWhenReady("Customermanagmentbtn_XPATH", "Commana_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("CreditLimi_XPATH","creditlimit_TEXT",60);
         utility.DoAssertContainsWhenReady("AssertViewCreditLimi_XPATH","assertcredit_TEXT","creditpass_TEXT","creditfail_TEXT",60);
-
-        driver.quit();
     }
 }

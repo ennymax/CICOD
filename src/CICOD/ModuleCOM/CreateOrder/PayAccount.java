@@ -23,11 +23,6 @@ public class PayAccount extends TestBase{
     @Test
     public void Pay_Account() throws IOException, InterruptedException {
         test = extent.createTest("PAY ACCOUNT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
         Login login = new Login(driver);
         RavePay ravePay = new RavePay(driver);
         Utility utility = new Utility(driver);

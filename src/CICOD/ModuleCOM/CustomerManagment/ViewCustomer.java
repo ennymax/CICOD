@@ -20,16 +20,10 @@ public class ViewCustomer extends TestBase {
     @Test
     public void VIEW_CUSTOMER() throws IOException, InterruptedException {
         test = extent.createTest("VIEW CUSTOMER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
@@ -62,7 +56,5 @@ public class ViewCustomer extends TestBase {
         } else {
             test.log(Status.FAIL, "Customer cant be viewed");
         }
-
-        driver.quit();
     }
 }

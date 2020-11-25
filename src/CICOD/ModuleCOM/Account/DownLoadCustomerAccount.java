@@ -20,19 +20,12 @@ public class DownLoadCustomerAccount extends TestBase {
     @Test
     public void DOWNLOAD_CUSTOMER_ACCOUNT() throws IOException, InterruptedException {
         test = extent.createTest("DOWNLOAD CUSTOMER ACCOUNT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
         login.Login();
 
-        //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("AccountBTN_XPATH")))).click();
@@ -60,6 +53,5 @@ public class DownLoadCustomerAccount extends TestBase {
         jse.executeScript("arguments[0].scrollIntoView();", ti11);
         ti11.click();
 
-        driver.quit();
     }
 }

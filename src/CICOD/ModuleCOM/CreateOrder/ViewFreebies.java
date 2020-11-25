@@ -26,13 +26,7 @@ public class ViewFreebies extends TestBase {
     @Test
     public void VIEW_FREEBIES() throws IOException, InterruptedException {
         test = extent.createTest("VIEW FREEBIES");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        RavePay ravePay = new RavePay(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;
         Utility utility = new Utility(driver);
@@ -135,6 +129,5 @@ public class ViewFreebies extends TestBase {
         utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT",40);
         utility.DowaitandAcceptAlerwhenReady(60);
         utility.DoAssertContainsWhenReady("AssertOrdeIDgenerated_XPATH", "OrDerID_TEXT","OrDerID_TEXT", "OrderIDPass_TEXT",30);
-        driver.quit();
     }
 }

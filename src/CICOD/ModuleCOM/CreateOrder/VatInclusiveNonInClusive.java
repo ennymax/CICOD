@@ -23,13 +23,7 @@ public class VatInclusiveNonInClusive extends TestBase {
     @Test
     public void VATINCLUSIVE() throws IOException, InterruptedException {
         test = extent.createTest("VAT INCLUSIVE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        RavePay ravePay=new RavePay(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;
 
@@ -101,6 +95,5 @@ public class VatInclusiveNonInClusive extends TestBase {
             test.log(Status.FAIL, "VAT applicable");
         }
 
-        driver.quit();
     }
 }

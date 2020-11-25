@@ -20,10 +20,6 @@ public class SUSPEND_UNSUSPEND_TAX extends TestBase {
     @Test
     public void SUSPEND_UNSUSPEND_TAX() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND TAX");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.Login();
@@ -80,7 +76,5 @@ public class SUSPEND_UNSUSPEND_TAX extends TestBase {
         } else {
             test.log(Status.FAIL, "Tax Unsuspension Failed");
         }
-
-        driver.quit();
     }
 }

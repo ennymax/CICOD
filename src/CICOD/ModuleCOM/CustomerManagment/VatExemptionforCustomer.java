@@ -23,15 +23,9 @@ public class VatExemptionforCustomer extends TestBase {
     @Test
     public void VatExemptionforCustomer() throws IOException, InterruptedException {
         test = extent.createTest("VAT EXEMPTION FORM CUSTOMER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
-        RavePay ravePay=new RavePay(driver);
         SecureRandom rn = new SecureRandom();
         int a = rn.nextInt(60000) + 1;
         int aa = rn.nextInt(60000) + 1;
@@ -181,7 +175,5 @@ public class VatExemptionforCustomer extends TestBase {
         System.out.println(driver.findElement(By.id("option-payment-amount-xs")).getText());
         assertEquals("NGN188.84", driver.findElement(By.id("option-payment-amount-xs")).getText());
         test.log(Status.PASS, "Vat Exemption is confirmed");
-
-        driver.quit();
     }
 }

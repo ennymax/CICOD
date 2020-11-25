@@ -24,16 +24,7 @@ public class Suspend_UnSuspendBuyer extends TestBase{
     @Test
     public void SUSPEND_UNSUSPEND_BUYER() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND BUYER VALUE CHAIN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(1000000) + 1;
         Utility utility = new Utility(driver);
 
         login.Login();
@@ -146,7 +137,5 @@ public class Suspend_UnSuspendBuyer extends TestBase{
         driver.findElement(By.xpath(Utility.fetchLocator("ValuechainBTN_XPATH"))).click();
 
         driver.findElement(By.xpath(Utility.fetchLocator("Suppliers_XPATH"))).click();
-
-        driver.quit();
     }
 }

@@ -26,11 +26,6 @@ public class Lodgment extends TestBase {
     @Test
     public void Update_lODGMENT() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE LODGMENT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
@@ -125,7 +120,5 @@ public class Lodgment extends TestBase {
         } else {
             test.log(Status.FAIL, "Lodgement Failed");
         }
-
-        driver.quit();
     }
 }

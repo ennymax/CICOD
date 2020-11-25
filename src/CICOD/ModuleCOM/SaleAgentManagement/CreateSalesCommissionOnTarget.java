@@ -24,13 +24,8 @@ public class CreateSalesCommissionOnTarget extends TestBase {
     @Test
     public void CREATE_SALE_COMMISSION_ON_TARGET() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("CREATE SALE COMMISSION ON TARGET");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(3) + 1;
         Randomstuff randomstuff = new Randomstuff();
 
         login.Login();
@@ -74,7 +69,5 @@ public class CreateSalesCommissionOnTarget extends TestBase {
         } else {
             test.log(Status.FAIL, "Create Sales Commission On Target Failed");
         }
-
-        driver.quit();
     }
 }

@@ -26,17 +26,8 @@ public class UpdateOfferSettings extends TestBase {
     @Test
     public void Update_Offer_settings() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("Update Offer settings");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        FileUpload fileUpload = new FileUpload();
-        Randomstuff randomstuff = new Randomstuff();
         SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(9) + 1;
-
         login.Login();
 
         //Com
@@ -63,8 +54,5 @@ public class UpdateOfferSettings extends TestBase {
 
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SaveOffer_XPATH")))).click();
-        test.log(Status.PASS, "Offer settings Update");
-
-        driver.quit();
     }
 }

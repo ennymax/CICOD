@@ -26,27 +26,21 @@ public class DOWNLOAD_User extends TestBase {
 
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        API_Watch_Service api_watch_service = new API_Watch_Service();
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Adminbtn_XPATH"))).click();
-        test.log(Status.PASS, "Administration button Fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("UserManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Administration button Fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("UserDownload_XPATH"))).click();
-        test.log(Status.PASS, "Download User was Successful");
 
         driver.quit();
     }

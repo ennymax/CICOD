@@ -21,25 +21,17 @@ public class ViewStatementOfAccount extends TestBase {
     @Test
     public void VIEW_STATEMENTOFACCOUNT() throws IOException, InterruptedException {
         test = extent.createTest("VIEW STATEMENT OF ACCOUNT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.Login();
 
-        //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CUSTOMER MANAGEMENT BUTTON
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functionsl");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH"))).click();
@@ -106,7 +98,5 @@ public class ViewStatementOfAccount extends TestBase {
         } else {
             test.log(Status.FAIL, "Send Statement of account not fully Functional");
         }
-
-        driver.quit();
     }
 }

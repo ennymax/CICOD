@@ -23,16 +23,8 @@ public class Suspend_UnsuspendOffers extends TestBase {
     @Test
     public void Suspend_Unsuspend_Offers_Settings() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("Suspend and Unsuspend Offer SETTINGS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        FileUpload fileUpload = new FileUpload();
-        Randomstuff randomstuff = new Randomstuff();
         SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(9) + 1;
 
         login.Login();
 
@@ -90,6 +82,5 @@ public class Suspend_UnsuspendOffers extends TestBase {
             test.log(Status.FAIL, "Unsuspension failed");
         }
 
-        driver.quit();
     }
 }

@@ -26,13 +26,7 @@ public class UPDATE_ROLE extends TestBase {
     @Test
     public void UPDATE_ROLE() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("UPDATE ROLE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
         ClickAll clickAll = new ClickAll(driver);
 
         login.Loginlupin();
@@ -68,6 +62,5 @@ public class UPDATE_ROLE extends TestBase {
             test.log(Status.FAIL, "Role cant be update");
         }
 
-        driver.quit();
     }
 }

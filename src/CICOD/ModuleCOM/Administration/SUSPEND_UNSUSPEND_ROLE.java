@@ -21,30 +21,21 @@ public class SUSPEND_UNSUSPEND_ROLE extends TestBase {
     @Test
     public void Suspend_Unsuspend_Role() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND ROLE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         screenShot.ScreenShotFullPage();
         driver.findElement(By.xpath(Utility.fetchLocator("Adminbtn_XPATH"))).click();
-        test.log(Status.PASS, "Administration button Fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Rolemanagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Role button fully Functional ");
 
         WebElement t = driver.findElement(By.xpath(Utility.fetchLocator("SS_XPATH")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", t);

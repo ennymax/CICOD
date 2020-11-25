@@ -22,11 +22,6 @@ public class SUSPEND_UNSUSPEND_PRODUCTS extends TestBase {
     @Test
     public void SUSPEND_UNSUSPEND_PRODUCT() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND PRODUCT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.Login();
@@ -80,7 +75,5 @@ public class SUSPEND_UNSUSPEND_PRODUCTS extends TestBase {
         Thread.sleep(2000);
         assertEquals("×\n" + "Product unsuspended", driver.findElement(By.xpath(Utility.fetchLocator("Assertsusp_XPATH"))).getText());
         test.log(Status.PASS, "Product Unsuspended successfully");
-
-        driver.quit();
     }
 }

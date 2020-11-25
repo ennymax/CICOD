@@ -19,11 +19,6 @@ public class FILTER_DISCOUNT_PAGE extends TestBase {
     @Test
     public void FILTER_DISCOUNT_PAGE() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("FILTER DISCOUNT PAGE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
@@ -70,7 +65,5 @@ public class FILTER_DISCOUNT_PAGE extends TestBase {
         utility.DoSendKeysWhenReadyEnter("Fcreateddate_XPATH", "Fcreateddate_TEXT", "Fcreateddate_TEXT", 4);
         utility.DoAssertXpathPresentWhenReady("AssertRegionagegePresent_XPATH", "Fcreateddatepassmsg_TEXT", "FcreateddateFailmsg_TEXT", 5);
         driver.findElement(By.xpath(Utility.fetchLocator("Fcreateddate_XPATH"))).clear();
-
-        driver.quit();
     }
 }

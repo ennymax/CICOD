@@ -24,10 +24,6 @@ public class CreateSaleTarget extends TestBase {
     @Test
     public void CREATE_VALUE_SPECIFIC_SPEND() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("CREATE VALUE SPECIFIC SPEND");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;
@@ -79,8 +75,5 @@ public class CreateSaleTarget extends TestBase {
         } else {
             test.log(Status.FAIL, "Failed to create Sales Target");
         }
-
-
-        driver.quit();
     }
 }

@@ -20,11 +20,6 @@ public class UPDATE_PRODUCT extends TestBase {
     @Test
     public void UPDATE_PRODUCT() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE PRODUCT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.Login();
@@ -58,7 +53,5 @@ public class UPDATE_PRODUCT extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("isave_XPATH"))).click();
-
-        driver.quit();
     }
 }

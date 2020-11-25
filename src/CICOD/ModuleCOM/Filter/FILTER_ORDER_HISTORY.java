@@ -20,19 +20,10 @@ public class FILTER_ORDER_HISTORY extends TestBase {
     @Test
     public void FILTER_ORDER_HISTORY() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("FILTER ORDER HISTORY");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
-        RavePay ravePay = new RavePay(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(3) + 1;
         Utility utility = new Utility(driver);
 
         login.Login();
-        test.log(Status.PASS, "Login Was Successful");
 
         utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
         utility.DoclickWhenReady("OrderHist_XPATH", "OrderHsi_TEXT", 40);
@@ -163,8 +154,5 @@ public class FILTER_ORDER_HISTORY extends TestBase {
         //Filter By Payment Status
         utility.DoSelectValuesByVisibleText("FilterByOrderStatus_XPATH", "OStatus1_TEXT", "OStatus1_TEXT", 30);
         utility.DoAssertXpathPresentWhenReady("Asserending_XPATH", "FilterOpasOSTA1_TEXT", "FilterOfaiOsat1_TEXT", 15);
-
-        System.out.println("********************FILTER ORDER HISTORY********************");
-        driver.quit();
     }
 }
