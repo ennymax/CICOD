@@ -3,9 +3,13 @@ package CICOD.ModuleCICOD;
 import CICOD.base.TestBase;
 import CICOD.utility.Login;
 import CICOD.utility.Utility;
+import com.aventstack.extentreports.Status;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.awt.*;
 import java.io.IOException;
+
+import static org.junit.Assert.assertTrue;
 
 public class SessionTimeOutTest extends TestBase {
     @Test
@@ -15,35 +19,33 @@ public class SessionTimeOutTest extends TestBase {
         Utility utility = new Utility(driver);
 
         Thread.sleep(3000);
-        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT");
+        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT","BFFail_TEXT");
 
         login.Login();
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
-
-
-        Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
-
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
 
+        Thread.sleep(60000);
+        Thread.sleep(3600000);
+        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT","BFFail_TEXT");
     }
 }

@@ -525,14 +525,21 @@ public class Utility extends TestBase{
     }
 
     //***************************Get Tittle ******************************
-    public void DoAssertTittle(String TittleText,String DisplayPassmsg) throws IOException, InterruptedException {
+    public void DoAssertTittle(String TittleText,String DisplayPassmsg, String DisplayFailmessage) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         String expectedTitle = Utility.fetchLocator(TittleText);
         String actualTitle = driver.getTitle();
-        Assert.assertEquals(actualTitle, expectedTitle);
-        test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
+
+        try {
+            Assert.assertEquals(actualTitle, expectedTitle);
+            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
+        } catch (Throwable e) {
+            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmessage));
+        }
     }
+
+
 
     public String DoGetPageTitleWithContains(int timeOut, String title) throws IOException, InterruptedException {
         Thread.sleep(1100);
