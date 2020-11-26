@@ -5,6 +5,8 @@ import com.aventstack.extentreports.Status;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
+
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
@@ -523,16 +525,13 @@ public class Utility extends TestBase{
     }
 
     //***************************Get Tittle ******************************
-    public void DoAssertTittle(String TittleText, String DisplayPassmsg, String DisplayFailmsg) throws IOException, InterruptedException {
+    public void DoAssertTittle(String TittleText,String DisplayPassmsg) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        String title = driver.getTitle();
-        System.out.println(title);
-        if (title == Utility.fetchLocator(TittleText)) {
-            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
-        } else {
-            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmsg));
-        }
+        String expectedTitle = Utility.fetchLocator(TittleText);
+        String actualTitle = driver.getTitle();
+        Assert.assertEquals(actualTitle, expectedTitle);
+        test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
     }
 
     public String DoGetPageTitleWithContains(int timeOut, String title) throws IOException, InterruptedException {

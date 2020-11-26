@@ -15,40 +15,35 @@ public class SessionTimeOutTest extends TestBase {
         Utility utility = new Utility(driver);
 
         Thread.sleep(3000);
-        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT","BFFail_TEXT");
+        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT");
 
         login.Login();
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
-
-
-        Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
 
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
+
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT","BFFail_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT");
 
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT","BFFail_TEXT");
+        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT");
 
-        Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT","BFFail_TEXT");
     }
 }
