@@ -23,7 +23,7 @@ public class RavePay extends TestBase {
     }
 
     public void RavePay3() throws IOException, InterruptedException {
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
         utility.DoSendKeysWhenReady("RavePayCardnumber_XPATH", "Ca_TEXT","CardNumber_TEXT",60);
         utility.DoSendKeysWhenReady("RavePayValidTill_XPATH", "ValidTm_TEXT","e1_TEXT", 60);
@@ -34,7 +34,7 @@ public class RavePay extends TestBase {
 
 
     public void RavePay2() throws IOException, InterruptedException {
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Thread.sleep(13000);
         driver.switchTo().frame(0);
 
@@ -50,8 +50,7 @@ public class RavePay extends TestBase {
 
 
     public void RavePay() throws IOException, InterruptedException {
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
-
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Thread.sleep(13000);
         driver.switchTo().frame(0);
 
@@ -69,7 +68,7 @@ public class RavePay extends TestBase {
     }
 
     public void RavePay1() throws IOException, InterruptedException {
-        driver.manage().timeouts().implicitlyWait(55, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Thread.sleep(13000);
         driver.switchTo().frame(0);
 
@@ -87,7 +86,7 @@ public class RavePay extends TestBase {
     }
 
     public void RavePayWorkShop() throws IOException, InterruptedException {
-        driver.manage().timeouts().implicitlyWait(160, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         driver.switchTo().frame("checkout");
         Utility utility = new Utility(driver);
 

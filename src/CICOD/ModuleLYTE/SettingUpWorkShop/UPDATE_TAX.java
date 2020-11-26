@@ -20,18 +20,12 @@ public class UPDATE_TAX extends TestBase {
     @Test
     public void UPDATE_TAx() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE TAX");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -67,8 +61,5 @@ public class UPDATE_TAX extends TestBase {
             } else {
             test.log(Status.FAIL, "Tax Wasn't Updated");
             }
-
-        System.out.println("********************UPDATE TAX TEST IS COMPLETED********************");
-        driver.quit();
     }
 }

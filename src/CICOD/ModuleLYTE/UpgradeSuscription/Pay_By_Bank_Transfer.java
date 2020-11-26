@@ -25,12 +25,6 @@ public class Pay_By_Bank_Transfer extends TestBase {
     @Test
     public void Pay_by_bank_transfer() throws IOException, InterruptedException {
         test = extent.createTest("PAY BY BANK TRANSFER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        RavePay ravePay = new RavePay(driver);
         Login login = new Login(driver);
 
         login.LoginUpgrade();
@@ -84,7 +78,5 @@ public class Pay_By_Bank_Transfer extends TestBase {
         } else {
             test.log(Status.FAIL, "Failed to close payment Page");
         }
-
-        driver.quit();
     }
 }

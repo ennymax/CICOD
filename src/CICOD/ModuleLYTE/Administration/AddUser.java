@@ -23,28 +23,18 @@ public class AddUser extends TestBase {
     @Test
     public void ADD_USER() throws IOException, InterruptedException {
         test = extent.createTest("ADD USER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AdminLyte_XPATH"))).click();
-        test.log(Status.PASS, "Administration button Fully functional");
 
         driver.findElement(By.xpath(Utility.fetchLocator("UserManagementLYTE_XPATH"))).click();
-        test.log(Status.PASS, "Administration button Fully functional");
 
         driver.findElement(By.xpath(Utility.fetchLocator("AddUserbtn_XPATH"))).click();
 
@@ -72,9 +62,5 @@ public class AddUser extends TestBase {
         } else {
             test.log(Status.FAIL, "Add User ModuleEKEDC failed");
         }
-
-        Thread.sleep(2000);
-        System.out.println("********************ADD USER TEST IS COMPLETED********************");
-        driver.quit();
     }
 }

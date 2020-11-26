@@ -41,7 +41,7 @@ public class Set_Spend_and_Assert_Minimum_Spend extends TestBase {
         utility.DoscrolltoViewClickWhenReady("BuyerActionBTN_XPATH","But_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("SuppliersProduct_XPATH","Supplbu_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("CreateOrderfromSuppler_XPATH","CretOrer_TEXT",60);
-        utility.DoAssertEqualWhenReady("AssertMinimuspend_XPATH","1,000.00",60);
+        utility.DoAssertEqualWhenReady("AssertMinimuspend_XPATH","1,000.00","Aminspass_TEXT","Aminsfail_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("ProductCategoryPlus_XPATH","ProductCa_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("SelectBeverages_XPATH","SelectBeve_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("AddProduct_XPATH","Addpro_TEXT",60);
@@ -52,7 +52,7 @@ public class Set_Spend_and_Assert_Minimum_Spend extends TestBase {
         utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH","Makepa_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("PayOnline_XPATH","Payoo_TEXT",60);
         utility.DoswitchtoframeWhenReady(0,13000);
-        utility.DoAssertEqualWhenReady("ASSenable_XPATH","NGN1,522.50",90);
+        utility.DoAssertEqualWhenReady("ASSenable_XPATH","NGN1,522.50","Aminspedpass_TEXT","AminspedFaled_TEXT",90);
 
         Thread.sleep(2000);
         driver.navigate().to("https://www.cicod.com/login");

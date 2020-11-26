@@ -21,17 +21,11 @@ public class VIEW_SUSCRIPTION extends TestBase {
     @Test
     public void VIEW_SUSCRIPTION() throws Exception {
         test = extent.createTest("VIEW SUBSCRIPTION");
-
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
         VideoRecorder.startRecording("TestingVideoRecording");
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         Thread.sleep(2000);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("sdsd_XPATH")));
@@ -57,8 +51,5 @@ public class VIEW_SUSCRIPTION extends TestBase {
         screenShot.ScreenShot();
 
         VideoRecorder.stopRecording();
-
-        System.out.println("********************View Suscription Test is Completed********************");
-        driver.quit();
     }
 }

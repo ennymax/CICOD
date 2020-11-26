@@ -19,20 +19,13 @@ public class SUSPEND_UNSUSPEND_TAX extends TestBase {
     @Test
     public void SUSPEND_TAX() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND TAX");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -83,9 +76,5 @@ public class SUSPEND_UNSUSPEND_TAX extends TestBase {
         } else {
             test.log(Status.FAIL, "Tax Unsuspension Failed");
         }
-
-        Thread.sleep(2000);
-        System.out.println("********************SUSPEND TAX TEST IS COMPLETED********************");
-        driver.quit();
     }
 }

@@ -17,11 +17,6 @@ public class VIEW_TRANSACTION_DETAILS extends TestBase {
     @Test
     public void VIEW_TRANSACTION_DETAIL() throws IOException, InterruptedException {
         test = extent.createTest("VIEW TRANSACTION DETAILS");
-
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
 
         login.LoginTestAccount();
@@ -34,7 +29,5 @@ public class VIEW_TRANSACTION_DETAILS extends TestBase {
         } else {
             test.log(Status.FAIL, "Transaction Details Failed to load");
         }
-
-        driver.quit();
     }
 }

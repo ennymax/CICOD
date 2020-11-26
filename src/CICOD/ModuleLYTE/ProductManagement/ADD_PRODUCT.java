@@ -21,35 +21,25 @@ public class ADD_PRODUCT extends TestBase {
     @Test
     public void ADD_PRODUCTs() throws IOException, InterruptedException {
         test = extent.createTest("ADD PRODUCT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         //Click On Product
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Productbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product button fully Functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Add_Producttn_XPATH"))).click();
-        test.log(Status.PASS, "Add Product button fully Functional");
 
         Thread.sleep(2000);
         WebElement menuOption1 = driver.findElement(By.xpath(Utility.fetchLocator("CreateProductpageassert_XPATH")));
@@ -87,8 +77,5 @@ public class ADD_PRODUCT extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("isave_XPATH"))).click();
-
-        System.out.println("********************ADD PRODUCT TEST IS COMPLETED********************");
-        driver.quit();
     }
 }

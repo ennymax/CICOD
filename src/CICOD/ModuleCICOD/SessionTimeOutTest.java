@@ -3,13 +3,8 @@ package CICOD.ModuleCICOD;
 import CICOD.base.TestBase;
 import CICOD.utility.Login;
 import CICOD.utility.Utility;
-import com.aventstack.extentreports.Status;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.awt.*;
 import java.io.IOException;
-
-import static org.junit.Assert.assertTrue;
 
 public class SessionTimeOutTest extends TestBase {
     @Test

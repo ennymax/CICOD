@@ -22,12 +22,6 @@ public class SearchPendingCollectionWithCorrectCredentials extends TestBase {
     @Test
     public void SEARCH_PENDING_COLLECTION_WITH_CORRECT_CREDENTIALS() throws IOException, InterruptedException {
         test = extent.createTest("SEARCH PENDING COLLECTION WITH CORRECT CREDENTIALS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -94,7 +88,5 @@ public class SearchPendingCollectionWithCorrectCredentials extends TestBase {
         WebElement Elementlb = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jsklb = (JavascriptExecutor) driver;
         jsklb.executeScript("arguments[0].scrollIntoView();", Elementlb);
-
-        driver.quit();
     }
 }

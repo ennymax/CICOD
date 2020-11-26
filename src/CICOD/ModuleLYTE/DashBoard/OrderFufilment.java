@@ -20,24 +20,17 @@ public class OrderFufilment extends TestBase {
     @Test
     public void ORDER_FUFILLMENT() throws IOException, InterruptedException {
         test = extent.createTest("ORDER FUFILMENT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //DashBoard
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("Dashboard_XPATH"))).click();
-        test.log(Status.PASS, "AssertDashboard button fully functional");
 
         driver.findElement(By.xpath(Utility.fetchLocator("Datefrom_XPATH"))).clear();
         driver.findElement(By.xpath(Utility.fetchLocator("Datefrom_XPATH"))).sendKeys(Utility.fetchLocator("Datefrom_TEXT"));
@@ -71,9 +64,6 @@ public class OrderFufilment extends TestBase {
 
         WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("TotalOrder_XPATH")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);
-
-        System.out.println("********************Order fulfillment Test is Completed********************");
-        driver.quit();
     }
 }
 

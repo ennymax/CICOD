@@ -19,25 +19,17 @@ public class View_DashBoard_By_Date extends TestBase {
     @Test
     public void VIEW_DASHBOARD() throws IOException, InterruptedException {
         test = extent.createTest("VIEW DASHBOARD BY DATE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //DashBoard
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("Dashboard_XPATH"))).click();
-        test.log(Status.PASS, "AssertDashboard button fully functional");
-
 
         driver.findElement(By.xpath(Utility.fetchLocator("Datefrom_XPATH"))).clear();
         driver.findElement(By.xpath(Utility.fetchLocator("Datefrom_XPATH"))).sendKeys(Utility.fetchLocator("Datefrom_TEXT"));
@@ -66,8 +58,5 @@ public class View_DashBoard_By_Date extends TestBase {
         } else {
             test.log(Status.FAIL, "Pending Orders for selected period is not displayed");
         }
-
-        System.out.println("********************View DashBoard Test is Completed********************");
-        driver.quit();
     }
 }

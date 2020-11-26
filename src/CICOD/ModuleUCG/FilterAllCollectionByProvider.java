@@ -22,11 +22,6 @@ public class FilterAllCollectionByProvider extends TestBase {
     @Test
     public void FILTER_ALL_COLLECTION_USING_PROVIDERS() throws IOException, InterruptedException {
         test = extent.createTest("FILTER ALL COLLECTION USING PROVIDERS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
@@ -118,7 +113,5 @@ public class FilterAllCollectionByProvider extends TestBase {
         WebElement ElementlN = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jsklN = (JavascriptExecutor) driver;
         jsklN.executeScript("arguments[0].scrollIntoView();", ElementlN);
-
-        driver.quit();
     }
 }

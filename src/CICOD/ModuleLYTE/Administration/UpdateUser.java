@@ -20,27 +20,18 @@ public class UpdateUser extends TestBase {
     @Test
     public void UPDATE_USER() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE USER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AdminLyte_XPATH"))).click();
-        test.log(Status.PASS, "Administration button Fully functional");
 
         driver.findElement(By.xpath(Utility.fetchLocator("UserManagementLYTE_XPATH"))).click();
-        test.log(Status.PASS, "Administration button Fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("UserAction_XPATH"))).click();
@@ -56,8 +47,5 @@ public class UpdateUser extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("CreateUserSaveBTN_XPATH"))).click();
-
-        System.out.println("********************UPDATE USER TEST IS COMPLETED********************");
-        driver.quit();
     }
 }

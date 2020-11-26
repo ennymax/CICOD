@@ -17,10 +17,6 @@ public class LoginWithWrongEmail extends TestBase {
     @Test
     public void LOGIN_WITH_WRONG_EMAIL() throws IOException, InterruptedException {
         test = extent.createTest("LOGIN WITH WRONG EMAIL");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
 
         login.LoginWrongEmail();
@@ -31,8 +27,5 @@ public class LoginWithWrongEmail extends TestBase {
         } else {
             test.log(Status.FAIL, "Login Successful");
         }
-
-        driver.quit();
     }
-
 }

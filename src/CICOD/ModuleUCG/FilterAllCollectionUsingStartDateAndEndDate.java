@@ -22,10 +22,6 @@ public class FilterAllCollectionUsingStartDateAndEndDate extends TestBase {
     @Test
     public void FILTER_ALL_COLLECTION_USING_START_DATE_AND_END_DATE() throws IOException, InterruptedException {
         test = extent.createTest("FILTER ALL COLLECTION USING START DATE AND END DATE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
@@ -78,7 +74,5 @@ public class FilterAllCollectionUsingStartDateAndEndDate extends TestBase {
         WebElement Elementl = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jskl = (JavascriptExecutor) driver;
         jskl.executeScript("arguments[0].scrollIntoView();", Elementl);
-
-        driver.quit();
     }
 }

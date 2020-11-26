@@ -20,13 +20,7 @@ public class DownloadAllCollections extends TestBase {
 
     @Test
     public void DOWNLOAD_ALL_COLLECTION() throws IOException, InterruptedException {
-        test = extent.createTest("DOWNLOAD ALL COLLECTION");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -69,7 +63,5 @@ public class DownloadAllCollections extends TestBase {
         } else {
             test.log(Status.FAIL, "Download was Failed");
         }
-
-        driver.quit();
     }
 }

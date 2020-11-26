@@ -20,11 +20,6 @@ public class DownloadVarienceReport extends TestBase {
     @Test
     public void DOWNLOAD_VARIANCE_REPORT() throws IOException, InterruptedException {
         test = extent.createTest("DOWNLOAD VARIANCE REPORT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -44,7 +39,5 @@ public class DownloadVarienceReport extends TestBase {
         WebElement element13 = driver.findElement(By.xpath(Utility.fetchLocator("Downl_XPATH")));
         JavascriptExecutor js13 = (JavascriptExecutor) driver;
         js13.executeScript("arguments[0].click();", element13);
-
-        driver.quit();
     }
 }

@@ -20,11 +20,6 @@ public class UPDATE_PRODUCT extends TestBase {
     @Test
     public void UPDATE_PRODUCT() throws IOException, InterruptedException {
         test = extent.createTest("UPDATE PRODUCT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.LoginTestAccount();
@@ -32,17 +27,14 @@ public class UPDATE_PRODUCT extends TestBase {
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         //Click On Product
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Productbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product button fully Functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ActionSuspendbtn_XPATH"))).click();
@@ -58,8 +50,5 @@ public class UPDATE_PRODUCT extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("isave_XPATH"))).click();
-
-        System.out.println("********************UPDATE PRODUCT TEST IS COMPLETED********************");
-        driver.quit();
     }
 }

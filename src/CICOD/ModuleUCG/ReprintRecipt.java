@@ -23,13 +23,6 @@ public class ReprintRecipt extends TestBase {
     @Test
     public void REPRINT_RECEIPT() throws IOException, InterruptedException {
         test = extent.createTest("REPRINT RECEIPT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -79,7 +72,5 @@ public class ReprintRecipt extends TestBase {
         JavascriptExecutor jsPPOwk = (JavascriptExecutor) driver;
         jsPPOwk.executeScript("arguments[0].click();", elementPPOwk);
         */
-
-        driver.quit();
     }
 }

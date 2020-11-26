@@ -20,30 +20,21 @@ public class SUSPEND_UNSUSPEND_ROLE extends TestBase {
     @Test
     public void SuspendRole() throws IOException, InterruptedException {
         test = extent.createTest("SUSPEND UNSUSPEND ROLE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AdminLyte_XPATH"))).click();
-        test.log(Status.PASS, "Administration button Fully functional");
 
         Thread.sleep(2000);
         WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("RoleLyte_XPATH")));
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].scrollIntoView();", ti11);
         ti11.click();
-        test.log(Status.PASS, "Role button fully Functional ");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("RoleActionbtn_XPATH"))).click();
@@ -67,9 +58,5 @@ public class SUSPEND_UNSUSPEND_ROLE extends TestBase {
 
         Thread.sleep(2000);
         driver.switchTo().alert().accept();
-        test.log(Status.PASS, "Role Unsuspend Successful");
-
-        System.out.println("********************SUSPEND UNSUSPEND ROLE TEST IS COMPLETED********************");
-        driver.quit();
     }
 }

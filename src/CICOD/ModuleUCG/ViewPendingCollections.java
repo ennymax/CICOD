@@ -19,11 +19,6 @@ public class ViewPendingCollections extends TestBase {
     @Test
     public void VIEW_PENDING_COLLECTION() throws IOException, InterruptedException {
         test = extent.createTest("VIEW PENDING COLLECTION");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -52,7 +47,5 @@ public class ViewPendingCollections extends TestBase {
         WebElement Elementlb = driver.findElement(By.xpath(Utility.fetchLocator("PendingCollectionlist_XPATH")));
         JavascriptExecutor jsklb = (JavascriptExecutor) driver;
         jsklb.executeScript("arguments[0].scrollIntoView();", Elementlb);
-
-        driver.quit();
     }
 }

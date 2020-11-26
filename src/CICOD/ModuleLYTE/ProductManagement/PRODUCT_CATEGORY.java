@@ -18,29 +18,20 @@ public class PRODUCT_CATEGORY extends TestBase {
     @Test
     public void PRODUCT_category() throws IOException, InterruptedException {
         test = extent.createTest("PRODUCT CATEGORY");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //product Management
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("productCategory_XPATH"))).click();
-        test.log(Status.PASS, "Product Category button fully functional");
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("ProductCategoryConfirm_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Product Category Page is opened");
@@ -60,8 +51,5 @@ public class PRODUCT_CATEGORY extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("savvbtn_XPATH"))).click();
-
-        System.out.println("********************PRODUCT CATEGORY TEST IS COMPLETED*******************");
-        driver.quit();
     }
 }

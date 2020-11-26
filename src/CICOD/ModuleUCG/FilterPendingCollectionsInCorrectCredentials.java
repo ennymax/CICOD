@@ -22,12 +22,6 @@ public class FilterPendingCollectionsInCorrectCredentials extends TestBase {
     @Test
     public void FILTER_PENDING_COLLECTION_WITH_INCORRECT_CREDENTIALS() throws IOException, InterruptedException {
         test = extent.createTest("FILTER PENDING COLLECTION WITH INCORRECT CREDENTIALS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        ScreenShot screenShotB = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -65,7 +59,5 @@ public class FilterPendingCollectionsInCorrectCredentials extends TestBase {
         WebElement Elementlbb = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jsklbb = (JavascriptExecutor) driver;
         jsklbb.executeScript("arguments[0].scrollIntoView();", Elementlbb);
-
-        driver.quit();
     }
 }

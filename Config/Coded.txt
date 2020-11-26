@@ -1,3 +1,4 @@
+
         String expectedTitle = Utility.fetchLocator(TittleText);
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, expectedTitle);
@@ -230,10 +231,7 @@ step 1
 cvv=780
 pin=3310
 
-Good Morning all
-20/11/2020
-1. Update Test Script for cicod(On going)
-2. Test update on value chain (Ongoing)
-23/11/2020
-1. Update Test Script for cicod(On going)
-2. Test update on value chain (Ongoing)
+DEV:
+Tenant ID: blakesshawn
+Email:Patrick.ijiti@crowninteractive.com
+Password: Pat1234!

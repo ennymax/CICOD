@@ -24,11 +24,6 @@ public class Upgrade_Suscription_After_Expiration extends TestBase {
     @Test
     public void UPGRADE_SUBSCRIPTION_AFTER_EXPIRATION() throws IOException, InterruptedException {
         test = extent.createTest("UPGRADE SUBSCRIPTION AFTER EXPIRATION");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         RavePay ravePay = new RavePay(driver);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
@@ -71,10 +66,5 @@ public class Upgrade_Suscription_After_Expiration extends TestBase {
         } else {
             test.log(Status.FAIL, "Flutter wave page not Functional");
         }
-
-        Thread.sleep(2000);
-        screenShot.ScreenShotFullPage();
-
-        driver.quit();
     }
 }

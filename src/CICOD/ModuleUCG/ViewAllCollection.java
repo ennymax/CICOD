@@ -21,12 +21,6 @@ public class ViewAllCollection extends TestBase {
     @Test
     public void VIEW_ALL_COLLECTION() throws IOException, InterruptedException {
         test = extent.createTest("VIEW ALL COLLECTION");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -55,7 +49,5 @@ public class ViewAllCollection extends TestBase {
         WebElement Element = driver.findElement(By.xpath(Utility.fetchLocator("AllCollectionPage_XPATH")));
         JavascriptExecutor jsk = (JavascriptExecutor) driver;
         jsk.executeScript("arguments[0].scrollIntoView();", Element);
-
-        driver.quit();
     }
 }

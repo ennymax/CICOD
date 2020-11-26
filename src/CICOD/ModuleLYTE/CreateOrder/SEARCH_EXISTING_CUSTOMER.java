@@ -18,20 +18,13 @@ public class SEARCH_EXISTING_CUSTOMER extends TestBase {
     @Test
     public void SEARCH_EXISTING_customer() throws IOException, InterruptedException {
         test = extent.createTest("SEARCH EXISTING CUSTOMER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);
@@ -54,8 +47,5 @@ public class SEARCH_EXISTING_CUSTOMER extends TestBase {
         } else {
             test.log(Status.FAIL, "Search Failed");
         }
-
-        System.out.println("********************CUSTUMER WAS CREATED SUCCESSFULLY IS COMPLETED********************");
-        driver.quit();
     }
 }

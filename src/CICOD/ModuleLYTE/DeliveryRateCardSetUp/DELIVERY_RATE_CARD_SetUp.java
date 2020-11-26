@@ -22,21 +22,14 @@ public class DELIVERY_RATE_CARD_SetUp extends TestBase {
     @Test
     public void DELIVERY_RATE_CARD_SETUP() throws IOException, InterruptedException {
         test = extent.createTest("DELIVERY RATE CARD SETUP");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginUpgrade();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Settings_XPATH"))).click();
@@ -79,11 +72,5 @@ public class DELIVERY_RATE_CARD_SetUp extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("FreeDeliveryPrice_XPATH"))).sendKeys(Utility.fetchLocator("FreeeDeliveryPrice_TEXT"));
 
         driver.findElement(By.xpath(Utility.fetchLocator("DeliverySavebtn_XPATH"))).click();
-
-        Thread.sleep(2000);
-        test.log(Status.PASS, "Delivery Rate Card was setup");
-
-        System.out.println("********************DELIVERY RATE CARD SETUP TEST IS COMPLETED********************");
-        driver.quit();
     }
 }

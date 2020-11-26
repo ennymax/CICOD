@@ -23,23 +23,16 @@ public class CREATECUSTOMER extends TestBase {
     @Test
     public void CREATE_CUSTOMER() throws IOException, InterruptedException {
         test = extent.createTest("CREATE CUSTOMER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(1000000) + 1;
 
         login.LoginTestAccountSetUp();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);
@@ -90,8 +83,5 @@ public class CREATECUSTOMER extends TestBase {
         } else {
             test.log(Status.FAIL, "Failed to create Customer");
         }
-
-        Thread.sleep(3000);
-        driver.quit();
     }
 }

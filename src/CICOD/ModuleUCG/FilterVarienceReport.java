@@ -20,11 +20,6 @@ public class FilterVarienceReport extends TestBase {
     @Test
     public void FILTER_VARIANCE_REPORT() throws IOException, InterruptedException {
         test = extent.createTest("FILTER VARIANCE REPORT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -90,7 +85,5 @@ public class FilterVarienceReport extends TestBase {
         } else {
             test.log(Status.FAIL, "Daily Vended Amount wasnt displayed");
         }
-
-        driver.quit();
     }
 }

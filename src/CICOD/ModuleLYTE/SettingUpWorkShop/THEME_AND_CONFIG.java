@@ -22,21 +22,13 @@ public class THEME_AND_CONFIG extends TestBase {
     @Test
     public void THEME_CONFIG() throws IOException, InterruptedException {
         test = extent.createTest("THEME AND CONFIG");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("WebshopandConfLyte_XPATH"))).click();
@@ -67,8 +59,5 @@ public class THEME_AND_CONFIG extends TestBase {
         } else {
             test.log(Status.FAIL, "Theme cant be updated");
         }
-
-        System.out.println("********************THEME AND CONFIG TEST IS COMPLETED********************");
-        driver.quit();
     }
 }

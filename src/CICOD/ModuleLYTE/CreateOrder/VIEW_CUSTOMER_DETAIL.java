@@ -20,11 +20,6 @@ public class VIEW_CUSTOMER_DETAIL extends TestBase {
     @Test
     public void VIEW_CUSTOMER_DETAILS() throws IOException, InterruptedException {
         test = extent.createTest("VIEW CUSTOMER TEST");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         Login login = new Login(driver);
         login.LoginTestAccount();
         test.log(Status.PASS, "Login Was Successful");
@@ -32,7 +27,6 @@ public class VIEW_CUSTOMER_DETAIL extends TestBase {
         //COM
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         //CREATE ORDER BUTTON
         Thread.sleep(2000);
@@ -65,8 +59,5 @@ public class VIEW_CUSTOMER_DETAIL extends TestBase {
         } else {
             test.log(Status.FAIL, "Customer Details wasnt displayed");
         }
-
-        System.out.println("********************VIEW CUSTOMER DETAIL TEST SUCCESSFULLY IS COMPLETED********************");
-        driver.quit();
     }
 }

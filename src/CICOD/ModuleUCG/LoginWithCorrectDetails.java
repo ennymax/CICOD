@@ -19,12 +19,6 @@ public class LoginWithCorrectDetails extends TestBase {
     @Test
     public void LOGIN_WITH_CORRECT_DETAILS() throws IOException, InterruptedException {
         test = extent.createTest("LOGIN WITH CORRECT DETAILS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenShotE = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -35,7 +29,5 @@ public class LoginWithCorrectDetails extends TestBase {
         } else {
             test.log(Status.FAIL, "Login failed");
         }
-
-        driver.quit();
     }
 }

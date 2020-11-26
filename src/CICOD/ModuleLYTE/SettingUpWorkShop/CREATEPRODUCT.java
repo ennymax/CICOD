@@ -20,32 +20,24 @@ public class CREATEPRODUCT extends TestBase {
     @Test
     public void CREATE_PRODUCT() throws IOException, InterruptedException {
         test = extent.createTest("CREATE PRODUCT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-        test.log(Status.PASS, "Login Was Successful");
 
         //Com
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
-        test.log(Status.PASS, "COM button fully functional");
 
         screenshot.ScreenShot();
 
         //product Management
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("ProductManagementbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product Management button fully functional");
 
         //Click On Product
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("Productbtn_XPATH"))).click();
-        test.log(Status.PASS, "Product button fully Functional");
 
         driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         driver.findElement(By.xpath(Utility.fetchLocator("Add_Producttn_XPATH"))).click();
@@ -83,8 +75,5 @@ public class CREATEPRODUCT extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("Savebtn_XPATH"))).click();
 
         screenshot.ScreenShot();
-
-        System.out.println("********************CREATE PRODUCT TEST IS COMPLETED********************");
-        driver.quit();
     }
 }

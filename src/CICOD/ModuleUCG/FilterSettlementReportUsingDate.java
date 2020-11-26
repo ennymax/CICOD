@@ -18,11 +18,6 @@ public class FilterSettlementReportUsingDate extends TestBase {
     @Test
     public void FILTER_SETTLEMENT_REPORT_USING_DATE() throws IOException, InterruptedException {
         test = extent.createTest("FILTER SETTLEMENT REPORT USING DATE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -61,7 +56,5 @@ public class FilterSettlementReportUsingDate extends TestBase {
         WebElement Elementl = driver.findElement(By.xpath(Utility.fetchLocator("AssertSettlementDetail_XPATH")));
         JavascriptExecutor jskl = (JavascriptExecutor) driver;
         jskl.executeScript("arguments[0].scrollIntoView();", Elementl);
-
-        driver.quit();
     }
 }

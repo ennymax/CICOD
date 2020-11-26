@@ -20,10 +20,6 @@ public class ViewPaymentHistory extends TestBase {
     @Test
     public void VIEW_PAYMENT_HISTORY() throws IOException, InterruptedException {
         test = extent.createTest("VIEW PAYMENT HISTORY");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
@@ -44,12 +40,6 @@ public class ViewPaymentHistory extends TestBase {
         } else {
             test.log(Status.FAIL, "Payment History wasn't Displayed");
         }
-
-        Thread.sleep(1200);
-        screenShot.ScreenShotFullPage();
-
-        System.out.println("********************VIEW PAYMENT HISTORY Test is Completed********************");
-        driver.quit();
     }
 
 }

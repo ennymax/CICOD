@@ -19,11 +19,6 @@ public class DownloadPendingCollection extends TestBase {
     @Test
     public void DOWNLOAD_PENDING_COLLECTION() throws IOException, InterruptedException {
         test = extent.createTest("DOWNLOAD PENDING COLLECTION");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        ScreenShot screenShotB = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -59,7 +54,5 @@ public class DownloadPendingCollection extends TestBase {
         } else {
             test.log(Status.FAIL, "Download was Failed");
         }
-
-        driver.quit();
     }
 }

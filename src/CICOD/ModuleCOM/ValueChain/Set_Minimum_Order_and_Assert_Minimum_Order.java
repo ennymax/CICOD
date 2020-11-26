@@ -46,7 +46,7 @@ public class Set_Minimum_Order_and_Assert_Minimum_Order extends TestBase {
         utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH","Makepa_TEXT",60);
         utility.DoscrolltoViewClickWhenReady("PayOnline_XPATH","Payoo_TEXT",60);
         utility.DoswitchtoframeWhenReady(0,13000);
-        utility.DoAssertEqualWhenReady("ASSenable_XPATH","NGN304.50",90);
+        utility.DoAssertEqualWhenReady("ASSenable_XPATH","NGN304.50","AmimPass_TEXT","AminiFail_TEXT",90);
 
         Thread.sleep(2000);
         driver.navigate().to("https://www.cicod.com/login");

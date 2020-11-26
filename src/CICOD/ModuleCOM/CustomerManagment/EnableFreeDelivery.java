@@ -25,6 +25,7 @@ public class EnableFreeDelivery extends TestBase {
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
+        Utility utility = new Utility(driver);
 
         login.Login();
 
@@ -232,7 +233,6 @@ public class EnableFreeDelivery extends TestBase {
         driver.switchTo().frame(0);
 
         Thread.sleep(2000);
-        Utility utility = new Utility(driver);
-        utility.DoAssertEqualWhenReady("ASSenable_XPATH","NGN203.00",70);
+        utility.DoAssertEqualWhenReady("ASSenable_XPATH","NGN203.00","AssertDelPass_TEXT","AssertDelFailed_TEXT",60);
     }
 }

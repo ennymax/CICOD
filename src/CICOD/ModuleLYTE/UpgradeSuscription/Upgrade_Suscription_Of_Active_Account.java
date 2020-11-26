@@ -23,19 +23,11 @@ public class Upgrade_Suscription_Of_Active_Account extends TestBase {
 
     @Test
     public void UPGRADE_SUBSCRIPTION() throws IOException, InterruptedException {
-
         test = extent.createTest("UPGRADE SUBSCRIPTION");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         RavePay ravePay = new RavePay(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginUpgrade();
-        test.log(Status.PASS, "Login Was Successful");
 
         Thread.sleep(2000);
         WebElement element1 = (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Billing1_XPATH"))));
@@ -73,7 +65,5 @@ public class Upgrade_Suscription_Of_Active_Account extends TestBase {
         } else {
             test.log(Status.FAIL, "Flutter wave page not Functional");
         }
-
-        driver.quit();
     }
 }

@@ -20,11 +20,6 @@ public class SearchSettlementReportUsingIncorrectCredentials extends TestBase {
     @Test
     public void SEARCH_SETTLEMENT_REPORT_WITH_INCORRECT_CREDENTIALS() throws IOException, InterruptedException {
         test = extent.createTest("SEARCH SETTLEMENT REPORT WITH INCORRECT CREDENTIALS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();
@@ -57,7 +52,5 @@ public class SearchSettlementReportUsingIncorrectCredentials extends TestBase {
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("SearchBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

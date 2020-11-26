@@ -17,10 +17,6 @@ public class LoginWithWrongDomain extends TestBase {
     @Test
     public void LOGIN_WITH_WRONG_DOMAIN() throws IOException, InterruptedException {
         test = extent.createTest("LOGIN WITH WRONG DOMAIN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         Login login = new Login(driver);
 
         login.LoginWrongDomainName();
@@ -31,7 +27,5 @@ public class LoginWithWrongDomain extends TestBase {
         } else {
             test.log(Status.FAIL, "Login Successful");
         }
-
-        driver.quit();
     }
 }

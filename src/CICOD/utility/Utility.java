@@ -432,12 +432,17 @@ public class Utility extends TestBase{
         }
     }
 
-    public void DoAssertEqualWhenReady(String locator, String assertionString, int timeOut) throws IOException, InterruptedException {
+    public void DoAssertEqualWhenReady(String locator, String assertionString,String DisplayPassmsg, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1600);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement msg11 = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
+        try {
+            assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
+            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
+        } catch (Throwable e) {
+            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmessage));
+        }
     }
 
     //**********************CheckBox and Radio Button********************
