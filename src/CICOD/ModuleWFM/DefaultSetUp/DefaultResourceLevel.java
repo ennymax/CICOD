@@ -18,13 +18,7 @@ public class DefaultResourceLevel extends TestBase {
 
     @Test
     public void DEFAULT_RESOURCE_LEVEL() throws IOException, InterruptedException {
-        test = extent.createTest("DEFAULT RESOURCE LEVEL");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        ScreenShot screenShot = new ScreenShot(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginDef1();
@@ -80,7 +74,5 @@ public class DefaultResourceLevel extends TestBase {
         } else {
             test.log(Status.FAIL, "Junior is not present as Default");
         }
-
-        driver.quit();
     }
 }

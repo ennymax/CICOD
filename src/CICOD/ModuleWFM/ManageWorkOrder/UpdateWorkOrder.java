@@ -18,12 +18,7 @@ public class UpdateWorkOrder extends TestBase {
 
     @Test
     public void UPDATE_WORKORDER() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE WORK ORDER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
@@ -59,7 +54,5 @@ public class UpdateWorkOrder extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("OkBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

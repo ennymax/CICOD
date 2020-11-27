@@ -20,7 +20,7 @@ public class CustomerAccount extends TestBase {
 
     @Test
     public void CUSTOMER_ACCOUNT() throws IOException, InterruptedException {
-        test = extent.createTest("CUSTOMER ACCOUNT");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.Login();

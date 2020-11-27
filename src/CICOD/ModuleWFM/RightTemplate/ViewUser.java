@@ -14,12 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class ViewUser extends TestBase {
     @Test
     public void ViewUser() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW USER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
@@ -31,6 +26,5 @@ public class ViewUser extends TestBase {
         utility.DoclickWhenReady("EniActionButton_XPATH", "ActionBBTN_TEXT", 50);
         utility.DoscrolltoViewClickWhenReady("viewUser_XPATH", "viewuser_TEXT", 40);
         utility.DoAssertXpathPresentWhenReady("pi_XPATH","Userpas_TEXT","userfail_TEXT",20);
-        driver.quit();
     }
 }

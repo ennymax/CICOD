@@ -19,11 +19,7 @@ public class Suspend_UnsuspendRightTemplate extends TestBase {
 
     @Test
     public void SUSPEND_UNSUSPEND_RIGHT_TEMPLATE() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND RIGHT TEMPLATE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginPremium();
@@ -77,7 +73,5 @@ public class Suspend_UnsuspendRightTemplate extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("SuspendRightTemplateOKBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

@@ -19,11 +19,7 @@ public class Suspend_UnsuspendResourceShedule extends TestBase {
 
     @Test
     public void SUSPEND_UNSUSPENDED_RESOURCE_SCHEDULE() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPENDED RESOURCE SCHEDULE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginPremium();
@@ -74,7 +70,5 @@ public class Suspend_UnsuspendResourceShedule extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN3_XPATH"))).click();
-
-        driver.quit();
     }
 }

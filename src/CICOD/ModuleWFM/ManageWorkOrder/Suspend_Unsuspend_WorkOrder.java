@@ -18,17 +18,10 @@ import java.security.SecureRandom;
 public class Suspend_Unsuspend_WorkOrder extends TestBase {
     @Test
     public void UPDATE_STATUS() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE STATUS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
         SecureRandom rn = new SecureRandom();
-        int tom = rn.nextInt(15) + 1;
 
         login.LoginPremium();
 
@@ -69,7 +62,5 @@ public class Suspend_Unsuspend_WorkOrder extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("UnsuspendWorkOrder2_XPATH"))).click();
 
         driver.findElement(By.xpath(Utility.fetchLocator("WorkOrderOKBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

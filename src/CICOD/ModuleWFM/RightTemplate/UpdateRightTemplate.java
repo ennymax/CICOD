@@ -21,14 +21,8 @@ public class UpdateRightTemplate extends TestBase {
 
     @Test
     public void UPDATE_RIGHT_TEMPLATE() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE RIGHT TEMPLATE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
-        Randomstuff randomStuff = new Randomstuff();
 
         login.LoginPremium();
 
@@ -65,7 +59,5 @@ public class UpdateRightTemplate extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("UpdateRightTemplateOKBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

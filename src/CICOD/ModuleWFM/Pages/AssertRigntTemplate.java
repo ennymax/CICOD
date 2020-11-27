@@ -16,11 +16,7 @@ public class AssertRigntTemplate extends TestBase {
 
     @Test
     public void ASSERT_RIGHT_TEMPLATE() throws IOException, InterruptedException {
-        test = extent.createTest("ASSERT RIGHT TEMPLATE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginPremium();
@@ -87,7 +83,5 @@ public class AssertRigntTemplate extends TestBase {
         } else {
             test.log(Status.FAIL, "SetUp Wizard is not displayed and enabled");
         }
-
-        driver.quit();
     }
 }

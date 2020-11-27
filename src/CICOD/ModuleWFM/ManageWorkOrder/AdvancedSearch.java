@@ -24,12 +24,7 @@ import static org.testng.AssertJUnit.assertEquals;
 public class AdvancedSearch extends TestBase {
     @Test
     public void ADVANCED_SEARCH() throws IOException, InterruptedException {
-        test = extent.createTest("ADVANCED SEARCH");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        ScreenShot screenShot = new ScreenShot(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         TabHandle tabHandle = new TabHandle(driver);
 
@@ -122,9 +117,5 @@ public class AdvancedSearch extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Downloadit_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.quit();
     }
-
 }

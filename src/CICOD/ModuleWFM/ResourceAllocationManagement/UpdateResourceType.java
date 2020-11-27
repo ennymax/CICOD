@@ -19,13 +19,8 @@ public class UpdateResourceType extends TestBase {
 
     @Test
     public void Update_RESOURCE_TYPE() throws IOException, InterruptedException {
-        test = extent.createTest("Update RESOURCE TYPE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
 
         login.LoginPremium();
 
@@ -56,8 +51,5 @@ public class UpdateResourceType extends TestBase {
         test.log(Status.PASS, "Update resource Type successful");
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
-        System.out.println("********************UPDATE RESOURCE TYPE********************");
     }
 }

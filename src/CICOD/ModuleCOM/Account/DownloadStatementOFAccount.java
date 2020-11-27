@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class DownloadStatementOFAccount extends TestBase {
     @Test
     public void DOWNLOAD_STATEMENT_OF_ACCOUNT() throws IOException, InterruptedException {
-        test = extent.createTest("DOWNLOAD STATEMENT OF ACCOUNT");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         ScreenShot screenShot = new ScreenShot(driver);
 

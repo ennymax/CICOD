@@ -1,5 +1,6 @@
 package CICOD.base;
 
+import CICOD.utility.BrokenLink;
 import CICOD.utility.Utility;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -37,7 +38,6 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-    OptionsManager optionsManager = new OptionsManager();
     public WebDriver driver;
     public static ExtentReports extent;
     public static ExtentHtmlReporter htmlReporter;
@@ -150,9 +150,6 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         driver.get(Utility.fetchProperty("applicationUrl").toString());
-    }
-
-    private void driver(ChromeDriver chromeDriver) {
     }
 
     @AfterMethod

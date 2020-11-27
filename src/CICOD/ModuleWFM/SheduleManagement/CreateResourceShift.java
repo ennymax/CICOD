@@ -22,16 +22,10 @@ public class CreateResourceShift extends TestBase {
 
     @Test
     public void CREATE_RESOURCE_SHIFT() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE RESOURCE SHIFT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        Randomstuff randomNumbers = new Randomstuff();
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(150000) + 1;
-
 
         login.LoginPremium();
 
@@ -74,7 +68,5 @@ public class CreateResourceShift extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

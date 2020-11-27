@@ -26,15 +26,8 @@ public class UpdateRegionToRole extends TestBase {
 
     @Test
     public void UPDATE_ESCALATION_ROLE() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE ESCALATION ROLE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
-        SecureRandom rn = new SecureRandom();
-        int resourceshedule = rn.nextInt(3) + 1;
 
         login.LoginPremium();
 
@@ -72,7 +65,5 @@ public class UpdateRegionToRole extends TestBase {
 
         Thread.sleep(1500);
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN6_XPATH"))).click();
-
-        driver.quit();
     }
 }

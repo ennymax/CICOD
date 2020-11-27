@@ -20,11 +20,7 @@ public class SUSPEND_AND_UNSUSPEND_QUEUE extends TestBase {
 
     @Test
     public void SUSPEND_AND_UNSUSPEND_QUEUE() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND AND UNSUSPEND QUEUE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
@@ -82,7 +78,5 @@ public class SUSPEND_AND_UNSUSPEND_QUEUE extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OOOk_XPATH"))).click();
-
-        driver.quit();
     }
 }

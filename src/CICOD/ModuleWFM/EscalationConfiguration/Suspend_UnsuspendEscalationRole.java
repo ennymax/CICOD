@@ -20,12 +20,7 @@ public class Suspend_UnsuspendEscalationRole extends TestBase {
 
     @Test
     public void SUSPEND_UNSUSPEND_ESCALATION_ROLE() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND ESCALATION ROLE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginPremium();
@@ -69,7 +64,5 @@ public class Suspend_UnsuspendEscalationRole extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

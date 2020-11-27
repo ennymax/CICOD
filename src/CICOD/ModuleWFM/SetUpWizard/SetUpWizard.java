@@ -18,11 +18,7 @@ import java.io.IOException;
 public class SetUpWizard extends TestBase {
     @Test
     public void CREATE_ESCALATION_ROLE() throws IOException, InterruptedException {
-        test = extent.createTest("SETUP WIZARD");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
 
@@ -58,7 +54,5 @@ public class SetUpWizard extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

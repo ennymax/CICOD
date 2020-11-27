@@ -21,14 +21,8 @@ public class Suspend_UnsuspendResourceShift extends TestBase {
 
     @Test
     public void SUSPEND_UNSUSPEND_RESOURCE_SHIFT() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND RESOURCE SHIFT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
 
         login.LoginPremium();
 
@@ -80,7 +74,5 @@ public class Suspend_UnsuspendResourceShift extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

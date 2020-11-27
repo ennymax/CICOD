@@ -19,12 +19,7 @@ public class AssertScheduleManagement extends TestBase {
 
     @Test
     public void ASSERT_SCHEDULE_MANAGEMENT() throws IOException, InterruptedException {
-        test = extent.createTest("ASSERT SCHEDULE MANAGEMENT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginPremium();
@@ -91,8 +86,5 @@ public class AssertScheduleManagement extends TestBase {
         } else {
             test.log(Status.FAIL, "SetUp Wizard is not displayed and enabled");
         }
-
-        driver.quit();
     }
-
 }

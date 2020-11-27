@@ -20,18 +20,11 @@ public class CreateWorkOrder extends TestBase {
 
     @Test
     public void CREATE_WORK_ORDER() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE WORK ORDER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        BrokenLink brokenLink = new BrokenLink(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
         SecureRandom rn = new SecureRandom();
-        int tom = rn.nextInt(15) + 1;
 
         login.LoginPremium();
 
@@ -99,7 +92,5 @@ public class CreateWorkOrder extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("OkBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

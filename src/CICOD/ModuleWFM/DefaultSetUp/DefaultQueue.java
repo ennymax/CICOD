@@ -17,12 +17,7 @@ public class DefaultQueue extends TestBase {
 
     @Test
     public void DEFAULT_QUEUE() throws IOException, InterruptedException {
-        test = extent.createTest("DEFAULT QUEUE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginDef1();
@@ -53,7 +48,5 @@ public class DefaultQueue extends TestBase {
         } else {
             test.log(Status.FAIL, "Finance Queue is not present as Default");
         }
-
-        driver.quit();
     }
 }

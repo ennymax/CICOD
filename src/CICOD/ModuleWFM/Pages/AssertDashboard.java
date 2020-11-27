@@ -15,15 +15,8 @@ public class AssertDashboard extends TestBase {
 
     @Test
     public void ASSERT_DASHBOARD() throws IOException, InterruptedException {
-        test = extent.createTest("ASSERT DASHBOARD");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
 
         login.LoginPremium();
 
@@ -77,7 +70,5 @@ public class AssertDashboard extends TestBase {
         } else {
             test.log(Status.FAIL, "Learn more cicod support is not displayed and enabled");
         }
-
-        driver.quit();
     }
 }

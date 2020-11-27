@@ -18,13 +18,7 @@ public class ViewWorkOrder extends TestBase {
 
     @Test
     public void VIEW_WORK_ORDER() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW WORK ORDER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginPremium();
@@ -88,7 +82,5 @@ public class ViewWorkOrder extends TestBase {
         } else {
             test.log(Status.FAIL, "BOM not displayed and enabled");
         }
-
-        driver.quit();
     }
 }

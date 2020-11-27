@@ -20,15 +20,10 @@ public class CreateDepartment extends TestBase {
 
     @Test
     public void CREATE_DEPARTMENT() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE DEPARTMENT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(1500000) + 1;
-
 
         login.LoginPremium();
 
@@ -61,7 +56,5 @@ public class CreateDepartment extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

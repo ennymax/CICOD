@@ -24,11 +24,7 @@ public class CreateNewResource extends TestBase {
 
     @Test
     public void CREATE_NEW_RESOURCE() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("CREATE NEW RESOURCE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         FileUpload fileUpload = new FileUpload();
 
@@ -142,7 +138,5 @@ public class CreateNewResource extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("CreateOKBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

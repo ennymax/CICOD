@@ -21,13 +21,8 @@ public class UpdateResourceShedule extends TestBase {
 
     @Test
     public void UPDATE_RESOURCE_SCHEDULE() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE RESOURCE SCHEDULE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
 
         login.LoginPremium();
 
@@ -61,7 +56,5 @@ public class UpdateResourceShedule extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN3_XPATH"))).click();
-
-        driver.quit();
     }
 }

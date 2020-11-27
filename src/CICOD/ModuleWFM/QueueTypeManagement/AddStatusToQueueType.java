@@ -22,13 +22,8 @@ public class AddStatusToQueueType extends TestBase {
 
     @Test
     public void ADD_STATUSES_TO_QUEUE_TYPE() throws IOException, InterruptedException {
-        test = extent.createTest("ADD STATUSES TO QUEUE TYPE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(15) + 1;
 
@@ -76,7 +71,5 @@ public class AddStatusToQueueType extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

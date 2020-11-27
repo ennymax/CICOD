@@ -13,12 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class Suspend_UnsuspendUser extends TestBase {
     @Test
     public void Suspend_UnsuspendUser() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND USER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
         ExcelUtil excelUtil = new ExcelUtil(driver);
@@ -40,7 +35,5 @@ public class Suspend_UnsuspendUser extends TestBase {
         utility.DowaitandAcceptAlerwhenReady(20);
         utility.DoAssertContainsWhenReady("Userpasscont_XPATH", "unsuss_TEXT", "userUnsusPass_TEXT", "userUnsusFail_TEXT", 30);
         excelUtil.DoclickWhenReady("Okbtnnn_XPATH",20);
-
-        driver.quit();
     }
 }

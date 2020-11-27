@@ -16,12 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class DefaultStatus extends TestBase {
     @Test
     public void DEFAULT_QUEUE_STATUES() throws IOException, InterruptedException {
-        test = extent.createTest("DEFAULT QUEUE STATUES");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginDef1();
@@ -83,7 +78,5 @@ public class DefaultStatus extends TestBase {
         } else {
             test.log(Status.FAIL, "Status PROCESSING is not present as Default");
         }
-
-        driver.quit();
     }
 }

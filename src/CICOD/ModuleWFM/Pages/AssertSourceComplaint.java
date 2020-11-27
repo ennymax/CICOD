@@ -17,16 +17,8 @@ import java.util.concurrent.TimeUnit;
 public class AssertSourceComplaint  extends TestBase {
     @Test
     public void ASSERT_SOURCE_COMPLAINT() throws IOException, InterruptedException {
-        test = extent.createTest("ASSERT SOURCE COMPLAINT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
 
         login.LoginPremium();
 
@@ -74,7 +66,5 @@ public class AssertSourceComplaint  extends TestBase {
         } else {
             test.log(Status.FAIL, "SetUp Wizard is not displayed and enabled");
         }
-
-        driver.quit();
     }
 }

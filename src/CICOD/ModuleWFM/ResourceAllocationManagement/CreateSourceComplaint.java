@@ -20,11 +20,7 @@ import java.io.IOException;
 public class CreateSourceComplaint extends TestBase {
     @Test
     public void CREATE_SOURCE_COMPLAIN() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE SOURCE COMPLAIN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
 
@@ -61,7 +57,5 @@ public class CreateSourceComplaint extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN4_XPATH"))).click();
-
-        driver.quit();
     }
 }

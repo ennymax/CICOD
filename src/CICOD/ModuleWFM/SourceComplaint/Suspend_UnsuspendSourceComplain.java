@@ -20,11 +20,7 @@ public class Suspend_UnsuspendSourceComplain extends TestBase {
 
     @Test
     public void SUSPEND_AND_UNSUSPEND_SOURCE_COMPLAIN() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND AND UNSUSPEND SOURCE COMPLAIN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginPremium();
@@ -79,7 +75,5 @@ public class Suspend_UnsuspendSourceComplain extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKSOU_XPATH"))).click();
-
-        driver.quit();
     }
 }

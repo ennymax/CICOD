@@ -15,12 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class ResetPassword extends TestBase {
     @Test
     public void ResetPassworD() throws IOException, InterruptedException {
-        test = extent.createTest("RESET PASSWORD");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
@@ -34,7 +29,5 @@ public class ResetPassword extends TestBase {
         utility.DowaitandAcceptAlerwhenReady(20);
         utility.DoAssertContainsWhenReady("lcont_XPATH", "usercontext_TEXT", "ResetpassPass_TEXT", "ResetpassFail_TEXT", 30);
         utility.DoclickWhenReady("OkBTNNREsetpassw_XPATH", "Ree_TEXT", 50);
-
-        driver.quit();
     }
 }

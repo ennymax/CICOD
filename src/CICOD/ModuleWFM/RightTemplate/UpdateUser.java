@@ -19,19 +19,10 @@ public class UpdateUser  extends TestBase {
 
     @Test
     public void UpdateUser() throws IOException, InterruptedException{
-        test = extent.createTest("UPDATE USER");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        FileUpload fileUpload = new FileUpload();
         Utility utility = new Utility(driver);
-        ExcelUtil excelUtil = new ExcelUtil(driver);
-
         SecureRandom rn = new SecureRandom();
-        int resourcetype = rn.nextInt(3) + 1;
 
         login.LoginNexus();
 
@@ -46,7 +37,5 @@ public class UpdateUser  extends TestBase {
         utility.DoclickWhenReady("CreateNewUser_XPATH", "UpCreta_TEXT",50);
         utility.DoAssertContainsWhenReady("AssertNewUserCreation_XPATH","Su_TEXT" ,"DplPass1_XPATH", "DplFail1_XPATH",30);
         utility.DoclickWhenReady("NewUserOKBTN_XPATH","Ok_TEXT",40);
-
-        driver.quit();
     }
 }

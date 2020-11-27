@@ -15,15 +15,8 @@ public class AssertQueueType extends TestBase {
 
     @Test
     public void ASSERT_QUEUE_TYPE() throws IOException, InterruptedException {
-        test = extent.createTest("ASSERT QUEUE TYPE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
 
         login.LoginPremium();
 
@@ -89,7 +82,5 @@ public class AssertQueueType extends TestBase {
         } else {
             test.log(Status.FAIL, "SetUp Wizard is not displayed and enabled");
         }
-
-        driver.quit();
     }
 }

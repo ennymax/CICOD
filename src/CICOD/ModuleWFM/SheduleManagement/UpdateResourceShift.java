@@ -22,11 +22,7 @@ public class UpdateResourceShift extends TestBase {
 
     @Test
     public void UPDATE_RESOURCE_SHIFT() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE RESOURCE SHIFT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         LocalDateTime date = LocalDateTime.now();
@@ -69,7 +65,5 @@ public class UpdateResourceShift extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

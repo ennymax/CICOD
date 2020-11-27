@@ -20,15 +20,9 @@ import java.security.SecureRandom;
 public class UpDateStatus extends TestBase {
     @Test
     public void UPDATE_STATUS() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE STATUS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        BrokenLink brokenLink = new BrokenLink(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(15) + 1;
 
@@ -77,7 +71,5 @@ public class UpDateStatus extends TestBase {
         Thread.sleep(2000);
         screenShot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("OkBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

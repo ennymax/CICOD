@@ -23,18 +23,10 @@ public class SetUpEscalationForQueueType extends TestBase {
 
     @Test
     public void SETUP_ESCALATION_FOR_QUEUE_TYPE() throws IOException, InterruptedException {
-        test = extent.createTest("SETUP ESCALATION FOR QUEUE TYPE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
-        Randomstuff randomStuff = new Randomstuff();
-        Randomstuff randomNumbers = new Randomstuff();
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(15000) + 1;
-
 
         login.LoginPremium();
 
@@ -84,7 +76,5 @@ public class SetUpEscalationForQueueType extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

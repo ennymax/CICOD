@@ -20,11 +20,7 @@ public class Suspend_UnsuspendResourceType extends TestBase {
 
     @Test
     public void SUSPEND_UNSUSPEND_RESOURCE_TYPE() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND RESOURCE TYPE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginPremium();
@@ -80,8 +76,5 @@ public class Suspend_UnsuspendResourceType extends TestBase {
 
         Thread.sleep(3000);
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
-        System.out.println("********************SUSPEND AND UNSUSPEND RESOURCE TYPE********************");
     }
 }

@@ -18,15 +18,9 @@ public class Suspend_UnsuspendQueueTypeStatus extends TestBase {
 
     @Test
     public void ADD_STATUSES_TO_QUEUE_TYPE() throws IOException, InterruptedException {
-        test = extent.createTest("Suspend Unsuspend QueueType Status");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
         SecureRandom rn = new SecureRandom();
-        int tom = rn.nextInt(15) + 1;
 
         login.LoginPremium();
 
@@ -64,7 +58,5 @@ public class Suspend_UnsuspendQueueTypeStatus extends TestBase {
 
         Thread.sleep(3000);
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

@@ -21,14 +21,8 @@ public class UpdateStatus extends TestBase {
 
     @Test
     public void UPDATE_STATUS() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE WORK ORDER STATUS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
 
         login.LoginPremium();
 
@@ -65,7 +59,5 @@ public class UpdateStatus extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

@@ -21,14 +21,8 @@ public class UpdateSourceComplain extends TestBase {
 
     @Test
     public void UPDATE_SOURCE_COMPLAIN() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE SOURCE COMPLAIN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
-        Randomstuff randomStuff = new Randomstuff();
 
         login.LoginPremium();
 
@@ -68,7 +62,5 @@ public class UpdateSourceComplain extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN4_XPATH"))).click();
-
-        driver.quit();
     }
 }

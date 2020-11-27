@@ -18,14 +18,9 @@ public class CreateStatus extends TestBase {
 
     @Test
     public void CREATE_STATUS() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE STATUS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
         Randomstuff randomStuff = new Randomstuff();
 
         login.LoginPremium();
@@ -59,7 +54,5 @@ public class CreateStatus extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }

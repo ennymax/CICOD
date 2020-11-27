@@ -22,13 +22,8 @@ public class Show_HideStatusFromResource extends TestBase {
 
     @Test
     public void SHOW_HIDE_STATUS_FROM_RESOURCE() throws IOException, InterruptedException {
-        test = extent.createTest("SHOW/HIDE STATUS FROM RESOURCE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(15) + 1;
 
@@ -107,7 +102,5 @@ public class Show_HideStatusFromResource extends TestBase {
         } else {
             test.log(Status.FAIL, "Hide Status from Resource Failed");
         }
-
-        driver.quit();
     }
 }

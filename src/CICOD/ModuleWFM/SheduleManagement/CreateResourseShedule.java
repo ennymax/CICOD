@@ -20,15 +20,8 @@ public class CreateResourseShedule extends TestBase {
 
     @Test
     public void CREATE_RESOURCE_SCHEDULE() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE RESOURCE SCHEDULE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
-        ScreenShot screenShot = new ScreenShot(driver);
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
-        Randomstuff randomNumbers = new Randomstuff();
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(150000) + 1;
 
@@ -86,7 +79,5 @@ public class CreateResourseShedule extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN3_XPATH"))).click();
-
-        driver.quit();
     }
 }

@@ -19,14 +19,9 @@ public class Suspend_Unsuspend_Department extends TestBase {
 
     @Test
     public void Suspend_Unsuspend_Department() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND DEPARTMENT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
-        int tom = rn.nextInt(1500000) + 1;
 
         login.LoginPremium();
 
@@ -68,7 +63,5 @@ public class Suspend_Unsuspend_Department extends TestBase {
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("dptOkBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

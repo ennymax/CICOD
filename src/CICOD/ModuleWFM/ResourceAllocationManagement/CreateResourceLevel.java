@@ -18,11 +18,7 @@ public class CreateResourceLevel extends TestBase {
 
     @Test
     public void CREATE_RESOURCE_LEVEL() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE RESOURCE LEVEL");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
 
@@ -52,7 +48,5 @@ public class CreateResourceLevel extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ResourceLevelOKBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

@@ -20,14 +20,8 @@ import java.io.IOException;
 public class Suspend_UnsuspendRegionToRole extends TestBase {
     @Test
     public void SUSPEND_UNSUSPEND_ESCALATION_ROLE() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND ESCALATION ROLE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
-        Randomstuff randomStuff = new Randomstuff();
 
         login.LoginPremium();
 
@@ -71,7 +65,5 @@ public class Suspend_UnsuspendRegionToRole extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN6_XPATH"))).click();
-
-        driver.quit();
     }
 }

@@ -20,11 +20,7 @@ public class CreateResourceType extends TestBase {
 
     @Test
     public void CREATE_RESOURCE_TYPE() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE RESOURCE TYPE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
 
@@ -67,8 +63,5 @@ public class CreateResourceType extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("ResourceTypeOKBTN_XPATH"))).click();
-
-        driver.quit();
-        System.out.println("********************CREATE RESOURCE TYPE********************");
     }
 }

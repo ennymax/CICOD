@@ -21,13 +21,8 @@ public class CreateQueue extends TestBase {
 
     @Test
     public void CREATE_QUEUE() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE QUEUE");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
         Randomstuff randomStuff = new Randomstuff();
 
         login.LoginPremium();
@@ -63,7 +58,5 @@ public class CreateQueue extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTNZ_XPATH"))).click();
-
-        driver.quit();
     }
 }

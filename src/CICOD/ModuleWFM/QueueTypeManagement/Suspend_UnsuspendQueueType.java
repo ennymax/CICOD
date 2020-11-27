@@ -20,14 +20,9 @@ import java.io.IOException;
 public class Suspend_UnsuspendQueueType extends TestBase {
     @Test
     public void SUSPEND_AND_UNSUSPEND_QUEUE_TYPE_STATUS() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND AND UNSUSPEND QUEUE TYPE STATUS");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("https://www.cicod.com/login");
-
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
-        TabHandle tabHandle = new TabHandle(driver);
 
         login.LoginPremium();
 
@@ -80,7 +75,5 @@ public class Suspend_UnsuspendQueueType extends TestBase {
         }
 
         driver.findElement(By.xpath(Utility.fetchLocator("OKBTN1_XPATH"))).click();
-
-        driver.quit();
     }
 }
