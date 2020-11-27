@@ -26,7 +26,7 @@ public class CarouselBanner extends TestBase {
 
     @Test
     public void CAROUSEL_BANNER() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("CAROUSEL BANNER");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         FileUpload fileUpload = new FileUpload();
         Login login = new Login(driver);
 

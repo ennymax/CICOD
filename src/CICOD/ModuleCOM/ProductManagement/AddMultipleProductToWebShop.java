@@ -24,7 +24,7 @@ public class AddMultipleProductToWebShop extends TestBase {
 
     @Test
     public void ADD_MULTIPLE_PRODUCT_TO_WEBSHOP() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("ADD MULTIPLE PRODUCT TO WEBSHOP");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.Login();

@@ -9,7 +9,7 @@ import java.io.IOException;
 public class SessionTimeOutTest extends TestBase {
     @Test
     public void SessionTimeOut() throws IOException, InterruptedException {
-        test = extent.createTest("SESSION TIMEOUT");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 
@@ -41,6 +41,6 @@ public class SessionTimeOutTest extends TestBase {
 
         Thread.sleep(60000);
         Thread.sleep(3600000);
-        utility.DoAssertTittle("TittleBF_TEXT","BFPass_TEXT","BFFail_TEXT");
+        utility.DoAssertTittle("TittleAF_TEXT","AFPass_TEXT","AFFail_TEXT");
     }
 }

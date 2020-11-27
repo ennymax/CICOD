@@ -23,7 +23,7 @@ public class PRODUCT_CATEGORY extends TestBase {
 
     @Test
     public void PRODUCT_category() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("PRODUCT CATEGORY");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         FileUpload fileUpload = new FileUpload();
         Randomstuff randomstuff = new Randomstuff();

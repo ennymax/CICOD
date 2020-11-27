@@ -22,7 +22,7 @@ import java.security.SecureRandom;
 public class CreateSalesCommissionOnOrder extends TestBase {
     @Test
     public void CREATE_SALE_COMMISSION_ON_ORDER() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("CREATE SALE COMMISSION ON ORDER");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;

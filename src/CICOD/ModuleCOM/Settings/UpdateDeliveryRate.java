@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class UpdateDeliveryRate  extends TestBase {
     @Test
     public void UPDATE_DELIVERY_RATE() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE DELIVERY RATE");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();

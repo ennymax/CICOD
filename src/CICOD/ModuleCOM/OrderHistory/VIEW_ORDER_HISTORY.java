@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class VIEW_ORDER_HISTORY extends TestBase {
     @Test
     public void VIEW_ORDER_history() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW ORDER HISTORY");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

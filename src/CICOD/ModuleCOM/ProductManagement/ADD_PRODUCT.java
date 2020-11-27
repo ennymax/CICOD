@@ -23,7 +23,7 @@ public class ADD_PRODUCT extends TestBase {
 
     @Test
     public void ADD_PRODUCTs() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("ADD PRODUCT");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
         SecureRandom rn = new SecureRandom();

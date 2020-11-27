@@ -20,7 +20,7 @@ public class THEME_AND_CONFIG extends TestBase {
 
     @Test
     public void THEME_CONFIG() throws IOException, InterruptedException {
-        test = extent.createTest("THEME AND CONFIG");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.Login();

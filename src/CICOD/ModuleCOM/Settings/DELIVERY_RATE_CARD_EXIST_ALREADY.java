@@ -21,7 +21,7 @@ public class DELIVERY_RATE_CARD_EXIST_ALREADY extends TestBase {
 
     @Test
     public void DELIVERY_RATE_CARD_SETUP() throws IOException, InterruptedException {
-        test = extent.createTest("DELIVERY RATE CARD SETUP");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

@@ -23,6 +23,7 @@ public class UploadCustomer extends TestBase {
     public void UPLOAD_CUSTOMER() throws IOException, InterruptedException, AWTException {
         test = extent.createTest("UPLOAD CUSTOMER");
         ScreenShot screenshot = new ScreenShot(driver);
+        Utility utility = new Utility(driver);
         Login login = new Login(driver);
         FileUpload fileUpload = new FileUpload();
 
@@ -55,5 +56,7 @@ public class UploadCustomer extends TestBase {
         jsq.executeScript("arguments[0].click();", elementq);
 
         fileUpload.UploadXLSX1();
+
+        utility.DoAssertContainsWhenReady("AsserfileUp_XPATH","Assertfileupstr_TEXT","Assertionpp_TEXT","Assertionpf_TEXT",20);
     }
 }

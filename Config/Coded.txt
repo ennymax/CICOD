@@ -87,7 +87,7 @@
          driver.findElement(By.xpath(Utility.fetchLocator("RegionEmail_XPATH"))).sendKeys(new Generex(regex).random());
 
 
-        cicodsaasstaging.com/lyte
+        cicodsaasstaging.com
         Cicodsaasdev.com
 
 
@@ -198,6 +198,8 @@ DefEmail_TEXT=demotestng@yopmail.com
 DefPassword_TEXT=@Ecomax1759
 
 STAGING_STAGING_STAGING
+cicodsaasstaging.com
+
 ndanitv
 ndanitv@sharklasers.com
 Ndanitv@123
@@ -213,7 +215,6 @@ Password:@Ecomax1759
 stratoscorp
 stratoscorp@yopmail.com
 Crown@123
-
 
 DEV_DEV_DEV
 cicodsaasdev.com
@@ -237,3 +238,4 @@ DEV:
 Tenant ID: blakesshawn
 Email:Patrick.ijiti@crowninteractive.com
 Password: Pat1234!
+

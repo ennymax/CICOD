@@ -23,7 +23,7 @@ import java.security.SecureRandom;
 public class CreateProductSpecificSpend extends TestBase {
     @Test
     public void CREATE_PRODUCT_SPECIFIC_SPEND() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("CREATE PRODUCT SPECIFIC SPEND");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(50) + 1;

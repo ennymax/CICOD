@@ -20,7 +20,7 @@ public class Suspend_Unsuspend_PointSetUp extends TestBase {
 
     @Test
     public void USUSPEND_UNSUSPEND_POINT_SETUP() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND POINT SETUP");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
 

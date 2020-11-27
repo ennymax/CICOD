@@ -20,7 +20,7 @@ import static org.testng.AssertJUnit.assertEquals;
 public class PurchaseProductValuechainPayNow extends TestBase {
     @Test
     public void PURCHASE_PRODUCT_VIA_VALUE_CHAIN_PAYNOW() throws IOException, InterruptedException {
-        test = extent.createTest("PURCHASE PRODUCT VIA VALUE CHAIN PAY NOW");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Utility utility = new Utility(driver);
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);

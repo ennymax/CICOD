@@ -23,7 +23,7 @@ public class CreateSaleTarget extends TestBase {
 
     @Test
     public void CREATE_VALUE_SPECIFIC_SPEND() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("CREATE VALUE SPECIFIC SPEND");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;

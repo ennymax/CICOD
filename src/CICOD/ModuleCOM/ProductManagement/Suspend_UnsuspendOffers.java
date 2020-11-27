@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 public class Suspend_UnsuspendOffers extends TestBase {
     @Test
     public void Suspend_Unsuspend_Offers_Settings() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("Suspend and Unsuspend Offer SETTINGS");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
 

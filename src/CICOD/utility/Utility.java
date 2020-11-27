@@ -441,6 +441,7 @@ public class Utility extends TestBase{
             assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
             test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
         } catch (Throwable e) {
+            System.out.println(driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
             test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmessage));
         }
     }

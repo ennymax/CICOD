@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 public class SuspendUnsuspendDeliveryRate extends TestBase {
     @Test
     public void DELIVERY_RATE_CARD_SETUP() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND DELIVERY RATE");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.Login();

@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class Set_Spend_and_Assert_Minimum_Spend extends TestBase {
     @Test
     public void Set_Spend_and_Assert_Minimum_Spend() throws IOException, InterruptedException {
-        test = extent.createTest("Set Minimum Spend and Assert Minimum Spend");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

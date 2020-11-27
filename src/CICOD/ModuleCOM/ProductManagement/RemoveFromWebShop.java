@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 public class RemoveFromWebShop extends TestBase {
     @Test
     public void REMOVE_FROM_WEBSHOP() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("REMOVE FROM WEBSHOP");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.Login();

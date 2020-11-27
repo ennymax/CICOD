@@ -18,7 +18,7 @@ public class Downloadorderhistory extends TestBase {
 
     @Test
     public void DOWNLOAD_ORDER_HISTORY() throws IOException, InterruptedException {
-        test = extent.createTest("DOWNLOAD ORDER HISTORY");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

@@ -25,7 +25,7 @@ public class UpdateOfferSettings extends TestBase {
 
     @Test
     public void Update_Offer_settings() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("Update Offer settings");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         login.Login();
