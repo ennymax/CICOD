@@ -318,13 +318,15 @@ public class TestBase {
     public void tearDown() throws InterruptedException, IOException {
         if (driver != null)
             driver.quit();
+    }
 
+
+    @AfterTest
+    public void AfterTest() throws IOException, InterruptedException {
         if (Boolean.parseBoolean(Utility.fetchProperty("SendReport").toString())) {
-            Thread.sleep(3000);
             SendReport("Reciever1");
             SendReport("gmail");
         } else {
-            Thread.sleep(3000);
             SendReport("Emax");
         }
     }
