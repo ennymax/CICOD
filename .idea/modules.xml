@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DataDrivenFramework.iml" filepath="$PROJECT_DIR$/DataDrivenFramework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Email/spring-boot-send-email.iml" filepath="$PROJECT_DIR$/../Email/spring-boot-send-email.iml" />
     </modules>
   </component>
 </project>

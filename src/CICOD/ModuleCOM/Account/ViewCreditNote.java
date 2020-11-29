@@ -28,7 +28,6 @@ public class ViewCreditNote extends TestBase {
     public void View_Credit_Note() throws IOException, InterruptedException, AWTException {
         test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
 
         login.Login();
 
@@ -55,7 +54,5 @@ public class ViewCreditNote extends TestBase {
         Thread.sleep(2000);
         assertEquals("Credit Note", driver.findElement(By.xpath(Utility.fetchLocator("AssertViewCrerditNote_XPATH"))).getText());
         test.log(Status.PASS, "Credit Note can be Viewed");
-
-        driver.quit();
     }
 }

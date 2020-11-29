@@ -13,6 +13,8 @@ import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.comparator.LastModifiedFileComparator;
+import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -24,9 +26,20 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.springframework.mail.SimpleMailMessage;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -36,6 +49,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -46,6 +60,7 @@ public class TestBase {
 
     private static final String OUTPUT_FOLDER = "./Report/";
     private static final String FILE_NAME = "Report" + System.currentTimeMillis() + ".html";
+
 
     @BeforeSuite
     public void setup() throws IOException {
@@ -61,6 +76,7 @@ public class TestBase {
             }
         }
         htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + FILE_NAME);
+
         htmlReporter.config().setDocumentTitle(Utility.fetchProperty("ProjectName").toString());
         htmlReporter.config().setReportName(Utility.fetchProperty("Tname").toString());
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
@@ -78,8 +94,6 @@ public class TestBase {
 
     @BeforeClass
     public void setUp() throws IOException {
-        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
-
         if (Utility.fetchProperty("browserName").toString().equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             if (Boolean.parseBoolean(Utility.fetchProperty("LunchOption").toString())) {
@@ -200,6 +214,74 @@ public class TestBase {
             test.getModel().setEndTime(getTime(result.getEndMillis()));
         }
         extent.flush();
+
+    }
+
+    public void SendReport(String RecipientEmail) throws IOException {
+        final String username = Utility.fetchProperty("HostEmail").toString();
+        final String password = Utility.fetchProperty("HostPassword").toString();
+        String emailID = Utility.fetchProperty(RecipientEmail).toString();
+
+        Properties props = new Properties();
+        props.put("mail.smtp.starttls.enable", true);
+        props.put("mail.smtp.auth", true);
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+
+
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+
+        try {
+
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailID));
+            message.setSubject("Test Report");
+            message.setText("Cicod");
+
+            MimeBodyPart messageBodyPart = new MimeBodyPart();
+
+            Multipart multipart = new MimeMultipart();
+
+            messageBodyPart = new MimeBodyPart();
+            File file = getTheNewestFile(System.getProperty("user.dir") + "\\Report\\","html");
+            String fileName = "Cicod Test Report";
+            DataSource source = new FileDataSource(file);
+            messageBodyPart.setDataHandler(new DataHandler(source));
+            messageBodyPart.setFileName(fileName);
+            multipart.addBodyPart(messageBodyPart);
+
+            message.setContent(multipart);
+
+            System.out.println("*************************************Sending Report******************************************");
+
+            Transport.send(message);
+
+            System.out.println("****************************************Done***************************************************");
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public File getTheNewestFile(String filePath, String ext) {
+        File theNewestFile = null;
+        File dir = new File(filePath);
+        FileFilter fileFilter = new WildcardFileFilter("*." + ext);
+        File[] files = dir.listFiles(fileFilter);
+
+        if (files.length > 0) {
+            /** The newest file comes first **/
+            Arrays.sort(files, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
+            theNewestFile = files[0];
+        }
+
+        return theNewestFile;
     }
 
     private Date getTime(long millis) {
@@ -233,8 +315,17 @@ public class TestBase {
     }
 
     @AfterClass
-    public void tearDown() {
+    public void tearDown() throws InterruptedException, IOException {
         if (driver != null)
             driver.quit();
+
+        if (Boolean.parseBoolean(Utility.fetchProperty("SendReport").toString())) {
+            Thread.sleep(3000);
+            SendReport("Reciever1");
+            SendReport("gmail");
+        } else {
+            Thread.sleep(3000);
+            SendReport("Emax");
+        }
     }
 }
