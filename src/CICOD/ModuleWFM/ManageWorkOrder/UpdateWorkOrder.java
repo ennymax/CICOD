@@ -42,8 +42,6 @@ public class UpdateWorkOrder extends TestBase {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("UpdateWorkOrder_XPATH"))).click();
 
-        Thread.sleep(2000);
-        screenShot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("CreateBtn_XPATH"))).click();
 
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertTrue_XPATH"))).size() != 0) {
@@ -52,7 +50,6 @@ public class UpdateWorkOrder extends TestBase {
             test.log(Status.FAIL, "Update Work Order Failed");
         }
 
-        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("OkBTN_XPATH"))).click();
     }
 }

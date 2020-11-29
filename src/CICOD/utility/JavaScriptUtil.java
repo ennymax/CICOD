@@ -4,6 +4,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
+
 public class JavaScriptUtil {
 
 	WebDriver driver;
@@ -12,18 +14,10 @@ public class JavaScriptUtil {
 		this.driver = driver;
 	}
 
-	public void flash(WebElement element) {
+	private void changeColor(String color, String element) throws IOException, InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		String bgcolor = element.getCssValue("backgroundColor");
-		for (int i = 0; i < 50; i++) {
-			changeColor("rgb(0,200,0)", element);// 1
-			changeColor(bgcolor, element);// 2
-		}
-	}
-
-	private void changeColor(String color, WebElement element) {
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("arguments[0].style.backgroundColor = '" + color + "'", element);
+		js.executeScript("arguments[0].style.backgroundColor = '" + color + "'", Utility.fetchLocator(element));
 
 		try {
 			Thread.sleep(20);
@@ -31,58 +25,70 @@ public class JavaScriptUtil {
 		}
 	}
 
-	public String getTitleByJS() {
+	public String getTitleByJS() throws InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		return js.executeScript("return document.title;").toString();
 	}
 
-	public void refreshBrowserByJS() {
+	public void refreshBrowserByJS() throws InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("history.go(0)");
 	}
 
-	public void generateAlert(String message) {
+	public void generateAlert(String message) throws InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("alert('" + message + "')");
 	}
 
-	public String getPageInnerText() {
+	public String getPageInnerText() throws InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		return js.executeScript("return document.documentElement.innerText;").toString();
 	}
 
-	public void clickElementByJS(WebElement element) {
+	public void clickElementByJS(String element) throws IOException, InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", element);
+		js.executeScript("arguments[0].click();", Utility.fetchLocator(element));
 	}
 
-	public void sendKeysUsingWithId(String id, String value) {
+	public void sendKeysUsingWithId(String id, String value) throws InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementById('" + id + "').value='" + value + "'");
 	}
 
-	public void scrollPageDown() {
+	public void scrollPageDown() throws InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	}
 
-	public void scrollPageDown(String height) {
+	public void scrollPageDown(String height) throws InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, '" + height + "')");
 	}
 
-	public void scrollPageUp() {
+	public void scrollPageUp() throws InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(document.body.scrollHeight, 0)");
 	}
 
-	public void scrollIntoView(WebElement element) {
+	public void scrollIntoView(String element) throws InterruptedException, IOException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		js.executeScript("arguments[0].scrollIntoView(true);", Utility.fetchLocator(element));
+		Thread.sleep(600);
 	}
 
-	public void drawOrder(WebElement element) {
+	public void drawOrder(String element) throws IOException, InterruptedException {
+		Thread.sleep(800);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].style.border='3px solid red'", element);
+		js.executeScript("arguments[0].style.border='3px solid red'", Utility.fetchLocator(element));
 	}
 }

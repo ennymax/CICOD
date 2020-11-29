@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class ViewPendingCollections extends TestBase {
     @Test
     public void VIEW_PENDING_COLLECTION() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW PENDING COLLECTION");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();

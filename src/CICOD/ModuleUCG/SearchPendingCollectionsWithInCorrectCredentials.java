@@ -20,7 +20,7 @@ public class SearchPendingCollectionsWithInCorrectCredentials extends TestBase {
 
     @Test
     public void SEARCH_PENDING_INCOLLECTION_WITH_CORRECT_CREDENTIALS() throws IOException, InterruptedException {
-        test = extent.createTest("SEARCH PENDING COLLECTION WITH INCORRECT CREDENTIALS");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 

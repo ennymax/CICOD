@@ -25,9 +25,28 @@
             <class name="CICOD.ModuleWFM.ManageWorkOrder.ChangePriorities"/>
             <class name="CICOD.ModuleWFM.ManageWorkOrder.ViewWorkOrder"/>
             <class name="CICOD.ModuleWFM.ManageWorkOrder.UpDateStatus"/>
-            <class name="CICOD.ModuleWFM.ManageWorkOrder.UpdateWorkOrder"/>
-            <class name="CICOD.ModuleWFM.ManageWorkOrder.CreateWorkOrder"/>
             <class name="CICOD.ModuleWFM.ManageWorkOrder.Suspend_Unsuspend_WorkOrder"/>
+        </classes>
+    </test>
+
+    <test name = "Queue Management">
+        <classes>
+            <class name="CICOD.ModuleWFM.QueueManagement.SUSPEND_AND_UNSUSPEND_QUEUE"/>
+            <class name="CICOD.ModuleWFM.QueueManagement.CreateQueue"/>
+            <class name="CICOD.ModuleWFM.QueueManagement.UpdateQUEUE"/>
+        </classes>
+    </test>
+
+    <test name = "QueueTypeManagement" >
+        <classes>
+            <class name="CICOD.ModuleWFM.QueueTypeManagement.CreateQueueType"/>
+            <class name="CICOD.ModuleWFM.QueueTypeManagement.AddStatusToQueueType"/>
+            <class name="CICOD.ModuleWFM.QueueTypeManagement.SetUpEscalationForQueueType"/>
+            <class name="CICOD.ModuleWFM.QueueTypeManagement.AddStatusToQueueType"/>
+            <class name="CICOD.ModuleWFM.QueueTypeManagement.Show_HideStatusFromResource"/>
+            <class name="CICOD.ModuleWFM.QueueTypeManagement.Suspend_UnsuspendQueueType"/>
+            <class name="CICOD.ModuleWFM.QueueTypeManagement.UpdateQueueType"/>
+            <class name="CICOD.ModuleWFM.QueueTypeManagement.Suspend_UnsuspendQueueTypeStatus"/>
         </classes>
     </test>
 

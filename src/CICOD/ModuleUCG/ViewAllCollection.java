@@ -20,7 +20,7 @@ public class ViewAllCollection extends TestBase {
 
     @Test
     public void VIEW_ALL_COLLECTION() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW ALL COLLECTION");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();

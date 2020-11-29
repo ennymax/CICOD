@@ -24,7 +24,8 @@ public class CreateWorkOrder extends TestBase {
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
-        SecureRandom rn = new SecureRandom();
+        Utility utility = new Utility(driver);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
         login.LoginPremium();
 
@@ -64,6 +65,15 @@ public class CreateWorkOrder extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("AddressLine2_XPATH"))).sendKeys(Utility.fetchLocator("AddressLine1_TEXT"));
 
         Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("cont_XPATH"))).click();
+
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoscrolltoViewClickFluentWait("cont_XPATH", 20);
+        excelUtil.DoSelectValuesByIndex("cont_XPATH",5,20);
+        excelUtil.DoclickWhenReady("niger_XPATH", 20);
+        javaScriptUtil.clickElementByJS("niger_XPATH");
+
+        Thread.sleep(999999999);
         WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("city_XPATH")));
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].scrollIntoView();", ti11);

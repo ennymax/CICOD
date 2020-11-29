@@ -22,7 +22,7 @@ public class ReprintRecipt extends TestBase {
 
     @Test
     public void REPRINT_RECEIPT() throws IOException, InterruptedException {
-        test = extent.createTest("REPRINT RECEIPT");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();

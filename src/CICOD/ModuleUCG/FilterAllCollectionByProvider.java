@@ -21,7 +21,7 @@ public class FilterAllCollectionByProvider extends TestBase {
 
     @Test
     public void FILTER_ALL_COLLECTION_USING_PROVIDERS() throws IOException, InterruptedException {
-        test = extent.createTest("FILTER ALL COLLECTION USING PROVIDERS");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 

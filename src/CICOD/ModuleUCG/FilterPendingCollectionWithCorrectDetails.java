@@ -21,7 +21,7 @@ public class FilterPendingCollectionWithCorrectDetails extends TestBase {
 
     @Test
     public void FILTER_PENDING_COLLECTION_WITH_CORRECT_CREDENTIALS() throws IOException, InterruptedException {
-        test = extent.createTest("FILTER PENDING COLLECTION WITH CORRECT CREDENTIALS");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();

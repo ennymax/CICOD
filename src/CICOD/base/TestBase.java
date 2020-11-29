@@ -1,6 +1,7 @@
 package CICOD.base;
 
 import CICOD.utility.BrokenLink;
+import CICOD.utility.JavaScriptUtil;
 import CICOD.utility.Utility;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -77,6 +78,7 @@ public class TestBase {
 
     @BeforeClass
     public void setUp() throws IOException {
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
         if (Utility.fetchProperty("browserName").toString().equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
@@ -153,12 +155,13 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void getResult(ITestResult result) {
+    public void getResult(ITestResult result) throws InterruptedException {
         String methodName = result.getMethod().getMethodName();
         String qualifiedName = result.getMethod().getQualifiedName();
         int last = qualifiedName.lastIndexOf(".");
         int mid = qualifiedName.substring(0, last).lastIndexOf(".");
         String className = qualifiedName.substring(mid + 1, last);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
         if (result.getStatus() == ITestResult.STARTED) {
             System.out.println("***************************" + methodName + " started!************************************");
@@ -166,21 +169,25 @@ public class TestBase {
             extentTest.assignCategory(result.getTestContext().getSuite().getName());
             extentTest.assignCategory(className);
             test = extent.createTest(result.getMethod().getMethodName().toLowerCase());
+            javaScriptUtil.generateAlert("Test Started");
         }
 
         if (result.getStatus() == ITestResult.FAILURE) {
             test.fail(MarkupHelper.createLabel(result.getName() + " The Test Case Failed", ExtentColor.RED));
             test.fail(result.getThrowable());
+            javaScriptUtil.generateAlert("Test Failed");
             System.out.println("***************************Failed********************* " + (result.getMethod().getMethodName() + " ********************Failed******************"));
             System.out.println("***************************Failed********************* " + getTime(result.getEndMillis()) + " ********************Failed******************");
         } else if (result.getStatus() == ITestResult.SUCCESS) {
             test.pass(MarkupHelper.createLabel(result.getName() + " The Test Case Passed", ExtentColor.GREEN));
+            javaScriptUtil.generateAlert("Test Passed");
             System.out.println("***************************Passed********************* " + (result.getMethod().getMethodName() + " ********************Passed******************"));
             System.out.println("***************************Passed********************* " + getTime(result.getEndMillis()) + " ********************Passed******************");
             test.getModel().setEndTime(getTime(result.getEndMillis()));
         } else if (result.getStatus() == ITestResult.SKIP) {
             test.skip(MarkupHelper.createLabel(result.getName() + " The Test Case Skipped", ExtentColor.YELLOW));
             test.skip(result.getThrowable());
+            javaScriptUtil.generateAlert("Test Skipped");
             System.out.println("***************************Skipped********************* " + (result.getMethod().getMethodName() + " ********************Skipped******************"));
             System.out.println("***************************Skipped********************* " + getTime(result.getEndMillis()) + " ********************Skipped******************");
 

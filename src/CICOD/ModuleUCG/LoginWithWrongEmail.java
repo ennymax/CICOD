@@ -16,7 +16,7 @@ public class LoginWithWrongEmail extends TestBase {
 
     @Test
     public void LOGIN_WITH_WRONG_EMAIL() throws IOException, InterruptedException {
-        test = extent.createTest("LOGIN WITH WRONG EMAIL");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginWrongEmail();

@@ -16,7 +16,7 @@ public class LoginWithWrongDomain extends TestBase {
 
     @Test
     public void LOGIN_WITH_WRONG_DOMAIN() throws IOException, InterruptedException {
-        test = extent.createTest("LOGIN WITH WRONG DOMAIN");
+        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginWrongDomainName();
