@@ -201,7 +201,7 @@ STAGING_STAGING_STAGING
 cicodsaasstaging.com
 
 ndanitv
-ndanitv@sharklasers.com
+
 Ndanitv@123
 
 shop Name ::Emaxkemi 
@@ -239,3 +239,10 @@ Tenant ID: blakesshawn
 Email:Patrick.ijiti@crowninteractive.com
 Password: Pat1234!
 
+all Good Morning all
+27/11/2020
+1. Functional Test WFM Mobile App(On going)
+2. Test ISO Security Fix(On going)
+30/11/2020
+1. Test Update On Value Chain(Done)
+2. Test ISO Security Fix(On going)

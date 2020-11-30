@@ -23,9 +23,9 @@ public class LoginWithWrongEmail extends TestBase {
 
         Thread.sleep(1200);
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertInvalidEmailOrPassword_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "Login was successful FAILED");
+            test.log(Status.PASS, "Login was successful");
         } else {
-            test.log(Status.FAIL, "Login Successful");
+            test.log(Status.FAIL, "Login Failed");
         }
     }
 }

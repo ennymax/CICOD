@@ -2,6 +2,7 @@ package CICOD.base;
 
 import CICOD.utility.BrokenLink;
 import CICOD.utility.JavaScriptUtil;
+import CICOD.utility.ScreenShot;
 import CICOD.utility.Utility;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -53,6 +54,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
+
     public WebDriver driver;
     public static ExtentReports extent;
     public static ExtentHtmlReporter htmlReporter;
@@ -60,7 +62,6 @@ public class TestBase {
 
     private static final String OUTPUT_FOLDER = "./Report/";
     private static final String FILE_NAME = "Report" + System.currentTimeMillis() + ".html";
-
 
     @BeforeSuite
     public void setup() throws IOException {
@@ -169,7 +170,8 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void getResult(ITestResult result) throws InterruptedException {
+    public void getResult(ITestResult result) throws InterruptedException, IOException {
+        ScreenShot screenShot = new ScreenShot(driver);
         String methodName = result.getMethod().getMethodName();
         String qualifiedName = result.getMethod().getQualifiedName();
         int last = qualifiedName.lastIndexOf(".");
@@ -188,7 +190,8 @@ public class TestBase {
 
         if (result.getStatus() == ITestResult.FAILURE) {
             test.fail(MarkupHelper.createLabel(result.getName() + " The Test Case Failed", ExtentColor.RED));
-            test.fail(result.getThrowable());
+           // test.fail(result.getThrowable());
+            test.fail(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(screenShot.ScreenShot1()).build());
             javaScriptUtil.generateAlert("Test Failed");
             System.out.println("***************************Failed********************* " + (result.getMethod().getMethodName() + " ********************Failed******************"));
             System.out.println("***************************Failed********************* " + getTime(result.getEndMillis()) + " ********************Failed******************");
@@ -206,29 +209,34 @@ public class TestBase {
             System.out.println("***************************Skipped********************* " + getTime(result.getEndMillis()) + " ********************Skipped******************");
 
             try {
-                test.skip(result.getThrowable(),
-                        MediaEntityBuilder.createScreenCaptureFromPath(getScreenshot()).build());
+                test.skip(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(screenShot.ScreenShot1()).build());
             } catch (IOException e) {
                 System.err.println("Exception thrown while updating test skip status " + Arrays.toString(e.getStackTrace()));
             }
+
             test.getModel().setEndTime(getTime(result.getEndMillis()));
         }
+
         extent.flush();
 
     }
 
     public void SendReport(String RecipientEmail) throws IOException {
+        String to = Utility.fetchProperty("HostEmail").toString();
+        String from = Utility.fetchProperty(RecipientEmail).toString();
+
         final String username = Utility.fetchProperty("HostEmail").toString();
         final String password = Utility.fetchProperty("HostPassword").toString();
-        String emailID = Utility.fetchProperty(RecipientEmail).toString();
+
+        String host = "smtp.gmail.com";
 
         Properties props = new Properties();
-        props.put("mail.smtp.starttls.enable", true);
-        props.put("mail.smtp.auth", true);
-        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", host);
         props.put("mail.smtp.port", "587");
 
-
+        // Get the Session object.
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
@@ -237,37 +245,40 @@ public class TestBase {
                 });
 
         try {
-
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(username));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(emailID));
-            message.setSubject("Test Report");
-            message.setText("Cicod");
+            message.setFrom(new InternetAddress(from));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
 
-            MimeBodyPart messageBodyPart = new MimeBodyPart();
+            message.setSubject("Testing Subject");
+            BodyPart messageBodyPart = new MimeBodyPart();
+
+            messageBodyPart.setContent("<h1>"+ Utility.fetchProperty("EmailTopic").toString() +"</h1>", "text/html");
+
+            BodyPart messa = new MimeBodyPart();
+            messa.setText(Utility.fetchProperty("MessageBody").toString());
 
             Multipart multipart = new MimeMultipart();
-
-            messageBodyPart = new MimeBodyPart();
-            File file = getTheNewestFile(System.getProperty("user.dir") + "\\Report\\","html");
-            String fileName = "Cicod Test Report";
-            DataSource source = new FileDataSource(file);
-            messageBodyPart.setDataHandler(new DataHandler(source));
-            messageBodyPart.setFileName(fileName);
             multipart.addBodyPart(messageBodyPart);
 
+            messageBodyPart = new MimeBodyPart();
+            File filename = getTheNewestFile(System.getProperty("user.dir") + "\\Report\\","html");
+            String nsme = "CicodReport";
+            DataSource source = new FileDataSource(filename);
+            messageBodyPart.setDataHandler(new DataHandler(source));
+            messageBodyPart.setFileName(nsme);
+            multipart.addBodyPart(messageBodyPart);
+            multipart.addBodyPart(messa);
             message.setContent(multipart);
 
             System.out.println("*************************************Sending Report******************************************");
-
             Transport.send(message);
-
             System.out.println("****************************************Done***************************************************");
 
         } catch (MessagingException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
+
 
     public File getTheNewestFile(String filePath, String ext) {
         File theNewestFile = null;
@@ -276,7 +287,7 @@ public class TestBase {
         File[] files = dir.listFiles(fileFilter);
 
         if (files.length > 0) {
-            /** The newest file comes first **/
+
             Arrays.sort(files, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
             theNewestFile = files[0];
         }
@@ -291,43 +302,21 @@ public class TestBase {
     }
 
 
-    public String getScreenshot() {
-        Path path = Paths.get(OUTPUT_FOLDER);
-        // if directory exists?
-        if (!Files.exists(path)) {
-            try {
-                Files.createDirectories(path);
-            } catch (IOException e) {
-                // fail to create directory
-                e.printStackTrace();
-            }
-        }
-
-        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        String path1 = System.getProperty("user.dir") + OUTPUT_FOLDER + System.currentTimeMillis() + FILE_NAME;
-        File destination = new File(path1);
-        try {
-            FileUtils.copyFile(src, destination);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return path1;
-    }
-
     @AfterClass
     public void tearDown() throws InterruptedException, IOException {
         if (driver != null)
             driver.quit();
     }
 
-
     @AfterTest
     public void AfterTest() throws IOException, InterruptedException {
         if (Boolean.parseBoolean(Utility.fetchProperty("SendReport").toString())) {
-            SendReport("Reciever1");
-            SendReport("gmail");
+
+            SendReport("Ecicod");
+            SendReport("yahoo");
         } else {
-            SendReport("Emax");
+
+            SendReport("gmail");
         }
     }
 }

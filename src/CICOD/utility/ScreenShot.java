@@ -9,19 +9,13 @@ import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
 import javax.imageio.ImageIO;
-import javax.mail.*;
-import javax.mail.internet.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Properties;
 
 public class ScreenShot extends TestBase {
 
@@ -82,6 +76,30 @@ public class ScreenShot extends TestBase {
         } catch (IOException e) {
             System.out.println("Error in the captureAndDisplayScreenShot method: " + e.getMessage());
         }
+    }
+
+    public String ScreenShot1() throws IOException, InterruptedException {
+        Path path = Paths.get(OUTPUT_FOLDER);
+        // if directory exists?
+        if (!Files.exists(path)) {
+            try {
+                Files.createDirectories(path);
+            } catch (IOException e) {
+                // fail to create directory
+                e.printStackTrace();
+            }
+        }
+        Thread.sleep(1000);
+        String extentReportImageqm11 = System.getProperty("user.dir") + OUTPUT_FOLDER + System.currentTimeMillis()+ FILE_NAME;
+        File srcam11 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            // now copy the screenshot to desired location using copyFile method
+            FileUtils.copyFile(srcam11, new File(extentReportImageqm11));
+            test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
+        } catch (IOException e) {
+            System.out.println("Error in the captureAndDisplayScreenShot method: " + e.getMessage());
+        }
+        return extentReportImageqm11;
     }
 
     public void ScreenShotFullPage() throws IOException, InterruptedException {
