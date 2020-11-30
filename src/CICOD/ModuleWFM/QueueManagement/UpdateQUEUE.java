@@ -21,7 +21,6 @@ public class UpdateQUEUE extends TestBase {
 
     @Test
     public void UPDATE_STATUS() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 

@@ -21,7 +21,6 @@ public class DownLoadCreditLimit extends TestBase {
 
     @Test
     public void DOWNLOAD_CREDIT_HISTORY() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("DOWNLOAD CREDIT HISTORY");
         Login login = new Login(driver);
 
         login.Login();

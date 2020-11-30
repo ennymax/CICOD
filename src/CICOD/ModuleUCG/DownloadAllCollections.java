@@ -20,9 +20,7 @@ public class DownloadAllCollections extends TestBase {
 
     @Test
     public void DOWNLOAD_ALL_COLLECTION() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
 
         login.LoginCorrectDetails();
 

@@ -16,7 +16,6 @@ public class CREATE_ORDER_FROM_EXISTING_CUSTOMER extends TestBase {
 
     @Test
     public void CREATE_ORDER_FROM_EXISTING_CUSTOMERS() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE ORDER FROM EXISTING CUSTOMER");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

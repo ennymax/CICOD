@@ -25,7 +25,6 @@ import static org.testng.AssertJUnit.assertEquals;
 public class Lodgment extends TestBase {
     @Test
     public void Update_lODGMENT() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE LODGMENT");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();

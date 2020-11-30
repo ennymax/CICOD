@@ -19,7 +19,6 @@ public class Variance_Report_Dashboard extends TestBase {
 
     @Test
     public void VARIANCE_REPORT() throws IOException, InterruptedException {
-        test = extent.createTest("VARIANCE REPORT DASHBOARD");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

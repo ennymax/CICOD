@@ -20,7 +20,6 @@ public class SuspendUnsuspendCustomer extends TestBase {
 
     @Test
     public void SUSPEND_UNSUSPEND_CUSTOMER() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND CUSTOMER");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         ScreenShot screenShot = new ScreenShot(driver);

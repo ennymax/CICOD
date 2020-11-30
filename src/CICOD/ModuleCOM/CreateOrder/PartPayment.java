@@ -20,9 +20,9 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class PartPayment extends TestBase {
+
     @Test
     public void PartPayment() throws IOException, InterruptedException {
-        test = extent.createTest("PART PAYMENT");
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;

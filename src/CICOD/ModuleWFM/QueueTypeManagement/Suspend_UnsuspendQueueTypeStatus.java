@@ -18,9 +18,7 @@ public class Suspend_UnsuspendQueueTypeStatus extends TestBase {
 
     @Test
     public void ADD_STATUSES_TO_QUEUE_TYPE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
 
         login.LoginPremium();
 

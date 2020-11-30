@@ -18,7 +18,6 @@ public class ADD_ROLE extends TestBase {
 
     @Test
     public void Add_Role() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("ADD ROLE");
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
         ScreenShot screenShot = new ScreenShot(driver);

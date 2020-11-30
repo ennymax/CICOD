@@ -24,7 +24,6 @@ import static org.junit.Assert.assertEquals;
 public class Pay_By_Bank_Transfer extends TestBase {
     @Test
     public void Pay_by_bank_transfer() throws IOException, InterruptedException {
-        test = extent.createTest("PAY BY BANK TRANSFER");
         Login login = new Login(driver);
 
         login.LoginUpgrade();

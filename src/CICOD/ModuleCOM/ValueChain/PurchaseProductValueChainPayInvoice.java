@@ -20,7 +20,6 @@ import static org.testng.AssertJUnit.assertEquals;
 public class PurchaseProductValueChainPayInvoice extends TestBase {
     @Test
     public void PURCHASE_PRODUCT_VIA_VALUE_CHAIN_PAYINVOICE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
 

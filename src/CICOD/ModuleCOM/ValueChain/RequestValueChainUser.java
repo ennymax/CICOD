@@ -24,7 +24,6 @@ public class RequestValueChainUser extends TestBase {
 
     @Test
     public void REQUEST_VALUE_CHAIN_USER() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

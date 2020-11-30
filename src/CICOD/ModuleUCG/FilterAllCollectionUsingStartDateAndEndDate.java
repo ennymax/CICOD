@@ -21,7 +21,6 @@ public class FilterAllCollectionUsingStartDateAndEndDate extends TestBase {
 
     @Test
     public void FILTER_ALL_COLLECTION_USING_START_DATE_AND_END_DATE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 

@@ -18,7 +18,6 @@ public class LoginWithCorrectDetails extends TestBase {
 
     @Test
     public void LOGIN_WITH_CORRECT_DETAILS() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();

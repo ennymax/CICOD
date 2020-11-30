@@ -19,7 +19,6 @@ public class AddRemark extends TestBase {
 
     @Test
     public void ADD_REMARK() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         BrokenLink brokenLink = new BrokenLink(driver);
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);

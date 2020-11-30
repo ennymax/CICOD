@@ -17,7 +17,6 @@ public class SEARCH_EXISTING_CUSTOMER extends TestBase {
 
     @Test
     public void SEARCH_EXISTING_customer() throws IOException, InterruptedException {
-        test = extent.createTest("SEARCH EXISTING CUSTOMER");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

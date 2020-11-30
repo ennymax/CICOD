@@ -19,7 +19,6 @@ import java.io.IOException;
 public class CreateRightTemplate extends TestBase {
     @Test
     public void CREATE_RIGHT_TEMPLATE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
 

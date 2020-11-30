@@ -24,7 +24,6 @@ import java.util.concurrent.TimeUnit;
 public class SelectDeliveryDetails extends TestBase {
     @Test
     public void SELECT_DELIVERY_DETAILS() throws IOException, InterruptedException {
-        test = extent.createTest("SELECT DELIVERY DETAILS");
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int stt = rn.nextInt(34) + 1;
@@ -112,6 +111,5 @@ public class SelectDeliveryDetails extends TestBase {
         } else {
             test.log(Status.FAIL, "Delivery Details wasn't created");
         }
-
     }
 }

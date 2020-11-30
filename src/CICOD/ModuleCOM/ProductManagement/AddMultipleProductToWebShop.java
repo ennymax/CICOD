@@ -24,7 +24,6 @@ public class AddMultipleProductToWebShop extends TestBase {
 
     @Test
     public void ADD_MULTIPLE_PRODUCT_TO_WEBSHOP() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.Login();
@@ -52,7 +51,6 @@ public class AddMultipleProductToWebShop extends TestBase {
         WebElement ele111 = driver.findElement(By.xpath(Utility.fetchLocator("BulkActionBTN_XPATH")));
         Select sel11 = new Select(ele111);
         sel11.selectByIndex(1);
-
         Thread.sleep(2000);
     }
 

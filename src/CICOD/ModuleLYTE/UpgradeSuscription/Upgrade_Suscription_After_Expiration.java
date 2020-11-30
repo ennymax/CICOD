@@ -23,9 +23,7 @@ public class Upgrade_Suscription_After_Expiration extends TestBase {
 
     @Test
     public void UPGRADE_SUBSCRIPTION_AFTER_EXPIRATION() throws IOException, InterruptedException {
-        test = extent.createTest("UPGRADE SUBSCRIPTION AFTER EXPIRATION");
         RavePay ravePay = new RavePay(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginUpgrade();

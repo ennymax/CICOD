@@ -18,7 +18,6 @@ public class View_DashBoard_By_Date extends TestBase {
 
     @Test
     public void VIEW_DASHBOARD() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW DASHBOARD BY DATE");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

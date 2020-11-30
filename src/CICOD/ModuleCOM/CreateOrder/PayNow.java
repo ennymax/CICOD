@@ -24,7 +24,6 @@ import static org.testng.AssertJUnit.assertEquals;
 public class PayNow extends TestBase {
     @Test
     public void PayNow() throws IOException, InterruptedException {
-        test = extent.createTest("PAYNOW");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
@@ -139,6 +138,5 @@ public class PayNow extends TestBase {
         } else {
             test.log(Status.FAIL, "Pay with POS Failed");
         }
-
     }
 }

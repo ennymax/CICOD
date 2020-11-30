@@ -15,10 +15,8 @@ import java.util.concurrent.TimeUnit;
 
 public class DownloadCustomerDetails extends TestBase {
 
-
     @Test
     public void DOWNLOAD_CUSTOMER_DETAILS() throws IOException, InterruptedException {
-        test = extent.createTest("DOWNLOAD CUSTOMER DETAILS");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

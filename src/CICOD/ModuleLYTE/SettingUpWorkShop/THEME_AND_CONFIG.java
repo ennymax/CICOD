@@ -21,7 +21,6 @@ import java.util.concurrent.TimeUnit;
 public class THEME_AND_CONFIG extends TestBase {
     @Test
     public void THEME_CONFIG() throws IOException, InterruptedException {
-        test = extent.createTest("THEME AND CONFIG");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

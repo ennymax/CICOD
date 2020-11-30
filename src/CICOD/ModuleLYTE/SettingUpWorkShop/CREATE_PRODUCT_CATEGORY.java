@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit;
 public class CREATE_PRODUCT_CATEGORY extends TestBase {
     @Test
     public void CREATE_PRODUCT_CATEGORy() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE PRODUCT CATEGORY");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

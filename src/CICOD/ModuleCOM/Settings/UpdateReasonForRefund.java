@@ -22,7 +22,6 @@ import static org.testng.AssertJUnit.assertEquals;
 public class UpdateReasonForRefund extends TestBase {
     @Test
     public void UPDATE_REASON_FOR_REFUND() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.Login();

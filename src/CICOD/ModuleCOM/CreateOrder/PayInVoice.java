@@ -22,7 +22,6 @@ import java.util.concurrent.TimeUnit;
 public class PayInVoice extends TestBase {
     @Test
     public void Pay_Invoice() throws IOException, InterruptedException {
-        test = extent.createTest("Pay Invoice");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
@@ -107,6 +106,5 @@ public class PayInVoice extends TestBase {
 
         Thread.sleep(2000);
         login.AcceptAlert();
-
     }
 }

@@ -19,7 +19,6 @@ public class SUSPEND_UNSUSPEND_TAX extends TestBase {
 
     @Test
     public void SUSPEND_UNSUSPEND_TAX() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.Login();

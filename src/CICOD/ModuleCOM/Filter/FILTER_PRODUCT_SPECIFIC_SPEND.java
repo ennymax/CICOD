@@ -16,7 +16,6 @@ import java.util.concurrent.TimeUnit;
 public class FILTER_PRODUCT_SPECIFIC_SPEND extends TestBase {
     @Test
     public void FILTER_PRODUCT_SPECIFIC_SPEND() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("FILTER PRODUCT SPECIFIC SPEND");
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

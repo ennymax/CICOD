@@ -38,7 +38,7 @@ public class JavaScriptUtil {
 	}
 
 	public void generateAlert(String message) throws InterruptedException {
-		Thread.sleep(800);
+		Thread.sleep(1400);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("alert('" + message + "')");
 	}

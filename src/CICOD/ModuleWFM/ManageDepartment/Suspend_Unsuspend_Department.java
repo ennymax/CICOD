@@ -19,9 +19,7 @@ public class Suspend_Unsuspend_Department extends TestBase {
 
     @Test
     public void Suspend_Unsuspend_Department() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
 
         login.LoginPremium();
 

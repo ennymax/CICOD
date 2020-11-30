@@ -22,7 +22,6 @@ public class VatExemptionforCustomer extends TestBase {
 
     @Test
     public void VatExemptionforCustomer() throws IOException, InterruptedException {
-        test = extent.createTest("VAT EXEMPTION FORM CUSTOMER");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();

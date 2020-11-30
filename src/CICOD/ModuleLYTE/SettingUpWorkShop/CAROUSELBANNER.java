@@ -25,7 +25,6 @@ import static org.testng.AssertJUnit.assertEquals;
 public class CAROUSELBANNER extends TestBase {
     @Test
     public void CAROUSEL_BANNER() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("CAROUSEL BANNER");
         FileUpload fileUpload = new FileUpload();
         Login login = new Login(driver);
 

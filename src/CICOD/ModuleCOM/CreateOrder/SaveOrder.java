@@ -21,9 +21,7 @@ public class SaveOrder extends TestBase {
 
     @Test
     public void SAVE_ORDER() throws IOException, InterruptedException {
-        test = extent.createTest("SAVE ORDER");
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
 
         login.Login();
 

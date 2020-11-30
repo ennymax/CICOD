@@ -20,7 +20,6 @@ public class SUSPEND_UNSUSPEND_ROLE extends TestBase {
 
     @Test
     public void Suspend_Unsuspend_Role() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND ROLE");
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 

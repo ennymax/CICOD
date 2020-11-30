@@ -24,7 +24,6 @@ public class CreateNewResource extends TestBase {
 
     @Test
     public void CREATE_NEW_RESOURCE() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         FileUpload fileUpload = new FileUpload();
 

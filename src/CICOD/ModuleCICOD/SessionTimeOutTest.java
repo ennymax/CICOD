@@ -9,7 +9,6 @@ import java.io.IOException;
 public class SessionTimeOutTest extends TestBase {
     @Test
     public void SessionTimeOut() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

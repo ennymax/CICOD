@@ -22,7 +22,6 @@ public class UpdateResourceShift extends TestBase {
 
     @Test
     public void UPDATE_RESOURCE_SHIFT() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         LocalDateTime date = LocalDateTime.now();

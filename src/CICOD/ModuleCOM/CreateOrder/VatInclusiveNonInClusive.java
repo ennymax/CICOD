@@ -22,7 +22,6 @@ public class VatInclusiveNonInClusive extends TestBase {
 
     @Test
     public void VATINCLUSIVE() throws IOException, InterruptedException {
-        test = extent.createTest("VAT INCLUSIVE");
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;
@@ -94,6 +93,5 @@ public class VatInclusiveNonInClusive extends TestBase {
         } else {
             test.log(Status.FAIL, "VAT applicable");
         }
-
     }
 }

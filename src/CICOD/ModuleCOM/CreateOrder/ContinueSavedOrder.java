@@ -26,7 +26,6 @@ import static org.testng.AssertJUnit.assertEquals;
 public class ContinueSavedOrder extends TestBase {
     @Test
     public void CONTINUE_SAVE_ORDER() throws IOException, InterruptedException {
-        test = extent.createTest("CONTINUE SAVED ORDER");
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;

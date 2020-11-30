@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 public class ViewCreditHistory extends TestBase {
     @Test
     public void VIEW_CREDIT_HISTORY() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW CREDIT HISTORY");
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

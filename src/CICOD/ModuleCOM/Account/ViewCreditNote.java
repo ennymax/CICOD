@@ -26,7 +26,6 @@ import static org.testng.AssertJUnit.assertEquals;
 public class ViewCreditNote extends TestBase {
     @Test
     public void View_Credit_Note() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.Login();

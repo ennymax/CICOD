@@ -19,7 +19,6 @@ public class UpdateUser extends TestBase {
 
     @Test
     public void UPDATE_USER() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE USER");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

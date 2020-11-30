@@ -21,7 +21,6 @@ import java.util.concurrent.TimeUnit;
 public class SalesTargetDashBoard extends TestBase {
     @Test
     public void SALES_TARGET_DASHBOARD() throws IOException, InterruptedException {
-        test = extent.createTest("SALES TARGET DASHBOARDS");
         Login login = new Login(driver);
 
         login.Login();

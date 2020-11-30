@@ -18,7 +18,6 @@ import java.io.IOException;
 public class SetUpWizard extends TestBase {
     @Test
     public void CREATE_ESCALATION_ROLE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
 

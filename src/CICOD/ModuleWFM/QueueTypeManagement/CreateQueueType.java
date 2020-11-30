@@ -22,7 +22,6 @@ public class CreateQueueType extends TestBase {
 
     @Test
     public void CREATE_QUEUE_TYPE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
         SecureRandom rn = new SecureRandom();

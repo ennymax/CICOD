@@ -23,7 +23,6 @@ public class SetUpEscalationForQueueType extends TestBase {
 
     @Test
     public void SETUP_ESCALATION_FOR_QUEUE_TYPE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(15000) + 1;

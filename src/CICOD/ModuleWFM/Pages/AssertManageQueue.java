@@ -15,7 +15,6 @@ public class AssertManageQueue extends TestBase {
 
     @Test
     public void ASSERT_MANAGE_QUEUE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginPremium();

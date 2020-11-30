@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 public class ViewCustomer extends TestBase {
     @Test
     public void VIEW_CUSTOMER() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW CUSTOMER");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

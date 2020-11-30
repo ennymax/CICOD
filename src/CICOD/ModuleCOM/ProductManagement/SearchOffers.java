@@ -23,7 +23,6 @@ import java.util.concurrent.TimeUnit;
 public class SearchOffers extends TestBase {
     @Test
     public void SEARCH_OFFERS() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.Login();

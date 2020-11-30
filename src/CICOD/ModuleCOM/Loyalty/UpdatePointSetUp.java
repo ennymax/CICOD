@@ -20,7 +20,6 @@ public class UpdatePointSetUp extends TestBase {
 
     @Test
     public void UPDATE_POINT_SETUP() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(50) + 1;

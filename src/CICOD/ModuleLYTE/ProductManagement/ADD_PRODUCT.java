@@ -20,7 +20,6 @@ public class ADD_PRODUCT extends TestBase {
 
     @Test
     public void ADD_PRODUCTs() throws IOException, InterruptedException {
-        test = extent.createTest("ADD PRODUCT");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

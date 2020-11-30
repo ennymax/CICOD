@@ -18,7 +18,6 @@ import java.util.concurrent.TimeUnit;
 public class SUSPEND_UNSUSPEND_TAX extends TestBase {
     @Test
     public void SUSPEND_TAX() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND TAX");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

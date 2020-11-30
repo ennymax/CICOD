@@ -17,7 +17,6 @@ import java.io.IOException;
 public class FilterSettlementReportUsingDate extends TestBase {
     @Test
     public void FILTER_SETTLEMENT_REPORT_USING_DATE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();

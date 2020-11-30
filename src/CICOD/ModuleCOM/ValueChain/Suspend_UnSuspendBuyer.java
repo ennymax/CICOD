@@ -23,7 +23,6 @@ public class Suspend_UnSuspendBuyer extends TestBase{
 
     @Test
     public void SUSPEND_UNSUSPEND_BUYER() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

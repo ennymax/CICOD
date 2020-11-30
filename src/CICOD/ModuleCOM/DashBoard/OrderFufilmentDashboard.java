@@ -17,7 +17,6 @@ public class OrderFufilmentDashboard extends TestBase {
 
     @Test
     public void ORDER_FUFILLMENT() throws IOException, InterruptedException {
-        test = extent.createTest("ORDER FULFILMENT DASHBOARD");
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

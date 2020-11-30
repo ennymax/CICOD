@@ -23,7 +23,6 @@ public class FailedSubscriptionRenewal extends TestBase {
 
     @Test
     public void FAILED_SUBSCRIPTION_RENEWAL() throws IOException, InterruptedException {
-        test = extent.createTest("FAILED SUBSCRIPTION RENEWAL");
         RavePay ravePay = new RavePay(driver);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);

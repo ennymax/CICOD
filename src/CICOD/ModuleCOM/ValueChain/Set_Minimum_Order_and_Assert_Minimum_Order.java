@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 public class Set_Minimum_Order_and_Assert_Minimum_Order extends TestBase {
     @Test
     public void Set_Minimum_Order_and_Assert_Minimum_Order() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

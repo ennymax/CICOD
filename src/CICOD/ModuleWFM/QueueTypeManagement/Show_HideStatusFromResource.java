@@ -22,7 +22,6 @@ public class Show_HideStatusFromResource extends TestBase {
 
     @Test
     public void SHOW_HIDE_STATUS_FROM_RESOURCE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int tom = rn.nextInt(15) + 1;

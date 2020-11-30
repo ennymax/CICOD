@@ -18,7 +18,6 @@ public class CreateStatus extends TestBase {
 
     @Test
     public void CREATE_STATUS() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();

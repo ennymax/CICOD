@@ -19,7 +19,6 @@ public class UPDATE_TAX extends TestBase {
 
     @Test
     public void UPDATE_TAx() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE TAX");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

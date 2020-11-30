@@ -19,7 +19,6 @@ public class Suspend_Unsuspend_Customer extends TestBase {
 
     @Test
     public void SUSPEND_UNSUSPEND_CUSTOMER() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND CUSTOMER");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

@@ -24,7 +24,6 @@ import java.util.concurrent.TimeUnit;
 public class  ApplyDiscount extends TestBase {
     @Test
     public void APPLY_DISCOUNT() throws IOException, InterruptedException {
-        test = extent.createTest("APPLY DISCOUNT");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         RavePay ravePay = new RavePay(driver);

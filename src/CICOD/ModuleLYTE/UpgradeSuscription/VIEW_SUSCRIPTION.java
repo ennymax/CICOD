@@ -20,7 +20,6 @@ public class VIEW_SUSCRIPTION extends TestBase {
 
     @Test
     public void VIEW_SUSCRIPTION() throws Exception {
-        test = extent.createTest("VIEW SUBSCRIPTION");
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
         VideoRecorder.startRecording("TestingVideoRecording");

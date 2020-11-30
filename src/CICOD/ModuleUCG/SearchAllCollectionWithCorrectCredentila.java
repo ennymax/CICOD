@@ -21,7 +21,6 @@ public class SearchAllCollectionWithCorrectCredentila extends TestBase {
 
     @Test
     public void SEARCH_ALL_COLLECTION_WITH_CORRECT_CREDENTIALS() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 

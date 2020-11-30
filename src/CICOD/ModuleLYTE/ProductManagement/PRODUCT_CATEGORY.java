@@ -17,7 +17,6 @@ public class PRODUCT_CATEGORY extends TestBase {
 
     @Test
     public void PRODUCT_category() throws IOException, InterruptedException {
-        test = extent.createTest("PRODUCT CATEGORY");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

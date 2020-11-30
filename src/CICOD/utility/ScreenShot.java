@@ -78,7 +78,7 @@ public class ScreenShot extends TestBase {
         }
     }
 
-    public String ScreenShot1() throws IOException, InterruptedException {
+    public String ScreenShotFullPageTestBase() throws IOException, InterruptedException {
         Path path = Paths.get(OUTPUT_FOLDER);
         // if directory exists?
         if (!Files.exists(path)) {
@@ -90,15 +90,10 @@ public class ScreenShot extends TestBase {
             }
         }
         Thread.sleep(1000);
-        String extentReportImageqm11 = System.getProperty("user.dir") + OUTPUT_FOLDER + System.currentTimeMillis()+ FILE_NAME;
-        File srcam11 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            // now copy the screenshot to desired location using copyFile method
-            FileUtils.copyFile(srcam11, new File(extentReportImageqm11));
-            test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
-        } catch (IOException e) {
-            System.out.println("Error in the captureAndDisplayScreenShot method: " + e.getMessage());
-        }
+        String extentReportImageqm11 =System.getProperty("user.dir") + OUTPUT_FOLDER + System.currentTimeMillis()+FILE_NAME;
+        Screenshot screenshot=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+        ImageIO.write(screenshot.getImage(),"PNG",new File(extentReportImageqm11));
+        test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
         return extentReportImageqm11;
     }
 

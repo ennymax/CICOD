@@ -18,7 +18,6 @@ import java.util.concurrent.TimeUnit;
 public class AddCreditlimt extends TestBase {
     @Test
     public void ADD_CREDIT_LIMIT() throws IOException, InterruptedException {
-        test = extent.createTest("ADD CREDIT LIMIT");
         Utility utility = new Utility(driver);
         Login login = new Login(driver);
 
@@ -48,6 +47,5 @@ public class AddCreditlimt extends TestBase {
         utility.DoclickWhenReady("AddlimitBTN_XPATH","Addl_TEXT",60);
         utility.DowaitandAcceptAlerwhenReady(60);
         utility.DoAssertContainsWhenReady("AssertCreditlimitCreation_XPATH","Contcc_TEXT","AssertCreditlimitCreationpass_TEXT","AssertCreditlimitCreationfail_TEXT",60);
-
     }
 }

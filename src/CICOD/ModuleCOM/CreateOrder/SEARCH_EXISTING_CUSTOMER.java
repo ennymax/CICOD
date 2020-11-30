@@ -47,6 +47,5 @@ public class SEARCH_EXISTING_CUSTOMER extends TestBase {
         } else {
             test.log(Status.FAIL, "Search Failed");
         }
-
     }
 }

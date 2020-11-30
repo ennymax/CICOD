@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 public class ViewUser extends TestBase {
     @Test
     public void ViewUser() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

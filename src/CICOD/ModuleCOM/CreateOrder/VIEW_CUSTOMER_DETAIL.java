@@ -15,7 +15,6 @@ public class VIEW_CUSTOMER_DETAIL extends TestBase {
 
     @Test
     public void VIEW_CUSTOMER_DETAILS() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW CUSTOMER");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);

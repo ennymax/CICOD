@@ -20,7 +20,6 @@ public class DownloadCustomerDetails extends TestBase {
 
     @Test
     public void DOWNLOAD_CUSTOMER_DETAILS() throws IOException, InterruptedException {
-        test = extent.createTest("DOWNLOAD CUSTOMER DETAILS");
         Login login = new Login(driver);
 
         login.Login();
@@ -39,7 +38,5 @@ public class DownloadCustomerDetails extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("DownloadCUstomerdbtn_XPATH"))).click();
-
-        driver.quit();
     }
 }

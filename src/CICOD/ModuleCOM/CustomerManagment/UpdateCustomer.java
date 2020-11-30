@@ -23,7 +23,6 @@ public class UpdateCustomer extends TestBase {
 
     @Test
     public void UPDATE_CUSTOMER() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE CUSTOMER");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();

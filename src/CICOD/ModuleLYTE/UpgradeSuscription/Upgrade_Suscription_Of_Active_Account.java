@@ -23,7 +23,6 @@ public class Upgrade_Suscription_Of_Active_Account extends TestBase {
 
     @Test
     public void UPGRADE_SUBSCRIPTION() throws IOException, InterruptedException {
-        test = extent.createTest("UPGRADE SUBSCRIPTION");
         RavePay ravePay = new RavePay(driver);
         Login login = new Login(driver);
 

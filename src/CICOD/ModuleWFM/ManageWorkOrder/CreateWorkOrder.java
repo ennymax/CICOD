@@ -20,11 +20,9 @@ public class CreateWorkOrder extends TestBase {
 
     @Test
     public void CREATE_WORK_ORDER() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomStuff = new Randomstuff();
-        Utility utility = new Utility(driver);
         JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
         login.LoginPremium();

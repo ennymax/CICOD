@@ -25,7 +25,6 @@ import static org.testng.AssertJUnit.assertEquals;
 public class ViewFreebies extends TestBase {
     @Test
     public void VIEW_FREEBIES() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW FREEBIES");
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;

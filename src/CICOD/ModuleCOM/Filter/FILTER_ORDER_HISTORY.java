@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 public class FILTER_ORDER_HISTORY extends TestBase {
     @Test
     public void FILTER_ORDER_HISTORY() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("FILTER ORDER HISTORY");
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

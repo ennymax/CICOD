@@ -26,7 +26,6 @@ public class CreateNewRegionToEscalation extends TestBase {
 
     @Test
     public void CREATE_NEW_ESCALATION_ROLE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         SecureRandom rn = new SecureRandom();
         int resourceshedule = rn.nextInt(3) + 1;

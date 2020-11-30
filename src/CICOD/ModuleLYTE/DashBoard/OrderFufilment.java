@@ -19,7 +19,6 @@ public class OrderFufilment extends TestBase {
 
     @Test
     public void ORDER_FUFILLMENT() throws IOException, InterruptedException {
-        test = extent.createTest("ORDER FUFILMENT");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

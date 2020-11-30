@@ -19,8 +19,6 @@ public class ViewPaymentHistory extends TestBase {
 
     @Test
     public void VIEW_PAYMENT_HISTORY() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW PAYMENT HISTORY");
-        ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 
         login.LoginExpiredAccount();
@@ -41,5 +39,4 @@ public class ViewPaymentHistory extends TestBase {
             test.log(Status.FAIL, "Payment History wasn't Displayed");
         }
     }
-
 }

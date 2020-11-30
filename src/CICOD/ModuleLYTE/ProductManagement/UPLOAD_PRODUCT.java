@@ -17,7 +17,6 @@ public class UPLOAD_PRODUCT extends TestBase {
 
     @Test
     public void upload_product() throws IOException, InterruptedException {
-        test = extent.createTest("UPLOAD PRODUCT");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

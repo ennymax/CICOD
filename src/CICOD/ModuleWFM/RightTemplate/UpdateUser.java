@@ -19,7 +19,6 @@ public class UpdateUser  extends TestBase {
 
     @Test
     public void UpdateUser() throws IOException, InterruptedException{
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
         SecureRandom rn = new SecureRandom();

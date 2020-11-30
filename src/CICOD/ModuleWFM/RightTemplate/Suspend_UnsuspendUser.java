@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 public class Suspend_UnsuspendUser extends TestBase {
     @Test
     public void Suspend_UnsuspendUser() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
         ExcelUtil excelUtil = new ExcelUtil(driver);
@@ -23,7 +22,7 @@ public class Suspend_UnsuspendUser extends TestBase {
         utility.DoclickWhenReady("Wfm_XPATH", "wfm_TEXT", 50);
         utility.DoclickWhenReady("UserManagement_XPATH", "Usermgt_TEXT", 50);
         utility.DoclickWhenReady("Usr_XPATH", "UsersBTN_TEXT", 50);
-        Thread.sleep(999999999);
+        //Thread.sleep(999999999);
         utility.DoclickWhenReady("UserActionBTNN_XPATH", "ActionBBTN_TEXT", 50);
         utility.DoscrolltoViewClickWhenReady("SuspendUserrr_XPATH", "SuspendUserrr_TEXT", 40);
         utility.DowaitandAcceptAlerwhenReady(20);

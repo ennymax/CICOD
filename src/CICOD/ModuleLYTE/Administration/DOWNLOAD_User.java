@@ -17,8 +17,6 @@ public class DOWNLOAD_User extends TestBase {
 
     @Test
     public void DOWNLOAD_USER() throws IOException, InterruptedException {
-        test = extent.createTest("DOWNLOAD USER");
-
         Login login = new Login(driver);
 
         login.LoginTestAccount();

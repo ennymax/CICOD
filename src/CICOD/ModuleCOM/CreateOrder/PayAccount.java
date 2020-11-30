@@ -22,7 +22,6 @@ import java.util.concurrent.TimeUnit;
 public class PayAccount extends TestBase{
     @Test
     public void Pay_Account() throws IOException, InterruptedException {
-        test = extent.createTest("PAY ACCOUNT");
         Login login = new Login(driver);
         RavePay ravePay = new RavePay(driver);
         Utility utility = new Utility(driver);
@@ -59,7 +58,5 @@ public class PayAccount extends TestBase{
         utility.DoclickWhenReady("PayOnline_XPATH", "PAyOnline_TEXT",40);
         utility.DoswitchtoframeWhenReady(0, 13000);
         ravePay.RavePay3();
-
-        driver.quit();
     }
 }

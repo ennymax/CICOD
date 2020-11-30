@@ -21,7 +21,6 @@ import static org.testng.AssertJUnit.assertEquals;
 public class EnableFreeDelivery extends TestBase {
     @Test
     public void Enable_free_Delivery() throws IOException, InterruptedException {
-        test = extent.createTest("Enable free Delivery");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();

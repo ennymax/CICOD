@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 public class Suspend_UnsuspendCustomerFromCustomerManagementPage extends TestBase {
     @Test
     public void SUSPEND_UNSUSPEND_CUSTOMER_FROM_CUSTOMER_MANAGEMENT_PAGE() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND UNSUSPEND CUSTOMER FROM CUSTOMER MANAGEMENT PAGE");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

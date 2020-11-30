@@ -22,7 +22,6 @@ public class ADDUSER extends TestBase {
 
     @Test
     public void ADD_USER() throws IOException, InterruptedException {
-        test = extent.createTest("ADD USER");
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
@@ -68,7 +67,5 @@ public class ADDUSER extends TestBase {
         Thread.sleep(2000);
         screenShot.ScreenShot();
         driver.findElement(By.xpath(Utility.fetchLocator("CreateUserSaveBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

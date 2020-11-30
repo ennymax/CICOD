@@ -21,7 +21,6 @@ public class SearchPendingCollectionWithCorrectCredentials extends TestBase {
 
     @Test
     public void SEARCH_PENDING_COLLECTION_WITH_CORRECT_CREDENTIALS() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginCorrectDetails();

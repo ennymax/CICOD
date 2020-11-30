@@ -16,7 +16,6 @@ public class VIEW_TRANSACTION_DETAILS extends TestBase {
 
     @Test
     public void VIEW_TRANSACTION_DETAIL() throws IOException, InterruptedException {
-        test = extent.createTest("VIEW TRANSACTION DETAILS");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

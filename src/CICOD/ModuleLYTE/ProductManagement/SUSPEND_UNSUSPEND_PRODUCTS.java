@@ -19,7 +19,6 @@ public class SUSPEND_UNSUSPEND_PRODUCTS extends TestBase {
 
     @Test
     public void SUSPEND_PRODUCT() throws IOException, InterruptedException {
-        test = extent.createTest("SUSPEND PRODUCT");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

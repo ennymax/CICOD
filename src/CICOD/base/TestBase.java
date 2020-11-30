@@ -1,23 +1,17 @@
 package CICOD.base;
 
-import CICOD.utility.BrokenLink;
 import CICOD.utility.JavaScriptUtil;
-import CICOD.utility.ScreenShot;
 import CICOD.utility.Utility;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -27,10 +21,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.springframework.mail.SimpleMailMessage;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -170,8 +162,7 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void getResult(ITestResult result) throws InterruptedException, IOException {
-        ScreenShot screenShot = new ScreenShot(driver);
+    public void getResult(ITestResult result) throws InterruptedException{
         String methodName = result.getMethod().getMethodName();
         String qualifiedName = result.getMethod().getQualifiedName();
         int last = qualifiedName.lastIndexOf(".");
@@ -190,35 +181,26 @@ public class TestBase {
 
         if (result.getStatus() == ITestResult.FAILURE) {
             test.fail(MarkupHelper.createLabel(result.getName() + " The Test Case Failed", ExtentColor.RED));
-           // test.fail(result.getThrowable());
-            test.fail(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(screenShot.ScreenShot1()).build());
             javaScriptUtil.generateAlert("Test Failed");
             System.out.println("***************************Failed********************* " + (result.getMethod().getMethodName() + " ********************Failed******************"));
             System.out.println("***************************Failed********************* " + getTime(result.getEndMillis()) + " ********************Failed******************");
+
         } else if (result.getStatus() == ITestResult.SUCCESS) {
             test.pass(MarkupHelper.createLabel(result.getName() + " The Test Case Passed", ExtentColor.GREEN));
             javaScriptUtil.generateAlert("Test Passed");
             System.out.println("***************************Passed********************* " + (result.getMethod().getMethodName() + " ********************Passed******************"));
             System.out.println("***************************Passed********************* " + getTime(result.getEndMillis()) + " ********************Passed******************");
             test.getModel().setEndTime(getTime(result.getEndMillis()));
+
         } else if (result.getStatus() == ITestResult.SKIP) {
             test.skip(MarkupHelper.createLabel(result.getName() + " The Test Case Skipped", ExtentColor.YELLOW));
-            test.skip(result.getThrowable());
             javaScriptUtil.generateAlert("Test Skipped");
             System.out.println("***************************Skipped********************* " + (result.getMethod().getMethodName() + " ********************Skipped******************"));
             System.out.println("***************************Skipped********************* " + getTime(result.getEndMillis()) + " ********************Skipped******************");
-
-            try {
-                test.skip(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(screenShot.ScreenShot1()).build());
-            } catch (IOException e) {
-                System.err.println("Exception thrown while updating test skip status " + Arrays.toString(e.getStackTrace()));
-            }
-
             test.getModel().setEndTime(getTime(result.getEndMillis()));
         }
 
         extent.flush();
-
     }
 
     public void SendReport(String RecipientEmail) throws IOException {
@@ -286,6 +268,7 @@ public class TestBase {
         FileFilter fileFilter = new WildcardFileFilter("*." + ext);
         File[] files = dir.listFiles(fileFilter);
 
+        assert files != null;
         if (files.length > 0) {
 
             Arrays.sort(files, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
@@ -301,15 +284,19 @@ public class TestBase {
         return calendar.getTime();
     }
 
+    @BeforeMethod
+    public void TestName(ITestResult result) {
+        test = extent.createTest(result.getMethod().getMethodName().toUpperCase());
+    }
 
     @AfterClass
-    public void tearDown() throws InterruptedException, IOException {
+    public void tearDown() {
         if (driver != null)
             driver.quit();
     }
 
     @AfterTest
-    public void AfterTest() throws IOException, InterruptedException {
+    public void AfterTest() throws IOException {
         if (Boolean.parseBoolean(Utility.fetchProperty("SendReport").toString())) {
 
             SendReport("Ecicod");

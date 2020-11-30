@@ -20,7 +20,6 @@ public class SUSPEND_AND_UNSUSPEND_QUEUE extends TestBase {
 
     @Test
     public void SUSPEND_AND_UNSUSPEND_QUEUE() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 

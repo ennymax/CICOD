@@ -21,7 +21,6 @@ public class DELIVERY_RATE_CARD_SetUp extends TestBase {
 
     @Test
     public void DELIVERY_RATE_CARD_SETUP() throws IOException, InterruptedException {
-        test = extent.createTest("DELIVERY RATE CARD SETUP");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
 

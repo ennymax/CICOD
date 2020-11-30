@@ -21,7 +21,6 @@ import java.util.concurrent.TimeUnit;
 public class UploadCustomer extends TestBase {
     @Test
     public void UPLOAD_CUSTOMER() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("UPLOAD CUSTOMER");
         ScreenShot screenshot = new ScreenShot(driver);
         Utility utility = new Utility(driver);
         Login login = new Login(driver);

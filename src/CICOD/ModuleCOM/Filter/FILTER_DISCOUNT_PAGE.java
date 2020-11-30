@@ -18,7 +18,6 @@ import java.util.concurrent.TimeUnit;
 public class FILTER_DISCOUNT_PAGE extends TestBase {
     @Test
     public void FILTER_DISCOUNT_PAGE() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("FILTER DISCOUNT PAGE");
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

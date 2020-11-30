@@ -15,7 +15,6 @@ public class AssertDashboard extends TestBase {
 
     @Test
     public void ASSERT_DASHBOARD() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
 
         login.LoginPremium();

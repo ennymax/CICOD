@@ -20,7 +20,6 @@ public class SELECT_DELIVERY_DETAILS extends TestBase {
 
     @Test
     public void SELECT_DELIVERY_DETAIL() throws IOException, InterruptedException {
-        test = extent.createTest("SELECT DELIVERY DETAILS");
         BrokenLink brokenLink = new BrokenLink(driver);
         Login login = new Login(driver);
 

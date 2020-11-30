@@ -20,7 +20,6 @@ public class ProductDashboard extends TestBase {
 
     @Test
     public void PRODUCT_DASHBOARD() throws IOException, InterruptedException {
-        test = extent.createTest("PRODUCT DASHBOARD");
         Login login = new Login(driver);
 
         login.Login();

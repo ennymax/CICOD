@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 public class ResetPassword extends TestBase {
     @Test
     public void ResetPassworD() throws IOException, InterruptedException {
-        test = extent.createTest(Thread.currentThread().getStackTrace()[1].getMethodName());
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
 

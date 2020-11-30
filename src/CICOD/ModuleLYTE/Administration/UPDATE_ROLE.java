@@ -19,7 +19,6 @@ public class UPDATE_ROLE extends TestBase {
 
     @Test
     public void UPDATE_ROLE() throws IOException, InterruptedException{
-        test = extent.createTest("UPDATE ROLE");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

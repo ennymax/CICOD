@@ -22,7 +22,6 @@ public class AddUser extends TestBase {
 
     @Test
     public void ADD_USER() throws IOException, InterruptedException {
-        test = extent.createTest("ADD USER");
         Login login = new Login(driver);
 
         login.LoginTestAccount();

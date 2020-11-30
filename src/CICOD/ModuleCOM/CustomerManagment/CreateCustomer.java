@@ -22,7 +22,6 @@ public class CreateCustomer extends TestBase {
 
     @Test
     public void Create_Customer() throws IOException, InterruptedException {
-        test = extent.createTest("CREATE CUSTOMER");
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Randomstuff randomstuff =new Randomstuff();

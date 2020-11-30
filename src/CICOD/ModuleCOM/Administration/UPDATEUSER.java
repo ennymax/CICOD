@@ -20,7 +20,6 @@ public class UPDATEUSER extends TestBase {
 
     @Test
     public void UPDATE_USER() throws IOException, InterruptedException {
-        test = extent.createTest("UPDATE USER");
         ScreenShot screenShot = new ScreenShot(driver);
         Login login = new Login(driver);
 

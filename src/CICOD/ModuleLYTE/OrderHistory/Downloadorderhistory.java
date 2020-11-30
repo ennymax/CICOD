@@ -17,7 +17,6 @@ public class Downloadorderhistory extends TestBase {
 
     @Test
     public void DOWNLOAD_ORDER_HISTORY() throws IOException, InterruptedException {
-        test = extent.createTest("DOWNLOAD ORDER HISTORY");
         Login login = new Login(driver);
 
         login.LoginTestAccount();
