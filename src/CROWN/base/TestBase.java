@@ -161,14 +161,22 @@ public class TestBase {
 
 
         if (Utility.fetchProperty("Project").toString().equalsIgnoreCase("CICOD")) {
-            driver.get(Utility.fetchProperty("applicationUrlCICOD").toString());
+
+            if (Boolean.parseBoolean(Utility.fetchProperty("CICODPROD").toString())) {
+                driver.get(Utility.fetchProperty("applicationUrlCICODPROD").toString());
+            } else {
+                driver.get(Utility.fetchProperty("applicationUrlCICODSTAGGING").toString());
+            }
         }
         else if(Utility.fetchProperty("Project").toString().equalsIgnoreCase("EKEDC")){
-            driver.get(Utility.fetchProperty("applicationUrlEKEDC").toString());
+
+            if (Boolean.parseBoolean(Utility.fetchProperty("EKEDCPROD").toString())) {
+                driver.get(Utility.fetchProperty("applicationUrlEKEDCPROD").toString());
+            } else {
+                driver.get(Utility.fetchProperty("applicationUrlEKEDCSTAGGING").toString());
+            }
         }
             System.out.println("*****************************" + Utility.fetchProperty("browserName") + " browser running ****************************************");
-
-
     }
 
     @AfterMethod
