@@ -15,7 +15,7 @@ public class Reset_Password_Email extends TestBase {
 
         driver.findElement(By.xpath(Utility.fetchLocator("Loginbtn_XPATH"))).click();
 
-        driver.findElement(By.xpath(Utility.fetchLocator("ResetPasswordBTN_XPATH"))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("ResetPasswordBTNEKE_XPATH"))).click();
 
         driver.findElement(By.xpath(Utility.fetchLocator("ResetEmail_XPATH"))).sendKeys(Utility.fetchLocator("EEmail_TEXT"));
 

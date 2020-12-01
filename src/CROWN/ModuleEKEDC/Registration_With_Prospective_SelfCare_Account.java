@@ -1,30 +1,21 @@
 package CROWN.ModuleEKEDC;
 
+import CROWN.base.TestBase;
+import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
-import com.base.TestBase;
-import com.utility.Utility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class Registration_With_Prospective_SelfCare_Account extends TestBase {
 
     @Test
     public void REGISTRATION_WITH_PROSPECTIVE_SELFCARE_ACCOUNT() throws IOException, InterruptedException {
-        test = extent.createTest("REGISTRATION WITH PROSPECTIVE SELF-CARE ACCOUNT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
-
         driver.findElement(By.xpath(Utility.fetchLocator("RegisterBTN_XPATH"))).click();
 
-        driver.findElement(By.xpath(Utility.fetchLocator("RegEmail_XPATH"))).sendKeys(Utility.fetchLocator("Pemail_TEXT"));
+        driver.findElement(By.xpath(Utility.fetchLocator("RegEmail_XPATH"))).sendKeys(Utility.fetchLocator("PemailEKE_TEXT"));
 
         driver.findElement(By.xpath(Utility.fetchLocator("RegNumber_XPATH"))).sendKeys(Utility.fetchLocator("RegNumber_TEXT"));
 
@@ -39,7 +30,5 @@ public class Registration_With_Prospective_SelfCare_Account extends TestBase {
         } else {
             test.log(Status.FAIL, "Already Exist message was not displayed Successfully");
         }
-
-        driver.quit();
     }
 }

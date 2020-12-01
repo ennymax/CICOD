@@ -1,27 +1,18 @@
 package CROWN.ModuleEKEDC;
 
+import CROWN.base.TestBase;
+import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
-import com.base.TestBase;
-import com.utility.Utility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class Registration_With_an_Existing_Selfcare_Account extends TestBase {
 
     @Test
     public void REGISTRATION_WITH_AN_EXISTING_SELFCARE_ACCOUNT() throws IOException, InterruptedException {
-        test = extent.createTest("REGISTRATION WITH AN EXISTING SELF-CARE ACCOUNT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
-
         driver.findElement(By.xpath(Utility.fetchLocator("RegisterBTN_XPATH"))).click();
 
         driver.findElement(By.xpath(Utility.fetchLocator("RegEmail_XPATH"))).sendKeys(Utility.fetchLocator("ExistEmail_TEXT"));

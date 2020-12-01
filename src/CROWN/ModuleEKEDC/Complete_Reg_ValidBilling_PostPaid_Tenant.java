@@ -17,7 +17,7 @@ public class Complete_Reg_ValidBilling_PostPaid_Tenant extends TestBase {
 
         login.Login_PostPaidLandlordEKEDC();
 
-        driver.findElement(By.xpath(Utility.fetchLocator("AccountNumber_XPATH"))).sendKeys(Utility.fetchLocator("AccountNumber_TEXT"));
+        driver.findElement(By.xpath(Utility.fetchLocator("AccountNumberEKE_XPATH"))).sendKeys(Utility.fetchLocator("AccountNumber_TEXT"));
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SubmitAccountNumber_XPATH"))).click();
@@ -27,10 +27,10 @@ public class Complete_Reg_ValidBilling_PostPaid_Tenant extends TestBase {
         js.executeScript("arguments[0].click();", element);
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("FirstName_XPATH"))).sendKeys(Utility.fetchLocator("FirstName_TEXT"));
+        driver.findElement(By.xpath(Utility.fetchLocator("FirstNameEKE_XPATH"))).sendKeys(Utility.fetchLocator("FirstName_TEXT"));
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("LastName_XPATH"))).sendKeys(Utility.fetchLocator("LastNAme_TEXT"));
+        driver.findElement(By.xpath(Utility.fetchLocator("LastNameEKE_XPATH"))).sendKeys(Utility.fetchLocator("LastNAme_TEXT"));
         // driver.findElement(By.xpath(Utility.fetchLocator("AddAccountBTN_XPATH"))).click();
     }
 }

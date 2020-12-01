@@ -1,30 +1,17 @@
 package CROWN.ModuleEKEDC;
 
+import CROWN.base.TestBase;
+import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
-import com.base.TestBase;
-import com.utility.Utility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class Payment_Without_Login_PostPaid_By_Card extends TestBase {
     @Test
     public void PAYMENT_WITHOUT_LOGIN_BANK_CARD_PREPAID() throws IOException, InterruptedException {
-
-        test = extent.createTest("PAYMENT WITHOUT LOGIN BANK TRANSFER POSTPAID");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-
-        Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("MakePaymentBTNnotLogedIN_XPATH"))).click();
 
         Thread.sleep(1200);
@@ -40,7 +27,7 @@ public class Payment_Without_Login_PostPaid_By_Card extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("ContinueAccountNumber_XPATH"))).click();
 
         Thread.sleep(4000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PaymentEmail_XPATH"))).sendKeys(Utility.fetchLocator("Pemail_TEXT"));
+        driver.findElement(By.xpath(Utility.fetchLocator("PaymentEmail_XPATH"))).sendKeys(Utility.fetchLocator("PemailEKE_TEXT"));
         driver.findElement(By.xpath(Utility.fetchLocator("PaymentNumber_XPATH"))).sendKeys(Utility.fetchLocator("RegNumber_TEXT"));
 
         Thread.sleep(1200);
@@ -57,7 +44,5 @@ public class Payment_Without_Login_PostPaid_By_Card extends TestBase {
         js.executeScript("arguments[0].click();", element);
 
         driver.findElement(By.xpath(Utility.fetchLocator("PaymentNowBTN_XPATH"))).click();
-
-        driver.quit();
     }
 }

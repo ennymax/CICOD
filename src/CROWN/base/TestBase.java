@@ -158,7 +158,17 @@ public class TestBase {
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        driver.get(Utility.fetchProperty("applicationUrl").toString());
+
+
+        if (Utility.fetchProperty("Project").toString().equalsIgnoreCase("CICOD")) {
+            driver.get(Utility.fetchProperty("applicationUrlCICOD").toString());
+        }
+        else if(Utility.fetchProperty("Project").toString().equalsIgnoreCase("EKEDC")){
+            driver.get(Utility.fetchProperty("applicationUrlEKEDC").toString());
+        }
+            System.out.println("*****************************" + Utility.fetchProperty("browserName") + " browser running ****************************************");
+
+
     }
 
     @AfterMethod

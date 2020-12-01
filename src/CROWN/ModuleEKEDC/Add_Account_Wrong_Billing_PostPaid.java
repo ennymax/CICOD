@@ -17,7 +17,7 @@ public class Add_Account_Wrong_Billing_PostPaid extends TestBase {
 
         login.LoginEKEDC();
 
-        driver.findElement(By.xpath(Utility.fetchLocator("AccountBTN_XPATH"))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("AccountBTNEKE_XPATH"))).click();
         driver.findElement(By.xpath(Utility.fetchLocator("ManageAccountBTN_XPATH"))).click();
 
         driver.findElement(By.xpath(Utility.fetchLocator("AddAccountBTN_XPATH"))).click();

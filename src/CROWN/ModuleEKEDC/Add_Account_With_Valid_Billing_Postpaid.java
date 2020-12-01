@@ -19,7 +19,7 @@ public class Add_Account_With_Valid_Billing_Postpaid extends TestBase {
         login.LoginEKEDC();
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("AccountBTN_XPATH"))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("AccountBTNEKE_XPATH"))).click();
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ManageAccountBTN_XPATH"))).click();

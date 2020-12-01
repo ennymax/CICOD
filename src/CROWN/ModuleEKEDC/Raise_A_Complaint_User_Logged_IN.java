@@ -1,8 +1,7 @@
 package CROWN.ModuleEKEDC;
 
+import CROWN.base.TestBase;
 import com.aventstack.extentreports.Status;
-import com.base.TestBase;
-import com.utility.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,14 +21,8 @@ public class Raise_A_Complaint_User_Logged_IN extends TestBase {
 
     @Test
     public void RAISE_A_COMPLAINT_USER_LOGGED_IN() throws IOException, InterruptedException, AWTException {
-
-        test = extent.createTest("RAISE A COMPLAIN USER LOGGED IN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
-
+        /*
         Login login = new Login(driver);
-        WebDriverWait wait = new WebDriverWait(driver, 20);
         FileUpload fileUpload = new FileUpload();
         RandomStuff randomStuff = new RandomStuff();
 
@@ -89,5 +82,7 @@ public class Raise_A_Complaint_User_Logged_IN extends TestBase {
         }
 
         driver.quit();
+
+         */
     }
 }

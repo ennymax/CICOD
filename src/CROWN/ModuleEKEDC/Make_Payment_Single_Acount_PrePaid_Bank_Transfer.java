@@ -1,33 +1,19 @@
 package CROWN.ModuleEKEDC;
 
+import CROWN.base.TestBase;
+import CROWN.utility.Login;
+import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
-import com.base.TestBase;
-import com.utility.Login;
-import com.utility.ScreenShot;
-import com.utility.Utility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class Make_Payment_Single_Acount_PrePaid_Bank_Transfer extends TestBase {
 
     @Test
     public void MAKE_PAYMENT_SINGLE_ACCOUNT_BY_BANK_PREPAID() throws IOException, InterruptedException {
-
-        test = extent.createTest("MAKE PAYMENT SINGLE ACCOUNT BY BANK PRE-PAID");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
-        ScreenShot screenShot = new ScreenShot(driver);
-
         Login login = new Login(driver);
 
         login.LoginPrePaidEKEDC();
@@ -53,7 +39,7 @@ public class Make_Payment_Single_Acount_PrePaid_Bank_Transfer extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SingleAccountMake_XPATH"))).click();
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayNowBaj_XPATH"))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("PayNowBajEKE_XPATH"))).click();
 
         Thread.sleep(2000);
         String title = driver.getTitle();

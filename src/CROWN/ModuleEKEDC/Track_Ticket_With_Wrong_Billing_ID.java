@@ -1,13 +1,10 @@
 package CROWN.ModuleEKEDC;
 
+import CROWN.base.TestBase;
+import CROWN.utility.Login;
+import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
-import com.base.TestBase;
-import com.utility.Login;
-import com.utility.Utility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -15,11 +12,6 @@ import java.io.IOException;
 public class Track_Ticket_With_Wrong_Billing_ID extends TestBase {
     @Test
     public void TRACK_VALID_ID_WITH_WRONG_ID() throws IOException, InterruptedException {
-
-        test = extent.createTest("TRACK TICKET ID WITH WRONG ID");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
         Login login = new Login(driver);
 
         login.LoginEKEDC();
@@ -36,7 +28,5 @@ public class Track_Ticket_With_Wrong_Billing_ID extends TestBase {
         } else {
             test.log(Status.FAIL, "Invalid Ticket Error ID was not displayed");
         }
-
-        driver.quit();
     }
 }

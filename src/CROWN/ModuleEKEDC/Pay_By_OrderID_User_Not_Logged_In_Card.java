@@ -1,15 +1,11 @@
 package CROWN.ModuleEKEDC;
 
-import com.base.TestBase;
-import com.utility.Utility;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import CROWN.base.TestBase;
+import CROWN.utility.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -17,13 +13,7 @@ public class Pay_By_OrderID_User_Not_Logged_In_Card extends TestBase {
 
     @Test
     public void PAY_ORDER_ID_USER_NOT_LOGGED_IN_CARD() throws IOException, InterruptedException {
-
-        test = extent.createTest("PAY ORDER ID BY CARD USER NOT LOGGED IN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
         //driver.get("https://staging-ekedp.convergenceondemand.net/");
-        driver.get("http://52.50.169.238");
-
         driver.manage().timeouts().implicitlyWait(39, TimeUnit.SECONDS);
 
         Thread.sleep(2000);

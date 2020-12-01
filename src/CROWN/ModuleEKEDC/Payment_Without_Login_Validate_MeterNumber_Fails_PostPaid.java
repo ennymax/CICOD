@@ -1,26 +1,16 @@
 package CROWN.ModuleEKEDC;
 
+import CROWN.base.TestBase;
+import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
-import com.base.TestBase;
-import com.utility.Utility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class Payment_Without_Login_Validate_MeterNumber_Fails_PostPaid extends TestBase {
 
     @Test
     public void PAYMENT_WITHOUT_LOGIN_VALIDATE_METER_NUMBER_FAILS_POSTPAID() throws IOException, InterruptedException {
-
-        test = extent.createTest("PAYMENT WITHOUT LOGIN VALIDATE METER NUMBER FAILS POSTPAID");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
-
         driver.findElement(By.xpath(Utility.fetchLocator("MakePaymentBTNnotLogedIN_XPATH"))).click();
 
         driver.findElement(By.xpath(Utility.fetchLocator("PayBill_XPATH"))).click();
@@ -35,7 +25,5 @@ public class Payment_Without_Login_Validate_MeterNumber_Fails_PostPaid extends T
         } else {
             test.log(Status.FAIL, "Error Message wasnt displayed");
         }
-
-        driver.quit();
     }
 }

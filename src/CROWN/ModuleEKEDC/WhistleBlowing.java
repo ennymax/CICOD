@@ -1,8 +1,7 @@
 package CROWN.ModuleEKEDC;
 
+import CROWN.base.TestBase;
 import com.aventstack.extentreports.Status;
-import com.base.TestBase;
-import com.utility.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,12 +19,7 @@ public class WhistleBlowing extends TestBase {
 
     @Test
     public void WHISTLBLOWING() throws IOException, InterruptedException, AWTException {
-
-        test = extent.createTest("WHISTLE BLOWING");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
-
+        /*
         RandomStuff randomStuff = new RandomStuff();
         FileUpload fileUpload = new FileUpload();
 
@@ -90,6 +84,8 @@ public class WhistleBlowing extends TestBase {
             test.log(Status.FAIL, "Complaint wasn't Submitted");
         }
 
-        driver.quit();
+
+
+         */
     }
 }

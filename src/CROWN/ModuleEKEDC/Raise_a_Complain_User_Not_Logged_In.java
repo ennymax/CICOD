@@ -1,20 +1,17 @@
 package CROWN.ModuleEKEDC;
 
+import CROWN.base.TestBase;
+import CROWN.utility.FileUpload;
+import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
-import com.base.TestBase;
-import com.utility.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.io.IOException;
 
@@ -22,12 +19,7 @@ public class Raise_a_Complain_User_Not_Logged_In extends TestBase {
 
     @Test
     public void RAISE_A_COMPLAINT_USER_NOT_LOGGED_IN() throws IOException, InterruptedException, AWTException {
-        test = extent.createTest("RAISE A COMPLAIN USER NOT LOGGED IN");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
-
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+       /*
         FileUpload fileUpload = new FileUpload();
         RandomStuff randomStuff = new RandomStuff();
 
@@ -94,5 +86,7 @@ public class Raise_a_Complain_User_Not_Logged_In extends TestBase {
         }
 
         driver.quit();
+
+        */
     }
 }

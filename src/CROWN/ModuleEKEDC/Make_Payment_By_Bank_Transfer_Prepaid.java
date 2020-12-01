@@ -7,7 +7,6 @@ import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class Make_Payment_By_Bank_Transfer_Prepaid extends TestBase {
@@ -48,10 +47,5 @@ public class Make_Payment_By_Bank_Transfer_Prepaid extends TestBase {
         } else {
             test.log(Status.FAIL, "Central Pay page wasnt displayed and enabled");
         }
-
-        Thread.sleep(2000);
-        screenShot.ScreenShotFullPage();
-
-        driver.quit();
     }
 }

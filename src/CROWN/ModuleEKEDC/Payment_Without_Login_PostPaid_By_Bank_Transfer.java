@@ -1,29 +1,18 @@
 package CROWN.ModuleEKEDC;
 
-import com.base.TestBase;
-import com.utility.ScreenShot;
-import com.utility.Utility;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import CROWN.base.TestBase;
+import CROWN.utility.ScreenShot;
+import CROWN.utility.Utility;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class Payment_Without_Login_PostPaid_By_Bank_Transfer extends TestBase {
 
     @Test
     public void PAYMENT_WITHOUT_LOGIN_BANK_TRANSFER_POSTPAID() throws IOException, InterruptedException {
-
-        test = extent.createTest("PAYMENT WITHOUT LOGIN BANK TRANSFER POSTPAID");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
-        driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS);
         ScreenShot screenShot = new ScreenShot(driver);
 
         Thread.sleep(2000);
@@ -42,7 +31,7 @@ public class Payment_Without_Login_PostPaid_By_Bank_Transfer extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("ContinueAccountNumber_XPATH"))).click();
 
         Thread.sleep(4000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PaymentEmail_XPATH"))).sendKeys(Utility.fetchLocator("Pemail_TEXT"));
+        driver.findElement(By.xpath(Utility.fetchLocator("PaymentEmail_XPATH"))).sendKeys(Utility.fetchLocator("PemailEKE_TEXT"));
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PaymentNumber_XPATH"))).sendKeys(Utility.fetchLocator("RegNumber_TEXT"));
@@ -56,11 +45,6 @@ public class Payment_Without_Login_PostPaid_By_Bank_Transfer extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("PrepaidMakePayment_XPATH"))).click();
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayNowBaj_XPATH"))).click();
-
-        Thread.sleep(2000);
-        screenShot.ScreenShotFullPage();
-
-        driver.quit();
+        driver.findElement(By.xpath(Utility.fetchLocator("PayNowBajEKE_XPATH"))).click();
     }
 }

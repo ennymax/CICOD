@@ -1,8 +1,7 @@
 package CROWN.ModuleEKEDC;
 
+import CROWN.base.TestBase;
 import com.aventstack.extentreports.Status;
-import com.base.TestBase;
-import com.utility.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,7 +13,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
 import java.awt.*;
 import java.io.IOException;
 
@@ -22,14 +20,8 @@ public class Raise_A_Complaint_User_Multiple_Account extends TestBase {
 
     @Test
     public void RAISE_A_COMPLAINT_USER_LOGGED_IN_MULTIPLE_ACCOUNT() throws IOException, InterruptedException, AWTException {
-
-        test = extent.createTest("RAISE A COMPLAIN USER LOGGED IN MULTIPLE ACCOUNT");
-        WebDriverManager.firefoxdriver().setup();
-        WebDriver driver = new FirefoxDriver();
-        driver.get("http://52.50.169.238");
-
+        /*
         Login login = new Login(driver);
-        WebDriverWait wait = new WebDriverWait(driver, 20);
         FileUpload fileUpload = new FileUpload();
         RandomStuff randomStuff = new RandomStuff();
 
@@ -92,5 +84,7 @@ public class Raise_A_Complaint_User_Multiple_Account extends TestBase {
         }
 
         driver.quit();
+
+         */
     }
 }
