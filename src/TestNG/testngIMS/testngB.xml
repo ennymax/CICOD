@@ -1,18 +1,18 @@
 <suite name="Suite">
     <test name = "Parallel Tests" parallel = "methods" thread-count = "3" group-by-instances="false" >
         <classes>
-            <class name="CICOD.ModuleIMS.InventryStatus.AddNewInventoryStatusRule"/>
-            <class name="CICOD.ModuleIMS.InventryStatus.NewInventoryStatus"/>
-            <class name="CICOD.ModuleIMS.InventryStatus.RemoveInventoryStatus"/>
-            <class name="CICOD.ModuleIMS.InventryStatus.RemoveInventoryStatusRule"/>
-            <class name="CICOD.ModuleIMS.InventryStatus.UpdateItemStatus"/>
-            <class name="CICOD.ModuleIMS.InventryStatus.UpdateInventryStatusRule"/>
-            <class name="CICOD.ModuleIMS.InventryStatus.ViewInventoryStatusRule"/>
-            <class name="CICOD.ModuleIMS.InventryStatus.ViewInventryStatus"/>
-            <class name="CICOD.ModuleIMS.InventryStatus.UpdateInventoryStatus"/>
+            <class name="CROWN.CICOD.ModuleIMS.InventryStatus.AddNewInventoryStatusRule"/>
+            <class name="CROWN.CICOD.ModuleIMS.InventryStatus.NewInventoryStatus"/>
+            <class name="CROWN.CICOD.ModuleIMS.InventryStatus.RemoveInventoryStatus"/>
+            <class name="CROWN.CICOD.ModuleIMS.InventryStatus.RemoveInventoryStatusRule"/>
+            <class name="CROWN.CICOD.ModuleIMS.InventryStatus.UpdateItemStatus"/>
+            <class name="CROWN.CICOD.ModuleIMS.InventryStatus.UpdateInventryStatusRule"/>
+            <class name="CROWN.CICOD.ModuleIMS.InventryStatus.ViewInventoryStatusRule"/>
+            <class name="CROWN.CICOD.ModuleIMS.InventryStatus.ViewInventryStatus"/>
+            <class name="CROWN.CICOD.ModuleIMS.InventryStatus.UpdateInventoryStatus"/>
 
             <!--class name="com.ModuleCOMCOM.ReturnInventryToSuppliers.ReturnInventoryToSuppliers"/-->
-            <class name="CICOD.ModuleIMS.ManageEmailAerts.CreateEmailAlerts"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageEmailAerts.CreateEmailAlerts"/>
         </classes>
     </test>
 </suite>

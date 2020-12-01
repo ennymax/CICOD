@@ -1,36 +1,36 @@
 <suite name="Suite">
     <test name = "Value Chain">
         <classes>
-            <class name="CICOD.ModuleCOM.ValueChain.PurchaseProductValuechainPayNow"/>
-            <class name="CICOD.ModuleCOM.ValueChain.PurchaseProductValueChainPayInvoice"/>
-            <class name="CICOD.ModuleCOM.ValueChain.RequestValueChainUser"/>
-            <class name="CICOD.ModuleCOM.ValueChain.BuyersInsight"/>
-            <class name="CICOD.ModuleCOM.ValueChain.Suspend_UnSuspendBuyer"/>
-            <class name="CICOD.ModuleCOM.ValueChain.ViewOrderHistoryViaValueChain"/>
+            <class name="CROWN.CICOD.ValueChain.PurchaseProductValuechainPayNow"/>
+            <class name="CROWN.CICOD.ValueChain.PurchaseProductValueChainPayInvoice"/>
+            <class name="CROWN.CICOD.ValueChain.RequestValueChainUser"/>
+            <class name="CROWN.CICOD.ValueChain.BuyersInsight"/>
+            <class name="CROWN.CICOD.ValueChain.Suspend_UnSuspendBuyer"/>
+            <class name="CROWN.CICOD.ValueChain.ViewOrderHistoryViaValueChain"/>
         </classes>
     </test>
     <test name = "Create Order">
         <classes>
-            <class name="CICOD.ModuleCOM.CreateOrder.SEARCH_EXISTING_CUSTOMER"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.CREATE_ORDER_FROM_EXISTING_CUSTOMER"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.ApplyDiscount"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.ContinueSavedOrder"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.PayAccount"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.PayInVoice"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.SaveOrder"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.SelectDeliveryDetails"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.VatInclusiveNonInClusive"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.VIEW_CUSTOMER_DETAIL"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.ViewFreebies"/>
-            <class name="CICOD.ModuleCOM.CreateOrder.PayNow"/>
+            <class name="CROWN.CICOD.CreateOrder.SEARCH_EXISTING_CUSTOMER"/>
+            <class name="CROWN.CICOD.CreateOrder.CREATE_ORDER_FROM_EXISTING_CUSTOMER"/>
+            <class name="CROWN.CICOD.CreateOrder.ApplyDiscount"/>
+            <class name="CROWN.CICOD.CreateOrder.ContinueSavedOrder"/>
+            <class name="CROWN.CICOD.CreateOrder.PayAccount"/>
+            <class name="CROWN.CICOD.CreateOrder.PayInVoice"/>
+            <class name="CROWN.CICOD.CreateOrder.SaveOrder"/>
+            <class name="CROWN.CICOD.CreateOrder.SelectDeliveryDetails"/>
+            <class name="CROWN.CICOD.CreateOrder.VatInclusiveNonInClusive"/>
+            <class name="CROWN.CICOD.CreateOrder.VIEW_CUSTOMER_DETAIL"/>
+            <class name="CROWN.CICOD.CreateOrder.ViewFreebies"/>
+            <class name="CROWN.CICOD.CreateOrder.PayNow"/>
         </classes>
     </test>
 
     <test name = "Sales Management">
         <classes>
-            <class name="CICOD.ModuleCOM.SaleAgentManagement.CreateSaleTarget"/>
-            <class name="CICOD.ModuleCOM.SaleAgentManagement.CreateSalesCommissionOnOrder"/>
-            <class name="CICOD.ModuleCOM.SaleAgentManagement.CreateSalesCommissionOnTarget"/>
+            <class name="CROWN.CICOD.SaleAgentManagement.CreateSaleTarget"/>
+            <class name="CROWN.CICOD.SaleAgentManagement.CreateSalesCommissionOnOrder"/>
+            <class name="CROWN.CICOD.SaleAgentManagement.CreateSalesCommissionOnTarget"/>
         </classes>
     </test>
 

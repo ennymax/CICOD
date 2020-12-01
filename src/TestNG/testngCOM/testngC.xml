@@ -1,35 +1,35 @@
 <suite name="Suite">
     <test name = "Product Management">
         <classes>
-            <class name="CICOD.ModuleCOM.ProductManagement.RemoveMultipleProductFromWebshop"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.SearchOffers"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.SUSPEND_UNSUSPEND_PRODUCTS"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.Suspend_UnsuspendOffers"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.UPDATE_PRODUCT"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.UpdateOfferSettings"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.UploadProduct"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.ADD_PRODUCT"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.AddMultipleProductToWebShop"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.CreateOfferSettings"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.PRODUCT_CATEGORY"/>
-            <class name="CICOD.ModuleCOM.ProductManagement.RemoveFromWebShop"/>
+            <class name="CROWN.CICOD.ProductManagement.RemoveMultipleProductFromWebshop"/>
+            <class name="CROWN.CICOD.ProductManagement.SearchOffers"/>
+            <class name="CROWN.CICOD.ProductManagement.SUSPEND_UNSUSPEND_PRODUCTS"/>
+            <class name="CROWN.CICOD.ProductManagement.Suspend_UnsuspendOffers"/>
+            <class name="CROWN.CICOD.ProductManagement.UPDATE_PRODUCT"/>
+            <class name="CROWN.CICOD.ProductManagement.UpdateOfferSettings"/>
+            <class name="CROWN.CICOD.ProductManagement.UploadProduct"/>
+            <class name="CROWN.CICOD.ProductManagement.ADD_PRODUCT"/>
+            <class name="CROWN.CICOD.ProductManagement.AddMultipleProductToWebShop"/>
+            <class name="CROWN.CICOD.ProductManagement.CreateOfferSettings"/>
+            <class name="CROWN.CICOD.ProductManagement.PRODUCT_CATEGORY"/>
+            <class name="CROWN.CICOD.ProductManagement.RemoveFromWebShop"/>
         </classes>
     </test>
 
     <test name = "Account">
         <classes>
-            <class name="CICOD.ModuleCOM.Account.CustomerAccount"/>
-            <class name="CICOD.ModuleCOM.Account.DownLoadCustomerAccount"/>
-            <class name="CICOD.ModuleCOM.Account.DownloadStatementOFAccount"/>
-            <class name="CICOD.ModuleCOM.Account.ViewCreditNote"/>
-            <class name="CICOD.ModuleCOM.Account.ViewStatementOfAccount"/>
-            <class name="CICOD.ModuleCOM.Account.CreateCreditNote"/>
+            <class name="CROWN.CICOD.Account.CustomerAccount"/>
+            <class name="CROWN.CICOD.Account.DownLoadCustomerAccount"/>
+            <class name="CROWN.CICOD.Account.DownloadStatementOFAccount"/>
+            <class name="CROWN.CICOD.Account.ViewCreditNote"/>
+            <class name="CROWN.CICOD.Account.ViewStatementOfAccount"/>
+            <class name="CROWN.CICOD.Account.CreateCreditNote"/>
         </classes>
     </test>
 
     <test name = "WorkShop Configuration">
         <classes>
-            <class name="CICOD.ModuleCOM.WorkShopConfiguration.CarouselBanner"/>
+            <class name="CROWN.CICOD.WorkShopConfiguration.CarouselBanner"/>
         </classes>
     </test>
 </suite>

@@ -2,34 +2,34 @@
 
     <test name = "DashBoard">
         <classes>
-            <class name="CICOD.ModuleCOM.DashBoard.OrderFufilmentDashboard"/>
-            <class name="CICOD.ModuleCOM.DashBoard.SalesTargetDashBoard"/>
-            <class name="CICOD.ModuleCOM.DashBoard.VarianceReportDashboard"/>
-            <class name="CICOD.ModuleCOM.DashBoard.View_DashBoard_By_Date"/>
-            <class name="CICOD.ModuleCOM.DashBoard.ProductDashboard"/>
+            <class name="CROWN.CICOD.DashBoard.OrderFufilmentDashboard"/>
+            <class name="CROWN.CICOD.DashBoard.SalesTargetDashBoard"/>
+            <class name="CROWN.CICOD.DashBoard.VarianceReportDashboard"/>
+            <class name="CROWN.CICOD.DashBoard.View_DashBoard_By_Date"/>
+            <class name="CROWN.CICOD.DashBoard.ProductDashboard"/>
         </classes>
     </test>
 
     <test name = "Order History">
         <classes>
-            <class name="CICOD.ModuleCOM.OrderHistory.Downloadorderhistory"/>
-            <class name="CICOD.ModuleCOM.OrderHistory.VIEW_ORDER_HISTORY"/>
+            <class name="CROWN.CICOD.OrderHistory.Downloadorderhistory"/>
+            <class name="CROWN.CICOD.OrderHistory.VIEW_ORDER_HISTORY"/>
         </classes>
     </test>
     <test name = "Customer Management">
         <classes>
-            <class name="CICOD.ModuleCOM.CustomerManagment.Suspend_UnsuspendCustomerFromCustomerManagementPage"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.UploadCustomer"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.CreateCustomer"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.ViewCreditHistory"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.DownloadCustomerDetails"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.DownLoadCreditLimit"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.SuspendUnsuspendCustomer"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.EnableFreeDelivery"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.UpdateCustomer"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.Lodgment"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.VatExemptionforCustomer"/>
-            <class name="CICOD.ModuleCOM.CustomerManagment.ViewCustomer"/>
+            <class name="CROWN.CICOD.CustomerManagment.Suspend_UnsuspendCustomerFromCustomerManagementPage"/>
+            <class name="CROWN.CICOD.CustomerManagment.UploadCustomer"/>
+            <class name="CROWN.CICOD.CustomerManagment.CreateCustomer"/>
+            <class name="CROWN.CICOD.CustomerManagment.ViewCreditHistory"/>
+            <class name="CROWN.CICOD.CustomerManagment.DownloadCustomerDetails"/>
+            <class name="CROWN.CICOD.CustomerManagment.DownLoadCreditLimit"/>
+            <class name="CROWN.CICOD.CustomerManagment.SuspendUnsuspendCustomer"/>
+            <class name="CROWN.CICOD.CustomerManagment.EnableFreeDelivery"/>
+            <class name="CROWN.CICOD.CustomerManagment.UpdateCustomer"/>
+            <class name="CROWN.CICOD.CustomerManagment.Lodgment"/>
+            <class name="CROWN.CICOD.CustomerManagment.VatExemptionforCustomer"/>
+            <class name="CROWN.CICOD.CustomerManagment.ViewCustomer"/>
         </classes>
     </test>
 

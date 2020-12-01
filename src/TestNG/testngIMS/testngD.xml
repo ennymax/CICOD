@@ -1,18 +1,18 @@
 <suite name="Suite">
     <test name = "Parallel Tests" parallel = "methods" thread-count = "3" group-by-instances="false" >
         <classes>
-            <class name="CICOD.ModuleIMS.ManageRole.AddNewRole"/>
-            <class name="CICOD.ModuleIMS.ManageRole.RemoveRole"/>
-            <class name="CICOD.ModuleIMS.ManageRole.UpdateRole"/>
-            <class name="CICOD.ModuleIMS.ManageRole.ViewRole"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageRole.AddNewRole"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageRole.RemoveRole"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageRole.UpdateRole"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageRole.ViewRole"/>
 
-            <class name="CICOD.ModuleIMS.ManageUsers.AddNewUser"/>
-            <class name="CICOD.ModuleIMS.ManageUsers.DownloadLastUserLogin"/>
-            <class name="CICOD.ModuleIMS.ManageUsers.DownloadUser"/>
-            <class name="CICOD.ModuleIMS.ManageUsers.RemoveUser"/>
-            <class name="CICOD.ModuleIMS.ManageUsers.UpdateUser"/>
-            <class name="CICOD.ModuleIMS.ManageUsers.ViewUsers"/>
-            <class name="CICOD.ModuleIMS.ManageUsers.RemoveUser"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageUsers.AddNewUser"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageUsers.DownloadLastUserLogin"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageUsers.DownloadUser"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageUsers.RemoveUser"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageUsers.UpdateUser"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageUsers.ViewUsers"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageUsers.RemoveUser"/>
 
         </classes>
     </test>

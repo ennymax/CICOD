@@ -1,28 +1,28 @@
 <suite name="Suite">
     <test name = "UCG A"  >
         <classes>
-            <class name="CICOD.ModuleUCG.ViewPendingCollections"/>
-            <class name="CICOD.ModuleUCG.FilterPendingCollectionsInCorrectCredentials"/>
-            <class name="CICOD.ModuleUCG.FilterPendingCollectionWithCorrectDetails"/>
-            <class name="CICOD.ModuleUCG.SearchPendingCollectionWithCorrectCredentials"/>
-            <class name="CICOD.ModuleUCG.SearchPendingCollectionsWithInCorrectCredentials"/>
-            <class name="CICOD.ModuleUCG.DownloadPendingCollection"/>
+            <class name="CROWN.CICOD.ModuleUCG.ViewPendingCollections"/>
+            <class name="CROWN.CICOD.ModuleUCG.FilterPendingCollectionsInCorrectCredentials"/>
+            <class name="CROWN.CICOD.ModuleUCG.FilterPendingCollectionWithCorrectDetails"/>
+            <class name="CROWN.CICOD.ModuleUCG.SearchPendingCollectionWithCorrectCredentials"/>
+            <class name="CROWN.CICOD.ModuleUCG.SearchPendingCollectionsWithInCorrectCredentials"/>
+            <class name="CROWN.CICOD.ModuleUCG.DownloadPendingCollection"/>
         </classes>
     </test>
 
     <test name = "UCG B"  >
         <classes>
-            <class name="CICOD.ModuleUCG.FilterVarienceReport"/>
-            <class name="CICOD.ModuleUCG.DownloadVarienceReport"/>
+            <class name="CROWN.CICOD.ModuleUCG.FilterVarienceReport"/>
+            <class name="CROWN.CICOD.ModuleUCG.DownloadVarienceReport"/>
         </classes>
     </test>
 
     <test name = "UCG C"  >
         <classes>
-            <class name="CICOD.ModuleUCG.ViewSettlementReport"/>
-            <class name="CICOD.ModuleUCG.FilterSettlementReportUsingDate"/>
-            <class name="CICOD.ModuleUCG.SearchSettlementReportUsingIncorrectCredentials"/>
-            <class name="CICOD.ModuleUCG.SearchSettlementReportUsingCorrectCredential"/>
+            <class name="CROWN.CICOD.ModuleUCG.ViewSettlementReport"/>
+            <class name="CROWN.CICOD.ModuleUCG.FilterSettlementReportUsingDate"/>
+            <class name="CROWN.CICOD.ModuleUCG.SearchSettlementReportUsingIncorrectCredentials"/>
+            <class name="CROWN.CICOD.ModuleUCG.SearchSettlementReportUsingCorrectCredential"/>
         </classes>
     </test>
 </suite>

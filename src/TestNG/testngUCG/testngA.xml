@@ -1,22 +1,22 @@
 <suite name="Suite">
     <test name = "UCG A"  >
         <classes>
-            <class name="CICOD.ModuleUCG.ViewAllCollection"/>
-            <class name="CICOD.ModuleUCG.FilterAllCollectionByProvider"/>
-            <class name="CICOD.ModuleUCG.FilterAllCollectionUsingStartDateAndEndDate"/>
-            <class name="CICOD.ModuleUCG.SearchAllCollectionWithCorrectCredentila"/>
-            <class name="CICOD.ModuleUCG.SearchAllCollectionWithIncorrectCedentials"/>
-            <class name="CICOD.ModuleUCG.DownloadAllCollections"/>
-            <class name="CICOD.ModuleUCG.ReprintRecipt"/>
+            <class name="CROWN.CICOD.ModuleUCG.ViewAllCollection"/>
+            <class name="CROWN.CICOD.ModuleUCG.FilterAllCollectionByProvider"/>
+            <class name="CROWN.CICOD.ModuleUCG.FilterAllCollectionUsingStartDateAndEndDate"/>
+            <class name="CROWN.CICOD.ModuleUCG.SearchAllCollectionWithCorrectCredentila"/>
+            <class name="CROWN.CICOD.ModuleUCG.SearchAllCollectionWithIncorrectCedentials"/>
+            <class name="CROWN.CICOD.ModuleUCG.DownloadAllCollections"/>
+            <class name="CROWN.CICOD.ModuleUCG.ReprintRecipt"/>
         </classes>
     </test>
 
     <test name = "UCG B"  >
         <classes>
-            <class name="CICOD.ModuleUCG.LoginWithCorrectDetails"/>
-            <class name="CICOD.ModuleUCG.LoginWithWrongDomain"/>
-            <class name="CICOD.ModuleUCG.LoginWithWrongPassword"/>
-            <class name="CICOD.ModuleUCG.LoginWithWrongEmail"/>
+            <class name="CROWN.CICOD.ModuleUCG.LoginWithCorrectDetails"/>
+            <class name="CROWN.CICOD.ModuleUCG.LoginWithWrongDomain"/>
+            <class name="CROWN.CICOD.ModuleUCG.LoginWithWrongPassword"/>
+            <class name="CROWN.CICOD.ModuleUCG.LoginWithWrongEmail"/>
         </classes>
     </test>
 </suite>

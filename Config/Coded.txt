@@ -47,10 +47,10 @@
 
        <test name = "File Management" parallel = "methods" thread-count = "2" group-by-instances="false" >
         <classes>
-            <class name="CICOD.ModuleWFM.FileManagement.UploadFile"/>
-            <class name="CICOD.ModuleWFM.FileManagement.DeleteAttachedFile"/>
-            <class name="CICOD.ModuleWFM.FileManagement.DownloadAttachedFile"/>
-            <class name="CICOD.ModuleWFM.FileManagement.ViewAttachedFile"/>
+            <class name="CROWN.CICOD.ModuleCOM.ModuleWFM.FileManagement.UploadFile"/>
+            <class name="CROWN.CICOD.ModuleCOM.ModuleWFM.FileManagement.DeleteAttachedFile"/>
+            <class name="CROWN.CICOD.ModuleCOM.ModuleWFM.FileManagement.DownloadAttachedFile"/>
+            <class name="CROWN.CICOD.ModuleCOM.ModuleWFM.FileManagement.ViewAttachedFile"/>
         </classes>
        </test>
 

@@ -1,36 +1,36 @@
 <suite name="Suite">
     <test name = "Upgrade Subscription">
         <classes>
-            <class name="CICOD.ModuleLYTE.UpgradeSuscription.Upgrade_Suscription_Of_Active_Account"/>
-            <class name="CICOD.ModuleLYTE.UpgradeSuscription.ViewPaymentHistory"/>
-            <class name="CICOD.ModuleLYTE.UpgradeSuscription.VIEW_SUSCRIPTION"/>
-            <class name="CICOD.ModuleLYTE.UpgradeSuscription.UpgradeSuscriptionOnFreeTrial"/>
-            <class name="CICOD.ModuleLYTE.UpgradeSuscription.FailedSubscriptionRenewal"/>
-            <class name="CICOD.ModuleLYTE.UpgradeSuscription.Upgrade_Suscription_After_Expiration"/>
+            <class name="CROWN.CICOD.ModuleLYTE.UpgradeSuscription.Upgrade_Suscription_Of_Active_Account"/>
+            <class name="CROWN.CICOD.ModuleLYTE.UpgradeSuscription.ViewPaymentHistory"/>
+            <class name="CROWN.CICOD.ModuleLYTE.UpgradeSuscription.VIEW_SUSCRIPTION"/>
+            <class name="CROWN.CICOD.ModuleLYTE.UpgradeSuscription.UpgradeSuscriptionOnFreeTrial"/>
+            <class name="CROWN.CICOD.ModuleLYTE.UpgradeSuscription.FailedSubscriptionRenewal"/>
+            <class name="CROWN.CICOD.ModuleLYTE.UpgradeSuscription.Upgrade_Suscription_After_Expiration"/>
         </classes>
     </test>
 
     <test name = "UCG" >
         <classes>
-            <class name="CICOD.ModuleLYTE.UCG.VIEW_TRANSACTION_DETAILS"/>
+            <class name="CROWN.CICOD.ModuleLYTE.UCG.VIEW_TRANSACTION_DETAILS"/>
         </classes>
     </test>
 
     <test name = "Administration">
         <classes>
-            <class name="CICOD.ModuleLYTE.Administration.UPDATE_ROLE"/>
-            <class name="CICOD.ModuleLYTE.Administration.SUSPEND_UNSUSPEND_ROLE"/>
-            <class name="CICOD.ModuleLYTE.Administration.ADD_ROLE"/>
-            <class name="CICOD.ModuleLYTE.Administration.AddUser"/>
-            <class name="CICOD.ModuleLYTE.Administration.UpdateUser"/>
-            <class name="CICOD.ModuleLYTE.Administration.DOWNLOAD_User"/>
+            <class name="CROWN.CICOD.ModuleLYTE.Administration.UPDATE_ROLE"/>
+            <class name="CROWN.CICOD.ModuleLYTE.Administration.SUSPEND_UNSUSPEND_ROLE"/>
+            <class name="CROWN.CICOD.ModuleLYTE.Administration.ADD_ROLE"/>
+            <class name="CROWN.CICOD.ModuleLYTE.Administration.AddUser"/>
+            <class name="CROWN.CICOD.ModuleLYTE.Administration.UpdateUser"/>
+            <class name="CROWN.CICOD.ModuleLYTE.Administration.DOWNLOAD_User"/>
         </classes>
     </test>
 
     <test name = "Customer Management">
         <classes>
-            <class name="CICOD.ModuleLYTE.CustomerManagment.DownloadCustomerDetails"/>
-            <class name="CICOD.ModuleLYTE.CustomerManagment.Suspend_Unsuspend_Customer"/>
+            <class name="CROWN.CICOD.ModuleLYTE.CustomerManagment.DownloadCustomerDetails"/>
+            <class name="CROWN.CICOD.ModuleLYTE.CustomerManagment.Suspend_Unsuspend_Customer"/>
         </classes>
     </test>
 </suite>

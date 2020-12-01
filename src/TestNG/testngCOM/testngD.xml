@@ -1,36 +1,36 @@
 <suite name="Suite">
     <test name = "Settings">
         <classes>
-            <class name="CICOD.ModuleCOM.Settings.THEME_AND_CONFIG"/>
-            <class name="CICOD.ModuleCOM.Settings.CREATEDELIVERYRATE"/>
-            <class name="CICOD.ModuleCOM.Settings.DELIVERY_RATE_CARD_EXIST_ALREADY"/>
-            <class name="CICOD.ModuleCOM.Settings.ReasonForRefund"/>
-            <class name="CICOD.ModuleCOM.Settings.SUSPEND_UNSUSPEND_TAX"/>
-            <class name="CICOD.ModuleCOM.Settings.SuspendUnsuspendDeliveryRate"/>
-            <class name="CICOD.ModuleCOM.Settings.UPDATE_TAX"/>
-            <class name="CICOD.ModuleCOM.Settings.UpdateDeliveryRate"/>
-            <class name="CICOD.ModuleCOM.Settings.UpdateReasonForRefund"/>
-            <class name="CICOD.ModuleCOM.Settings.SuspendUnsuspendReasonforRefund"/>
+            <class name="CROWN.CICOD.Settings.THEME_AND_CONFIG"/>
+            <class name="CROWN.CICOD.Settings.CREATEDELIVERYRATE"/>
+            <class name="CROWN.CICOD.Settings.DELIVERY_RATE_CARD_EXIST_ALREADY"/>
+            <class name="CROWN.CICOD.Settings.ReasonForRefund"/>
+            <class name="CROWN.CICOD.Settings.SUSPEND_UNSUSPEND_TAX"/>
+            <class name="CROWN.CICOD.Settings.SuspendUnsuspendDeliveryRate"/>
+            <class name="CROWN.CICOD.Settings.UPDATE_TAX"/>
+            <class name="CROWN.CICOD.Settings.UpdateDeliveryRate"/>
+            <class name="CROWN.CICOD.Settings.UpdateReasonForRefund"/>
+            <class name="CROWN.CICOD.Settings.SuspendUnsuspendReasonforRefund"/>
         </classes>
     </test>
 
     <test name = "Administration">
         <classes>
-            <class name="CICOD.ModuleCOM.Administration.ADD_ROLE"/>
-            <class name="CICOD.ModuleCOM.Administration.ADDUSER"/>
-            <class name="CICOD.ModuleCOM.Administration.DOWNLOAD_User"/>
-            <class name="CICOD.ModuleCOM.Administration.SUSPEND_UNSUSPEND_ROLE"/>
-            <class name="CICOD.ModuleCOM.Administration.UPDATE_ROLE"/>
-            <class name="CICOD.ModuleCOM.Administration.UPDATEUSER"/>
+            <class name="CROWN.CICOD.Administration.ADD_ROLE"/>
+            <class name="CROWN.CICOD.Administration.ADDUSER"/>
+            <class name="CROWN.CICOD.Administration.DOWNLOAD_User"/>
+            <class name="CROWN.CICOD.Administration.SUSPEND_UNSUSPEND_ROLE"/>
+            <class name="CROWN.CICOD.Administration.UPDATE_ROLE"/>
+            <class name="CROWN.CICOD.Administration.UPDATEUSER"/>
         </classes>
     </test>
 
     <test name = "Loyalty">
         <classes>
-            <class name="CICOD.ModuleCOM.Loyalty.CreateProductSpecificSpend"/>
-            <class name="CICOD.ModuleCOM.Loyalty.CreateValueSpecificSpend"/>
-            <class name="CICOD.ModuleCOM.Loyalty.Suspend_Unsuspend_PointSetUp"/>
-            <class name="CICOD.ModuleCOM.Loyalty.UpdatePointSetUp"/>
+            <class name="CROWN.CICOD.Loyalty.CreateProductSpecificSpend"/>
+            <class name="CROWN.CICOD.Loyalty.CreateValueSpecificSpend"/>
+            <class name="CROWN.CICOD.Loyalty.Suspend_Unsuspend_PointSetUp"/>
+            <class name="CROWN.CICOD.Loyalty.UpdatePointSetUp"/>
         </classes>
     </test>
 </suite>

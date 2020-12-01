@@ -1,21 +1,21 @@
 <suite name="Suite">
     <test name = "Parallel Tests" parallel = "methods" thread-count = "3" group-by-instances="false" >
             <classes>
-            <class name="CICOD.ModuleIMS.ManageCategory.NewInventryCategory"/>
-            <class name="CICOD.ModuleIMS.ManageCategory.RemoveCategory"/>
-            <class name="CICOD.ModuleIMS.ManageCategory.Suspend_UnsuspendCategory"/>
-            <class name="CICOD.ModuleIMS.ManageCategory.UpdateInventoryCategory"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageCategory.NewInventryCategory"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageCategory.RemoveCategory"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageCategory.Suspend_UnsuspendCategory"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageCategory.UpdateInventoryCategory"/>
 
-            <class name="CICOD.ModuleIMS.ManageProductCategory.CreateProductCategory"/>
-            <class name="CICOD.ModuleIMS.ManageProductCategory.RemoveProductCategory"/>
-            <class name="CICOD.ModuleIMS.ManageProductCategory.UpdateProductCategory"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageProductCategory.CreateProductCategory"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageProductCategory.RemoveProductCategory"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageProductCategory.UpdateProductCategory"/>
 
-            <class name="CICOD.ModuleIMS.ManageSupplier.CreateSupplier"/>
-            <class name="CICOD.ModuleIMS.ManageSupplier.RemoveSuppplier"/>
-            <class name="CICOD.ModuleIMS.ManageSupplier.UpdateSupplier"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageSupplier.CreateSupplier"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageSupplier.RemoveSuppplier"/>
+            <class name="CROWN.CICOD.ModuleIMS.ManageSupplier.UpdateSupplier"/>
 
-            <class name="CICOD.ModuleIMS.MaterialIssuanceReport.RecieveDashBoardFilter"/>
-            <class name="CICOD.ModuleIMS.MaterialIssuanceReport.ViewDashboard"/>
+            <class name="CROWN.CICOD.ModuleIMS.MaterialIssuanceReport.RecieveDashBoardFilter"/>
+            <class name="CROWN.CICOD.ModuleIMS.MaterialIssuanceReport.ViewDashboard"/>
 
         </classes>
     </test>

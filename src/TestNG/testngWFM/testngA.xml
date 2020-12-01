@@ -1,52 +1,52 @@
 <suite name="Suite">
     <test name = "Escalation Configuration">
         <classes>
-            <class name="CICOD.ModuleWFM.EscalationConfiguration.CreateEscalationRole"/>
-            <class name="CICOD.ModuleWFM.EscalationConfiguration.CreateNewRegionToEscalation"/>
-            <class name="CICOD.ModuleWFM.EscalationConfiguration.Suspend_UnsuspendEscalationRole"/>
-            <class name="CICOD.ModuleWFM.EscalationConfiguration.Suspend_UnsuspendRegionToRole"/>
-            <class name="CICOD.ModuleWFM.EscalationConfiguration.UpdateEscalationRole"/>
-            <class name="CICOD.ModuleWFM.EscalationConfiguration.UpdateRegionToRole"/>
+            <class name="CROWN.CICOD.ModuleWFM.EscalationConfiguration.CreateEscalationRole"/>
+            <class name="CROWN.CICOD.ModuleWFM.EscalationConfiguration.CreateNewRegionToEscalation"/>
+            <class name="CROWN.CICOD.ModuleWFM.EscalationConfiguration.Suspend_UnsuspendEscalationRole"/>
+            <class name="CROWN.CICOD.ModuleWFM.EscalationConfiguration.Suspend_UnsuspendRegionToRole"/>
+            <class name="CROWN.CICOD.ModuleWFM.EscalationConfiguration.UpdateEscalationRole"/>
+            <class name="CROWN.CICOD.ModuleWFM.EscalationConfiguration.UpdateRegionToRole"/>
         </classes>
     </test>
 
     <test name = "Manage Department">
         <classes>
-            <class name="CICOD.ModuleWFM.ManageDepartment.CreateDepartment"/>
-            <class name="CICOD.ModuleWFM.ManageDepartment.Suspend_Unsuspend_Department"/>
-            <class name="CICOD.ModuleWFM.ManageDepartment.UpdateDepartment"/>
+            <class name="CROWN.CICOD.ModuleWFM.ManageDepartment.CreateDepartment"/>
+            <class name="CROWN.CICOD.ModuleWFM.ManageDepartment.Suspend_Unsuspend_Department"/>
+            <class name="CROWN.CICOD.ModuleWFM.ManageDepartment.UpdateDepartment"/>
         </classes>
     </test>
 
     <test name = "Manage WorkOrder">
     <classes>
-            <class name="CICOD.ModuleWFM.ManageWorkOrder.AddRemark"/>
-            <class name="CICOD.ModuleWFM.ManageWorkOrder.AdvancedSearch"/>
-            <class name="CICOD.ModuleWFM.ManageWorkOrder.ChangePriorities"/>
-            <class name="CICOD.ModuleWFM.ManageWorkOrder.ViewWorkOrder"/>
-            <class name="CICOD.ModuleWFM.ManageWorkOrder.UpDateStatus"/>
-            <class name="CICOD.ModuleWFM.ManageWorkOrder.Suspend_Unsuspend_WorkOrder"/>
+            <class name="CROWN.CICOD.ModuleWFM.ManageWorkOrder.AddRemark"/>
+            <class name="CROWN.CICOD.ModuleWFM.ManageWorkOrder.AdvancedSearch"/>
+            <class name="CROWN.CICOD.ModuleWFM.ManageWorkOrder.ChangePriorities"/>
+            <class name="CROWN.CICOD.ModuleWFM.ManageWorkOrder.ViewWorkOrder"/>
+            <class name="CROWN.CICOD.ModuleWFM.ManageWorkOrder.UpDateStatus"/>
+            <class name="CROWN.CICOD.ModuleWFM.ManageWorkOrder.Suspend_Unsuspend_WorkOrder"/>
         </classes>
     </test>
 
     <test name = "Queue Management">
         <classes>
-            <class name="CICOD.ModuleWFM.QueueManagement.SUSPEND_AND_UNSUSPEND_QUEUE"/>
-            <class name="CICOD.ModuleWFM.QueueManagement.CreateQueue"/>
-            <class name="CICOD.ModuleWFM.QueueManagement.UpdateQUEUE"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueManagement.SUSPEND_AND_UNSUSPEND_QUEUE"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueManagement.CreateQueue"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueManagement.UpdateQUEUE"/>
         </classes>
     </test>
 
     <test name = "QueueTypeManagement" >
         <classes>
-            <class name="CICOD.ModuleWFM.QueueTypeManagement.CreateQueueType"/>
-            <class name="CICOD.ModuleWFM.QueueTypeManagement.AddStatusToQueueType"/>
-            <class name="CICOD.ModuleWFM.QueueTypeManagement.SetUpEscalationForQueueType"/>
-            <class name="CICOD.ModuleWFM.QueueTypeManagement.AddStatusToQueueType"/>
-            <class name="CICOD.ModuleWFM.QueueTypeManagement.Show_HideStatusFromResource"/>
-            <class name="CICOD.ModuleWFM.QueueTypeManagement.Suspend_UnsuspendQueueType"/>
-            <class name="CICOD.ModuleWFM.QueueTypeManagement.UpdateQueueType"/>
-            <class name="CICOD.ModuleWFM.QueueTypeManagement.Suspend_UnsuspendQueueTypeStatus"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueTypeManagement.CreateQueueType"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueTypeManagement.AddStatusToQueueType"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueTypeManagement.SetUpEscalationForQueueType"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueTypeManagement.AddStatusToQueueType"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueTypeManagement.Show_HideStatusFromResource"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueTypeManagement.Suspend_UnsuspendQueueType"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueTypeManagement.UpdateQueueType"/>
+            <class name="CROWN.CICOD.ModuleWFM.QueueTypeManagement.Suspend_UnsuspendQueueTypeStatus"/>
         </classes>
     </test>
 
