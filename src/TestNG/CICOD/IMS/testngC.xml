@@ -1,20 +1,20 @@
 <suite name="Suite">
     <test name = "Parallel Tests" parallel = "methods" thread-count = "3" group-by-instances="false" >
         <classes>
-            <class name="CROWN.CICOD.ModuleIMS.Audit.DownloadAuditList"/>
-            <class name="CROWN.CICOD.ModuleIMS.Audit.ViewAuditListPage"/>
+            <class name="CROWN.CICOD.IMS.Audit.DownloadAuditList"/>
+            <class name="CROWN.CICOD.IMS.Audit.ViewAuditListPage"/>
 
-            <class name="CROWN.CICOD.ModuleIMS.BinCard.ViewBinCard"/>
+            <class name="CROWN.CICOD.IMS.BinCard.ViewBinCard"/>
 
-            <class name="CROWN.CICOD.ModuleIMS.ManageInventry.AddInventory"/>
-            <class name="CROWN.CICOD.ModuleIMS.ManageInventry.DownloadInventory"/>
-            <class name="CROWN.CICOD.ModuleIMS.ManageInventry.ReceiveInventory"/>
-            <class name="CROWN.CICOD.ModuleIMS.ManageInventry.ReceiveInventoryByInvoice"/>
-            <class name="CROWN.CICOD.ModuleIMS.ManageInventry.UpdateInventory"/>
-            <class name="CROWN.CICOD.ModuleIMS.ManageInventry.ViewReceivedInventory"/>
-            <class name="CROWN.CICOD.ModuleIMS.ManageInventry.ViewInventory"/>
+            <class name="CROWN.CICOD.IMS.ManageInventry.AddInventory"/>
+            <class name="CROWN.CICOD.IMS.ManageInventry.DownloadInventory"/>
+            <class name="CROWN.CICOD.IMS.ManageInventry.ReceiveInventory"/>
+            <class name="CROWN.CICOD.IMS.ManageInventry.ReceiveInventoryByInvoice"/>
+            <class name="CROWN.CICOD.IMS.ManageInventry.UpdateInventory"/>
+            <class name="CROWN.CICOD.IMS.ManageInventry.ViewReceivedInventory"/>
+            <class name="CROWN.CICOD.IMS.ManageInventry.ViewInventory"/>
 
-            <class name="CROWN.CICOD.ModuleIMS.UpdateOfValue_I_and_QA.ApprovedSupply"/>
+            <class name="CROWN.CICOD.IMS.UpdateOfValue_I_and_QA.ApprovedSupply"/>
 
         </classes>
     </test>

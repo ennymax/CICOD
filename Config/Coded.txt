@@ -47,10 +47,10 @@
 
        <test name = "File Management" parallel = "methods" thread-count = "2" group-by-instances="false" >
         <classes>
-            <class name="CROWN.CICOD.ModuleCOM.ModuleWFM.FileManagement.UploadFile"/>
-            <class name="CROWN.CICOD.ModuleCOM.ModuleWFM.FileManagement.DeleteAttachedFile"/>
-            <class name="CROWN.CICOD.ModuleCOM.ModuleWFM.FileManagement.DownloadAttachedFile"/>
-            <class name="CROWN.CICOD.ModuleCOM.ModuleWFM.FileManagement.ViewAttachedFile"/>
+            <class name="CROWN.CICOD.COM.ModuleWFM.FileManagement.UploadFile"/>
+            <class name="CROWN.CICOD.COM.ModuleWFM.FileManagement.DeleteAttachedFile"/>
+            <class name="CROWN.CICOD.COM.ModuleWFM.FileManagement.DownloadAttachedFile"/>
+            <class name="CROWN.CICOD.COM.ModuleWFM.FileManagement.ViewAttachedFile"/>
         </classes>
        </test>
 
@@ -198,7 +198,6 @@ DefEmail_TEXT=demotestng@yopmail.com
 DefPassword_TEXT=@Ecomax1759
 
 STAGING_STAGING_STAGING
-cicodsaasstaging.com
 
 ndanitv
 
@@ -221,7 +220,7 @@ cicodsaasdev.com
 
 Domain: blakesshawn
 Email: blakesandshawn@yopmail.com
-Password:Crown@123
+Password:+
 
 Domain=emaxkemi
 Email:emaxkemi@yopmail.com
@@ -240,9 +239,7 @@ Email:Patrick.ijiti@crowninteractive.com
 Password: Pat1234!
 
 all Good Morning all
-27/11/2020
-1. Functional Test WFM Mobile App(On going)
-2. Test ISO Security Fix(On going)
-30/11/2020
-1. Test Update On Value Chain(Done)
-2. Test ISO Security Fix(On going)
+01/12/2020
+1. Test ISO Security Fix(On going)
+02/12/2020
+1. Test ISO Security Fix(On going)

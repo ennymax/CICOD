@@ -1,35 +1,35 @@
 <suite name="Suite">
     <test name = "Default SetUp">
         <classes>
-            <class name="CROWN.CICOD.ModuleWFM.DefaultSetUp.DefaultDepartment"/>
-            <class name="CROWN.CICOD.ModuleWFM.DefaultSetUp.DefaultQueue"/>
-            <class name="CROWN.CICOD.ModuleWFM.DefaultSetUp.DefaultQueueType"/>
-            <class name="CROWN.CICOD.ModuleWFM.DefaultSetUp.DefaultResourceLevel"/>
-            <class name="CROWN.CICOD.ModuleWFM.DefaultSetUp.DefaultResourceType"/>
-            <class name="CROWN.CICOD.ModuleWFM.DefaultSetUp.DefaultStatus"/>
+            <class name="CROWN.CICOD.WFM.DefaultSetUp.DefaultDepartment"/>
+            <class name="CROWN.CICOD.WFM.DefaultSetUp.DefaultQueue"/>
+            <class name="CROWN.CICOD.WFM.DefaultSetUp.DefaultQueueType"/>
+            <class name="CROWN.CICOD.WFM.DefaultSetUp.DefaultResourceLevel"/>
+            <class name="CROWN.CICOD.WFM.DefaultSetUp.DefaultResourceType"/>
+            <class name="CROWN.CICOD.WFM.DefaultSetUp.DefaultStatus"/>
         </classes>
     </test>
     <test name = "Right Template">
         <classes>
-            <class name="CROWN.CICOD.ModuleWFM.RightTemplate.Suspend_UnsuspendRightTemplate"/>
-            <class name="CROWN.CICOD.ModuleWFM.RightTemplate.UpdateRightTemplate"/>
-            <class name="CROWN.CICOD.ModuleWFM.RightTemplate.CreateRightTemplate"/>
-            <class name="CROWN.CICOD.ModuleWFM.RightTemplate.CreateUsers"/>
+            <class name="CROWN.CICOD.WFM.RightTemplate.Suspend_UnsuspendRightTemplate"/>
+            <class name="CROWN.CICOD.WFM.RightTemplate.UpdateRightTemplate"/>
+            <class name="CROWN.CICOD.WFM.RightTemplate.CreateRightTemplate"/>
+            <class name="CROWN.CICOD.WFM.RightTemplate.CreateUsers"/>
         </classes>
     </test>
 
     <test name = "Pages">
         <classes>
-            <class name="CROWN.CICOD.ModuleWFM.Pages.AssertDepartment"/>
-            <class name="CROWN.CICOD.ModuleWFM.Pages.AssertEscalation"/>
-            <class name="CROWN.CICOD.ModuleWFM.Pages.AssertManageQueue"/>
-            <class name="CROWN.CICOD.ModuleWFM.Pages.AssertQueueType"/>
-            <class name="CROWN.CICOD.ModuleWFM.Pages.AssertResourcePage"/>
-            <class name="CROWN.CICOD.ModuleWFM.Pages.AssertRigntTemplate"/>
-            <class name="CROWN.CICOD.ModuleWFM.Pages.AssertScheduleManagement"/>
-            <class name="CROWN.CICOD.ModuleWFM.Pages.AssertSourceComplaint"/>
-            <class name="CROWN.CICOD.ModuleWFM.Pages.AssertWorkOrderStatus"/>
-            <class name="CROWN.CICOD.ModuleWFM.Pages.AssertDashboard"/>
+            <class name="CROWN.CICOD.WFM.Pages.AssertDepartment"/>
+            <class name="CROWN.CICOD.WFM.Pages.AssertEscalation"/>
+            <class name="CROWN.CICOD.WFM.Pages.AssertManageQueue"/>
+            <class name="CROWN.CICOD.WFM.Pages.AssertQueueType"/>
+            <class name="CROWN.CICOD.WFM.Pages.AssertResourcePage"/>
+            <class name="CROWN.CICOD.WFM.Pages.AssertRigntTemplate"/>
+            <class name="CROWN.CICOD.WFM.Pages.AssertScheduleManagement"/>
+            <class name="CROWN.CICOD.WFM.Pages.AssertSourceComplaint"/>
+            <class name="CROWN.CICOD.WFM.Pages.AssertWorkOrderStatus"/>
+            <class name="CROWN.CICOD.WFM.Pages.AssertDashboard"/>
         </classes>
     </test>
 </suite>

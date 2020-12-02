@@ -1,34 +1,34 @@
 <suite name="Suite">
     <test name = "Resource Allocation Management">
         <classes>
-            <class name="CROWN.CICOD.ModuleWFM.ResourceAllocationManagement.CreateNewResource"/>
-            <class name="CROWN.CICOD.ModuleWFM.ResourceAllocationManagement.CreateResourceLevel"/>
-            <class name="CROWN.CICOD.ModuleWFM.ResourceAllocationManagement.UpdateResouceLevel"/>
-            <class name="CROWN.CICOD.ModuleWFM.ResourceAllocationManagement.CreateResourceType"/>
-            <class name="CROWN.CICOD.ModuleWFM.ResourceAllocationManagement.Suspend_UnsuspendResourceType"/>
-            <class name="CROWN.CICOD.ModuleWFM.ResourceAllocationManagement.Suspend_UnsuspendResourceLevel"/>
-            <class name="CROWN.CICOD.ModuleWFM.ResourceAllocationManagement.UpdateResourceType"/>
-            <class name="CROWN.CICOD.ModuleWFM.ResourceAllocationManagement.CreateSourceComplaint"/>
+            <class name="CROWN.CICOD.WFM.ResourceAllocationManagement.CreateNewResource"/>
+            <class name="CROWN.CICOD.WFM.ResourceAllocationManagement.CreateResourceLevel"/>
+            <class name="CROWN.CICOD.WFM.ResourceAllocationManagement.UpdateResouceLevel"/>
+            <class name="CROWN.CICOD.WFM.ResourceAllocationManagement.CreateResourceType"/>
+            <class name="CROWN.CICOD.WFM.ResourceAllocationManagement.Suspend_UnsuspendResourceType"/>
+            <class name="CROWN.CICOD.WFM.ResourceAllocationManagement.Suspend_UnsuspendResourceLevel"/>
+            <class name="CROWN.CICOD.WFM.ResourceAllocationManagement.UpdateResourceType"/>
+            <class name="CROWN.CICOD.WFM.ResourceAllocationManagement.CreateSourceComplaint"/>
         </classes>
     </test>
 
     <test name = "Source Complaint">
         <classes>
-            <class name="CROWN.CICOD.ModuleWFM.SourceComplaint.CreateSourceComplaint"/>
-            <class name="CROWN.CICOD.ModuleWFM.SourceComplaint.UpdateSourceComplain"/>
-            <class name="CROWN.CICOD.ModuleWFM.SourceComplaint.Suspend_UnsuspendSourceComplain"/>
+            <class name="CROWN.CICOD.WFM.SourceComplaint.CreateSourceComplaint"/>
+            <class name="CROWN.CICOD.WFM.SourceComplaint.UpdateSourceComplain"/>
+            <class name="CROWN.CICOD.WFM.SourceComplaint.Suspend_UnsuspendSourceComplain"/>
 
         </classes>
     </test>
 
     <test name = "Schedule Management">
         <classes>
-            <class name="CROWN.CICOD.ModuleWFM.SheduleManagement.CreateResourceShift"/>
-            <class name="CROWN.CICOD.ModuleWFM.SheduleManagement.CreateResourseShedule"/>
-            <class name="CROWN.CICOD.ModuleWFM.SheduleManagement.Suspend_UnsuspendResourceShedule"/>
-            <class name="CROWN.CICOD.ModuleWFM.SheduleManagement.Suspend_UnsuspendResourceShift"/>
-            <class name="CROWN.CICOD.ModuleWFM.SheduleManagement.UpdateResourceShedule"/>
-            <class name="CROWN.CICOD.ModuleWFM.SheduleManagement.UpdateResourceShift"/>
+            <class name="CROWN.CICOD.WFM.SheduleManagement.CreateResourceShift"/>
+            <class name="CROWN.CICOD.WFM.SheduleManagement.CreateResourseShedule"/>
+            <class name="CROWN.CICOD.WFM.SheduleManagement.Suspend_UnsuspendResourceShedule"/>
+            <class name="CROWN.CICOD.WFM.SheduleManagement.Suspend_UnsuspendResourceShift"/>
+            <class name="CROWN.CICOD.WFM.SheduleManagement.UpdateResourceShedule"/>
+            <class name="CROWN.CICOD.WFM.SheduleManagement.UpdateResourceShift"/>
         </classes>
     </test>
 </suite>

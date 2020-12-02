@@ -1,28 +1,28 @@
 <suite name="Suite">
     <test name = "UCG A"  >
         <classes>
-            <class name="CROWN.CICOD.ModuleUCG.ViewPendingCollections"/>
-            <class name="CROWN.CICOD.ModuleUCG.FilterPendingCollectionsInCorrectCredentials"/>
-            <class name="CROWN.CICOD.ModuleUCG.FilterPendingCollectionWithCorrectDetails"/>
-            <class name="CROWN.CICOD.ModuleUCG.SearchPendingCollectionWithCorrectCredentials"/>
-            <class name="CROWN.CICOD.ModuleUCG.SearchPendingCollectionsWithInCorrectCredentials"/>
-            <class name="CROWN.CICOD.ModuleUCG.DownloadPendingCollection"/>
+            <class name="CROWN.CICOD.UCG.ViewPendingCollections"/>
+            <class name="CROWN.CICOD.UCG.FilterPendingCollectionsInCorrectCredentials"/>
+            <class name="CROWN.CICOD.UCG.FilterPendingCollectionWithCorrectDetails"/>
+            <class name="CROWN.CICOD.UCG.SearchPendingCollectionWithCorrectCredentials"/>
+            <class name="CROWN.CICOD.UCG.SearchPendingCollectionsWithInCorrectCredentials"/>
+            <class name="CROWN.CICOD.UCG.DownloadPendingCollection"/>
         </classes>
     </test>
 
     <test name = "UCG B"  >
         <classes>
-            <class name="CROWN.CICOD.ModuleUCG.FilterVarienceReport"/>
-            <class name="CROWN.CICOD.ModuleUCG.DownloadVarienceReport"/>
+            <class name="CROWN.CICOD.UCG.FilterVarienceReport"/>
+            <class name="CROWN.CICOD.UCG.DownloadVarienceReport"/>
         </classes>
     </test>
 
     <test name = "UCG C"  >
         <classes>
-            <class name="CROWN.CICOD.ModuleUCG.ViewSettlementReport"/>
-            <class name="CROWN.CICOD.ModuleUCG.FilterSettlementReportUsingDate"/>
-            <class name="CROWN.CICOD.ModuleUCG.SearchSettlementReportUsingIncorrectCredentials"/>
-            <class name="CROWN.CICOD.ModuleUCG.SearchSettlementReportUsingCorrectCredential"/>
+            <class name="CROWN.CICOD.UCG.ViewSettlementReport"/>
+            <class name="CROWN.CICOD.UCG.FilterSettlementReportUsingDate"/>
+            <class name="CROWN.CICOD.UCG.SearchSettlementReportUsingIncorrectCredentials"/>
+            <class name="CROWN.CICOD.UCG.SearchSettlementReportUsingCorrectCredential"/>
         </classes>
     </test>
 </suite>

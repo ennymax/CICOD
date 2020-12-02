@@ -1,22 +1,22 @@
 <suite name="Suite">
     <test name = "Product Management">
         <classes>
-            <class name="CROWN.CICOD.ModuleLYTE.ProductManagement.ADD_PRODUCT"/>
-            <class name="CROWN.CICOD.ModuleLYTE.ProductManagement.PRODUCT_CATEGORY"/>
-            <class name="CROWN.CICOD.ModuleLYTE.ProductManagement.UPDATE_PRODUCT"/>
-            <class name="CROWN.CICOD.ModuleLYTE.ProductManagement.UPLOAD_PRODUCT"/>
-            <class name="CROWN.CICOD.ModuleLYTE.ProductManagement.SUSPEND_UNSUSPEND_PRODUCTS"/>
+            <class name="CROWN.CICOD.LYTE.ProductManagement.ADD_PRODUCT"/>
+            <class name="CROWN.CICOD.LYTE.ProductManagement.PRODUCT_CATEGORY"/>
+            <class name="CROWN.CICOD.LYTE.ProductManagement.UPDATE_PRODUCT"/>
+            <class name="CROWN.CICOD.LYTE.ProductManagement.UPLOAD_PRODUCT"/>
+            <class name="CROWN.CICOD.LYTE.ProductManagement.SUSPEND_UNSUSPEND_PRODUCTS"/>
         </classes>
     </test>
 
     <test name = "Setting Up WebShop">
         <classes>
-            <class name="CROWN.CICOD.ModuleLYTE.SettingUpWorkShop.CAROUSELBANNER"/>
-            <class name="CROWN.CICOD.ModuleLYTE.SettingUpWorkShop.CREATEPRODUCT"/>
-            <class name="CROWN.CICOD.ModuleLYTE.SettingUpWorkShop.CREATE_PRODUCT_CATEGORY"/>
-            <class name="CROWN.CICOD.ModuleLYTE.SettingUpWorkShop.SUSPEND_UNSUSPEND_TAX"/>
-            <class name="CROWN.CICOD.ModuleLYTE.SettingUpWorkShop.THEME_AND_CONFIG"/>
-            <class name="CROWN.CICOD.ModuleLYTE.SettingUpWorkShop.UPDATE_TAX"/>
+            <class name="CROWN.CICOD.LYTE.SettingUpWorkShop.CAROUSELBANNER"/>
+            <class name="CROWN.CICOD.LYTE.SettingUpWorkShop.CREATEPRODUCT"/>
+            <class name="CROWN.CICOD.LYTE.SettingUpWorkShop.CREATE_PRODUCT_CATEGORY"/>
+            <class name="CROWN.CICOD.LYTE.SettingUpWorkShop.SUSPEND_UNSUSPEND_TAX"/>
+            <class name="CROWN.CICOD.LYTE.SettingUpWorkShop.THEME_AND_CONFIG"/>
+            <class name="CROWN.CICOD.LYTE.SettingUpWorkShop.UPDATE_TAX"/>
         </classes>
     </test>
 </suite>
