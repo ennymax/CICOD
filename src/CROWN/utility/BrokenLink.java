@@ -1,6 +1,6 @@
 package CROWN.utility;
 
-import CROWN.base.TestBase;
+import CROWN.Base.TestBase;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;

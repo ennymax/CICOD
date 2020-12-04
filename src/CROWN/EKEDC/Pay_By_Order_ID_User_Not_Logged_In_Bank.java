@@ -1,6 +1,6 @@
 package CROWN.EKEDC;
 
-import CROWN.base.TestBase;
+import CROWN.Base.TestBase;
 import CROWN.utility.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

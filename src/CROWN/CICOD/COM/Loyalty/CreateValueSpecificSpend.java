@@ -1,6 +1,6 @@
 package CROWN.CICOD.COM.Loyalty;
 
-import CROWN.base.TestBase;
+import CROWN.Base.TestBase;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;

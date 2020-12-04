@@ -1,16 +1,21 @@
 
+  TestListenerAdapter tla = new TestListenerAdapter();
+        TestNG testng = new TestNG();
+        testng.setTestClasses(new Class[]{CreateCreditNote.class, CreateCreditNote.class});
+        testng.addListener(tla);
+        testng.run();
+
         String expectedTitle = Utility.fetchLocator(TittleText);
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, expectedTitle);
         test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
-         (invocationCount = 5)
+        (invocationCount = 5)
 
          https://github.com/naveenanimation20/PageObjectModel.git
          https://github.com/naveenanimation20/July2020SeleniumSessions.git
 
          https://www.youtube.com/playlist?list=PLoX0sUafNGbH9bmbIANk3D50FNUmuJIF3
          https://www.youtube.com/watch?v=qqmyAxfGV9c
-         elezabeth
 
          public void createContact(String emailId, String jobTitle) {
          Thread.sleep(1000);
@@ -237,9 +242,3 @@ DEV:
 Tenant ID: blakesshawn
 Email:Patrick.ijiti@crowninteractive.com
 Password: Pat1234!
-
-all Good Morning all
-01/12/2020
-1. Test ISO Security Fix(On going)
-02/12/2020
-1. Test ISO Security Fix(On going)

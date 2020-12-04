@@ -1,6 +1,6 @@
 package CROWN.CICOD.WFM.RightTemplate;
 
-import CROWN.base.TestBase;
+import CROWN.Base.TestBase;
 import CROWN.utility.*;
 import org.testng.annotations.Test;
 

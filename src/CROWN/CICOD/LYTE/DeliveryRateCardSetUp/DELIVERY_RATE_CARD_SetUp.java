@@ -1,6 +1,6 @@
 package CROWN.CICOD.LYTE.DeliveryRateCardSetUp;
 
-import CROWN.base.TestBase;
+import CROWN.Base.TestBase;
 import CROWN.utility.Login;
 import CROWN.utility.ScreenShot;
 import CROWN.utility.Utility;

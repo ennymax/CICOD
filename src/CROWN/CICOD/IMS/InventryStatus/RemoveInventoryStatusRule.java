@@ -1,6 +1,6 @@
 package CROWN.CICOD.IMS.InventryStatus;
 
-import CROWN.base.TestBase;
+import CROWN.Base.TestBase;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import io.github.bonigarcia.wdm.WebDriverManager;

@@ -1,4 +1,4 @@
-package CROWN.base;
+package CROWN.Base;
 
 import CROWN.utility.JavaScriptUtil;
 import CROWN.utility.Utility;
@@ -194,13 +194,11 @@ public class TestBase {
             extentTest.assignCategory(result.getTestContext().getSuite().getName());
             extentTest.assignCategory(className);
             test = extent.createTest(result.getMethod().getMethodName().toLowerCase());
-            javaScriptUtil.generateAlert("Test Started");
         }
 
         if (result.getStatus() == ITestResult.FAILURE) {
             test.fail(MarkupHelper.createLabel(result.getName() + " The Test Case Failed", ExtentColor.RED));
             test.fail(result.getThrowable());
-            javaScriptUtil.generateAlert("Test Failed");
             System.out.println("***************************Failed********************* " + (result.getMethod().getMethodName() + " ********************Failed******************"));
             System.out.println("***************************Failed********************* " + getTime(result.getEndMillis()) + " ********************Failed******************");
 
@@ -213,7 +211,6 @@ public class TestBase {
 
         } else if (result.getStatus() == ITestResult.SKIP) {
             test.skip(MarkupHelper.createLabel(result.getName() + " The Test Case Skipped", ExtentColor.YELLOW));
-            javaScriptUtil.generateAlert("Test Skipped");
             System.out.println("***************************Skipped********************* " + (result.getMethod().getMethodName() + " ********************Skipped******************"));
             System.out.println("***************************Skipped********************* " + getTime(result.getEndMillis()) + " ********************Skipped******************");
             test.getModel().setEndTime(getTime(result.getEndMillis()));

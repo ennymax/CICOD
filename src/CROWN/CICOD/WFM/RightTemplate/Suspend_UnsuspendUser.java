@@ -1,5 +1,5 @@
 package CROWN.CICOD.WFM.RightTemplate;
-import CROWN.base.TestBase;
+import CROWN.Base.TestBase;
 import CROWN.utility.ExcelUtil;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;

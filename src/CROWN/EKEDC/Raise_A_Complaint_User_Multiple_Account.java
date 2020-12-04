@@ -1,6 +1,6 @@
 package CROWN.EKEDC;
 
-import CROWN.base.TestBase;
+import CROWN.Base.TestBase;
 import org.testng.annotations.Test;
 import java.awt.*;
 import java.io.IOException;

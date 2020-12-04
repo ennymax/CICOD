@@ -1,6 +1,6 @@
 package CROWN.utility;
 
-import CROWN.base.TestBase;
+import CROWN.Base.TestBase;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
