@@ -9,37 +9,37 @@ import java.util.List;
 public class Time {
 
     public static void main(String[] args) {
+        System.out.println(System.currentTimeMillis());
         while (true) {
-            System.out.println(LocalDateTime.now().getHour());
-            if (LocalDateTime.now().getHour() == 24) {
+            if (System.currentTimeMillis() == 0) {
                 System.out.println("Starting TestScheduled for " + LocalDateTime.now().getHour());
                 StartTest();
             }
-            if (LocalDateTime.now().getHour() == 3) {
+            if (System.currentTimeMillis() == 10800000) {
                 System.out.println("Starting TestScheduled for " + LocalDateTime.now().getHour());
                 StartTest();
             }
-            if (LocalDateTime.now().getHour() == 6) {
+            if (System.currentTimeMillis() == 21600000) {
                 System.out.println("Starting TestScheduled for " + LocalDateTime.now().getHour());
                 StartTest();
             }
-            if (LocalDateTime.now().getHour() == 9) {
+            if (System.currentTimeMillis() == 32400000) {
                 System.out.println("Starting TestScheduled for " + LocalDateTime.now().getHour());
                 StartTest();
             }
-            if (LocalDateTime.now().getHour() == 12) {
+            if (System.currentTimeMillis() == 43200000) {
                 System.out.println("Starting TestScheduled for " + LocalDateTime.now().getHour());
                 StartTest();
             }
-            if (LocalDateTime.now().getHour() == 15) {
+            if (System.currentTimeMillis() == 54000000) {
                 System.out.println("Starting TestScheduled for " + LocalDateTime.now().getHour());
                 StartTest();
             }
-            if (LocalDateTime.now().getHour() == 18) {
+            if (System.currentTimeMillis() == 64800000) {
                 System.out.println("Starting TestScheduled for " + LocalDateTime.now().getHour());
                 StartTest();
             }
-            if (LocalDateTime.now().getHour() == 21) {
+            if (System.currentTimeMillis() == 75600000) {
                 System.out.println("Starting TestScheduled for " + LocalDateTime.now().getHour());
                 StartTest();
             }

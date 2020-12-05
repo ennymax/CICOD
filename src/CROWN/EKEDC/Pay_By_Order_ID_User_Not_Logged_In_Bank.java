@@ -22,12 +22,7 @@ public class Pay_By_Order_ID_User_Not_Logged_In_Bank extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("InputPayOrderID_XPATH"))).sendKeys(Utility.fetchLocator("OrderID_TEXT"));
         driver.findElement(By.xpath(Utility.fetchLocator("SubmitPaymentIDBTN_XPATH"))).click();
 
-        Thread.sleep(3000);
-        WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("MakePayementBTN_XPATH")));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", element);
-
-        Thread.sleep(3000);
+        Thread.sleep(200000000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayByBank_XPATH"))).click();
 
         Thread.sleep(4000);

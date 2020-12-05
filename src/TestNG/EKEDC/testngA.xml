@@ -1,17 +1,22 @@
 <suite name="Suite">
-    <test name = "EKEDC A" parallel = "methods" thread-count = "2" group-by-instances="false" >
+    <test name = "EKEDC A"  >
         <classes>
-            <class name="CROWN.EKEDC.Login_with_Wrong_Email"/>
-            <class name="CROWN.EKEDC.Login_with_Registered_Email"/>
-            <class name="CROWN.EKEDC.Login_With_Wrong_Password"/>
-            <class name="CROWN.EKEDC.Registration"/>
-            <class name="CROWN.EKEDC.Registration_DPP"/>
-            <class name="CROWN.EKEDC.Registration_With_an_Existing_Selfcare_Account"/>
-            <class name="CROWN.EKEDC.Registration_with_incomplete_PhoneNumber"/>
-            <class name="CROWN.EKEDC.Registration_With_Matching_Password"/>
-            <class name="CROWN.EKEDC.Registration_With_Prospective_SelfCare_Account"/>
-            <class name="CROWN.EKEDC.Registration_with_Unmatching_Password"/>
+            <class name="CROWN.EKEDC.Add_Account_Valid_Billing_Prepaid"/>
+            <class name="CROWN.EKEDC.Add_Account_With_Valid_Billing_Postpaid"/>
+            <class name="CROWN.EKEDC.Add_Account_With_Wrong_Billing_ID_Prepaid"/>
+            <class name="CROWN.EKEDC.Add_Account_Wrong_Billing_PostPaid"/>
+            <class name="CROWN.EKEDC.Complete_Reg_ValidBilling_PostPaid_Tenant"/>
+            <class name="CROWN.EKEDC.Complete_Reg_ValidBilling_PostPaidLandLord"/>
+            <class name="CROWN.EKEDC.Complete_Registration_ValidBIlling_PrePaid_LandLord"/>
+            <class name="CROWN.EKEDC.Complete_Registration_ValidBilling_Prepaid_Tenant"/>
+            <class name="CROWN.EKEDC.Complete_Registration_Wrong_BillingID_PostPaid"/>
+            <class name="CROWN.EKEDC.Add_Account_With_Wrong_Billing_ID_Prepaid"/>
             <class name="CROWN.EKEDC.Download_Bills"/>
+            <class name="CROWN.EKEDC.Edit_PhoneNumber_On_Profile_Page"/>
+            <class name="CROWN.EKEDC.Log_The_User_Out_After_30_Minute_Of_Inactivity"/>
+            <class name="CROWN.EKEDC.Login_with_Registered_Email"/>
+            <class name="CROWN.EKEDC.Login_with_Wrong_Email"/>
+            <class name="CROWN.EKEDC.Login_With_Wrong_Password"/>
         </classes>
     </test>
 </suite>

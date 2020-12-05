@@ -24,7 +24,7 @@ public class MakePayment_Logged_In_User_Prepaid extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SingleAccountPayment_XPATH"))).click();
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ss_XPATH"))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("ss1_XPATH"))).click();
 
         Thread.sleep(1000);
         driver.findElement(By.xpath(Utility.fetchLocator("PrepaidPayByCard_XPATH"))).click();

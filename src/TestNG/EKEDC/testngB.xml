@@ -1,16 +1,20 @@
 <suite name="Suite">
-    <test name = "EKEDC B" parallel = "methods" thread-count = "2" group-by-instances="false" >
+    <test name = "EKEDC B"  >
         <classes>
-            <class name="CROWN.EKEDC.Add_Account_Valid_Billing_Prepaid"/>
-            <class name="CROWN.EKEDC.Add_Account_With_Valid_Billing_Postpaid"/>
-            <class name="CROWN.EKEDC.Complete_Reg_ValidBilling_PostPaid_Tenant"/>
-            <class name="CROWN.EKEDC.Complete_Reg_ValidBilling_PostPaidLandLord"/>
-            <class name="CROWN.EKEDC.Complete_Registration_ValidBIlling_PrePaid_LandLord"/>
-            <class name="CROWN.EKEDC.Complete_Registration_ValidBilling_Prepaid_Tenant"/>
-            <class name="CROWN.EKEDC.Complete_Registration_Wrong_BillingID_PostPaid"/>
-            <class name="CROWN.EKEDC.Complete_Registration_Wrong_BillingID_Prepaid"/>
-            <class name="CROWN.EKEDC.Reset_Password_Unregistered_Email"/>
-            <class name="CROWN.EKEDC.Reset_Password_Email"/>
+            <class name="CROWN.EKEDC.Make_Payment_By_Bank_Transfer_Prepaid"/>
+            <class name="CROWN.EKEDC.Make_Payment_By_Card_Single_User_Prepaid"/>
+            <class name="CROWN.EKEDC.Make_Payment_Single_Account_Pay_By_Bank_PostPaid"/>
+            <class name="CROWN.EKEDC.Make_Payment_Single_Account_Pay_By_Card_PostPaid"/>
+            <class name="CROWN.EKEDC.Make_Payment_Single_Acount_PrePaid_Bank_Transfer"/>
+            <class name="CROWN.EKEDC.Make_Payment_Without_Login_Prepaid_By_Card"/>
+            <class name="CROWN.EKEDC.MakePayment_Logged_In_User_Prepaid"/>
+            <class name="CROWN.EKEDC.Pay_By_Order_ID_User_Not_Logged_In_Bank"/>
+            <class name="CROWN.EKEDC.Pay_By_OrderID_User_Not_Logged_In_Card"/>
+            <class name="CROWN.EKEDC.Payment_Without_Login_Bank_Transfer_Prepaid"/>
+            <class name="CROWN.EKEDC.Payment_Without_Login_PostPaid_By_Bank_Transfer"/>
+            <class name="CROWN.EKEDC.Payment_Without_Login_PostPaid_By_Card"/>
+            <class name="CROWN.EKEDC.Payment_Without_Login_Validate_MeterNumber_Fails_PostPaid"/>
+            <class name="CROWN.EKEDC.Payment_Without_Login_where_Validating_Account_Number_Fails_PrePaid"/>
         </classes>
     </test>
 </suite>

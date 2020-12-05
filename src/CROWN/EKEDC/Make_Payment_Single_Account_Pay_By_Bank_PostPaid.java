@@ -25,7 +25,7 @@ public class Make_Payment_Single_Account_Pay_By_Bank_PostPaid extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SingleAccountPayment_XPATH"))).click();
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ss_XPATH"))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("ss1_XPATH"))).click();
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PrepaidPayByCard_XPATH"))).click();
@@ -33,7 +33,7 @@ public class Make_Payment_Single_Account_Pay_By_Bank_PostPaid extends TestBase {
         if (driver.findElements(By.xpath(Utility.fetchLocator("AssertBuyTokenpage_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Buy Token Page was Displayed");
         } else {
-            test.log(Status.FAIL, "Buy Token Page wasnt Dispalyed");
+            test.log(Status.FAIL, "Buy Token Page wasn't Displayed");
         }
 
         Thread.sleep(2000);

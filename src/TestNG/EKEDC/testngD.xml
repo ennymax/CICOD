@@ -1,17 +1,19 @@
 <suite name="Suite">
-    <test name = "EKEDC D" parallel = "methods" thread-count = "2" >
+    <test name = "EKEDC D" >
         <classes>
-            <class name="CROWN.EKEDC.Pay_By_OrderID_User_Not_Logged_In_Card"/>
-            <class name="CROWN.EKEDC.Payment_Without_Login_PostPaid_By_Card"/>
-
-            <class name="CROWN.EKEDC.Pay_By_Order_ID_User_Not_Logged_In_Bank"/>
-
-            <class name="CROWN.EKEDC.Pay_By_OrderID_User_Not_Logged_In_Card"/>
-
-            <class name="CROWN.EKEDC.Pay_By_OrderID_User_Not_Logged_In_Card"/>
-
-            <class name="CROWN.EKEDC.Pay_By_OrderID_User_Not_Logged_In_Card"/>
-
+        <class name="CROWN.EKEDC.Search_Payment_History"/>
+        <class name="CROWN.EKEDC.Staff_Verification_Invalid_StaffID"/>
+        <class name="CROWN.EKEDC.Staff_Verification_Valid_StaffID"/>
+        <class name="CROWN.EKEDC.Track_Ticket_ID_With_Valid_ID"/>
+        <class name="CROWN.EKEDC.Track_Ticket_With_Wrong_Billing_ID"/>
+        <class name="CROWN.EKEDC.View_Account"/>
+        <class name="CROWN.EKEDC.View_Bill_History"/>
+        <class name="CROWN.EKEDC.View_Payment_History"/>
+        <class name="CROWN.EKEDC.View_Profile"/>
+        <class name="CROWN.EKEDC.View_Service_Alert_District"/>
+        <class name="CROWN.EKEDC.View_Ticket_History_Logged_In_User_Mutiple_Account"/>
+        <class name="CROWN.EKEDC.View_Ticket_History_Loggedin_User"/>
+        <class name="CROWN.EKEDC.WhistleBlowing"/>
         </classes>
     </test>
 </suite>

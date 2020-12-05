@@ -1,6 +1,7 @@
 package CROWN.EKEDC;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.ScreenShot;
 import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
@@ -12,6 +13,8 @@ import java.io.IOException;
 public class Payment_Without_Login_PostPaid_By_Card extends TestBase {
     @Test
     public void PAYMENT_WITHOUT_LOGIN_BANK_CARD_PREPAID() throws IOException, InterruptedException {
+        ScreenShot screenShot = new ScreenShot(driver);
+
         driver.findElement(By.xpath(Utility.fetchLocator("MakePaymentBTNnotLogedIN_XPATH"))).click();
 
         Thread.sleep(1200);
@@ -36,7 +39,7 @@ public class Payment_Without_Login_PostPaid_By_Card extends TestBase {
         if (driver.findElements(By.xpath(Utility.fetchLocator("ConfirmPaymentPage_XPATH"))).size() != 0) {
             test.log(Status.PASS, "Confirmation page was displayed");
         } else {
-            test.log(Status.FAIL, "Comfirmation Page wasnt dispalyed");
+            test.log(Status.FAIL, "Confirmation Page wasn't displayed");
         }
 
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("AgreePaymemtCheckBox_XPATH")));
@@ -44,5 +47,8 @@ public class Payment_Without_Login_PostPaid_By_Card extends TestBase {
         js.executeScript("arguments[0].click();", element);
 
         driver.findElement(By.xpath(Utility.fetchLocator("PaymentNowBTN_XPATH"))).click();
+
+        Thread.sleep(3000);
+        screenShot.ScreenShot();
     }
 }

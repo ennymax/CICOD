@@ -25,7 +25,7 @@ public class Make_Payment_Single_Acount_PrePaid_Bank_Transfer extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("SingleAccountPayment_XPATH"))).click();
 
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ss_XPATH"))).click();
+        driver.findElement(By.xpath(Utility.fetchLocator("ss1_XPATH"))).click();
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PrepaidPayByCard_XPATH"))).click();
@@ -49,7 +49,5 @@ public class Make_Payment_Single_Acount_PrePaid_Bank_Transfer extends TestBase {
         } else {
             test.log(Status.FAIL, "Central Pay page wasnt displayed and enabled");
         }
-
-        driver.quit();
     }
 }

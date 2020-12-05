@@ -12,6 +12,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
+import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,8 +22,10 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.ITestResult;
+import org.testng.*;
 import org.testng.annotations.*;
+import org.testng.xml.XmlSuite;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -39,11 +42,10 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Properties;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
+
+import static org.testng.ITestResult.SUCCESS;
 
 public class TestBase {
 
@@ -54,6 +56,10 @@ public class TestBase {
 
     private static final String OUTPUT_FOLDER = "./Report/";
     private static final String FILE_NAME = "Report" + System.currentTimeMillis() + ".html";
+    public int Passed;
+    public int Failed;
+    public int Skipped;
+
 
     @BeforeSuite
     public void setup() throws IOException {
@@ -186,7 +192,6 @@ public class TestBase {
         int last = qualifiedName.lastIndexOf(".");
         int mid = qualifiedName.substring(0, last).lastIndexOf(".");
         String className = qualifiedName.substring(mid + 1, last);
-        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
 
         if (result.getStatus() == ITestResult.STARTED) {
             System.out.println("***************************" + methodName + " started!************************************");
@@ -202,18 +207,18 @@ public class TestBase {
             System.out.println("***************************Failed********************* " + (result.getMethod().getMethodName() + " ********************Failed******************"));
             System.out.println("***************************Failed********************* " + getTime(result.getEndMillis()) + " ********************Failed******************");
 
-        } else if (result.getStatus() == ITestResult.SUCCESS) {
+        } else if (result.getStatus() == SUCCESS) {
             test.pass(MarkupHelper.createLabel(result.getName() + " The Test Case Passed", ExtentColor.GREEN));
-            javaScriptUtil.generateAlert("Test Passed");
             System.out.println("***************************Passed********************* " + (result.getMethod().getMethodName() + " ********************Passed******************"));
             System.out.println("***************************Passed********************* " + getTime(result.getEndMillis()) + " ********************Passed******************");
             test.getModel().setEndTime(getTime(result.getEndMillis()));
+            Passed++;
 
         } else if (result.getStatus() == ITestResult.SKIP) {
             test.skip(MarkupHelper.createLabel(result.getName() + " The Test Case Skipped", ExtentColor.YELLOW));
             System.out.println("***************************Skipped********************* " + (result.getMethod().getMethodName() + " ********************Skipped******************"));
             System.out.println("***************************Skipped********************* " + getTime(result.getEndMillis()) + " ********************Skipped******************");
-            test.getModel().setEndTime(getTime(result.getEndMillis()));
+
         }
 
         extent.flush();
@@ -311,8 +316,10 @@ public class TestBase {
             driver.quit();
     }
 
-    @AfterTest
+
+    @AfterSuite(alwaysRun=true)
     public void AfterTest() throws IOException {
+
         if (Boolean.parseBoolean(Utility.fetchProperty("SendReport").toString())) {
 
             SendReport("Ecicod");
@@ -321,5 +328,6 @@ public class TestBase {
 
             SendReport("gmail");
         }
+
     }
 }
