@@ -19,6 +19,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class Utility extends TestBase{
 
@@ -85,7 +86,7 @@ public class Utility extends TestBase{
     }
 
     public void DosendKeysRandomEmailsFluentWait(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
+         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
         utility.DowaitForElementWithFluentWait(locator, timeOut);
@@ -545,8 +546,6 @@ public class Utility extends TestBase{
         }
     }
 
-
-
     public String DoGetPageTitleWithContains(int timeOut, String title) throws IOException, InterruptedException {
         Thread.sleep(1100);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
@@ -555,10 +554,8 @@ public class Utility extends TestBase{
 
     }
 
-    public String DoGetPageTitleWithIsTitle(int timeOut, String title) throws IOException, InterruptedException {
+    public String DoGetPageTitleWithIsTitle() throws IOException, InterruptedException {
         Thread.sleep(1100);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        wait.until(ExpectedConditions.titleIs(Utility.fetchLocator(title)));
         return driver.getTitle();
     }
 

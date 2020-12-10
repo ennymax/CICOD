@@ -52,7 +52,7 @@ public class PartPayment extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SearchProductbtnq_XPATH"))).click();
-
+/*
         //Add button
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("AddBTN_XPATH"))).click();
@@ -241,5 +241,8 @@ public class PartPayment extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayNowBTN_XPATH"))).click();
+
+
+ */
     }
 }

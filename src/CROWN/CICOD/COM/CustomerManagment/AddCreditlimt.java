@@ -34,6 +34,8 @@ public class AddCreditlimt extends TestBase {
         utility.DoclickWhenReady("SearchBTNC_XPATH","Se_TEXT",60);
         utility.DoAssertXpathPresentWhenReady("Creditselecter33_XPATH","credpass_TEXT","crditfail_TEXT",60);
         utility.DoclickWhenReady("Creditselecter33_XPATH", "CredtSel_TEXT",60);
+
+
         utility.DoSendKeysWhenReady("CreditAmt_XPATH","AM_TEXT","AM_TEXT",60);
         utility.DoclickWhenReady("AddlimitBTN_XPATH","Addl_TEXT",60);
         utility.DowaitandAcceptAlerwhenReady(60);

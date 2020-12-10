@@ -96,7 +96,7 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         Thread.sleep(2000);
         System.out.println(driver.findElement(By.id("option-payment-amount-xs")).getText());
 
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         assertEquals("NGN2,131.50", driver.findElement(By.id("option-payment-amount-xs")).getText());
         test.log(Status.PASS, "PayOnline Was Successful");
 

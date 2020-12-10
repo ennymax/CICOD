@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class Add_Account_With_Valid_Billing_Postpaid extends TestBase {
-
     @Test
     public void ADD_ACCOUNT_WITH_VALID_BILLING_POSTPAID() throws InterruptedException, IOException {
         Login login = new Login(driver);

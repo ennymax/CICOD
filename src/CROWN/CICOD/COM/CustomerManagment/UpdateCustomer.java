@@ -26,16 +26,13 @@ public class UpdateCustomer extends TestBase {
         int aa = rn.nextInt(60000) + 1;
         int tomm = rn.nextInt(30) + 1;
         int tommm = rn.nextInt(10) + 1;
+        Utility utility = new Utility(driver);
 
         login.Login();
 
-        //COM
-        Thread.sleep(2000);
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
 
-        //CUSTOMER MANAGEMENT BUTTON
-        Thread.sleep(2000);
-        screenshot.ScreenShot();
-        driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
+        utility.DoclickWhenReady("Customermanagmentbtn_XPATH", "Commana_TEXT",60);
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH"))).click();

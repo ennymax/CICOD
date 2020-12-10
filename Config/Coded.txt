@@ -1,4 +1,4 @@
-
+/root/IdeaProjects/CICOD/Config/Coded.txt
   TestListenerAdapter tla = new TestListenerAdapter();
         TestNG testng = new TestNG();
         testng.setTestClasses(new Class[]{CreateCreditNote.class, CreateCreditNote.class});
@@ -189,7 +189,7 @@ maxag35716@votavk.com
 emaxkemiyop
 emaxkemi@yopmail.com
 @Ecomax1759
- 
+
 nexusnigeria
 nexus@sharklasers.com
 Crown@123
@@ -231,6 +231,11 @@ Domain=emaxkemi
 Email:emaxkemi@yopmail.com
 Password=@Ecomax1759
 
+stratoscorp
+stratoscorp@yopmail.com
+@Ecomax1759
+
+
 ctrl + shift + f
 
 step 1
@@ -242,3 +247,12 @@ DEV:
 Tenant ID: blakesshawn
 Email:Patrick.ijiti@crowninteractive.com
 Password: Pat1234!
+
+all Good Morning all
+09/12/2020
+1. QA index for the November (Done)
+2. Regression Test for COM(Done)
+3. Update Test Script for COM(On going)
+10/12/2020
+1. Update Test Script for COM(On going)
+2. Functional Test EKEDC Selfcare(On going)

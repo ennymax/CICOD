@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Order History</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Dec 05 09:57:58 WAT 2020</td>
+<td>Started on:</td><td>Thu Dec 10 15:50:33 WAT 2020</td>
 </tr>
-<tr><td>Total time:</td><td>117 seconds (117875 ms)</td>
+<tr><td>Total time:</td><td>122 seconds (122647 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,47 +67,94 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='CROWN.CICOD.COM.OrderHistory.Downloadorderhistory.getResult()'><b>getResult</b><br>Test class: CROWN.CICOD.COM.OrderHistory.Downloadorderhistory<br>Parameters: [TestResult name=DOWNLOAD_ORDER_HISTORY status=SUCCESS method=Downloadorderhistory.DOWNLOAD_ORDER_HISTORY()[pri:0, instance:CROWN.CICOD.COM.OrderHistory.Downloadorderhistory@7c7b252e] output={null}]</td>
-<td><div><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+<td title='CROWN.CICOD.COM.Account.CustomerAccount.AccountButton()'><b>AccountButton</b><br>Test class: CROWN.CICOD.COM.Account.CustomerAccount</td>
+<td></td>
+<td>10</td>
+<td>CROWN.CICOD.COM.Account.CustomerAccount@63070bab</td></tr>
+<tr>
+<td title='CROWN.CICOD.COM.Account.CustomerAccount.AssertCustomerAccount()'><b>AssertCustomerAccount</b><br>Test class: CROWN.CICOD.COM.Account.CustomerAccount</td>
+<td></td>
+<td>1</td>
+<td>CROWN.CICOD.COM.Account.CustomerAccount@63070bab</td></tr>
+<tr>
+<td title='CROWN.CICOD.COM.Account.CustomerAccount.AssertValueofCustomerAccount()'><b>AssertValueofCustomerAccount</b><br>Test class: CROWN.CICOD.COM.Account.CustomerAccount</td>
+<td></td>
+<td>1</td>
+<td>CROWN.CICOD.COM.Account.CustomerAccount@63070bab</td></tr>
+<tr>
+<td title='CROWN.CICOD.COM.Account.CustomerAccount.COM()'><b>COM</b><br>Test class: CROWN.CICOD.COM.Account.CustomerAccount</td>
+<td></td>
+<td>8</td>
+<td>CROWN.CICOD.COM.Account.CustomerAccount@63070bab</td></tr>
+<tr>
+<td title='CROWN.CICOD.COM.Account.CustomerAccount.CustomerAccountButton()'><b>CustomerAccountButton</b><br>Test class: CROWN.CICOD.COM.Account.CustomerAccount</td>
+<td></td>
+<td>5</td>
+<td>CROWN.CICOD.COM.Account.CustomerAccount@63070bab</td></tr>
+<tr>
+<td title='CROWN.CICOD.COM.Account.CustomerAccount.loginAsAdmin()'><b>loginAsAdmin</b><br>Test class: CROWN.CICOD.COM.Account.CustomerAccount</td>
+<td></td>
+<td>8</td>
+<td>CROWN.CICOD.COM.Account.CustomerAccount@63070bab</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='CROWN.CICOD.COM.Account.CustomerAccount.AccountButton()'><b>AccountButton</b><br>Test class: CROWN.CICOD.COM.Account.CustomerAccount</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/aside/section/ul/li[9]/a (tried for 45 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at CROWN.CICOD.COM.Account.CustomerAccount.AccountButton(CustomerAccount.java:30)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: /html/body/div[2]/aside/section/ul/li[9]/a
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-A9ARH4A&apos;, ip: &apos;192.168.43.169&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 83.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201112153044, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 23204, moz:profile: C:\Users\CROWN_STAFF\AppDat..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: be22b670-6ac0-459e-b187-32e1bd922ac6
+*** Element info: {Using=xpath, value=/html/body/div[2]/aside/section/ul/li[9]/a}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
-	at CROWN.utility.JavaScriptUtil.generateAlert(JavaScriptUtil.java:42)
-	at CROWN.Base.TestBase.getResult(TestBase.java:214)
-	at CROWN.Base.Time.StartTest(Time.java:59)
-	at CROWN.Base.Time.main(Time.java:28)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace662045021", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace662045021'><pre>org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-A9ARH4A&apos;, ip: &apos;192.168.43.169&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:489)
-	at CROWN.utility.JavaScriptUtil.generateAlert(JavaScriptUtil.java:42)
-	at CROWN.Base.TestBase.getResult(TestBase.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 25 more
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace757541645", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace757541645'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/aside/section/ul/li[9]/a (tried for 45 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at CROWN.CICOD.COM.Account.CustomerAccount.AccountButton(CustomerAccount.java:30)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -121,46 +168,43 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
 	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1204)
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 	at org.testng.TestNG.runSuites(TestNG.java:1049)
 	at org.testng.TestNG.run(TestNG.java:1017)
-	at CROWN.Base.Time.StartTest(Time.java:59)
-	at CROWN.Base.Time.main(Time.java:28)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: /html/body/div[2]/aside/section/ul/li[9]/a
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-A9ARH4A&apos;, ip: &apos;192.168.43.169&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 83.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201112153044, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 23204, moz:profile: C:\Users\CROWN_STAFF\AppDat..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: be22b670-6ac0-459e-b187-32e1bd922ac6
+*** Element info: {Using=xpath, value=/html/body/div[2]/aside/section/ul/li[9]/a}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 25 more
 </pre></div></td>
-<td>1</td>
-<td>CROWN.CICOD.COM.OrderHistory.Downloadorderhistory@7c7b252e</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='CROWN.CICOD.COM.OrderHistory.Downloadorderhistory.tearDown()'><b>tearDown</b><br>Test class: CROWN.CICOD.COM.OrderHistory.Downloadorderhistory</td>
-<td></td>
-<td>0</td>
-<td>CROWN.CICOD.COM.OrderHistory.Downloadorderhistory@7c7b252e</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='CROWN.CICOD.COM.OrderHistory.Downloadorderhistory.DOWNLOAD_ORDER_HISTORY()'><b>DOWNLOAD_ORDER_HISTORY</b><br>Test class: CROWN.CICOD.COM.OrderHistory.Downloadorderhistory</td>
-<td></td>
-<td>34</td>
-<td>CROWN.CICOD.COM.OrderHistory.Downloadorderhistory@7c7b252e</td></tr>
-<tr>
-<td title='CROWN.CICOD.COM.OrderHistory.VIEW_ORDER_HISTORY.VIEW_ORDER_history()'><b>VIEW_ORDER_history</b><br>Test class: CROWN.CICOD.COM.OrderHistory.VIEW_ORDER_HISTORY</td>
-<td></td>
-<td>25</td>
-<td>CROWN.CICOD.COM.OrderHistory.VIEW_ORDER_HISTORY@4d5d943d</td></tr>
+<td>62</td>
+<td>CROWN.CICOD.COM.Account.CustomerAccount@63070bab</td></tr>
 </table><p>
 </body>
 </html>

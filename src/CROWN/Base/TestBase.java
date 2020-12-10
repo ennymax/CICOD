@@ -1,6 +1,7 @@
 package CROWN.Base;
 
 import CROWN.utility.JavaScriptUtil;
+import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -12,6 +13,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
+import org.apache.commons.lang.SystemUtils;
 import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -56,10 +58,7 @@ public class TestBase {
 
     private static final String OUTPUT_FOLDER = "./Report/";
     private static final String FILE_NAME = "Report" + System.currentTimeMillis() + ".html";
-    public int Passed;
-    public int Failed;
-    public int Skipped;
-
+    //private static final String OUTPUT_FOLDER = "/root/IdeaProjects/CICOD/Report/";
 
     @BeforeSuite
     public void setup() throws IOException {
@@ -93,6 +92,7 @@ public class TestBase {
 
     @BeforeClass
     public void setUp() throws IOException {
+
         if (Utility.fetchProperty("browserName").toString().equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             if (Boolean.parseBoolean(Utility.fetchProperty("LunchOption").toString())) {
@@ -183,6 +183,7 @@ public class TestBase {
             }
         }
             System.out.println("*****************************" + Utility.fetchProperty("browserName") + " browser running ****************************************");
+
     }
 
     @AfterMethod
@@ -212,7 +213,6 @@ public class TestBase {
             System.out.println("***************************Passed********************* " + (result.getMethod().getMethodName() + " ********************Passed******************"));
             System.out.println("***************************Passed********************* " + getTime(result.getEndMillis()) + " ********************Passed******************");
             test.getModel().setEndTime(getTime(result.getEndMillis()));
-            Passed++;
 
         } else if (result.getStatus() == ITestResult.SKIP) {
             test.skip(MarkupHelper.createLabel(result.getName() + " The Test Case Skipped", ExtentColor.YELLOW));
@@ -297,6 +297,12 @@ public class TestBase {
         }
 
         return theNewestFile;
+    }
+
+    public String getOperatingSystemSystemUtils() {
+        String os = SystemUtils.OS_NAME;
+        System.out.println("Using SystemUtils: " + os);
+        return os;
     }
 
     private Date getTime(long millis) {

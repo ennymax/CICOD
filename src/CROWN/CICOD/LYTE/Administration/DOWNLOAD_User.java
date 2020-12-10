@@ -15,7 +15,9 @@ public class DOWNLOAD_User extends TestBase {
         Login login = new Login(driver);
 
         login.LoginTestAccount();
-
+        Thread.sleep(10000);
+        System.out.println(driver.getTitle());
+        Thread.sleep(99999999);
         //COM
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
 

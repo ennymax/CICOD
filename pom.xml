@@ -23,12 +23,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                    <suiteXmlFiles>src\TestNG\testngCOM\testngA.xml</suiteXmlFiles>
-                    <suiteXmlFiles>src\TestNG\testngCOM\testngA.xml</suiteXmlFiles>
+                    <suiteXmlFiles>src\TestNG\CICOD\COM\testngA.xml</suiteXmlFiles>
                 </configuration>
             </plugin>
-
-
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
@@ -365,8 +362,6 @@
             <artifactId>javax.mail-api</artifactId>
             <version>1.6.2</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
@@ -391,6 +386,12 @@
             <version>4.3.0</version>
         </dependency>
         <dependency>
+            <groupId>com.beust</groupId>
+            <artifactId>jcommander</artifactId>
+            <version>1.78</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
             <version>1.6.2</version>
@@ -404,5 +405,4 @@
         </dependency>
 
     </dependencies>
-
 </project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="CROWN.Base.RetryListener"/>
+  </listeners>
+  <test thread-count="5" name="Order History(failed)">
+    <classes>
+      <class name="CROWN.CICOD.COM.Account.CustomerAccount">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="setUp"/>
+          <include name="getResult"/>
+          <include name="TestName"/>
+          <include name="AccountButton"/>
+          <include name="AfterTest"/>
+        </methods>
+      </class> <!-- CROWN.CICOD.COM.Account.CustomerAccount -->
+    </classes>
+  </test> <!-- Order History(failed) -->
+</suite> <!-- Failed suite [Suite] -->

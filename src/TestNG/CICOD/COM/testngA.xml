@@ -1,8 +1,10 @@
 <suite name="Suite">
+    <listeners>
+        <listener class-name = "CROWN.Base.RetryListener"></listener>
+    </listeners>
     <test name = "Order History">
         <classes>
-            <class name="CROWN.CICOD.COM.OrderHistory.Downloadorderhistory"/>
-            <class name="CROWN.CICOD.COM.OrderHistory.VIEW_ORDER_HISTORY"/>
+            <class name="CROWN.CICOD.COM.Account.CustomerAccount"/>
         </classes>
     </test>
 </suite>

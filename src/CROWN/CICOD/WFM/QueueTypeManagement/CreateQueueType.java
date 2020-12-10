@@ -38,7 +38,7 @@ public class CreateQueueType extends TestBase {
         Thread.sleep(1000);
         driver.findElement(By.xpath(Utility.fetchLocator("CreateQUEUETYpeBTN_XPATH"))).click();
 
-        Thread.sleep(2500);
+        Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("QueueTypeName_XPATH"))).sendKeys(randomStuff.ListRandom());
 
         Thread.sleep(2000);
