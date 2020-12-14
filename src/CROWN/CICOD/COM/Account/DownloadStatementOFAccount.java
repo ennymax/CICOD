@@ -9,28 +9,37 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+
 import java.io.IOException;
 
 public class DownloadStatementOFAccount extends TestBase {
-    @Test
-    public void DOWNLOAD_STATEMENT_OF_ACCOUNT() throws IOException, InterruptedException {
+
+    @Test(priority = 1)
+    public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        ScreenShot screenShot = new ScreenShot(driver);
-
         login.Login();
+    }
 
+    @Test(priority = 2)
+    public void CustomerOrderManagement() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
+    }
 
+    @Test(priority = 3)
+    public void CustomerManagementModule() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
-        test.log(Status.PASS, "Customer Management button fully Functionsl");
+    }
 
+    @Test(priority = 4)
+    public void SelectCustomer() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH"))).click();
-        screenShot.ScreenShot();
+    }
 
-        //SELECT ACTION
+    @Test(priority = 5)
+    public void ViewCustomer() throws IOException, InterruptedException {
         Thread.sleep(2000);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("ActionSuspend_XPATH")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -40,11 +49,16 @@ public class DownloadStatementOFAccount extends TestBase {
         WebElement elementq = driver.findElement(By.xpath(Utility.fetchLocator("VIEWCustomer_XPATH")));
         JavascriptExecutor jsq = (JavascriptExecutor) driver;
         jsq.executeScript("arguments[0].click();", elementq);
+    }
 
+    @Test(priority = 6)
+    public void ViewStatementOfAccount() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("ViewStatementOfAccount_XPATH"))).click();
-        screenShot.ScreenShot();
+    }
 
+    @Test(priority = 7)
+    public void AssertStatementOfAccount() throws IOException, InterruptedException {
         Thread.sleep(2000);
         WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("AssertstatmentOfAccount_XPATH")));
         String text11 = msg11.getText();
@@ -53,7 +67,10 @@ public class DownloadStatementOFAccount extends TestBase {
         } else {
             test.log(Status.FAIL, "Statement of account cant be viewedd");
         }
+    }
 
+    @Test(priority = 8)
+    public void FilterDateRange() throws IOException, InterruptedException {
         WebElement tt = driver.findElement(By.xpath(Utility.fetchLocator("FilterDateFrom_XPATH")));
         tt.clear();
         tt.sendKeys(Utility.fetchLocator("Datefrom_TEXT"));
@@ -64,7 +81,10 @@ public class DownloadStatementOFAccount extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("FilterfilterBTN_XPATH"))).click();
+    }
 
+    @Test(priority = 9)
+    public void DownloadStatementOfAccountAsPDF() throws IOException, InterruptedException {
         Thread.sleep(2000);
         WebElement ti11z = driver.findElement(By.xpath(Utility.fetchLocator("dOWNLOADSttatementOfAccount_XPATH")));
         JavascriptExecutor jsez = (JavascriptExecutor) driver;
@@ -73,12 +93,11 @@ public class DownloadStatementOFAccount extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("DownloadAsPDF_XPATH"))).click();
+    }
 
-        screenShot.ScreenShot();
-        test.log(Status.PASS, "Download as PDF was Successful");
-
+    @Test(priority = 10)
+    public void DownloadStatementOfAccountAsExcel() throws IOException, InterruptedException {
         driver.navigate().back();
-
         Thread.sleep(2000);
         WebElement ti11zz = driver.findElement(By.xpath(Utility.fetchLocator("dOWNLOADSttatementOfAccount_XPATH")));
         JavascriptExecutor jsezz = (JavascriptExecutor) driver;
@@ -87,6 +106,5 @@ public class DownloadStatementOFAccount extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("DownloadAsSpreadSheet_XPATH"))).click();
-        test.log(Status.PASS, "Download as SpreadSheet was Successful");
     }
 }

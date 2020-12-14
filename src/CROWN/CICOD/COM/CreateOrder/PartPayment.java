@@ -1,9 +1,9 @@
 package CROWN.CICOD.COM.CreateOrder;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.Login;
-import CROWN.utility.Utility;
+import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
+import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -16,177 +16,157 @@ import java.security.SecureRandom;
 
 import static org.testng.AssertJUnit.assertEquals;
 
+@Epic("Part Payment")
+@Story("Test Part Payment Module..")
 public class PartPayment extends TestBase {
-    @Test
-    public void PartPayment() throws IOException, InterruptedException {
+
+    @Description("Login")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 1)
+    public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(3) + 1;
-
         login.Login();
+    }
 
-        //COM
-        Thread.sleep(1200);
-        driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
+    @Description("COM")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 2)
+    public void CustomerOrderManagement() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+    }
 
-        //CREATE ORDER BUTTON
-        Thread.sleep(1200);
-        driver.findElement(By.xpath(Utility.fetchLocator("Createorderbtn_XPATH"))).click();
+    @Description("Test Create Order")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 3)
+    public void CreateOrder() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("Createorderbtn_XPATH", 30);
+    }
 
-        //SEARCH BY NAME
-        Thread.sleep(1200);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchByName_XPATH"))).click();
+    @Description("Search Customer By Name")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 4)
+    public void SearchCustomerByName() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("SearchByName_XPATH", 30);
+        util.DoSendKeysWhenReady("SeaerchInput_XPATH", "CustomerName_TEXT", 20);
+        util.DoscrolltoViewClickWhenReady("Searchbtn_XPATH", 30);
+    }
 
+    @Description("View Customer By Name")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 5)
+    public void ViewCustomerDetails() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", 30);
+    }
+
+    @Description("Assrt View Customer Details")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 6)
+    public void AssertViewCustomerDetails() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SeaerchInput_XPATH"))).sendKeys(Utility.fetchLocator("CustomerName_TEXT"));
+        WebElement msg1 = driver.findElement(By.xpath(Utility.fetchLocator("AssertSearchByName_XPATH")));
+        String text1 = msg1.getText();
+        if (msg1.isEnabled() && text1.contains("Email Address")) {
+            test.log(Status.PASS, "Search By Name Success");
+        } else {
+            test.log(Status.FAIL, "Search By Name Failed");
+        }
+    }
 
-        Thread.sleep(1200);
-        driver.findElement(By.xpath(Utility.fetchLocator("Searchbtn_XPATH"))).click();
+    @Description("Search Product By Name")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 7)
+    public void SearchProduct() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoSendKeysWhenReady("SearchProductinput_XPATH", "ID_TEXT", 20);
+        util.DoscrolltoViewClickWhenReady("SearchProductbtnq_XPATH", 30);
+    }
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ViewDetails_XPATH"))).click();
+    @Description("Add Product to Chart")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 8)
+    public void AddProducttoChart() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("AddBTN_XPATH", 30);
+    }
 
-        //SEARCH PRODUCT
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductinput_XPATH"))).sendKeys(Utility.fetchLocator("ID_TEXT"));
+    @Description("Test Apply Discount Module")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 9)
+    public void ApplyDiscount() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("Applydiscount_XPATH", 30);
+        util.DoSendKeysWhenReady("DiscountByPercent_XPATH", "10_TEXT", 30);
+        util.DoscrolltoViewClickWhenReady("OkDiscount_XPATH", 30);
+        util.DoscrolltoViewClickWhenReady("ConfirmOKDiscount_XPATH", 30);
+    }
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductbtnq_XPATH"))).click();
-/*
-        //Add button
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("AddBTN_XPATH"))).click();
+    @Description("Test Discount Module")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 10)
+    public void SelectRegion() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("jjregion_XPATH", 30);
+        util.DoSelectValuesByIndex("SelectRegion_XPATH", 2, 20);
+    }
 
-        Thread.sleep(2000);
-        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", ti11);
-        ti11.click();
+    @Description("Select Payment Option")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 11)
+    public void PaymentOption() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH", "PaymentOPT_TEXT", 50);
+        utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT", 40);
+    }
 
-        Thread.sleep(1200);
-        WebElement tid = driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", tid);
+    @Description("Test Select Part Payment Option")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 12)
+    public void PartPayment() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoscrolltoViewClickWhenReady("PartPayment_XPATH", "MakePayment_TEXT", 40);
+    }
 
-        Thread.sleep(2000);
-        WebElement ele111 = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
-        Select sel11 = new Select(ele111);
-        sel11.selectByIndex(st);
+    @Description("Payment")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 13)
+    public void Payment() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT", 40);
+    }
 
-        Thread.sleep(1200);
-        WebElement tidd = driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", tidd);
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PartPayment_XPATH"))).click();
-
-        Thread.sleep(1200);
-        WebElement ti112 = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
-        JavascriptExecutor jse2 = (JavascriptExecutor) driver;
-        jse2.executeScript("arguments[0].scrollIntoView();", ti112);
-        ti112.click();
-
+    @Description("Pay Amount for Part Payment")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 15)
+    public void PayAmount() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PartPaymentAmount_XPATH"))).sendKeys(Utility.fetchLocator("pamt_TEXT"));
+    }
 
-        Thread.sleep(2000);
-        WebElement msg = (new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("assertamt100_TEXT"))));
-        String text = msg.getText();
-        if (msg.isEnabled() && text.contains("100")) {
-            test.log(Status.PASS, "Fixed Amount Works");
-        } else {
-            test.log(Status.FAIL, "Fixed Amount Unsuccessful");
-        }
+    @Description("Select Payment Date")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 17)
+    public void SelectPaymentDate() throws IOException, InterruptedException {
+        DatePicker datePicker = new DatePicker(driver);
+        datePicker.DatePickerJE("PartPaymentDate_XPATH","10/10/2020");
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PartPaymentDate_XPATH"))).click();
+        Thread.sleep(99999999);
+    }
 
+    @Test(priority = 18)
+    public void MakePartPayment() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayNowBTN_XPATH"))).click();
+    }
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayOnline_XPATH"))).click();
 
-        Thread.sleep(13000);
-        driver.switchTo().frame(0);
+    @Test(priority = 1400)
+    public void PartPaymentv() throws IOException, InterruptedException {
 
-        Thread.sleep(2000);
-        System.out.println(driver.findElement(By.id("option-payment-amount-xs")).getText());
-        assertEquals("NGN101.50", driver.findElement(By.id("option-payment-amount-xs")).getText());
-
-        //Back Back
-        driver.navigate().back();
-
-        //SEARCH BY NAME
-        Thread.sleep(1200);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchByName_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SeaerchInput_XPATH"))).sendKeys(Utility.fetchLocator("CustomerName_TEXT"));
-
-        Thread.sleep(1200);
-        driver.findElement(By.xpath(Utility.fetchLocator("Searchbtn_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ViewDetails_XPATH"))).click();
-
-        //SEARCH PRODUCT
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductinput_XPATH"))).sendKeys(Utility.fetchLocator("ID_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductbtnq_XPATH"))).click();
-
-        //Add button
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("AddBTN_XPATH"))).click();
-
-        Thread.sleep(2000);
-        WebElement ti11pp = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
-        JavascriptExecutor jsepp = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", ti11pp);
-        ti11pp.click();
-
-        Thread.sleep(1200);
-        WebElement tidpp = driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", tidpp);
-
-        Thread.sleep(2000);
-        WebElement ele111pp = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
-        Select sel11pp = new Select(ele111);
-        sel11pp.selectByIndex(st);
-
-        Thread.sleep(1200);
-        WebElement tiddll = driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", tiddll);
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PartPayment_XPATH"))).click();
-
-        Thread.sleep(1200);
-        WebElement ti112nn = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
-        JavascriptExecutor jse2nn = (JavascriptExecutor) driver;
-        jse2.executeScript("arguments[0].scrollIntoView();", ti112nn);
-        ti112nn.click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PartPaymentAmount_XPATH"))).sendKeys(Utility.fetchLocator("pamt_TEXT"));
-
-        Thread.sleep(2000);
-        WebElement msgtt = (new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("assertamt100_TEXT"))));
-        String texttt = msg.getText();
-        if (msg.isEnabled() && text.contains("100")) {
-            test.log(Status.PASS, "Fixed Amount Works");
-        } else {
-            test.log(Status.FAIL, "Fixed Amount Unsuccessful");
-        }
-
-        Thread.sleep(2000);
+        Thread.sleep(999999999);
         driver.findElement(By.xpath(Utility.fetchLocator("PartPaymentDate_XPATH"))).click();
 
         Thread.sleep(2000);
@@ -229,7 +209,7 @@ public class PartPayment extends TestBase {
 
         Thread.sleep(2000);
         WebElement msg1 = (new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("assertamt100_TEXT"))));
-        String text1 = msg.getText();
+        String text1 = msg1.getText();
         if (msg1.isEnabled() && text1.contains("100")) {
             test.log(Status.PASS, "Fixed Amount Works");
         } else {
@@ -243,6 +223,6 @@ public class PartPayment extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("PayNowBTN_XPATH"))).click();
 
 
- */
+
     }
 }

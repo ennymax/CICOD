@@ -2,9 +2,14 @@
     <listeners>
         <listener class-name = "CROWN.Base.RetryListener"></listener>
     </listeners>
-    <test name = "Order History">
+    <test name = "Customer Account">
         <classes>
             <class name="CROWN.CICOD.COM.Account.CustomerAccount"/>
+        </classes>
+    </test>
+    <test name = "Create Credit Note">
+        <classes>
+            <class name="CROWN.CICOD.COM.Account.CreateCreditNote"/>
         </classes>
     </test>
 </suite>

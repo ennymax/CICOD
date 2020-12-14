@@ -1,93 +1,548 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="6" failed="0" skipped="1">
+<testng-results ignored="0" total="20" passed="19" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-10T14:50:33Z" name="Suite" finished-at="2020-12-10T14:52:35Z" duration-ms="122647">
+  <suite started-at="2020-12-10T15:55:21Z" name="Suite" finished-at="2020-12-10T15:58:45Z" duration-ms="204463">
     <groups>
     </groups>
-    <test started-at="2020-12-10T14:50:33Z" name="Order History" finished-at="2020-12-10T14:52:35Z" duration-ms="122647">
+    <test started-at="2020-12-10T15:55:21Z" name="Customer Account" finished-at="2020-12-10T15:56:12Z" duration-ms="51290">
       <class name="CROWN.CICOD.COM.Account.CustomerAccount">
-        <test-method is-config="true" signature="setup()[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:50:32Z" name="setup" finished-at="2020-12-10T14:50:33Z" duration-ms="452" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:50:33Z" name="setUp" finished-at="2020-12-10T14:50:54Z" duration-ms="20750" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:55:21Z" name="setUp" finished-at="2020-12-10T15:55:42Z" duration-ms="21597" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:50:54Z" name="TestName" finished-at="2020-12-10T14:50:54Z" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:55:42Z" name="TestName" finished-at="2020-12-10T15:55:42Z" duration-ms="9" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginAsAdmin status=SUCCESS method=CustomerAccount.loginAsAdmin()[pri:1, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
+                <![CDATA[[TestResult name=login status=SUCCESS method=CustomerAccount.login()[pri:1, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestName -->
-        <test-method signature="loginAsAdmin()[pri:1, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:50:54Z" name="loginAsAdmin" finished-at="2020-12-10T14:51:02Z" duration-ms="8049" status="PASS">
+        <test-method signature="login()[pri:1, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:55:43Z" name="login" finished-at="2020-12-10T15:55:51Z" duration-ms="8139" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAsAdmin -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:51:02Z" name="getResult" finished-at="2020-12-10T14:51:02Z" duration-ms="594" status="PASS">
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:55:51Z" name="getResult" finished-at="2020-12-10T15:55:51Z" duration-ms="398" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginAsAdmin status=SUCCESS method=CustomerAccount.loginAsAdmin()[pri:1, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
+                <![CDATA[[TestResult name=login status=SUCCESS method=CustomerAccount.login()[pri:1, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:51:02Z" name="TestName" finished-at="2020-12-10T14:51:02Z" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:55:51Z" name="TestName" finished-at="2020-12-10T15:55:51Z" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=COM status=SUCCESS method=CustomerAccount.COM()[pri:2, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
+                <![CDATA[[TestResult name=CustomerOrderManagement status=SUCCESS method=CustomerAccount.CustomerOrderManagement()[pri:2, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestName -->
-        <test-method signature="COM()[pri:2, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:51:02Z" name="COM" finished-at="2020-12-10T14:51:10Z" duration-ms="8092" status="PASS">
+        <test-method signature="CustomerOrderManagement()[pri:2, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:55:51Z" name="CustomerOrderManagement" finished-at="2020-12-10T15:56:01Z" duration-ms="9512" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- COM -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:51:10Z" name="getResult" finished-at="2020-12-10T14:51:11Z" duration-ms="107" status="PASS">
+        </test-method> <!-- CustomerOrderManagement -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:01Z" name="getResult" finished-at="2020-12-10T15:56:01Z" duration-ms="262" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=COM status=SUCCESS method=CustomerAccount.COM()[pri:2, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
+                <![CDATA[[TestResult name=CustomerOrderManagement status=SUCCESS method=CustomerAccount.CustomerOrderManagement()[pri:2, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:51:11Z" name="TestName" finished-at="2020-12-10T14:51:11Z" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:01Z" name="TestName" finished-at="2020-12-10T15:56:01Z" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AccountButton status=SKIP method=CustomerAccount.AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
+                <![CDATA[[TestResult name=AccountButton status=SUCCESS method=CustomerAccount.AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestName -->
-        <test-method signature="AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:51:11Z" name="AccountButton" finished-at="2020-12-10T14:52:13Z" duration-ms="62029" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:01Z" name="AccountButton" finished-at="2020-12-10T15:56:03Z" duration-ms="2322" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AccountButton -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:03Z" name="getResult" finished-at="2020-12-10T15:56:03Z" duration-ms="82" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AccountButton status=SUCCESS method=CustomerAccount.AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:04Z" name="TestName" finished-at="2020-12-10T15:56:04Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CustomerAccountButton status=SUCCESS method=CustomerAccount.CustomerAccountButton()[pri:4, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="CustomerAccountButton()[pri:4, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:04Z" name="CustomerAccountButton" finished-at="2020-12-10T15:56:07Z" duration-ms="3231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CustomerAccountButton -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:07Z" name="getResult" finished-at="2020-12-10T15:56:07Z" duration-ms="117" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CustomerAccountButton status=SUCCESS method=CustomerAccount.CustomerAccountButton()[pri:4, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:07Z" name="TestName" finished-at="2020-12-10T15:56:07Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AssertCustomerAccount status=SUCCESS method=CustomerAccount.AssertCustomerAccount()[pri:5, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="AssertCustomerAccount()[pri:5, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:07Z" name="AssertCustomerAccount" finished-at="2020-12-10T15:56:08Z" duration-ms="1021" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssertCustomerAccount -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:08Z" name="getResult" finished-at="2020-12-10T15:56:08Z" duration-ms="77" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AssertCustomerAccount status=SUCCESS method=CustomerAccount.AssertCustomerAccount()[pri:5, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:08Z" name="TestName" finished-at="2020-12-10T15:56:08Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AssertValueofCustomerAccount status=SUCCESS method=CustomerAccount.AssertValueofCustomerAccount()[pri:6, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="AssertValueofCustomerAccount()[pri:6, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:08Z" name="AssertValueofCustomerAccount" finished-at="2020-12-10T15:56:09Z" duration-ms="1012" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AssertValueofCustomerAccount -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:09Z" name="getResult" finished-at="2020-12-10T15:56:09Z" duration-ms="64" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AssertValueofCustomerAccount status=SUCCESS method=CustomerAccount.AssertValueofCustomerAccount()[pri:6, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@10aa41f2]" started-at="2020-12-10T15:56:09Z" name="tearDown" finished-at="2020-12-10T15:56:12Z" duration-ms="3070" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- CROWN.CICOD.COM.Account.CustomerAccount -->
+    </test> <!-- Customer Account -->
+    <test started-at="2020-12-10T15:56:12Z" name="Create Credit Note" finished-at="2020-12-10T15:58:45Z" duration-ms="153151">
+      <class name="CROWN.CICOD.COM.Account.CreateCreditNote">
+        <test-method is-config="true" signature="setup()[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:55:20Z" name="setup" finished-at="2020-12-10T15:55:21Z" duration-ms="424" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:56:12Z" name="setUp" finished-at="2020-12-10T15:56:44Z" duration-ms="31767" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:56:44Z" name="TestName" finished-at="2020-12-10T15:56:44Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=login status=SUCCESS method=CreateCreditNote.login()[pri:1, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="login()[pri:1, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:56:44Z" name="login" finished-at="2020-12-10T15:56:52Z" duration-ms="7718" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:56:52Z" name="getResult" finished-at="2020-12-10T15:56:52Z" duration-ms="42" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=login status=SUCCESS method=CreateCreditNote.login()[pri:1, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:56:52Z" name="TestName" finished-at="2020-12-10T15:56:52Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CustomerOrderManagement status=SUCCESS method=CreateCreditNote.CustomerOrderManagement()[pri:2, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="CustomerOrderManagement()[pri:2, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:56:52Z" name="CustomerOrderManagement" finished-at="2020-12-10T15:57:02Z" duration-ms="9870" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CustomerOrderManagement -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:02Z" name="getResult" finished-at="2020-12-10T15:57:02Z" duration-ms="89" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CustomerOrderManagement status=SUCCESS method=CreateCreditNote.CustomerOrderManagement()[pri:2, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:02Z" name="TestName" finished-at="2020-12-10T15:57:02Z" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AccountButton status=SUCCESS method=CreateCreditNote.AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:02Z" name="AccountButton" finished-at="2020-12-10T15:57:04Z" duration-ms="1969" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AccountButton -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:05Z" name="getResult" finished-at="2020-12-10T15:57:05Z" duration-ms="48" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AccountButton status=SUCCESS method=CreateCreditNote.AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:05Z" name="TestName" finished-at="2020-12-10T15:57:05Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CreditNoteButton status=SUCCESS method=CreateCreditNote.CreditNoteButton()[pri:4, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="CreditNoteButton()[pri:4, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:05Z" name="CreditNoteButton" finished-at="2020-12-10T15:57:07Z" duration-ms="2580" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreditNoteButton -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:07Z" name="getResult" finished-at="2020-12-10T15:57:07Z" duration-ms="61" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CreditNoteButton status=SUCCESS method=CreateCreditNote.CreditNoteButton()[pri:4, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:07Z" name="TestName" finished-at="2020-12-10T15:57:07Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CreateCreditNoteButton status=SUCCESS method=CreateCreditNote.CreateCreditNoteButton()[pri:5, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="CreateCreditNoteButton()[pri:5, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:07Z" name="CreateCreditNoteButton" finished-at="2020-12-10T15:57:11Z" duration-ms="3701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateCreditNoteButton -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:11Z" name="getResult" finished-at="2020-12-10T15:57:11Z" duration-ms="65" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CreateCreditNoteButton status=SUCCESS method=CreateCreditNote.CreateCreditNoteButton()[pri:5, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:11Z" name="TestName" finished-at="2020-12-10T15:57:11Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=InputCustomerName status=SUCCESS method=CreateCreditNote.InputCustomerName()[pri:6, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="InputCustomerName()[pri:6, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:11Z" name="InputCustomerName" finished-at="2020-12-10T15:57:18Z" duration-ms="6542" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InputCustomerName -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:18Z" name="getResult" finished-at="2020-12-10T15:57:18Z" duration-ms="137" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=InputCustomerName status=SUCCESS method=CreateCreditNote.InputCustomerName()[pri:6, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:18Z" name="TestName" finished-at="2020-12-10T15:57:18Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SelectReason status=SUCCESS method=CreateCreditNote.SelectReason()[pri:7, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="SelectReason()[pri:7, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:19Z" name="SelectReason" finished-at="2020-12-10T15:57:21Z" duration-ms="1953" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SelectReason -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:21Z" name="getResult" finished-at="2020-12-10T15:57:21Z" duration-ms="56" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SelectReason status=SUCCESS method=CreateCreditNote.SelectReason()[pri:7, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:21Z" name="TestName" finished-at="2020-12-10T15:57:21Z" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=inputInvoiceNumber status=SUCCESS method=CreateCreditNote.inputInvoiceNumber()[pri:8, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="inputInvoiceNumber()[pri:8, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:21Z" name="inputInvoiceNumber" finished-at="2020-12-10T15:57:21Z" duration-ms="47" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inputInvoiceNumber -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:21Z" name="getResult" finished-at="2020-12-10T15:57:21Z" duration-ms="60" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=inputInvoiceNumber status=SUCCESS method=CreateCreditNote.inputInvoiceNumber()[pri:8, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:21Z" name="TestName" finished-at="2020-12-10T15:57:21Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=EnterQuantity status=SUCCESS method=CreateCreditNote.EnterQuantity()[pri:9, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="EnterQuantity()[pri:9, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:21Z" name="EnterQuantity" finished-at="2020-12-10T15:57:23Z" duration-ms="1236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EnterQuantity -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:23Z" name="getResult" finished-at="2020-12-10T15:57:23Z" duration-ms="62" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=EnterQuantity status=SUCCESS method=CreateCreditNote.EnterQuantity()[pri:9, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:23Z" name="TestName" finished-at="2020-12-10T15:57:23Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=EnterAmount status=SUCCESS method=CreateCreditNote.EnterAmount()[pri:10, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="EnterAmount()[pri:10, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:23Z" name="EnterAmount" finished-at="2020-12-10T15:57:24Z" duration-ms="1236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EnterAmount -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:24Z" name="getResult" finished-at="2020-12-10T15:57:24Z" duration-ms="149" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=EnterAmount status=SUCCESS method=CreateCreditNote.EnterAmount()[pri:10, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:24Z" name="TestName" finished-at="2020-12-10T15:57:24Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Description status=SUCCESS method=CreateCreditNote.Description()[pri:11, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="Description()[pri:11, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:24Z" name="Description" finished-at="2020-12-10T15:57:26Z" duration-ms="1266" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Description -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:26Z" name="getResult" finished-at="2020-12-10T15:57:26Z" duration-ms="73" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Description status=SUCCESS method=CreateCreditNote.Description()[pri:11, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:26Z" name="TestName" finished-at="2020-12-10T15:57:26Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SendButton status=SUCCESS method=CreateCreditNote.SendButton()[pri:12, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="SendButton()[pri:12, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:26Z" name="SendButton" finished-at="2020-12-10T15:57:28Z" duration-ms="2253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SendButton -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:28Z" name="getResult" finished-at="2020-12-10T15:57:28Z" duration-ms="54" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SendButton status=SUCCESS method=CreateCreditNote.SendButton()[pri:12, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:28Z" name="TestName" finished-at="2020-12-10T15:57:28Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AssertCreditNoteCreation status=SKIP method=CreateCreditNote.AssertCreditNoteCreation()[pri:13, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestName -->
+        <test-method signature="AssertCreditNoteCreation()[pri:13, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:57:28Z" name="AssertCreditNoteCreation" finished-at="2020-12-10T15:58:30Z" duration-ms="62025" status="SKIP">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/aside/section/ul/li[9]/a (tried for 45 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[Unable to locate element: /html/body/div[2]/div/div[3]/div/div
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-A9ARH4A', ip: '192.168.43.169', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 83.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201112153044, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 22040, moz:profile: C:\Users\CROWN_STAFF\AppDat..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a8dec942-eae7-4f20-a0b1-55aa57dd59f3
+*** Element info: {Using=xpath, value=/html/body/div[2]/div/div[3]/div/div}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[2]/aside/section/ul/li[9]/a (tried for 45 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at CROWN.CICOD.COM.Account.CustomerAccount.AccountButton(CustomerAccount.java:30)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: /html/body/div[2]/div/div[3]/div/div
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-A9ARH4A', ip: '192.168.43.169', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 83.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201112153044, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 22040, moz:profile: C:\Users\CROWN_STAFF\AppDat..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a8dec942-eae7-4f20-a0b1-55aa57dd59f3
+*** Element info: {Using=xpath, value=/html/body/div[2]/div/div[3]/div/div}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at CROWN.CICOD.COM.Account.CreateCreditNote.AssertCreditNoteCreation(CreateCreditNote.java:92)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,165 +567,58 @@ at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
 at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: /html/body/div[2]/aside/section/ul/li[9]/a
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-A9ARH4A', ip: '192.168.43.169', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 83.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20201112153044, moz:geckodriverVersion: 0.28.0, moz:headless: false, moz:processID: 23204, moz:profile: C:\Users\CROWN_STAFF\AppDat..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: be22b670-6ac0-459e-b187-32e1bd922ac6
-*** Element info: {Using=xpath, value=/html/body/div[2]/aside/section/ul/li[9]/a}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 25 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AccountButton -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:13Z" name="getResult" finished-at="2020-12-10T14:52:13Z" duration-ms="70" status="PASS">
+        </test-method> <!-- AssertCreditNoteCreation -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:58:30Z" name="getResult" finished-at="2020-12-10T15:58:30Z" duration-ms="39" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AccountButton status=SKIP method=CustomerAccount.AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
+                <![CDATA[[TestResult name=AssertCreditNoteCreation status=SKIP method=CreateCreditNote.AssertCreditNoteCreation()[pri:13, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:13Z" name="TestName" finished-at="2020-12-10T14:52:13Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:58:30Z" name="TestName" finished-at="2020-12-10T15:58:30Z" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AccountButton status=SUCCESS method=CustomerAccount.AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
+                <![CDATA[[TestResult name=AssertCreditNoteCreation status=SUCCESS method=CreateCreditNote.AssertCreditNoteCreation()[pri:13, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestName -->
-        <test-method signature="AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:13Z" name="AccountButton" finished-at="2020-12-10T14:52:24Z" duration-ms="10921" status="PASS">
+        <test-method signature="AssertCreditNoteCreation()[pri:13, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:58:30Z" name="AssertCreditNoteCreation" finished-at="2020-12-10T15:58:41Z" duration-ms="10584" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AccountButton -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:24Z" name="getResult" finished-at="2020-12-10T14:52:24Z" duration-ms="153" status="PASS">
+        </test-method> <!-- AssertCreditNoteCreation -->
+        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:58:41Z" name="getResult" finished-at="2020-12-10T15:58:41Z" duration-ms="62" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AccountButton status=SUCCESS method=CustomerAccount.AccountButton()[pri:3, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
+                <![CDATA[[TestResult name=AssertCreditNoteCreation status=SUCCESS method=CreateCreditNote.AssertCreditNoteCreation()[pri:13, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:24Z" name="TestName" finished-at="2020-12-10T14:52:24Z" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CustomerAccountButton status=SUCCESS method=CustomerAccount.CustomerAccountButton()[pri:4, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestName -->
-        <test-method signature="CustomerAccountButton()[pri:4, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:24Z" name="CustomerAccountButton" finished-at="2020-12-10T14:52:29Z" duration-ms="5275" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CustomerAccountButton -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:29Z" name="getResult" finished-at="2020-12-10T14:52:29Z" duration-ms="112" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=CustomerAccountButton status=SUCCESS method=CustomerAccount.CustomerAccountButton()[pri:4, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:29Z" name="TestName" finished-at="2020-12-10T14:52:29Z" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AssertCustomerAccount status=SUCCESS method=CustomerAccount.AssertCustomerAccount()[pri:5, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestName -->
-        <test-method signature="AssertCustomerAccount()[pri:5, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:29Z" name="AssertCustomerAccount" finished-at="2020-12-10T14:52:30Z" duration-ms="1015" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AssertCustomerAccount -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:30Z" name="getResult" finished-at="2020-12-10T14:52:30Z" duration-ms="64" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AssertCustomerAccount status=SUCCESS method=CustomerAccount.AssertCustomerAccount()[pri:5, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="TestName(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:30Z" name="TestName" finished-at="2020-12-10T14:52:30Z" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AssertValueofCustomerAccount status=SUCCESS method=CustomerAccount.AssertValueofCustomerAccount()[pri:6, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestName -->
-        <test-method signature="AssertValueofCustomerAccount()[pri:6, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:30Z" name="AssertValueofCustomerAccount" finished-at="2020-12-10T14:52:31Z" duration-ms="1012" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AssertValueofCustomerAccount -->
-        <test-method is-config="true" signature="getResult(org.testng.ITestResult)[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:31Z" name="getResult" finished-at="2020-12-10T14:52:31Z" duration-ms="55" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AssertValueofCustomerAccount status=SUCCESS method=CustomerAccount.AssertValueofCustomerAccount()[pri:6, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:31Z" name="tearDown" finished-at="2020-12-10T14:52:35Z" duration-ms="4019" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:58:41Z" name="tearDown" finished-at="2020-12-10T15:58:45Z" duration-ms="4423" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="AfterTest()[pri:0, instance:CROWN.CICOD.COM.Account.CustomerAccount@63070bab]" started-at="2020-12-10T14:52:35Z" name="AfterTest" finished-at="2020-12-10T14:52:39Z" duration-ms="3746" status="PASS">
+        <test-method is-config="true" signature="AfterTest()[pri:0, instance:CROWN.CICOD.COM.Account.CreateCreditNote@fa36558]" started-at="2020-12-10T15:58:45Z" name="AfterTest" finished-at="2020-12-10T15:58:49Z" duration-ms="3719" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterTest -->
-      </class> <!-- CROWN.CICOD.COM.Account.CustomerAccount -->
-    </test> <!-- Order History -->
+      </class> <!-- CROWN.CICOD.COM.Account.CreateCreditNote -->
+    </test> <!-- Create Credit Note -->
   </suite> <!-- Suite -->
 </testng-results>

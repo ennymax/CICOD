@@ -16,23 +16,33 @@ import java.io.IOException;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class ViewCreditNote extends TestBase {
-    @Test
-    public void View_Credit_Note() throws IOException, InterruptedException, AWTException {
+
+    @Test(priority=1)
+    public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-
         login.Login();
+    }
 
-        //Com
+    @Test(priority=2)
+    public void CustomerOrderManagement() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
+    }
 
+    @Test(priority=3)
+    public void AccountModule() throws IOException, InterruptedException {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("AccountBTN_XPATH")))).click();
+    }
 
+    @Test(priority=4)
+    public void CreditNoteButton() throws IOException, InterruptedException {
         Thread.sleep(2000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("CreditNote_XPATH")))).click();
+    }
 
-
+    @Test(priority=5)
+    public void ViewCreditNote() throws IOException, InterruptedException {
         Thread.sleep(2000);
         WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("cAction_XPATH")));
         JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -41,9 +51,11 @@ public class ViewCreditNote extends TestBase {
 
         Thread.sleep(1200);
         driver.findElement(By.xpath(Utility.fetchLocator("CView_XPATH"))).click();
+    }
 
+    @Test(priority=6)
+    public void AssertViewCreditNote() throws IOException, InterruptedException {
         Thread.sleep(2000);
         assertEquals("Credit Note", driver.findElement(By.xpath(Utility.fetchLocator("AssertViewCrerditNote_XPATH"))).getText());
-        test.log(Status.PASS, "Credit Note can be Viewed");
     }
 }

@@ -13,7 +13,7 @@ import java.io.IOException;
 public class CustomerAccount extends TestBase {
 
     @Test(priority=1)
-    public void loginAsAdmin() throws IOException, InterruptedException {
+    public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
         login.Login();
     }

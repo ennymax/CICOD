@@ -84,7 +84,7 @@ public class Suspend_UnSuspendBuyer extends TestBase {
         Thread.sleep(1300);
         driver.findElement(By.xpath(Utility.fetchLocator("ValuechainBTN_XPATH"))).click();
 
-        Thread.sleep(1400);
+        Thread.sleep(140);
         driver.findElement(By.xpath(Utility.fetchLocator("ValuechainByers_XPATH"))).click();
 
         Thread.sleep(1400);
@@ -114,6 +114,7 @@ public class Suspend_UnSuspendBuyer extends TestBase {
         }
 
         Thread.sleep(2000);
+        driver.manage().deleteAllCookies();
         driver.navigate().to("https://www.cicod.com/login");
 
         login.LoginDefault();

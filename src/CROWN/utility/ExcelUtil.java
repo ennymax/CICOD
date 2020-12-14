@@ -310,7 +310,7 @@ public class ExcelUtil extends TestBase {
         element.click();
     }
 
-    public void DoscrolltoViewClickWhenReady(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
+    public void DoscrolltoViewClickWhenReady(String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);

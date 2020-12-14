@@ -163,6 +163,7 @@ public class TestBase {
 
         driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
 
 
@@ -314,6 +315,7 @@ public class TestBase {
     @BeforeMethod
     public void TestName(ITestResult result) {
         test = extent.createTest(result.getMethod().getMethodName().toUpperCase());
+        System.out.println("Running Test::: " + result.getMethod().getMethodName().toUpperCase());
     }
 
     @AfterClass

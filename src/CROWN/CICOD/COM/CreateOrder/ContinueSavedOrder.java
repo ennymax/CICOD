@@ -1,9 +1,7 @@
 package CROWN.CICOD.COM.CreateOrder;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.Login;
-import CROWN.utility.ScreenShot;
-import CROWN.utility.Utility;
+import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,34 +14,49 @@ import java.security.SecureRandom;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class ContinueSavedOrder extends TestBase {
-    @Test
-    public void CONTINUE_SAVE_ORDER() throws IOException, InterruptedException {
+
+    @Test(priority = 1)
+    public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(3) + 1;
-        Utility utility = new Utility(driver);
-        ScreenShot screenshot = new ScreenShot(driver);
-
         login.Login();
+    }
 
-        utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
-        utility.DoclickWhenReady("Createorderbtn_XPATH", "CreateOrder_TEXT",40);
+    @Test(priority = 2)
+    public void CustomerOrderManagement() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+    }
+
+    @Test(priority = 3)
+    public void CreateOrder() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("Createorderbtn_XPATH", 30);
+    }
+
+    @Test(priority = 4)
+    public void ViewSavedOrder() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
         utility.DoscrolltoViewClickWhenReady("ViewSavedOrer_XPATH", "ViewSa_TEXT",40);
         utility.DoclickWhenReady("SelectOre11_XPATH", "ViewSa_TEXT",40);
+    }
+
+    @Test(priority = 5)
+    public void AssertViewSavedOrder() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
         utility.DoAssertContainsWhenReady("AssertAlert_XPATH","alercon_TEXT","SOpass_TEXT","SOFail_TEXT",60);
         utility.DoAssertXpathPresentWhenReady("Ooo_XPATH","SOpass_TEXT","SOFail_TEXT",60);
         utility.DoAssertXpathPresentWhenReady("Ooo_XPATH","ASERTORE_XPATH","SOFail_TEXT",60);
+    }
 
-        Thread.sleep(2000);
-        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
-        JavascriptExecutor jse = (JavascriptExecutor) driver;jse.executeScript("arguments[0].scrollIntoView();", ti11);
-        ti11.click();
+    @Test(priority = 6)
+    public void SelectRegion() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("jjregion_XPATH", 30);
+        util.DoSelectValuesByIndex("SelectRegion_XPATH", 2, 20);
+    }
 
-        Thread.sleep(4000);
-        WebElement ele111 = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
-        Select sel11 = new Select(ele111);
-        sel11.selectByIndex(st);
-
+    @Test(priority = 7)
+    public void MakePayment() throws IOException, InterruptedException {
         Thread.sleep(2000);
         WebElement ti112 = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
         JavascriptExecutor jse2 = (JavascriptExecutor) driver;
@@ -52,59 +65,76 @@ public class ContinueSavedOrder extends TestBase {
 
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayOnline_XPATH"))).click();
+    }
 
-        Thread.sleep(13000);
-        driver.switchTo().frame(0);
+    @Test(priority = 8)
+    public void RavPay() throws IOException, InterruptedException {
+        RavePay ravePay = new RavePay(driver);
+        ravePay.RavePay2();
+    }
 
-        Thread.sleep(2000);
-        System.out.println(driver.findElement(By.id("option-payment-amount-xs")).getText());
-        assertEquals("NGN203.00", driver.findElement(By.id("option-payment-amount-xs")).getText());
-        test.log(Status.PASS, "Vat Exemption is confirmed");
-
+    @Test(priority = 9)
+    public void AssertPayOnline() throws IOException, InterruptedException {
+        ScreenShot screenshot = new ScreenShot(driver);
         Thread.sleep(2000);
         screenshot.ScreenShotFullPage();
-        test.log(Status.INFO, "MAKE PAYMENT WITH POS");
+        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("Auth_XPATH")));
+        String text11 = msg11.getText();
+        if (msg11.isEnabled() && text11.contains("Enter your 4-digit card pin to authorize this payment")) {
+            test.log(Status.PASS, "Flutterwave Payment Portal Fully Functional");
+        } else {
+            test.log(Status.FAIL, "Payment Portal down");
+        }
+    }
 
+    @Test(priority = 10)
+    public void NavigteURL() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.get("https://nexusnigeria.cicod.com/cuorma/web/index.php/site/order-product?inv_search_text=Tomatoes");
+    }
 
-        //SEARCH BY NAME
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SeaerchInput_XPATH"))).sendKeys(Utility.fetchLocator("CustomerName_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Searchbtn_XPATH"))).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ViewDetails_XPATH"))).click();
+    @Test(priority = 11)
+    public void ViewSavedOrderPOS() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoscrolltoViewClickWhenReady("ViewSavedOrer_XPATH", "ViewSa_TEXT",40);
+        utility.DoclickWhenReady("SelectOre11_XPATH", "ViewSa_TEXT",40);
+    }
 
-        //Add button
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("AddBTN_XPATH"))).click();
+    @Test(priority = 12)
+    public void AssertViewSavedOrderPOS() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoAssertContainsWhenReady("AssertAlert_XPATH","alercon_TEXT","SOpass_TEXT","SOFail_TEXT",60);
+        utility.DoAssertXpathPresentWhenReady("Ooo_XPATH","SOpass_TEXT","SOFail_TEXT",60);
+        utility.DoAssertXpathPresentWhenReady("Ooo_XPATH","ASERTORE_XPATH","SOFail_TEXT",60);
+    }
 
-        Thread.sleep(2000);
-        WebElement ti11kk = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
-        JavascriptExecutor jsekk = (JavascriptExecutor) driver;jse.executeScript("arguments[0].scrollIntoView();", ti11kk);
-        ti11kk.click();
+    @Test(priority = 13)
+    public void SelectRegionPOS() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("jjregion_XPATH", 30);
+        util.DoSelectValuesByIndex("SelectRegion_XPATH", 2, 20);
+    }
 
+    @Test(priority = 14)
+    public void MakePaymentPOS() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        WebElement ele111ll = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
-        Select sel11ll = new Select(ele111ll);
-        sel11ll.selectByIndex(st);
+        WebElement ti112 = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
+        JavascriptExecutor jse2 = (JavascriptExecutor) driver;
+        jse2.executeScript("arguments[0].scrollIntoView();", ti112);
+        ti112.click();
+    }
 
-        Thread.sleep(2000);
-        screenshot.ScreenShotFullPage();
-        test.log(Status.INFO, "MAKE PAYMENT WITH POS");
-
-        Thread.sleep(2000);
-        WebElement ti112lll = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
-        JavascriptExecutor jse2lll = (JavascriptExecutor) driver;
-        jse2lll.executeScript("arguments[0].scrollIntoView();", ti112lll);
-        ti112lll.click();
-
+    @Test(priority = 15)
+    public void POS() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayPoS_XPATH"))).click();
 
         Thread.sleep(4000);
         driver.findElement(By.xpath(Utility.fetchLocator("ConfirmPAymantPOS_XPATH"))).click();
+    }
 
+    @Test(priority = 16)
+    public void AssertPOS() throws IOException, InterruptedException {
         Thread.sleep(200);
         WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("ComfirmPOSPayment_XPATH")));
         String text11 = msg11.getText();

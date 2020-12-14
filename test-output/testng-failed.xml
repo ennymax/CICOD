@@ -4,19 +4,19 @@
   <listeners>
     <listener class-name="CROWN.Base.RetryListener"/>
   </listeners>
-  <test thread-count="5" name="Order History(failed)">
+  <test thread-count="5" name="Create Credit Note(failed)">
     <classes>
-      <class name="CROWN.CICOD.COM.Account.CustomerAccount">
+      <class name="CROWN.CICOD.COM.Account.CreateCreditNote">
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
           <include name="setUp"/>
           <include name="getResult"/>
           <include name="TestName"/>
-          <include name="AccountButton"/>
+          <include name="AssertCreditNoteCreation"/>
           <include name="AfterTest"/>
         </methods>
-      </class> <!-- CROWN.CICOD.COM.Account.CustomerAccount -->
+      </class> <!-- CROWN.CICOD.COM.Account.CreateCreditNote -->
     </classes>
-  </test> <!-- Order History(failed) -->
+  </test> <!-- Create Credit Note(failed) -->
 </suite> <!-- Failed suite [Suite] -->
