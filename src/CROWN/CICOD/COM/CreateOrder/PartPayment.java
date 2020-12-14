@@ -91,6 +91,8 @@ public class PartPayment extends TestBase {
     public void AddProducttoChart() throws IOException, InterruptedException {
         ExcelUtil util = new ExcelUtil(driver);
         util.DoscrolltoViewClickWhenReady("AddBTN_XPATH", 30);
+        Thread.sleep(2000);
+        util.DoscrolltoViewClickWhenReady("AddBTN_XPATH", 30);
     }
 
     @Description("Test Apply Discount Module")
@@ -153,76 +155,30 @@ public class PartPayment extends TestBase {
         DatePicker datePicker = new DatePicker(driver);
         datePicker.DatePickerJE("PartPaymentDate_XPATH","10/10/2020");
 
-        Thread.sleep(99999999);
     }
 
+    @Description("Proceed To Make Part Payment")
+    @Severity(SeverityLevel.NORMAL)
     @Test(priority = 18)
     public void MakePartPayment() throws IOException, InterruptedException {
         Thread.sleep(2000);
         driver.findElement(By.xpath(Utility.fetchLocator("PayNowBTN_XPATH"))).click();
     }
 
+    @Description("Select PayOnline")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 19)
+    public void AssertPayOnline() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("PayOnline_XPATH", "PAyOnline_TEXT", 40);
+        utility.DoswitchtoframeWhenReady(0, 13000);
+    }
 
-    @Test(priority = 1400)
-    public void PartPaymentv() throws IOException, InterruptedException {
-
-        Thread.sleep(999999999);
-        driver.findElement(By.xpath(Utility.fetchLocator("PartPaymentDate_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayNowBTN_XPATH"))).click();
-
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayPoS_XPATH"))).click();
-
-        Thread.sleep(3000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ConfirmPAymantPOS_XPATH"))).click();
-
-        Thread.sleep(1200);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("ComfirmPOSPayment_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Payment yet to be received on Order")) {
-            test.log(Status.PASS, "Pay with POS Functional");
-        } else {
-            test.log(Status.FAIL, "Pay with POS Failed");
-        }
-
-        Thread.sleep(1200);
-        WebElement tidda = driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", tidda);
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PartPayment_XPATH"))).click();
-
-        Thread.sleep(1200);
-        WebElement ti112l = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
-        JavascriptExecutor jse2l = (JavascriptExecutor) driver;
-        jse2l.executeScript("arguments[0].scrollIntoView();", ti112l);
-        ti112l.click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PartPaymentAmount_XPATH"))).sendKeys(Utility.fetchLocator("pamt_TEXT"));
-
-        Thread.sleep(2000);
-        WebElement msg1 = (new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("assertamt100_TEXT"))));
-        String text1 = msg1.getText();
-        if (msg1.isEnabled() && text1.contains("100")) {
-            test.log(Status.PASS, "Fixed Amount Works");
-        } else {
-            test.log(Status.FAIL, "Fixed Amount Unsuccessful");
-        }
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PartPaymentDate_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayNowBTN_XPATH"))).click();
-
-
-
+    @Description("Demo Rave Pay")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 20)
+    public void RavePay() throws IOException, InterruptedException {
+        RavePay ravePay = new RavePay(driver);
+        ravePay.RavePay3();
     }
 }
