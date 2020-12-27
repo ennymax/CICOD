@@ -94,7 +94,6 @@ https://nexusnigeria.cicod.com/cuorma/web/order-history/order-details?id=1235
          driver.findElement(By.xpath(Utility.fetchLocator("RegionEmail_XPATH"))).sendKeys(new Generex(regex).random());
 
 
-        cicodsaasstaging.com
         Cicodsaasdev.com
 
 
@@ -205,9 +204,10 @@ DefEmail_TEXT=demotestng@yopmail.com
 DefPassword_TEXT=@Ecomax1759
 
 STAGING_STAGING_STAGING
+       www.cicodsaasstaging.com
 
 ndanitv
-
+ndanitv@sharklasers.com
 Ndanitv@123
 
 shop Name ::Emaxkemi 
@@ -231,7 +231,7 @@ Password:+
 
 Domain=emaxkemi
 Email:emaxkemi@yopmail.com
-Password=@Ecomax1759
+Password=n
 
 stratoscorp
 stratoscorp@yopmail.com

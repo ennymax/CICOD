@@ -1,10 +1,7 @@
 package CROWN.CICOD.COM.CustomerManagment;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.FileUpload;
-import CROWN.utility.Login;
-import CROWN.utility.ScreenShot;
-import CROWN.utility.Utility;
+import CROWN.utility.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -19,6 +16,7 @@ public class UploadCustomer extends TestBase {
         Utility utility = new Utility(driver);
         Login login = new Login(driver);
         FileUpload fileUpload = new FileUpload();
+        Assertion assertion = new Assertion(driver);
 
         login.Login();
 
@@ -50,6 +48,6 @@ public class UploadCustomer extends TestBase {
 
         fileUpload.UploadXLSX1();
 
-        utility.DoAssertContainsWhenReady("AsserfileUp_XPATH","Assertfileupstr_TEXT","Assertionpp_TEXT","Assertionpf_TEXT",20);
+        assertion.DoAssertContainsWhenReady("AsserfileUp_XPATH","Assertfileupstr_TEXT","Assertionpp_TEXT","Assertionpf_TEXT",20);
     }
 }

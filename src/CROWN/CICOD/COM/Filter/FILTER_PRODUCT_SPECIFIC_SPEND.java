@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.Filter;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.Assertion;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import org.openqa.selenium.By;
@@ -14,6 +15,7 @@ public class FILTER_PRODUCT_SPECIFIC_SPEND extends TestBase {
         test = extent.createTest("FILTER PRODUCT SPECIFIC SPEND");
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
+        Assertion assertion = new Assertion(driver);
 
         login.Login();
         utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
@@ -22,17 +24,17 @@ public class FILTER_PRODUCT_SPECIFIC_SPEND extends TestBase {
 
         //Product
         utility.DoSendKeysWhenReadyEnter("Fproduct_XPATH", "Fproduct_TEXT", "Fproduct_TEXT", 40);
-        utility.DoAssertXpathPresentWhenReady("AssertPa_XPATH", "Fpassmsg_TEXT", "FFailmsg_TEXT", 15);
+        assertion.DoAssertXpathPresentWhenReady("AssertPa_XPATH", "Fpassmsg_TEXT", "FFailmsg_TEXT", 15);
         driver.findElement(By.xpath(Utility.fetchLocator("Fproduct_XPATH"))).clear();
 
         //Product Spend
         utility.DoSendKeysWhenReadyEnter("ProductPoint_XPATH", "Productpoint_XPATH", "Productpoint_XPATH", 40);
-        utility.DoAssertXpathPresentWhenReady("AssertPa_XPATH", "pppassmsg_TEXT", "ppailmsg_TEXT", 15);
+        assertion.DoAssertXpathPresentWhenReady("AssertPa_XPATH", "pppassmsg_TEXT", "ppailmsg_TEXT", 15);
         driver.findElement(By.xpath(Utility.fetchLocator("Productspend_XPATH"))).clear();
 
         //Product Point
         utility.DoSendKeysWhenReadyEnter("ProductPoint_XPATH", "Productpoint_XPATH", "Productpoint_XPATH", 40);
-        utility.DoAssertXpathPresentWhenReady("AssertPa_XPATH", "pppassmsg_TEXT", "ppailmsg_TEXT", 15);
+        assertion.DoAssertXpathPresentWhenReady("AssertPa_XPATH", "pppassmsg_TEXT", "ppailmsg_TEXT", 15);
         driver.findElement(By.xpath(Utility.fetchLocator("Productspend_XPATH"))).clear();
     }
 }

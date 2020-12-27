@@ -1,6 +1,8 @@
 package CROWN.CICOD.WFM.RightTemplate;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.Assertion;
+import CROWN.utility.JavaScriptUtil;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import org.testng.annotations.Test;
@@ -14,7 +16,8 @@ public class UpdateUser  extends TestBase {
     public void UpdateUser() throws IOException, InterruptedException{
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
-        SecureRandom rn = new SecureRandom();
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+        Assertion assertion = new Assertion(driver);
 
         login.LoginNexus();
 
@@ -22,12 +25,12 @@ public class UpdateUser  extends TestBase {
         utility.DoclickWhenReady("UserManagement_XPATH", "Usermgt_TEXT",50);
         utility.DoclickWhenReady("Usr_XPATH", "UsersBTN_TEXT",50);
         utility.DoclickWhenReady("UserActionBTNN_XPATH", "ActionBBTN_TEXT",50);
-        utility.DoscrolltoViewClickWhenReady("UpdateBtton_XPATH","UpdateBTNN_TEXT",40);
+        javaScriptUtil.DoscrolltoViewClickWhenReady("UpdateBtton_XPATH","UpdateBTNN_TEXT",40);
         utility.DosendKeysRandomListwordsWhenReady("NewUserFname_XPATH", "NewUser_TEXT",50);
         utility.DosendKeysRandomListwordsWhenReady("NewUserLastName_XPATH", "FirstNa_TEXT",50);
 
         utility.DoclickWhenReady("CreateNewUser_XPATH", "UpCreta_TEXT",50);
-        utility.DoAssertContainsWhenReady("AssertNewUserCreation_XPATH","Su_TEXT" ,"DplPass1_XPATH", "DplFail1_XPATH",30);
+        assertion.DoAssertContainsWhenReady("AssertNewUserCreation_XPATH","Su_TEXT" ,"DplPass1_XPATH", "DplFail1_XPATH",30);
         utility.DoclickWhenReady("NewUserOKBTN_XPATH","Ok_TEXT",40);
     }
 }

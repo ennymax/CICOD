@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.DashBoard;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.Assertion;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
@@ -15,6 +16,7 @@ public class OrderFufilmentDashboard extends TestBase {
     public void ORDER_FUFILLMENT() throws IOException, InterruptedException {
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
+        Assertion assertion = new Assertion(driver);
 
         login.Login();
 
@@ -23,7 +25,7 @@ public class OrderFufilmentDashboard extends TestBase {
         utility.DoSendKeysWhenReady("Datefrom_XPATH", "Datefrom_TEXT","Datefrom_TEXT", 50);
         utility.DoSendKeysWhenReady("Dateto_XPATH", "Dateto_TEXT","Dateto_TEXT", 50);
         utility.DoclickWhenReady("Dispalybtn_XPATH", "DD_TEXT",50);
-        utility.DoAssertXpathPresentWhenReady("TotalOrder_XPATH", "TotalOrderPassMsg_TEXT","TotalOrderPassMsg_TEXT", 20);
+        assertion.DoAssertXpathPresentWhenReady("TotalOrder_XPATH", "TotalOrderPassMsg_TEXT","TotalOrderPassMsg_TEXT", 20);
 
         Thread.sleep(1000);
         if (driver.findElements(By.xpath(Utility.fetchLocator("PaidOrder_XPATH"))).size() != 0) {

@@ -36,16 +36,19 @@ public class ContinueSavedOrder extends TestBase {
     @Test(priority = 4)
     public void ViewSavedOrder() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoscrolltoViewClickWhenReady("ViewSavedOrer_XPATH", "ViewSa_TEXT",40);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+
+        javaScriptUtil.DoscrolltoViewClickWhenReady("ViewSavedOrer_XPATH", "ViewSa_TEXT",40);
         utility.DoclickWhenReady("SelectOre11_XPATH", "ViewSa_TEXT",40);
     }
 
     @Test(priority = 5)
     public void AssertViewSavedOrder() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoAssertContainsWhenReady("AssertAlert_XPATH","alercon_TEXT","SOpass_TEXT","SOFail_TEXT",60);
-        utility.DoAssertXpathPresentWhenReady("Ooo_XPATH","SOpass_TEXT","SOFail_TEXT",60);
-        utility.DoAssertXpathPresentWhenReady("Ooo_XPATH","ASERTORE_XPATH","SOFail_TEXT",60);
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("AssertAlert_XPATH","alercon_TEXT","SOpass_TEXT","SOFail_TEXT",60);
+        assertion.DoAssertXpathPresentWhenReady("Ooo_XPATH","SOpass_TEXT","SOFail_TEXT",60);
+        assertion.DoAssertXpathPresentWhenReady("Ooo_XPATH","ASERTORE_XPATH","SOFail_TEXT",60);
     }
 
     @Test(priority = 6)
@@ -96,16 +99,19 @@ public class ContinueSavedOrder extends TestBase {
     @Test(priority = 11)
     public void ViewSavedOrderPOS() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoscrolltoViewClickWhenReady("ViewSavedOrer_XPATH", "ViewSa_TEXT",40);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+
+        javaScriptUtil.DoscrolltoViewClickWhenReady("ViewSavedOrer_XPATH", "ViewSa_TEXT",40);
         utility.DoclickWhenReady("SelectOre11_XPATH", "ViewSa_TEXT",40);
     }
 
     @Test(priority = 12)
     public void AssertViewSavedOrderPOS() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoAssertContainsWhenReady("AssertAlert_XPATH","alercon_TEXT","SOpass_TEXT","SOFail_TEXT",60);
-        utility.DoAssertXpathPresentWhenReady("Ooo_XPATH","SOpass_TEXT","SOFail_TEXT",60);
-        utility.DoAssertXpathPresentWhenReady("Ooo_XPATH","ASERTORE_XPATH","SOFail_TEXT",60);
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("AssertAlert_XPATH","alercon_TEXT","SOpass_TEXT","SOFail_TEXT",60);
+        assertion.DoAssertXpathPresentWhenReady("Ooo_XPATH","SOpass_TEXT","SOFail_TEXT",60);
+        assertion.DoAssertXpathPresentWhenReady("Ooo_XPATH","ASERTORE_XPATH","SOFail_TEXT",60);
     }
 
     @Test(priority = 13)

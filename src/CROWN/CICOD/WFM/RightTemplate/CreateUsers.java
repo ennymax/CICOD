@@ -15,6 +15,7 @@ public class CreateUsers extends TestBase {
         FileUpload fileUpload = new FileUpload();
         Utility utility = new Utility(driver);
         ExcelUtil excelUtil = new ExcelUtil(driver);
+        Assertion assertion = new Assertion(driver);
 
         SecureRandom rn = new SecureRandom();
         int resourcetype = rn.nextInt(3) + 1;
@@ -43,7 +44,7 @@ public class CreateUsers extends TestBase {
         utility.DoclickWhenReady("Newq11_XPATH", "u2_TEXT",50);
         excelUtil.DoclickWhenReady("Cll_XPATH",60);
         utility.DoclickWhenReady("CreateNewUser_XPATH", "Creta_TEXT",50);
-        utility.DoAssertContainsWhenReady("AssertNewUserCreation_XPATH","Su_TEXT" ,"DplPass_XPATH", "DplFail_XPATH",30);
+        assertion.DoAssertContainsWhenReady("AssertNewUserCreation_XPATH","Su_TEXT" ,"DplPass_XPATH", "DplFail_XPATH",30);
         utility.DoclickWhenReady("NewUserOKBTN_XPATH","Ok_TEXT",40);
     }
 }

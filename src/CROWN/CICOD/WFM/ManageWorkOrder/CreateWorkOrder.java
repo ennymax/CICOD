@@ -64,7 +64,7 @@ public class CreateWorkOrder extends TestBase {
         excelUtil.DoscrolltoViewClickFluentWait("cont_XPATH", 20);
         excelUtil.DoSelectValuesByIndex("cont_XPATH",5,20);
         excelUtil.DoclickWhenReady("niger_XPATH", 20);
-        javaScriptUtil.clickElementByJS("niger_XPATH");
+        javaScriptUtil.DoClickFluentwaitJS("niger_XPATH", 30);
 
         Thread.sleep(999999999);
         WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("city_XPATH")));

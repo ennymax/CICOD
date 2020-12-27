@@ -1,13 +1,16 @@
 package CROWN.CICOD.COM.Account;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.JavaScriptUtil;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+
 import java.awt.*;
 import java.io.IOException;
 import java.security.SecureRandom;
+
 import static org.testng.AssertJUnit.assertEquals;
 
 public class CreateCreditNote extends TestBase {
@@ -38,9 +41,10 @@ public class CreateCreditNote extends TestBase {
 
     @Test(priority = 5)
     public void CreateCreditNoteButton() throws IOException, InterruptedException {
-        Utility utility = new Utility(driver);
+        JavaScriptUtil utility = new JavaScriptUtil(driver);
         utility.DoscrolltoViewClickFluentWait("CreateCreditNote_XPATH", "CreateCN_TEXT", 60);
     }
+
     @Test(priority = 6)
     public void InputCustomerName() throws IOException, InterruptedException, AWTException {
         Utility utility = new Utility(driver);

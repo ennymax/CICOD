@@ -18,10 +18,10 @@ import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
 
-public class Utility extends TestBase{
+import static org.testng.AssertJUnit.assertEquals;
+
+public class Utility extends TestBase {
 
     WebDriver driver;
 
@@ -34,7 +34,7 @@ public class Utility extends TestBase{
         FileInputStream file = new FileInputStream("./Config/config.properties");
         Properties property = new Properties();
         property.load(file);
-        return 	property.get(key);
+        return property.get(key);
     }
 
     public static String fetchLocator(String key) throws IOException {
@@ -70,7 +70,7 @@ public class Utility extends TestBase{
 
     //**********************Send Keys ********************
 
-    public void DosendKeysRandomNumberFluentWait(String locator, String ObjectName ,int span, int timeOut) throws IOException, InterruptedException {
+    public void DosendKeysRandomNumberFluentWait(String locator, String ObjectName, int span, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         SecureRandom rn = new SecureRandom();
@@ -86,7 +86,7 @@ public class Utility extends TestBase{
     }
 
     public void DosendKeysRandomEmailsFluentWait(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
-         Thread.sleep(1100);
+        Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
         utility.DowaitForElementWithFluentWait(locator, timeOut);
@@ -123,7 +123,7 @@ public class Utility extends TestBase{
         System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
     }
 
-    public void DosendKeysRandomListwordsFluentWait(String locator,String ObjectName, int timeOut) throws IOException, InterruptedException {
+    public void DosendKeysRandomListwordsFluentWait(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Randomstuff randomstuff = new Randomstuff();
@@ -137,18 +137,6 @@ public class Utility extends TestBase{
         System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
     }
 
-    public void DoSendKeysByActionClassFluentWait(String locator, String value, String ObjectName, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
-        utility.DowaitForElementWithFluentWait(locator, timeOut);
-        WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
-        Actions ac = new Actions(driver);
-        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
-        ac.sendKeys((locat), Utility.fetchLocator(value)).perform();
-        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
-    }
-
     public void DosendKeyRRWhenReady(String locator, String actualText, String ObjectName, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
@@ -159,27 +147,6 @@ public class Utility extends TestBase{
         mcj.clear();
         mcj.sendKeys(actualText);
         System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
-    }
-
-    public void DoSendKeysByActionClassWhenReady(String locator, String actualText, String ObjectName, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        Actions ac = new Actions(driver);
-        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
-        ac.sendKeys((locat), Utility.fetchLocator(actualText)).perform();
-        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
-    }
-
-    public void DoClearActionclassWhenReady(String locator, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        Actions ac = new Actions(driver);
-        ac.sendKeys((locat), Keys.DELETE ).perform();
     }
 
     public void DoSendKeysWhenReady(String locator, String ObjectName, String actualText, int timeOut) throws IOException, InterruptedException {
@@ -202,7 +169,7 @@ public class Utility extends TestBase{
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
         utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
         element.clear();
-        element.sendKeys(Utility.fetchLocator(actualText) + Keys.ENTER + Keys.ENTER + Keys.ENTER );
+        element.sendKeys(Utility.fetchLocator(actualText) + Keys.ENTER + Keys.ENTER + Keys.ENTER);
         System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
     }
 
@@ -216,11 +183,11 @@ public class Utility extends TestBase{
         utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
         element.clear();
         String a = "@gmail.com";
-        element.sendKeys(randomstuff.ListRandom() + a );
+        element.sendKeys(randomstuff.ListRandom() + a);
         System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
     }
 
-    public void DosendKeysRandomNumberWhenReady(String locator, String ObjectName ,int span, int timeOut) throws IOException, InterruptedException {
+    public void DosendKeysRandomNumberWhenReady(String locator, String ObjectName, int span, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
@@ -235,7 +202,7 @@ public class Utility extends TestBase{
         System.out.println("waited for element to be present on the page -->" + timeOut + "secs");
     }
 
-    public void DosendKeysRandomListwordsWhenReady(String locator,String ObjectName, int timeOut) throws IOException, InterruptedException {
+    public void DosendKeysRandomListwordsWhenReady(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
@@ -283,7 +250,6 @@ public class Utility extends TestBase{
         Utility utility = new Utility(driver);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].scrollIntoView();", element);
         Actions builder = new Actions(driver);
@@ -291,75 +257,13 @@ public class Utility extends TestBase{
         System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
     }
 
-    public void DoswitchtoframeWhenReady(int frameIndex, int sleepindex ) throws IOException, InterruptedException {
+    public void DoswitchtoframeWhenReady(int frameIndex, int sleepindex) throws IOException, InterruptedException {
         Thread.sleep(sleepindex);
         driver.switchTo().frame(frameIndex);
         System.out.println("waited for frame to be present on the page -->" + sleepindex + " milliseconds");
     }
 
-    public void DohoverWhenReady(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        Actions builder = new Actions(driver);
-        WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
-        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
-    }
-
-
     //**********************Clicks ********************
-    public void DoubleClickActionWhenReady(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement element11p = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
-        element11p.click();
-        Actions actionp = new Actions(driver);
-        actionp.moveToElement(element11p).doubleClick().perform();
-        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
-    }
-
-    public void DoClickActionclassWhenReady(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
-        Actions ac = new Actions(driver);
-        ac.click(locat).perform();
-        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
-    }
-
-    public void DoClickActionclassFluentWait(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
-        utility.DowaitForElementWithFluentWait(locator, timeOut);
-        WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
-        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
-        Actions ac = new Actions(driver);
-        ac.click(locat).perform();
-        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
-    }
-
-    public void DoscrolltoViewClickFluentWait(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
-        utility.DowaitForElementWithFluentWait(locator, timeOut);
-        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
-        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", ti11);
-        ti11.click();
-        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
-    }
-
     public void DoclickFluentWait(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
@@ -375,76 +279,11 @@ public class Utility extends TestBase{
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
-            WebDriverWait wait = new WebDriverWait(driver, timeOut);
-            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-            utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
-            element.click();
-        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
-    }
-
-    public void DoscrolltoViewClickWhenReady(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement ti11 = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", ti11);
-        ti11.click();
-        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
-    }
-
-    //**********************Assertion********************
-    public void DoAssertContainsWhenReady(String locator, String Containstext, String DisplayPassmsg, String DisplayFailmsg, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement msg11 = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        System.out.println(msg11);
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains(Utility.fetchLocator(Containstext))) {
-            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
-        } else {
-            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmsg));
-        }
-    }
-
-    public void DoAssertXpathPresentWhenReady(String locator, String DisplayPassmessage, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        if ( wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator))))).isDisplayed()) {
-            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmessage));
-        } else {
-            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmessage));
-        }
-    }
-
-    public void DoAssertXpathAbsentWhenReady(String locator, String DisplayPassmessage, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1100);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        if (driver.findElements(By.xpath(Utility.fetchLocator(locator))).size() == 0) {
-            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmessage));
-        } else {
-            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmessage));
-        }
-    }
-
-    public void DoAssertEqualWhenReady(String locator, String assertionString,String DisplayPassmsg, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1600);
-        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement msg11 = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
-        try {
-            assertEquals(assertionString, driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
-            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
-        } catch (Throwable e) {
-            System.out.println(driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());
-            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmessage));
-        }
+        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
+        element.click();
+        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
     }
 
     //**********************CheckBox and Radio Button********************
@@ -532,7 +371,7 @@ public class Utility extends TestBase{
     }
 
     //***************************Get Tittle ******************************
-    public void DoAssertTittle(String TittleText,String DisplayPassmsg, String DisplayFailmessage) throws IOException, InterruptedException {
+    public void DoAssertTittle(String TittleText, String DisplayPassmsg, String DisplayFailmessage) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         String expectedTitle = Utility.fetchLocator(TittleText);
@@ -609,7 +448,7 @@ public class Utility extends TestBase{
             }
 
         }
-        test.log(Status.PASS, Utility.fetchLocator(ObjectName) +" is Displayed");
+        test.log(Status.PASS, Utility.fetchLocator(ObjectName) + " is Displayed");
 
         return flag;
 
@@ -682,7 +521,7 @@ public class Utility extends TestBase{
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(timeOut))
-                .pollingEvery(Duration.ofSeconds(3))
+                .pollingEvery(Duration.ofSeconds(2))
                 .ignoring(NoSuchElementException.class);
 
         WebElement element = wait.until(new Function<WebDriver, WebElement>() {

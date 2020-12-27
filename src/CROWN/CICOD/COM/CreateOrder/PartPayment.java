@@ -3,18 +3,16 @@ package CROWN.CICOD.COM.CreateOrder;
 import CROWN.Base.TestBase;
 import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
-import io.qameta.allure.*;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.context.annotation.Description;
 import org.testng.annotations.Test;
-import java.io.IOException;
-import java.security.SecureRandom;
 
-import static org.testng.AssertJUnit.assertEquals;
+import java.io.IOException;
 
 @Epic("Part Payment")
 @Story("Test Part Payment Module..")
@@ -120,7 +118,9 @@ public class PartPayment extends TestBase {
     @Test(priority = 11)
     public void PaymentOption() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH", "PaymentOPT_TEXT", 50);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+
+        javaScriptUtil.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH", "PaymentOPT_TEXT", 50);
         utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT", 40);
     }
 
@@ -129,7 +129,9 @@ public class PartPayment extends TestBase {
     @Test(priority = 12)
     public void PartPayment() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoscrolltoViewClickWhenReady("PartPayment_XPATH", "MakePayment_TEXT", 40);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+
+        javaScriptUtil.DoscrolltoViewClickWhenReady("PartPayment_XPATH", "MakePayment_TEXT", 40);
     }
 
     @Description("Payment")
@@ -137,7 +139,8 @@ public class PartPayment extends TestBase {
     @Test(priority = 13)
     public void Payment() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT", 40);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+        javaScriptUtil.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT", 40);
     }
 
     @Description("Pay Amount for Part Payment")
@@ -151,10 +154,9 @@ public class PartPayment extends TestBase {
     @Description("Select Payment Date")
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 17)
-    public void SelectPaymentDate() throws IOException, InterruptedException {
+    public void SelectPaymentDate() throws IOException {
         DatePicker datePicker = new DatePicker(driver);
         datePicker.DatePickerJE("PartPaymentDate_XPATH","10/10/2020");
-
     }
 
     @Description("Proceed To Make Part Payment")

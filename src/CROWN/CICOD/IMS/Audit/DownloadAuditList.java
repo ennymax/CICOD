@@ -50,7 +50,5 @@ public class DownloadAuditList extends TestBase {
         Thread.sleep(5400);
         driver.findElement(By.xpath(Utility.fetchLocator("DownloadAuditList_XPATH"))).click();
 
-        driver.quit();
-        System.out.println("********************DOWNLOAD AUDIT LIST********************");
     }
 }

@@ -78,16 +78,16 @@ public class FileUpload extends TestBase {
             //Robot Class
             Robot robot = new Robot();
             //Keyboard Action : CTRL+V
-            Thread.sleep(2500);
+            Thread.sleep(1000);
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_V);
 
-            Thread.sleep(2500);
+            Thread.sleep(1000);
             robot.keyRelease(KeyEvent.VK_CONTROL);
             robot.keyRelease(KeyEvent.VK_V);
 
             //Keyboard Action : Enter
-            Thread.sleep(2500);
+            Thread.sleep(500);
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyPress(KeyEvent.VK_ENTER);
 

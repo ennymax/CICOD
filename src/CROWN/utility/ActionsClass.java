@@ -1,71 +1,136 @@
 package CROWN.utility;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class ActionsClass {
-	static WebDriver driver;
 
-	public static void main(String[] args) throws InterruptedException {
+    WebDriver driver;
 
-		WebDriverManager.chromedriver().setup();
+    public ActionsClass(WebDriver driver) {
+        this.driver = driver;
+    }
 
-		driver = new ChromeDriver();
+    public void DoSendKeysWithMoveToElement(String locator, String value, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(500);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        Actions action = new Actions(driver);
+        action.moveToElement(element).sendKeys(value).build().perform();
+    }
 
-		driver.get("http://app.hubspot.com/");
-		Thread.sleep(6000);
-		
-		By email = By.id("username");
-		By Password = By.id("password");
-		By Login = By.id("loginBtn");
+    public void DoActionsSendKeys(String locator, String value, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(1100);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        Actions action = new Actions(driver);
+        action.sendKeys(element, value).perform();
+    }
 
-		Actions act = new Actions(driver);
-		
-		act.sendKeys(driver.findElement(email), "test@gmail.com").perform();;
-		act.sendKeys(driver.findElement(Password), "test@123").perform();
-		act.sendKeys(Keys.ENTER).perform();
-		
-		
-		//act.moveToElement(driver.findElement(email)).sendKeys("test@gmail.com").build().perform();
-//		
-//		act.sendKeys(driver.findElement(email), "test@gmail.com").perform();
-//		act.sendKeys(driver.findElement(Password), "test@123").perform();
-//		act.click(driver.findElement(Login)).perform();
-		
-//		doActionsSendKeys(email, "test@gmail.com");
-//		doActionsSendKeys(Password, "test@123");
-//		doActionsClick(Login);
-		
-	}
+    public void DoActionsSendKeysRandomListword(String locator, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(1100);
+        Randomstuff randomstuff = new Randomstuff();
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement element = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        Actions action = new Actions(driver);
+        action.sendKeys(element, randomstuff.ListRandom()).perform();
+    }
 
-	public static WebElement getElement(By locator) {
-		return driver.findElement(locator);
-	}
-	
-	public static void doActionsSendKeys(By locator, String value) {
-		Actions action = new Actions(driver);
-		action.sendKeys(getElement(locator), value).perform();
-	}
-	
-	public static void doActionsClick(By locator) {
-		Actions action = new Actions(driver);
-		action.click(getElement(locator)).perform();
-	}
-	
-	public static void doSendKeysWithMoveToElement(By locator, String value) {
-		Actions action = new Actions(driver);
-		action.moveToElement(getElement(locator)).sendKeys(value).build().perform();
-	}
-	
-	public static void doClickWithMoveToElement(By locator) {
-		Actions action = new Actions(driver);
-		action.moveToElement(getElement(locator)).click().build().perform();
-	}
-	
-	
+    public void DoSendKeysByActionClassFluentWait(String locator, String value, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(500);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        Utility utility = new Utility(driver);
+        utility.DowaitForElementWithFluentWait(locator, timeOut);
+        WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        Actions ac = new Actions(driver);
+        ac.sendKeys((locat), Utility.fetchLocator(value)).perform();
+    }
+
+    public void DoSendKeysByActionClassWhenReady(String locator, String actualText, String ObjectName, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(500);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        Utility utility = new Utility(driver);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        Actions ac = new Actions(driver);
+        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
+        ac.sendKeys((locat), Utility.fetchLocator(actualText)).perform();
+        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
+    }
+
+
+    //**********************Clicks ********************
+    public void DoActionsClick(String locator, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(500);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        Actions action = new Actions(driver);
+        action.click(element).perform();
+    }
+
+    public void DoClickWithMoveToElement(String locator, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(500);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        Actions action = new Actions(driver);
+        action.moveToElement(element).click().build().perform();
+    }
+
+    public void DoDoubleClickActionWhenReady(String locator, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(1100);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        Utility utility = new Utility(driver);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement element11p = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        element11p.click();
+        Actions actionp = new Actions(driver);
+        actionp.moveToElement(element11p).doubleClick().perform();
+    }
+
+    public void DoClickActionclassWhenReady(String locator, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(1100);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        Utility utility = new Utility(driver);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        Actions ac = new Actions(driver);
+        ac.click(locat).perform();
+    }
+
+    public void DoClickActionclassFluentWait(String locator, String ObjectName, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(1100);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        Utility utility = new Utility(driver);
+        utility.DowaitForElementWithFluentWait(locator, timeOut);
+        WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
+        Actions ac = new Actions(driver);
+        ac.click(locat).perform();
+        System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
+    }
+
+    public void DoClearActionclassWhenReady(String locator, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(500);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        Actions ac = new Actions(driver);
+        ac.sendKeys((locat), Keys.DELETE).perform();
+    }
+
+    public void DoHovereffectClickWhenReady(String locator, int timeOut) throws IOException, InterruptedException {
+    	Thread.sleep(500);
+        Actions actions = new Actions(driver);
+		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebElement subMenu = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        actions.moveToElement(subMenu);
+        actions.click().build().perform();
+    }
 }

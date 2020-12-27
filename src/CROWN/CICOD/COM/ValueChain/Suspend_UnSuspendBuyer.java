@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.ValueChain;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.Assertion;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
@@ -18,6 +19,7 @@ public class Suspend_UnSuspendBuyer extends TestBase {
     public void SUSPEND_UNSUSPEND_BUYER() throws IOException, InterruptedException {
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
+        Assertion assertion = new Assertion(driver);
 
         login.Login();
 
@@ -26,7 +28,7 @@ public class Suspend_UnSuspendBuyer extends TestBase {
         utility.DoclickWhenReady("ValuechainByers_XPATH", "Buyersbtn_TEXT",60);
         utility.DoclickWhenReady("BuyerActionBTN_XPATH", "BuyerActbtn_TEXT",60);
         utility.DoclickWhenReady("ProductAvailableForBuy_XPATH", "Productav_TEXT",60);
-        utility.DoAssertContainsWhenReady("AssertProductCode_XPATH","cont_TEXT","vpass_TEXT","vfail_TEXT",60);
+        assertion.DoAssertContainsWhenReady("AssertProductCode_XPATH","cont_TEXT","vpass_TEXT","vfail_TEXT",60);
 
         driver.navigate().back();
 

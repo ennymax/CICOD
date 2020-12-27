@@ -1,10 +1,7 @@
 package CROWN.CICOD.COM.CustomerManagment;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.Login;
-import CROWN.utility.Randomstuff;
-import CROWN.utility.ScreenShot;
-import CROWN.utility.Utility;
+import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,6 +17,7 @@ public class EnableFreeDelivery extends TestBase {
         Login login = new Login(driver);
         Randomstuff randomstuff = new Randomstuff();
         Utility utility = new Utility(driver);
+        Assertion assertion = new Assertion(driver);
 
         login.Login();
 
@@ -227,6 +225,6 @@ public class EnableFreeDelivery extends TestBase {
         driver.switchTo().frame(0);
 
         Thread.sleep(2000);
-        utility.DoAssertEqualWhenReady("ASSenable_XPATH","NGN203.00","AssertDelPass_TEXT","AssertDelFailed_TEXT",60);
+        assertion.DoAssertEqualWhenReady("ASSenable_XPATH","NGN203.00","AssertDelPass_TEXT","AssertDelFailed_TEXT",60);
     }
 }

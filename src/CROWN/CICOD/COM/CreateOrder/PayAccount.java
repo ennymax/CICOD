@@ -113,7 +113,8 @@ public class PayAccount extends TestBase {
     @Test(priority = 11)
     public void PaymentOption() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH", "PaymentOPT_TEXT", 50);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+        javaScriptUtil.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH", "PaymentOPT_TEXT", 50);
         utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT", 40);
     }
 
@@ -122,7 +123,9 @@ public class PayAccount extends TestBase {
     @Test(priority = 12)
     public void PayAccount() throws IOException, InterruptedException {
         Utility utility = new Utility(driver);
-        utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT", 40);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+
+        javaScriptUtil.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT", 40);
         utility.DowaitandAcceptAlerwhenReady(60);
     }
 
@@ -130,8 +133,8 @@ public class PayAccount extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 13)
     public void AssertPayAccount() throws IOException, InterruptedException {
-        Utility utility = new Utility(driver);
-        utility.DoAssertContainsWhenReady("AssertOrdeIDgenerated_XPATH", "OrDerID_TEXT", "OrDerID_TEXT", "OrderIDPass_TEXT", 30);
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("AssertOrdeIDgenerated_XPATH", "OrDerID_TEXT", "OrDerID_TEXT", "OrderIDPass_TEXT", 30);
     }
 
     @Description("Proceed to make PAyment")

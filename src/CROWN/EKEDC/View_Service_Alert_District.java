@@ -1,10 +1,8 @@
 package CROWN.EKEDC;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import java.io.IOException;
 

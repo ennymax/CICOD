@@ -48,7 +48,6 @@ public class VideoRecorder extends ScreenRecorder {
                 null, file, methodName);
 
         screenRecorder.start();
-
     }
 
     public static void stopRecording() throws Exception {
@@ -68,5 +67,4 @@ public class VideoRecorder extends ScreenRecorder {
                 name + "-" + dateFormat.format(new Date()) + "." + Registry.getInstance().getExtension(fileFormat));
 
     }
-
 }

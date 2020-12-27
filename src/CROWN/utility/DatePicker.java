@@ -20,7 +20,7 @@ public class DatePicker extends TestBase {
         WebElement select = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].type = arguments[1]", select, "text");
-        driver.findElement(By.xpath(Utility.fetchLocator(locator))).sendKeys(Date);
+        select.sendKeys(Date);
     }
 
     public static void SetDate(String locator, String Date, WebDriver driver) {

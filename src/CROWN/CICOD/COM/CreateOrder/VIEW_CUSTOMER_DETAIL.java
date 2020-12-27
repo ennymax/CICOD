@@ -1,9 +1,7 @@
 package CROWN.CICOD.COM.CreateOrder;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.Login;
-import CROWN.utility.ScreenShot;
-import CROWN.utility.Utility;
+import CROWN.utility.*;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
@@ -14,6 +12,8 @@ public class VIEW_CUSTOMER_DETAIL extends TestBase {
         ScreenShot screenshot = new ScreenShot(driver);
         Login login = new Login(driver);
         Utility utility = new Utility(driver);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+        Assertion assertion = new Assertion(driver);
 
         login.Login();
 
@@ -23,9 +23,9 @@ public class VIEW_CUSTOMER_DETAIL extends TestBase {
         utility.DoclickWhenReady("SearchByName_XPATH", "SearchBox_TEXT",40);
         utility.DoSendKeysWhenReady("SeaerchInput_XPATH","CustomerFirstname_TEXT","CustomerFirstname_TEXT", 40);
         utility.DoclickWhenReady("Searchbtn_XPATH", "SearchBTN_TEXT",40);
-        utility.DoAssertXpathPresentWhenReady("SearchByNameAssertion_XPATH","Searched_TEXT","Sbynamepass_TEXT", 40);
-        utility.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", "Cus_TEXT",40);
-        utility.DoAssertXpathPresentWhenReady("assertdisplayeddetails_XPATH","Cus_TEXT","DisMessag_TEXT", 20);
+        assertion.DoAssertXpathPresentWhenReady("SearchByNameAssertion_XPATH","Searched_TEXT","Sbynamepass_TEXT", 40);
+        javaScriptUtil.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", "Cus_TEXT",40);
+        assertion.DoAssertXpathPresentWhenReady("assertdisplayeddetails_XPATH","Cus_TEXT","DisMessag_TEXT", 20);
         screenshot.ScreenShotWebElement("assertdisplayeddetails_XPATH", 30);
     }
 }

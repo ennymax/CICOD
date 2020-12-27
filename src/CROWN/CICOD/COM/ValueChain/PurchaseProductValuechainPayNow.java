@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.ValueChain;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.Assertion;
 import CROWN.utility.Login;
 import CROWN.utility.ScreenShot;
 import CROWN.utility.Utility;
@@ -21,6 +22,7 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         Login login = new Login(driver);
 
         login.LoginDefault();
+        Assertion assertion = new Assertion(driver);
 
         //COM
         Thread.sleep(2000);
@@ -211,6 +213,6 @@ public class PurchaseProductValuechainPayNow extends TestBase {
         jse2llm.executeScript("arguments[0].scrollIntoView();", ti112llm);
         ti112llm.click();
 
-        utility.DoAssertXpathPresentWhenReady("con1_XPATH", "UssdPass_TEXT", "UssdFail_TEXT", 30);
+        assertion.DoAssertXpathPresentWhenReady("con1_XPATH", "UssdPass_TEXT", "UssdFail_TEXT", 30);
     }
 }

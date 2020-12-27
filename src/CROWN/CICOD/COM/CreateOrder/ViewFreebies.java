@@ -1,6 +1,8 @@
 package CROWN.CICOD.COM.CreateOrder;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.Assertion;
+import CROWN.utility.JavaScriptUtil;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
@@ -21,6 +23,8 @@ public class ViewFreebies extends TestBase {
         SecureRandom rn = new SecureRandom();
         int st = rn.nextInt(3) + 1;
         Utility utility = new Utility(driver);
+        Assertion assertion = new Assertion(driver);
+        JavaScriptUtil actionsClass = new JavaScriptUtil(driver);
 
         login.Login();
 
@@ -29,10 +33,10 @@ public class ViewFreebies extends TestBase {
         utility.DoclickWhenReady("SearchByName_XPATH", "SearchBox_TEXT",40);
         utility.DoSendKeysWhenReady("SeaerchInput_XPATH","CustomerFirstname_TEXT" ,"CustomerName_TEXT", 40);
         utility.DoclickWhenReady("Searchbtn_XPATH", "SearchBTN_TEXT",40);
-        utility.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", "Cus_TEXT",40);
+        actionsClass.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", "Cus_TEXT",40);
 
 
-        utility.DoAssertContainsWhenReady("AssertSearchByName_XPATH", "Searched_TEXT","em_TEXT", "SBN_TEXT",30);
+        assertion.DoAssertContainsWhenReady("AssertSearchByName_XPATH", "Searched_TEXT","em_TEXT", "SBN_TEXT",30);
 
         //SEARCH PRODUCT
         Thread.sleep(2000);
@@ -115,10 +119,10 @@ public class ViewFreebies extends TestBase {
         Select sel11lla = new Select(ele111llq);
         sel11lla.selectByIndex(2);
 
-        utility.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH","PaymentOPT_TEXT",50);
+        actionsClass.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH","PaymentOPT_TEXT",50);
         utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT",40);
-        utility.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT",40);
+        actionsClass.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT",40);
         utility.DowaitandAcceptAlerwhenReady(60);
-        utility.DoAssertContainsWhenReady("AssertOrdeIDgenerated_XPATH", "OrDerID_TEXT","OrDerID_TEXT", "OrderIDPass_TEXT",30);
+        assertion.DoAssertContainsWhenReady("AssertOrdeIDgenerated_XPATH", "OrDerID_TEXT","OrDerID_TEXT", "OrderIDPass_TEXT",30);
     }
 }

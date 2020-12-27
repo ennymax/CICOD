@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.Settings;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.JavaScriptUtil;
 import CROWN.utility.Login;
 import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
@@ -35,7 +36,9 @@ public class SuspendUnsuspendReasonforRefund extends TestBase {
         jse.executeScript("arguments[0].scrollIntoView();", ti11);
         ti11.click();
 
-        utility.DoscrolltoViewClickWhenReady("rActionBTN_XPATH","Act_TEXT",60);
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+
+        javaScriptUtil.DoscrolltoViewClickWhenReady("rActionBTN_XPATH","Act_TEXT",60);
 
         Thread.sleep(2000);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("rsusend_XPATH")));
@@ -45,7 +48,7 @@ public class SuspendUnsuspendReasonforRefund extends TestBase {
         driver.switchTo().alert().accept();
         test.log(Status.PASS, "Reason for Refund was suspended successfully");
 
-        utility.DoscrolltoViewClickWhenReady("rActionBTN_XPATH","Act_TEXT",60);
+        javaScriptUtil.DoscrolltoViewClickWhenReady("rActionBTN_XPATH","Act_TEXT",60);
 
         Thread.sleep(2000);
         WebElement elementz = driver.findElement(By.xpath(Utility.fetchLocator("rUnsuspend_XPATH")));
