@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Assertion extends TestBase {
@@ -24,7 +23,7 @@ public class Assertion extends TestBase {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement msg11 = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        WebElement msg11 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         System.out.println(msg11);
         String text11 = msg11.getText();
         if (msg11.isEnabled() && text11.contains(Utility.fetchLocator(Containstext))) {
@@ -38,7 +37,7 @@ public class Assertion extends TestBase {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        if (wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator))))).isDisplayed()) {
+        if (wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator)))).isDisplayed()) {
             test.log(Status.PASS, Utility.fetchLocator(DisplayPassmessage));
         } else {
             test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmessage));
@@ -48,7 +47,8 @@ public class Assertion extends TestBase {
     public void DoAssertXpathAbsentWhenReady(String locator, String DisplayPassmessage, String DisplayFailmessage, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        if (driver.findElements(By.xpath(Utility.fetchLocator(locator))).size() == 0) {
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        if (wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator)))).isDisplayed()) {
             test.log(Status.PASS, Utility.fetchLocator(DisplayPassmessage));
         } else {
             test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmessage));
@@ -60,7 +60,7 @@ public class Assertion extends TestBase {
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         try {
-            assertEquals(assertionString, wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator))))).getText());
+            assertEquals(assertionString, wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator)))).getText());
             test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
         } catch (Throwable e) {
             System.out.println(driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());

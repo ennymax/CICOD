@@ -21,7 +21,7 @@ public class ActionsClass {
     public void DoSendKeysWithMoveToElement(String locator, String value, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(500);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         Actions action = new Actions(driver);
         action.moveToElement(element).sendKeys(value).build().perform();
     }
@@ -29,7 +29,7 @@ public class ActionsClass {
     public void DoActionsSendKeys(String locator, String value, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         Actions action = new Actions(driver);
         action.sendKeys(element, value).perform();
     }
@@ -38,7 +38,7 @@ public class ActionsClass {
         Thread.sleep(1100);
         Randomstuff randomstuff = new Randomstuff();
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement element = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         Actions action = new Actions(driver);
         action.sendKeys(element, randomstuff.ListRandom()).perform();
     }
@@ -58,7 +58,7 @@ public class ActionsClass {
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        WebElement locat = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         Actions ac = new Actions(driver);
         utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
         ac.sendKeys((locat), Utility.fetchLocator(actualText)).perform();
@@ -70,7 +70,7 @@ public class ActionsClass {
     public void DoActionsClick(String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(500);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         Actions action = new Actions(driver);
         action.click(element).perform();
     }
@@ -78,7 +78,7 @@ public class ActionsClass {
     public void DoClickWithMoveToElement(String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(500);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         Actions action = new Actions(driver);
         action.moveToElement(element).click().build().perform();
     }
@@ -86,9 +86,8 @@ public class ActionsClass {
     public void DoDoubleClickActionWhenReady(String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        Utility utility = new Utility(driver);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement element11p = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        WebElement element11p = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         element11p.click();
         Actions actionp = new Actions(driver);
         actionp.moveToElement(element11p).doubleClick().perform();
@@ -99,7 +98,7 @@ public class ActionsClass {
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         Utility utility = new Utility(driver);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        WebElement locat = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         Actions ac = new Actions(driver);
         ac.click(locat).perform();
     }
@@ -120,7 +119,7 @@ public class ActionsClass {
         Thread.sleep(500);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
-        WebElement locat = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        WebElement locat = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         Actions ac = new Actions(driver);
         ac.sendKeys((locat), Keys.DELETE).perform();
     }
@@ -129,7 +128,7 @@ public class ActionsClass {
     	Thread.sleep(500);
         Actions actions = new Actions(driver);
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
-		WebElement subMenu = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+        WebElement subMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         actions.moveToElement(subMenu);
         actions.click().build().perform();
     }
