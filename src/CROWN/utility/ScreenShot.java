@@ -77,6 +77,17 @@ public class ScreenShot extends TestBase {
             System.out.println("Error in the captureAndDisplayScreenShot method: " + e.getMessage());
         }
     }
+    public String getScreenshot() {
+        File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
+        File destination = new File(path);
+        try {
+            FileUtils.copyFile(src, destination);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return path;
+    }
 
     public String ScreenShotFullPageTestBase() throws IOException, InterruptedException {
         Path path = Paths.get(OUTPUT_FOLDER);

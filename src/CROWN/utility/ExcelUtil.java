@@ -212,8 +212,7 @@ public class ExcelUtil extends TestBase {
     public void DoscrolltoViewClickFluentWait(String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DowaitForElementWithFluentWait(locator, timeOut);
+        DowaitForElementWithFluentWait(locator, timeOut);
         WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].scrollIntoView();", ti11);
@@ -223,8 +222,7 @@ public class ExcelUtil extends TestBase {
     public void DoclickFluentWait(String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
-        ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DowaitForElementWithFluentWait(locator, timeOut);
+        DowaitForElementWithFluentWait(locator, timeOut);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         element.click();
     }
@@ -264,8 +262,7 @@ public class ExcelUtil extends TestBase {
 
     public void DoCheckBoxFluentWait(String locator, String NameOfEvent, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
-        ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DowaitForElementWithFluentWait(locator, timeOut);
+        DowaitForElementWithFluentWait(locator, timeOut);
         WebElement check_box = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
     }
 
@@ -277,8 +274,7 @@ public class ExcelUtil extends TestBase {
 
     public void DoRadioButtonFluentWait(String locator, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1200);
-        ExcelUtil excelUtil = new ExcelUtil(driver);
-        excelUtil.DowaitForElementWithFluentWait(locator, timeOut);
+        DowaitForElementWithFluentWait(locator, timeOut);
         WebElement check_box = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         if (check_box.isSelected()) {
         } else {

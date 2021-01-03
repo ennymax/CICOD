@@ -23,7 +23,7 @@ public class ActionsClass {
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         Actions action = new Actions(driver);
-        action.moveToElement(element).sendKeys(value).build().perform();
+        action.moveToElement(element).sendKeys(Utility.fetchLocator(value)).build().perform();
     }
 
     public void DoActionsSendKeys(String locator, String value, int timeOut) throws IOException, InterruptedException {
@@ -31,7 +31,7 @@ public class ActionsClass {
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
         Actions action = new Actions(driver);
-        action.sendKeys(element, value).perform();
+        action.sendKeys(element, Utility.fetchLocator(value)).perform();
     }
 
     public void DoActionsSendKeysRandomListword(String locator, int timeOut) throws IOException, InterruptedException {

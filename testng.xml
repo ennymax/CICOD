@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" >
+    <test verbose="2" preserve-order="true" name="C:/Automation/CROWN/src/CROWN/CICOD/COM/CreateOrder/ApplyDiscount.java" >
+        <classes>
+            <class name="CROWN.CICOD.COM.CreateOrder.ApplyDiscount" >
+                <methods>
+                <include name="login"/>
+                <include name="CustomerOrderManagement"/>
+                <include name="CreateOrder"/>
+                <include name="SearchCustomerByName"/>
+                <include name="ViewCustomerDetails"/>
+                <include name="AssertViewCustomerDetails"/>
+                <include name="SearchProduct"/>
+                <include name="AddProducttoChart"/>
+                <include name="ApplyDiscount"/>
+                <include name="SelectRegion"/>
+                <include name="MakePayment"/>
+                <include name="RavPay"/>
+                <include name="AssertPayOnline"/>
+            </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

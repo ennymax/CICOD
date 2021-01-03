@@ -22,8 +22,9 @@ public class JavaScriptUtil {
 		Thread.sleep(1100);
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
 		Utility utility = new Utility(driver);
+		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		utility.DowaitForElementWithFluentWait(locator, timeOut);
-		WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+		WebElement ti11 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
 		utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("arguments[0].scrollIntoView();", ti11);
@@ -36,7 +37,7 @@ public class JavaScriptUtil {
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
 		Utility utility = new Utility(driver);
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
-		WebElement ti11 = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+		WebElement ti11 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
 		utility.isElementDisplayedandEnabled(locator, ObjectName, timeOut);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("arguments[0].scrollIntoView();", ti11);
@@ -46,15 +47,16 @@ public class JavaScriptUtil {
 
 	public void DoClickFluentwaitJS(String locator, int timeOut) throws IOException, InterruptedException {
 		Utility utility = new Utility(driver);
+		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		utility.DowaitForElementWithFluentWait(locator, timeOut);
-		WebElement ele = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+		WebElement ele = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", ele);
 	}
 
 	public void DoClickWhenReadyJS(String locator, int timeOut) throws IOException, InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
-		WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
+		WebElement ele = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", ele);
 	}

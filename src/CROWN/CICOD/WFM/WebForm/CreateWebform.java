@@ -6,6 +6,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
+import org.openqa.selenium.By;
 import org.springframework.context.annotation.Description;
 import org.testng.annotations.Test;
 import java.awt.*;
@@ -107,14 +108,96 @@ public class CreateWebform extends TestBase {
         actionsClass.DoDoubleClickActionWhenReady("Webformqueue_XPATH", 30);
     }
 
-    @Description("Queue")
+    @Description("Search Queue")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 12)
-    public void SelectQueueType() throws IOException, InterruptedException, AWTException {
+    public void SearchQueue() throws IOException, InterruptedException, AWTException {
         ActionsClass actionsClass = new ActionsClass(driver);
-        Thread.sleep(5000);
-        actionsClass.DoClickWithMoveToElement("Orderfufil_XPATH", 30);
-        actionsClass.DoClickWithMoveToElement("source_XPATH", 30);
-        Thread.sleep(99999999);
+        actionsClass.DoActionsSendKeys("SearchQue_XPATH","Ooo_TEXT",30);
+    }
+
+    @Description("Assert Search Queue")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 13)
+    public void AssertSearchQueue() throws IOException, InterruptedException, AWTException {
+       Assertion assertion = new Assertion(driver);
+       assertion.DoAssertXpathPresentWhenReady("asorder_XPATH","Searchpass_TEXT","Searchfailed_TEXT",20);
+    }
+
+    @Description("Select Queue Type")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 14)
+    public void SelectQueueType() throws IOException, InterruptedException, AWTException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("Orderr_XPATH","Ooo_TEXT",30);
+        utility.DoclickWhenReady("wfmConfig_XPATH","Ooo_TEXT",30);
+    }
+
+    @Description("Web Form Queue Type")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 15)
+    public void Webform_QueueType() throws IOException, InterruptedException, AWTException {
+        ActionsClass actionsClass = new ActionsClass(driver);
+        actionsClass.DoDoubleClickActionWhenReady("WebQueueT_XPATH", 30);
+    }
+
+    @Description("Webform_Queue Type PickUp")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 16)
+    public void Webform_QueuetypePickUp() throws IOException, InterruptedException, AWTException {
+        ActionsClass actionsClass = new ActionsClass(driver);
+        Utility utility = new Utility(driver);
+        actionsClass.DoClickWithMoveToElement("Pickup_XPATH", 30);
+        utility.DoclickWhenReady("wfmConfig_XPATH","Ooo_TEXT",30);
+    }
+
+    @Description("Initila Email Response")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 17)
+    public void InitialEmailResponse() throws IOException, InterruptedException, AWTException {
+        ActionsClass actionsClass = new ActionsClass(driver);
+        actionsClass.DoSendKeysByActionClassFluentWait("InitialEmailRespoms_XPATH", "Decrib_TEXT", 30);
+    }
+
+    @Description("Display From for a  Particular Period")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 18)
+    public void DisplayFromPeriod() throws IOException, InterruptedException, AWTException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("DisplayformPeriod_XPATH","Ooo_TEXT",30);
+    }
+
+    @Description("StartDate")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 19)
+    public void StartDate() throws IOException, InterruptedException, AWTException {
+     DatePicker datePicker = new DatePicker(driver);
+     datePicker.DatePickerJE("WebDatefrom_XPATH","2020-10-22");
+    }
+
+    @Description("EndDate")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 20)
+    public void EndDate() throws IOException, InterruptedException, AWTException {
+        DatePicker datePicker = new DatePicker(driver);
+        Utility utility = new Utility(driver);
+        datePicker.DatePickerJE("WebDateTo_XPATH","2021-10-22");
+        utility.DoclickWhenReady("wfmConfig_XPATH","Ooo_TEXT",30);
+    }
+
+    @Description("EndDate")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 21)
+    public void AllowAttachedFile() throws IOException, InterruptedException, AWTException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("AllowAttachedFi_XPATH","Ooo_TEXT",30);
+    }
+
+    @Description("Save Web Form")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 22)
+    public void SaveWebForm() throws IOException, InterruptedException, AWTException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("Save_XPATH","Ooo_TEXT",30);
     }
 }

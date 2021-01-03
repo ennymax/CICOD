@@ -1,6 +1,7 @@
 package CROWN.CICOD.COM.CreateOrder;
 
 import CROWN.Base.TestBase;
+import CROWN.TestNGlisteners.TestAllureListener;
 import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import io.qameta.allure.Epic;
@@ -10,12 +11,13 @@ import io.qameta.allure.Story;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.springframework.context.annotation.Description;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 @Epic("Part Payment")
 @Story("Test Part Payment Module..")
+@Listeners(TestAllureListener.class)
 public class PartPayment extends TestBase {
 
     @Description("Login")
@@ -128,9 +130,7 @@ public class PartPayment extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 12)
     public void PartPayment() throws IOException, InterruptedException {
-        Utility utility = new Utility(driver);
         JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
-
         javaScriptUtil.DoscrolltoViewClickWhenReady("PartPayment_XPATH", "MakePayment_TEXT", 40);
     }
 

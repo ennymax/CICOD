@@ -58,7 +58,6 @@ public class TestBase {
 
     private static final String OUTPUT_FOLDER = "./Report/";
     private static final String FILE_NAME = "Report" + System.currentTimeMillis() + ".html";
-    //private static final String OUTPUT_FOLDER = "/root/IdeaProjects/CICOD/Report/";
 
     @BeforeSuite
     public void setup() throws IOException {
@@ -298,12 +297,6 @@ public class TestBase {
         }
 
         return theNewestFile;
-    }
-
-    public String getOperatingSystemSystemUtils() {
-        String os = SystemUtils.OS_NAME;
-        System.out.println("Using SystemUtils: " + os);
-        return os;
     }
 
     private Date getTime(long millis) {

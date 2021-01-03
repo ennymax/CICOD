@@ -1,15 +1,36 @@
 <suite name="Suite">
     <listeners>
-        <listener class-name = "CROWN.Base.RetryListener"></listener>
+        <listener class-name="CROWN.Base.RetryListener"></listener>
     </listeners>
-    <test name = "Customer Account">
+    <test name="Customer Account">
         <classes>
             <class name="CROWN.CICOD.COM.Account.CustomerAccount"/>
+            Tope
         </classes>
     </test>
-    <test name = "Create Credit Note">
+    <test name="Create Credit Note">
         <classes>
             <class name="CROWN.CICOD.COM.Account.CreateCreditNote"/>
+        </classes>
+    </test>
+    <test name="Download Customer Account">
+        <classes>
+            <class name="CROWN.CICOD.COM.Account.DownLoadCustomerAccount"/>
+        </classes>
+    </test>
+    <test name="Download Statement of Account">
+        <classes>
+            <class name="CROWN.CICOD.COM.Account.DownloadStatementOFAccount"/>
+        </classes>
+    </test>
+    <test name="View Credit Note">
+        <classes>
+            <class name="CROWN.CICOD.COM.Account.ViewCreditNote"/>
+        </classes>
+    </test>
+    <test name="View Statement of Account">
+        <classes>
+            <class name="CROWN.CICOD.COM.Account.ViewStatementOfAccount"/>
         </classes>
     </test>
 </suite>
