@@ -131,6 +131,7 @@ public class PartPayment extends TestBase {
     @Test(priority = 12)
     public void PartPayment() throws IOException, InterruptedException {
         JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+
         javaScriptUtil.DoscrolltoViewClickWhenReady("PartPayment_XPATH", "MakePayment_TEXT", 40);
     }
 

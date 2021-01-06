@@ -1,47 +1,6 @@
-https://nexusnigeria.cicod.com/cuorma/web/order-history/order-details?id=1235
+      allure serve
 
-/root/IdeaProjects/CICOD/Config/Coded.txt
-  TestListenerAdapter tla = new TestListenerAdapter();
-        TestNG testng = new TestNG();
-        testng.setTestClasses(new Class[]{CreateCreditNote.class, CreateCreditNote.class});
-        testng.addListener(tla);
-        testng.run();
-
-        String expectedTitle = Utility.fetchLocator(TittleText);
-        String actualTitle = driver.getTitle();
-        Assert.assertEquals(actualTitle, expectedTitle);
-        test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
-        (invocationCount = 5)
-
-         https://github.com/naveenanimation20/PageObjectModel.git
-         https://github.com/naveenanimation20/July2020SeleniumSessions.git
-
-         https://www.youtube.com/playlist?list=PLoX0sUafNGbH9bmbIANk3D50FNUmuJIF3
-         https://www.youtube.com/watch?v=qqmyAxfGV9c
-
-         public void createContact(String emailId, String jobTitle) {
-         Thread.sleep(1000);
-         String extentReportImageqm11 = System.getProperty("user.dir") + "\\ScreenShot\\ScreenShot" + System.currentTimeMillis() + ".png";
-         WebElement logo = driver.findElement(By.xpath(Utility.fetchLocator("AccountBTN_XPATH")));
-         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-         BufferedImage fullScreen = ImageIO.read(screenshot);
-         Point location = logo.getLocation();
-         int width = logo.getSize().getWidth();
-         int height = logo.getSize().getHeight();
-
-         BufferedImage logoImage = fullScreen.getSubimage(location.getX(), location.getY(), width, height);
-         ImageIO.write(logoImage, "png", screenshot);
-         FileUtils.copyFile(screenshot, new File(extentReportImageqm11));
-         test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
-
-               	}
-
-                Thread.sleep(2000);
-                Actions builder = new Actions(driver);
-                WebElement element1 = driver.findElement(By.xpath(Utility.fetchLocator("Lodg_XPATH")));
-                builder.moveToElement(element1).build().perform();
-
-08033987879
+      08033987879
 
        //Video Recording
         VideoRecorder.startRecording("IMSBUG");
@@ -61,27 +20,6 @@ https://nexusnigeria.cicod.com/cuorma/web/order-history/order-details?id=1235
         </classes>
        </test>
 
-        Thread.sleep(2000);
-        assertEquals("Frontend Banner Carousel created", driver.findElement(By.xpath(Utility.fetchLocator("AssertBanner_XPATH"))).getText());
-        test.log(Status.PASS, "Frontend Banner Carousel created");
-
-        Thread.sleep(2000);
- 
-        String title = driver.getTitle();
-      
-        System.out.println(title);
-
- 
-        if (driver.getTitle() == "Welcome to Central Pay") {
-      
-           test.log(Status.PASS, "Central Pay was Displayed and Enabled");
-   
-           } else {
-          
-           test.log(Status.FAIL, "Central Pay page wasnt displayed and enabled");
-     
-           }
-
            54.194.49.238
            Password:int3ractiv3
 
@@ -100,73 +38,9 @@ https://nexusnigeria.cicod.com/cuorma/web/order-history/order-details?id=1235
         Actions builder = new Actions(driver);
         builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
 
-        String title = driver.getTitle();
-        System.out.println(title);
-        if (driver.getTitle() == "Google") {
-            System.out.println("Test case has been passed.");
-        } else {
-            System.out.println("Test case has been failed.");
-        }
-
-
-        String extentReportImageqm11 = System.getProperty("user.dir") + "\\ScreenShot\\ScreenShot" + System.currentTimeMillis() + ".png";
-        WebElement logo = driver.findElement(By.id("nav-logo")); // Get entire page screenshot     
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        BufferedImage fullScreen = ImageIO.read(screenshot); //Find location of the webelement logo on the page     
-        Point location = logo.getLocation(); //Find width and height of the located element logo          
-        int width = logo.getSize().getWidth();
-        int height = logo.getSize().getHeight();
-        //Now the main point, which is cropping the full image to get only the logo screenshot     
-        BufferedImage logoImage = fullScreen.getSubimage(location.getX(), location.getY(), width, height);
-        ImageIO.write(logoImage, "png", screenshot); //copy the file to the desired location     
-        FileUtils.copyFile(screenshot, new File("path of file"));
-    
-
-        String extentReportImageqm11 = System.getProperty("user.dir") + "\\ScreenShot\\ScreenShot" + System.currentTimeMillis() + ".png";
-        Screenshot screenshot=new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
-        ImageIO.write(screenshot.getImage(),"PNG",new File(extentReportImageqm11));
-        test.log(Status.INFO, "Screenshot from : " + extentReportImageqm11, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImageqm11).build());
-
-
         Thread.sleep(2000)
         Actions builder = new Actions(driver);
         builder.moveToElement(driver.findElement(By.xpath("//input[@type='file']"))).click().build().perform();
-
-        SecureRandom rn = new SecureRandom();
-        int tom = rn.nextInt(15) + 1; 
-
-        WebElement mcj = driver.findElement(By.xpath(Utility.fetchLocator("QueueDescription_XPATH")));
-        mcj.clear();
-        mcj.sendKeys(Utility.fetchLocator("Decrib_TEXT"));      
-
-        Thread.sleep(2000);
-        WebElement msg =(new WebDriverWait(driver, 45)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Utility.fetchLocator("AssertSuccessfullPayment_XPATH"))));
-        String text = msg.getText();
-        if (msg.isEnabled() && text.contains("Payment successful")) {
-            test.log(Status.PASS, "Payment Was successful");
-        } else {
-            test.log(Status.FAIL, "Payment Failed");
-        }
-
-
-       if (driver.findElements(By.xpath(Utility.fetchLocator("AssertRavPayPage_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "RavePayment Page was successfully Displayed ");
-        } else {
-            test.log(Status.FAIL, "RavePayment Page wasn't displayed");
-        }
-
-
-               Thread.sleep(2000);
-               WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH")));
-               JavascriptExecutor jse = (JavascriptExecutor) driver;
-               jse.executeScript("arguments[0].scrollIntoView();", ti11);
-               ti11.click();
-
-
-        Thread.sleep(1000);
-        WebElement ele111j = driver.findElement(By.xpath(Utility.fetchLocator("MarchantState_XPATH")));
-        Select sel11j = new Select(ele111j);
-        sel11j.selectByIndex(stt);   
 
  Server Login
  IP:54.194.49.238
@@ -204,7 +78,7 @@ DefEmail_TEXT=demotestng@yopmail.com
 DefPassword_TEXT=@Ecomax1759
 
 STAGING_STAGING_STAGING
-       www.cicodsaasstaging.com
+www.cicodsaasstaging.com
 
 ndanitv
 ndanitv@sharklasers.com
@@ -249,12 +123,3 @@ DEV:
 Tenant ID: blakesshawn
 Email:Patrick.ijiti@crowninteractive.com
 Password: Pat1234!
-
-all Good Morning all
-09/12/2020
-1. QA index for the November (Done)
-2. Regression Test for COM(Done)
-3. Update Test Script for COM(On going)
-10/12/2020
-1. Update Test Script for COM(On going)
-2. Functional Test EKEDC Selfcare(On going)

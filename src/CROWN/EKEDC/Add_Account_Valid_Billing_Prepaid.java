@@ -19,13 +19,13 @@ public class Add_Account_Valid_Billing_Prepaid extends TestBase {
 
         login.LoginEKEDC();
 
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         driver.findElement(By.xpath(Utility.fetchLocator("AccountBTNEKE_XPATH"))).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         driver.findElement(By.xpath(Utility.fetchLocator("ManageAccountBTN_XPATH"))).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(1500);
         driver.findElement(By.xpath(Utility.fetchLocator("AddAccountBTN_XPATH"))).click();
 
         WebElement ele111 = driver.findElement(By.xpath(Utility.fetchLocator("AccountIndex_XPATH")));

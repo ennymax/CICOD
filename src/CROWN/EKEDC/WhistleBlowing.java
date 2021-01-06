@@ -1,6 +1,15 @@
 package CROWN.EKEDC;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.FileUpload;
+import CROWN.utility.Randomstuff;
+import CROWN.utility.Utility;
+import com.aventstack.extentreports.Status;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -10,8 +19,8 @@ public class WhistleBlowing extends TestBase {
 
     @Test
     public void WHISTLBLOWING() throws IOException, InterruptedException, AWTException {
-        /*
-        RandomStuff randomStuff = new RandomStuff();
+
+        Randomstuff randomStuff = new Randomstuff();
         FileUpload fileUpload = new FileUpload();
 
         Thread.sleep(2000);
@@ -59,7 +68,7 @@ public class WhistleBlowing extends TestBase {
         Actions builder = new Actions(driver);
         builder.moveToElement(driver.findElement(By.xpath(Utility.fetchLocator("EkedpUploader_XPATH")))).click().build().perform();
 
-        fileUpload.UploadAbove5MB();
+        fileUpload.UploadFileImage3MB();
 
         Thread.sleep(2000);
         WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("Agrrere_XPATH")));
@@ -75,8 +84,5 @@ public class WhistleBlowing extends TestBase {
             test.log(Status.FAIL, "Complaint wasn't Submitted");
         }
 
-
-
-         */
     }
 }
