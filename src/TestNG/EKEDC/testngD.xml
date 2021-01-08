@@ -13,7 +13,7 @@
         <class name="CROWN.EKEDC.View_Service_Alert_District"/>
         <class name="CROWN.EKEDC.View_Ticket_History_Logged_In_User_Mutiple_Account"/>
         <class name="CROWN.EKEDC.View_Ticket_History_Loggedin_User"/>
-        <class name="CROWN.EKEDC.WhistleBlowing"/>
+        <class name="CROWN.EKEDC.WhistleBlowing_User_Not_LoggedIn"/>
         </classes>
     </test>
 </suite>

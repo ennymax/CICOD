@@ -1,5 +1,6 @@
       allure serve
-
+@Listeners(TestNgListeners.ListenersBlog.class)
+https://www.javacodegeeks.com/2019/06/testng-listeners-in-selenium-webdriver-examples.html
       08033987879
 
        //Video Recording
@@ -123,3 +124,13 @@ DEV:
 Tenant ID: blakesshawn
 Email:Patrick.ijiti@crowninteractive.com
 Password: Pat1234!
+
+Apology for the Delay
+all Good Morning
+TODAY 06/01/2021 - CICOD
+1. Retest COM Mobile API Fix (Ongoing)
+2. Clean Up WFM Bug Queue(Ongoing)
+3. QA index for December (Ongoing)
+TODAY 07/01/2021 - CICOD
+1. Retest COM Mobile API Fix (Done)
+2. Clean Up WFM Bug Queue(Ongoing)

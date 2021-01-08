@@ -1,7 +1,6 @@
 package CROWN.CICOD.COM.CreateOrder;
 
 import CROWN.Base.TestBase;
-import CROWN.TestNGlisteners.TestAllureListener;
 import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
 import io.qameta.allure.Epic;
@@ -11,21 +10,20 @@ import io.qameta.allure.Story;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.springframework.context.annotation.Description;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
 @Epic("Part Payment")
 @Story("Test Part Payment Module..")
-@Listeners(TestAllureListener.class)
 public class PartPayment extends TestBase {
 
     @Description("Login")
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 1)
-    public void login() throws IOException, InterruptedException {
+    public void login() throws Exception {
         Login login = new Login(driver);
         login.Login();
+
     }
 
     @Description("COM")
@@ -131,7 +129,6 @@ public class PartPayment extends TestBase {
     @Test(priority = 12)
     public void PartPayment() throws IOException, InterruptedException {
         JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
-
         javaScriptUtil.DoscrolltoViewClickWhenReady("PartPayment_XPATH", "MakePayment_TEXT", 40);
     }
 
@@ -177,10 +174,10 @@ public class PartPayment extends TestBase {
         utility.DoswitchtoframeWhenReady(0, 13000);
     }
 
-    @Description("Demo Rave Pay")
+    @Description("Rave Pay")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 20)
-    public void RavePay() throws IOException, InterruptedException {
+    public void RavePay() throws Exception {
         RavePay ravePay = new RavePay(driver);
         ravePay.RavePay3();
     }

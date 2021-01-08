@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
   <listeners>
-    <listener class-name="CROWN.Base.RetryListener"/>
+    <listener class-name="CROWN.TestNGlisteners.RetryListener"/>
   </listeners>
   <test thread-count="5" name="Create Credit Note(failed)">
     <classes>

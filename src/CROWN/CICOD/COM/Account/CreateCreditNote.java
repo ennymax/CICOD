@@ -8,6 +8,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.springframework.context.annotation.Description;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.awt.*;
@@ -15,6 +16,7 @@ import java.io.IOException;
 import java.security.SecureRandom;
 
 import static org.testng.AssertJUnit.assertEquals;
+
 
 public class CreateCreditNote extends TestBase {
 

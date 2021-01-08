@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ScreenShot extends TestBase {
 
@@ -55,6 +57,19 @@ public class ScreenShot extends TestBase {
 
     }
 
+    public String getScreenshoteee(WebDriver driver, String screenshotName) throws Exception {
+        //below line is just to append the date format with the screenshot name to avoid duplicate names
+        String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        //after execution, you could see a folder "FailedTestsScreenshots" under src folder
+        String destination = System.getProperty("user.dir") + "/FailedTestsScreenshots/"+screenshotName+dateName+".png";
+        File finalDestination = new File(destination);
+        FileUtils.copyFile(source, finalDestination);
+        //Returns the captured file path
+        return destination;
+    }
+
     public void ScreenShot() throws IOException, InterruptedException {
         Path path = Paths.get(OUTPUT_FOLDER);
         // if directory exists?
@@ -76,9 +91,24 @@ public class ScreenShot extends TestBase {
         } catch (IOException e) {
             System.out.println("Error in the captureAndDisplayScreenShot method: " + e.getMessage());
         }
+
     }
+
+    public void takeScreenShot(String methodName, WebDriver driver) {
+        String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
+
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        //The below method will save the screen shot in d drive with test method name
+        try {
+            FileUtils.copyFile(scrFile, new File(path + methodName+".png"));
+            System.out.println("***Placed screen shot in "+ path + " ***");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public String getScreenshot() {
-        File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
         File destination = new File(path);
         try {
