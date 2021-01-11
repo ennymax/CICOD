@@ -29,7 +29,7 @@ public class CustomerAccount extends TestBase {
         login.Login();
     }
 
-    @Description("login")
+    @Description("Customer Order Management")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority=2)
     public void CustomerOrderManagement() throws IOException, InterruptedException {
@@ -37,7 +37,7 @@ public class CustomerAccount extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
     }
 
-    @Description("login")
+    @Description("Account Button")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority=3)
     public void AccountButton() throws IOException, InterruptedException {
@@ -45,7 +45,7 @@ public class CustomerAccount extends TestBase {
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("AccountBTN_XPATH")))).click();
     }
 
-    @Description("login")
+    @Description("Customer Account Button")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority=4)
     public void CustomerAccountButton() throws IOException, InterruptedException {
@@ -53,7 +53,7 @@ public class CustomerAccount extends TestBase {
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("CustomerAccount_XPATH")))).click();
     }
 
-    @Description("login")
+    @Description("Assert Customer Account")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority=5)
     public void AssertCustomerAccount() throws IOException, InterruptedException {
@@ -65,7 +65,7 @@ public class CustomerAccount extends TestBase {
         }
     }
 
-    @Description("login")
+    @Description("Assert Value of Customer Account")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority=6)
     public void AssertValueofCustomerAccount() throws IOException, InterruptedException {

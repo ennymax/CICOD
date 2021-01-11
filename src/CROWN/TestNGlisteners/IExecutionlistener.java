@@ -1,5 +1,6 @@
 package CROWN.TestNGlisteners;
 
+import CROWN.utility.VideoRecorder;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.testng.IExecutionListener;
@@ -22,11 +23,22 @@ public class IExecutionlistener extends ISuitelistener implements IExecutionList
 
     @Override
     public void onExecutionStart() {
-        System.out.println("*************************************Master FrameWork*******************************************");
+        System.out.println("\n *************************************Starting Video Recording******************************************\n");
+        try {
+            VideoRecorder.startRecording("IMSBUG");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onExecutionFinish() {
+        System.out.println("*************************************Ending Video Recording******************************************");
+        try {
+            VideoRecorder.stopRecording();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         System.out.println("Notify by mail, TestNG is finished");
         System.out.println("Total  Passed Test =" + passedtests.size());
@@ -106,7 +118,6 @@ public class IExecutionlistener extends ISuitelistener implements IExecutionList
         } catch (MessagingException e) {
             System.out.println("*************************************Failed to Send Report******************************************");
             throw new RuntimeException(e);
-
         }
     }
 
@@ -125,5 +136,4 @@ public class IExecutionlistener extends ISuitelistener implements IExecutionList
 
         return theNewestFile;
     }
-
 }
