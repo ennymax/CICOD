@@ -22,6 +22,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -177,7 +178,6 @@ public class TestBase {
             test.fail(result.getThrowable());
 
         } else if (result.getStatus() == SUCCESS) {
-            screenShot.ScreenShot();
             test.pass(MarkupHelper.createLabel(result.getName() + " The Test Case Passed", ExtentColor.GREEN));
             test.getModel().setEndTime(getTime(result.getEndMillis()));
 
@@ -201,7 +201,11 @@ public class TestBase {
 
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        if (driver != null)
-            driver.quit();
+        try {
+            if (driver != null)
+                driver.quit();
+        } catch (Exception e) {
+            System.out.println("Something went wrong");
+        }
     }
 }

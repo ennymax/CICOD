@@ -20,6 +20,20 @@ public class Assertion extends TestBase {
         this.driver = driver;
     }
 
+    public void DoCheckBoxSelected(String locator,String DisplayPassmsg, String DisplayFailmsg, int timeOut) throws IOException, InterruptedException {
+        Thread.sleep(1100);
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, timeOut);
+        Thread.sleep(1200);
+        WebElement check_box1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
+        if(check_box1.isSelected()) {
+            test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
+        } else {
+            check_box1.click();
+            test.log(Status.FAIL, Utility.fetchLocator(DisplayFailmsg));
+        }
+    }
+
     public void DoAssertContainsWhenReady(String locator, String Containstext, String DisplayPassmsg, String DisplayFailmsg, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
@@ -61,7 +75,7 @@ public class Assertion extends TestBase {
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         try {
-            assertEquals(assertionString, wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator)))).getText());
+            assertEquals(Utility.fetchLocator(assertionString), wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator)))).getText());
             test.log(Status.PASS, Utility.fetchLocator(DisplayPassmsg));
         } catch (Throwable e) {
             System.out.println(driver.findElement(By.xpath(Utility.fetchLocator(locator))).getText());

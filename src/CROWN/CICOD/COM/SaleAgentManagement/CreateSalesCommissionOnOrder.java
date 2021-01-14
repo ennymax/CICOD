@@ -1,68 +1,103 @@
 package CROWN.CICOD.COM.SaleAgentManagement;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.Login;
-import CROWN.utility.Randomstuff;
-import CROWN.utility.Utility;
+import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.context.annotation.Description;
 import org.testng.annotations.Test;
+
 import java.awt.*;
 import java.io.IOException;
 import java.security.SecureRandom;
 
 public class CreateSalesCommissionOnOrder extends TestBase {
-    @Test
-    public void CREATE_SALE_COMMISSION_ON_ORDER() throws IOException, InterruptedException, AWTException {
+
+    @Description("login")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 1)
+    public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(3) + 1;
-        Randomstuff randomstuff = new Randomstuff();
-
         login.Login();
+    }
 
-        //COM
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("com_XPATH")))).click();
+    @Description("Customer Order Management")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 2)
+    public void CustomerOrderManagement() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+    }
 
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SaleManagementBTN_XPATH")))).click();
+    @Description("Credit Limit")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 3)
+    public void SalesManagement() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoclickFluentWait("SaleManagementBTN_XPATH", "SaleManagementBTN_XPATH", 60);
+    }
 
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SaleCommissionBTN_XPATH")))).click();
+    @Description("Sale Commission")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 4)
+    public void SaleCommission() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoclickFluentWait("SaleCommissionBTN_XPATH", "SaleCommissionBTN_XPATH", 60);
+    }
 
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("CreateSaleCommissiontBTN_XPATH")))).click();
+    @Description("Create Sale Commission")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 5)
+    public void CreateSaleCommission() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoclickFluentWait("CreateSaleCommissiontBTN_XPATH", "CreateSaleCommissiontBTN_XPATH", 60);
+    }
 
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("ComissionName_XPATH")))).sendKeys(randomstuff.ListRandom());
+    @Description("Commission Name")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 6)
+    public void CommissionName() throws IOException, InterruptedException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DosendKeysRandomListwordsWhenReady("ComissionName_XPATH", 20);
+    }
 
-        Thread.sleep(2000);
-        WebElement ele11 = driver.findElement(By.xpath(Utility.fetchLocator("ccc_XPATH")));
-        Select sel1 = new Select(ele11);
-        sel1.selectByIndex(1);
+    @Description("EE")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 7)
+    public void EE() throws IOException, InterruptedException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoSelectValuesByIndex("ccc_XPATH", 1, 20);
+        excelUtil.DoSelectValuesByIndexRandom("vb_XPATH", 6, 20);
+    }
 
-        Thread.sleep(3000);
-        WebElement ele11a = driver.findElement(By.xpath(Utility.fetchLocator("vb_XPATH")));
-        Select sel1a = new Select(ele11a);
-        sel1a.selectByIndex(st);
+    @Description("Actual Value")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 8)
+    public void ActualValue() throws IOException, InterruptedException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoSendKeysWhenReady("ActualValue_XPATH", "45_TEXT", 20);
+    }
 
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 20)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("ActualValue_XPATH")))).sendKeys("45");
-
-        driver.findElement(By.xpath("//button[@class='btn btn-success']")).click();
+    @Description("AA")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 9)
+    public void AA() throws IOException, InterruptedException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoclickWhenReady("AAAA_XPATH", 20);
         Thread.sleep(6000);
+    }
 
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("mct_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Sales commission could not be created\n" + "Commission / Target Type exists")) {
-            test.log(Status.PASS, "Create Sales Commission On Order Fully Functional");
-        } else {
-            test.log(Status.FAIL, "Create Sales Commission On Order Failed");
-        }
+    @Description("Assert Create Sales Commission")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 10)
+    public void AssertCreateSalesCommission() throws IOException, InterruptedException {
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("mct_XPATH", "Commissioncont_TEXT", "comOPass_TEXT", "comOFail_TEXT", 20);
     }
 }

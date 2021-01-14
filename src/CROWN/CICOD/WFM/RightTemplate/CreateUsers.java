@@ -37,7 +37,7 @@ public class CreateUsers extends TestBase {
         excelUtil.DoclickWhenReady("Cll_XPATH",60);
         utility.DoFileUpWhenReady("FileUpload_XPATH", "3mb_TEXT",50);
         fileUpload.UploadFileImage3MB();
-        utility.DosendKeysRandomNumberWhenReady("NewUserStaffID_XPATH", "StaffID_TEXT",500000 , 60);
+        utility.DosendKeysRandomNumberWhenReady("NewUserStaffID_XPATH",500000 , 60);
         utility.DosendKeysRandomListwordsWhenReady("NewserJobTittle_XPATH", "JobT_TEXT",50);
         excelUtil.DoclickWhenReady("Cll_XPATH",60);
         utility.DoclickWhenReady("NewUserRegion_XPATH", "U1_TEXT",50);

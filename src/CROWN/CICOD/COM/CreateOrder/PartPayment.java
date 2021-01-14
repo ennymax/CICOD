@@ -60,18 +60,13 @@ public class PartPayment extends TestBase {
         util.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", 30);
     }
 
-    @Description("Assrt View Customer Details")
+    @Description("Assert View Customer Details")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 6)
     public void AssertViewCustomerDetails() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        WebElement msg1 = driver.findElement(By.xpath(Utility.fetchLocator("AssertSearchByName_XPATH")));
-        String text1 = msg1.getText();
-        if (msg1.isEnabled() && text1.contains("Email Address")) {
-            test.log(Status.PASS, "Search By Name Success");
-        } else {
-            test.log(Status.FAIL, "Search By Name Failed");
-        }
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("AssertSearchByName_XPATH","cot_TEXT","searpass_TEXT","searfail_TEXT",20);
     }
 
     @Description("Search Product By Name")

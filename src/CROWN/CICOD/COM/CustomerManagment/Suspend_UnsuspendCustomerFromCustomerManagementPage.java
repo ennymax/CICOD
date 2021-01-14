@@ -1,68 +1,83 @@
 package CROWN.CICOD.COM.CustomerManagment;
 
 import CROWN.Base.TestBase;
+import CROWN.utility.ExcelUtil;
 import CROWN.utility.Login;
 import CROWN.utility.ScreenShot;
 import CROWN.utility.Utility;
 import com.aventstack.extentreports.Status;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.springframework.context.annotation.Description;
 import org.testng.annotations.Test;
+
+import java.awt.*;
 import java.io.IOException;
 
 public class Suspend_UnsuspendCustomerFromCustomerManagementPage extends TestBase {
-    @Test
-    public void SUSPEND_UNSUSPEND_CUSTOMER_FROM_CUSTOMER_MANAGEMENT_PAGE() throws IOException, InterruptedException {
-        ScreenShot screenshot = new ScreenShot(driver);
+
+    @Description("login")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 1)
+    public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-
         login.Login();
+    }
 
-        //COM
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
+    @Description("Customer Order Management")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 2)
+    public void CustomerOrderManagement() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+    }
 
-        //CUSTOMER MANAGEMENT BUTTON
-        Thread.sleep(2000);
-        screenshot.ScreenShot();
-        driver.findElement(By.xpath(Utility.fetchLocator("Customermanagmentbtn_XPATH"))).click();
+    @Description("Customer Management")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 3)
+    public void CustomerManagement() throws IOException, InterruptedException, AWTException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoclickWhenReady("Customermanagmentbtn_XPATH", 20);
+        excelUtil.DoclickWhenReady("SelectCustomerbtn_XPATH", 20);
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SelectCustomerbtn_XPATH"))).click();
+    }
 
-        //SELECT ACTION
-        Thread.sleep(2000);
-        screenshot.ScreenShot();
-        WebElement element = driver.findElement(By.xpath(Utility.fetchLocator("ActionSuspend_XPATH")));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", element);
+    @Description("Action Button")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 4)
+    public void ActionButton() throws IOException, InterruptedException, AWTException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoscrolltoViewClickWhenReady("ActionSuspend_XPATH", 20);
+    }
 
-        WebElement elementq = driver.findElement(By.xpath(Utility.fetchLocator("VIEWCustomer_XPATH")));
-        JavascriptExecutor jsq = (JavascriptExecutor) driver;
-        jsq.executeScript("arguments[0].click();", elementq);
+    @Description("View Customer")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 5)
+    public void ViewCustomer() throws IOException, InterruptedException, AWTException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoscrolltoViewClickWhenReady("VIEWCustomer_XPATH", 20);
+    }
 
-        Thread.sleep(2000);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("AssertViewCustomer_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("View Customer")) {
-            test.log(Status.PASS, "Customer can Be Viewed");
-        } else {
-            test.log(Status.FAIL, "Customer cant be viewed");
-        }
+    @Description("Suspend Customer")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 6)
+    public void SuspendCustomer() throws IOException, InterruptedException, AWTException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        Utility utility = new Utility(driver);
+        excelUtil.DoscrolltoViewClickWhenReady("SuspendFromCustomerPage_XPATH", 20);
+        utility.DowaitandAcceptAlerwhenReady(20);
+    }
 
-        Thread.sleep(2000);
-        WebElement elementqj = driver.findElement(By.xpath(Utility.fetchLocator("SuspendFromCustomerPage_XPATH")));
-        JavascriptExecutor jsqj = (JavascriptExecutor) driver;
-        jsqj.executeScript("arguments[0].click();", elementqj);
-
-        login.AcceptAlert();
-
-        Thread.sleep(2000);
-        WebElement elementqll = driver.findElement(By.xpath(Utility.fetchLocator("UnsuspendfromCustomerPage_XPATH")));
-        JavascriptExecutor jsqll = (JavascriptExecutor) driver;
-        jsqll.executeScript("arguments[0].click();", elementqll);
-
-        login.AcceptAlert();
+    @Description("Unsuspend Customer")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 7)
+    public void UnsuspendCustomer() throws IOException, InterruptedException, AWTException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        Utility utility = new Utility(driver);
+        excelUtil.DoscrolltoViewClickWhenReady("UnsuspendfromCustomerPage_XPATH", 20);
+        utility.DowaitandAcceptAlerwhenReady(20);
     }
 }

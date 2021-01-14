@@ -1,15 +1,15 @@
 package CROWN.CICOD.COM.CreateOrder;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.Assertion;
-import CROWN.utility.JavaScriptUtil;
-import CROWN.utility.Login;
-import CROWN.utility.Utility;
+import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.springframework.context.annotation.Description;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.security.SecureRandom;
@@ -17,112 +17,155 @@ import java.security.SecureRandom;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class ViewFreebies extends TestBase {
-    @Test
-    public void VIEW_FREEBIES() throws IOException, InterruptedException {
+
+    @Description("login")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 1)
+    public void login() throws IOException, InterruptedException {
         Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(3) + 1;
-        Utility utility = new Utility(driver);
-        Assertion assertion = new Assertion(driver);
-        JavaScriptUtil actionsClass = new JavaScriptUtil(driver);
-
         login.Login();
-
-        utility.DoclickWhenReady("com_XPATH", "comm_TEXT",60);
-        utility.DoclickWhenReady("Createorderbtn_XPATH", "CreateOrder_TEXT",40);
-        utility.DoclickWhenReady("SearchByName_XPATH", "SearchBox_TEXT",40);
-        utility.DoSendKeysWhenReady("SeaerchInput_XPATH","CustomerFirstname_TEXT" ,"CustomerName_TEXT", 40);
-        utility.DoclickWhenReady("Searchbtn_XPATH", "SearchBTN_TEXT",40);
-        actionsClass.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", "Cus_TEXT",40);
-
-
-        assertion.DoAssertContainsWhenReady("AssertSearchByName_XPATH", "Searched_TEXT","em_TEXT", "SBN_TEXT",30);
-
-        //SEARCH PRODUCT
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductinput_XPATH"))).sendKeys(Utility.fetchLocator("ql_TEXT"));
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductbtnq_XPATH"))).click();
-
-        Thread.sleep(2000);
-        WebElement ti11z = driver.findElement(By.xpath(Utility.fetchLocator("AddBTNQ_XPATH")));
-        JavascriptExecutor jsez = (JavascriptExecutor) driver;
-        jsez.executeScript("arguments[0].scrollIntoView();", ti11z);
-        ti11z.click();
-
-        Thread.sleep(2000);
-        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("ViewFreebies_XPATH")));
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", ti11);
-        ti11.click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("quiCheck_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("AddQui_XPATH"))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Offer1_XPATH"))).click();
-
-        Thread.sleep(900);
-        if (driver.findElements(By.xpath(Utility.fetchLocator("assFreebies_XPATH"))).size() != 0) {
-            test.log(Status.PASS, "FreeBies can be Viewed");
-        } else {
-            test.log(Status.FAIL, "FeeBies cant be viewed");
-        }
-
-        Thread.sleep(2000);
-        assertEquals("quill (Soft drinks)\n" + "Delete\n" + "Quantity\n" + "1\n" + "₦0.00", driver.findElement(By.xpath(Utility.fetchLocator("Assertfreebies_XPATH"))).getText());
-        test.log(Status.PASS, "Confirmed Freebies was added Successfully");
-
-        Thread.sleep(2000);
-        WebElement ti11kk = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
-        JavascriptExecutor jsekk = (JavascriptExecutor) driver;jse.executeScript("arguments[0].scrollIntoView();", ti11kk);
-        ti11kk.click();
-
-        Thread.sleep(2000);
-        WebElement ele111ll = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
-        Select sel11ll = new Select(ele111ll);
-        sel11ll.selectByIndex(st);
-
-        Thread.sleep(2000);
-        WebElement ti112lll = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
-        JavascriptExecutor jse2lll = (JavascriptExecutor) driver;
-        jse2lll.executeScript("arguments[0].scrollIntoView();", ti112lll);
-        ti112lll.click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayPoS_XPATH"))).click();
-
-        Thread.sleep(4000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ConfirmPAymantPOS_XPATH"))).click();
-
-        Thread.sleep(200);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("ComfirmPOSPayment_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Payment yet to be received on Order")) {
-            test.log(Status.PASS, "Pay with POS Functional");
-        } else {
-            test.log(Status.FAIL, "Pay with POS Failed");
-        }
-
-        Thread.sleep(2000);
-        WebElement ti11kkp = driver.findElement(By.xpath(Utility.fetchLocator("jjregion_XPATH")));
-        JavascriptExecutor jsekkp = (JavascriptExecutor) driver;
-        jsekkp.executeScript("arguments[0].scrollIntoView();", ti11kkp);
-        ti11kkp.click();
-
-        Thread.sleep(2000);
-        WebElement ele111llq = driver.findElement(By.xpath(Utility.fetchLocator("SelectRegion_XPATH")));
-        Select sel11lla = new Select(ele111llq);
-        sel11lla.selectByIndex(2);
-
-        actionsClass.DoscrolltoViewClickWhenReady("PaymentOptions_XPATH","PaymentOPT_TEXT",50);
-        utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT",40);
-        actionsClass.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT",40);
-        utility.DowaitandAcceptAlerwhenReady(60);
-        assertion.DoAssertContainsWhenReady("AssertOrdeIDgenerated_XPATH", "OrDerID_TEXT","OrDerID_TEXT", "OrderIDPass_TEXT",30);
     }
+
+    @Description("Customer Order Management")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 2)
+    public void CustomerOrderManagement() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+    }
+
+    @Description("Create Order")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 3)
+    public void CreateOrder() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("Createorderbtn_XPATH", 30);
+    }
+
+    @Description("Search Customer By Name")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 4)
+    public void SearchCustomerByName() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("SearchByName_XPATH", 30);
+        util.DoSendKeysWhenReady("SeaerchInput_XPATH", "CustomerName_TEXT", 20);
+        util.DoscrolltoViewClickWhenReady("Searchbtn_XPATH", 30);
+    }
+
+    @Description("View Customer Details")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 5)
+    public void ViewCustomerDetails() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", 30);
+    }
+
+    @Description("Assert View Customer Details")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 6)
+    public void AssertViewCustomerDetails() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("AssertSearchByName_XPATH","cot_TEXT","searpass_TEXT","searfail_TEXT",20);
+    }
+
+    @Description("Search Product")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 7)
+    public void SearchProduct() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoSendKeysWhenReady("SearchProductinput_XPATH", "ID_TEXT", 20);
+        util.DoscrolltoViewClickWhenReady("SearchProductbtnq_XPATH", 30);
+    }
+
+
+    @Description("Add Product to Chart")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 8)
+    public void AddProducttoChart() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("AddBTN_XPATH", 30);
+    }
+
+    @Description("Add Product to Chart")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 9)
+    public void ViewFreebies() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("ViewFreebies_XPATH", 30);
+    }
+
+    @Description("Add Product to Chart")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 10)
+    public void Check_Offer_AddOffer() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("quiCheck_XPATH", 30);
+        util.DoscrolltoViewClickWhenReady("AddQui_XPATH", 30);
+    }
+
+    @Description("Add Product to Chart")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 11)
+    public void SelectOffer() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("Offer1_XPATH", 30);
+    }
+
+    @Description("Assert Product Offer")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 12)
+    public void AssertProductOffer() throws IOException, InterruptedException {
+       Assertion assertion = new Assertion(driver);
+       assertion.DoAssertXpathPresentWhenReady("assFreebies_XPATH","assfrepass_TEXT","assfreefail_TEXT",20);
+    }
+
+    @Description("Assert Product Offer")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 13)
+    public void Assert_Product_Offer_Price() throws IOException, InterruptedException {
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertEqualWhenReady("Assertfreebies_XPATH","asserStriTEXT","assfrepass1_TEXT","assfreefail1_TEXT",20);
+    }
+
+
+    @Description("Select Region")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 14)
+    public void SelectRegion() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("jjregion_XPATH", 30);
+        util.DoSelectValuesByIndex("SelectRegion_XPATH", 2, 20);
+    }
+
+    @Description("Make Payment")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 15)
+    public void MakePayment() throws IOException, InterruptedException {
+        Thread.sleep(2000);
+        WebElement ti112 = driver.findElement(By.xpath(Utility.fetchLocator("MakePayment_XPATH")));
+        JavascriptExecutor jse2 = (JavascriptExecutor) driver;
+        jse2.executeScript("arguments[0].scrollIntoView();", ti112);
+        ti112.click();
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(Utility.fetchLocator("PayOnline_XPATH"))).click();
+    }
+
+    @Description("Rav Pay")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 15)
+    public void RavPay() throws IOException, InterruptedException {
+        RavePay ravePay = new RavePay(driver);
+        ravePay.RavePay2();
+    }
+
+    @Description("Assert Pay Online")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 16)
+    public void AssertPayOnline() throws IOException, InterruptedException {
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("Auth_XPATH","payon_TEXT","p11_TEXT","p12_TEXT",20);
+    }
+
 }

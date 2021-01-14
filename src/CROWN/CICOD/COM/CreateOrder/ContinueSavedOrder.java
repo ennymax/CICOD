@@ -172,17 +172,11 @@ public class ContinueSavedOrder extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("ConfirmPAymantPOS_XPATH"))).click();
     }
 
-    @Description("Assert POS")
+    @Description("Assert Pay POS")
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 16)
-    public void AssertPOS() throws IOException, InterruptedException {
-        Thread.sleep(200);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("ComfirmPOSPayment_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Payment yet to be received on Order")) {
-            test.log(Status.PASS, "Pay with POS Functional");
-        } else {
-            test.log(Status.FAIL, "Pay with POS Failed");
-        }
+    public void AssertPayPOS() throws IOException, InterruptedException {
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("ComfirmPOSPayment_XPATH", "fr_TEXT", "frPass_TEXT", "frFail_TEXT", 20);
     }
 }

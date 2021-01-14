@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
+
 import java.io.IOException;
 import java.security.SecureRandom;
 
@@ -59,18 +60,13 @@ public class PayInVoice extends TestBase {
         util.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", 30);
     }
 
-    @Description("Assert if Customer can be viewed")
-    @Severity(SeverityLevel.NORMAL)
+    @org.springframework.context.annotation.Description("Assert View Customer Details")
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 6)
     public void AssertViewCustomerDetails() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        WebElement msg1 = driver.findElement(By.xpath(Utility.fetchLocator("AssertSearchByName_XPATH")));
-        String text1 = msg1.getText();
-        if (msg1.isEnabled() && text1.contains("Email Address")) {
-            test.log(Status.PASS, "Search By Name Success");
-        } else {
-            test.log(Status.FAIL, "Search By Name Failed");
-        }
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("AssertSearchByName_XPATH", "cot_TEXT", "searpass_TEXT", "searfail_TEXT", 20);
     }
 
     @Description("Search Product")
@@ -120,61 +116,67 @@ public class PayInVoice extends TestBase {
         utility.DoclickWhenReady("NewPayAccount_XPATH", "Payno_TEXT", 40);
     }
 
-    @Description("Select PayAccount")
+    @Description("Pay Invoice")
     @Severity(SeverityLevel.NORMAL)
     @Test(priority = 12)
-    public void PayAccount() throws IOException, InterruptedException {
-        Utility utility = new Utility(driver);
-        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
-
-        javaScriptUtil.DoscrolltoViewClickWhenReady("MakePayment_XPATH", "MakePayment_TEXT", 40);
-        utility.DowaitandAcceptAlerwhenReady(60);
+    public void PayInvoice() throws IOException, InterruptedException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoclickWhenReady("PayInVoice_XPATH", 20);
     }
 
+    @Description("Generate Order Code")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 13)
+    public void GenerateOrderCode() throws IOException, InterruptedException {
+        JavaScriptUtil javaScriptUtil = new JavaScriptUtil(driver);
+        javaScriptUtil.DoscrolltoViewClickWhenReady("GenerateOrderCode_XPATH", "GenerateOrderCode_XPATH", 20);
+    }
 
+    @Description("Accept Alert")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 14)
+    public void AcceptAlert() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DowaitandAcceptAlerwhenReady(20);
+    }
 
-    @Test
-    public void Pay_Invoice() throws IOException, InterruptedException {
-        ScreenShot screenshot = new ScreenShot(driver);
-        Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int st = rn.nextInt(3) + 1;
+    @Description("Assert Order Code Generation")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 15)
+    public void AssertOrderCodeGeneration() throws IOException, InterruptedException {
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("SendOrderConfirmation_XPATH", "sss_TEXT", "OrderCodePass_TEXT", "OrderCodeFailed_TEXT", 20);
+    }
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayInVoice_XPATH"))).click();
+    @Description("Send Order Confirmation")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 15)
+    public void SendOrderConfirmation() throws IOException, InterruptedException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoclickWhenReady("SendOrderConfirmation_XPATH", 20);
+    }
 
-        WebElement tid = driver.findElement(By.xpath(Utility.fetchLocator("PaymentOptions_XPATH")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", tid);
+    @Description("Pay Now Pay Account")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 17)
+    public void PayNowPayAccount() throws IOException, InterruptedException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoclickWhenReady("PayNowPayAccount_XPATH", 20);
+    }
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("GenerateOrderCode_XPATH"))).click();
-        test.log(Status.PASS, "Order Code Was Generated Successfully");
+    @Description("PayfromAccount")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 18)
+    public void PayfromAccount() throws IOException, InterruptedException {
+        ExcelUtil excelUtil = new ExcelUtil(driver);
+        excelUtil.DoclickWhenReady("PayfromAccount_XPATH", 20);
+    }
 
-        Thread.sleep(2000);
-        login.AcceptAlert();
-
-        Thread.sleep(1500);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("SendOrderConfirmation_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Send Order Confirmation")) {
-            test.log(Status.PASS, "Order Confirmation page is Functional");
-        } else {
-            test.log(Status.FAIL, "Failed to Load Order confirmation Page");
-        }
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SendOrderConfirmation_XPATH"))).click();
-
-        Thread.sleep(1300);
-        driver.findElement(By.xpath(Utility.fetchLocator("PayNowPayAccount_XPATH"))).click();
-
-        Thread.sleep(1300);
-        screenshot.ScreenShot();
-        driver.findElement(By.xpath(Utility.fetchLocator("PayfromAccount_XPATH"))).click();
-        test.log(Status.PASS, "Pay from Account Fully Functional");
-
-        Thread.sleep(2000);
-        login.AcceptAlert();
-
+    @Description("Accept Alert Pay Account")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 19)
+    public void AcceptAlertPayAccount() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DowaitandAcceptAlerwhenReady(20);
     }
 }

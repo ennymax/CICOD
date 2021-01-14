@@ -1,110 +1,159 @@
 package CROWN.CICOD.COM.CreateOrder;
 
 import CROWN.Base.TestBase;
-import CROWN.utility.Login;
-import CROWN.utility.Randomstuff;
-import CROWN.utility.Utility;
+import CROWN.utility.*;
 import com.aventstack.extentreports.Status;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.context.annotation.Description;
 import org.testng.annotations.Test;
+
 import java.io.IOException;
 import java.security.SecureRandom;
 
 public class SelectDeliveryDetails extends TestBase {
-    @Test
-    public void SELECT_DELIVERY_DETAILS() throws IOException, InterruptedException {
-        Login login = new Login(driver);
-        SecureRandom rn = new SecureRandom();
-        int stt = rn.nextInt(34) + 1;
-        int sttt = rn.nextInt(13) + 1;
-        Randomstuff randomstuff = new Randomstuff();
 
+    @Description("Login")
+    @Severity(SeverityLevel.NORMAL)
+    @Test(priority = 1)
+    public void login() throws Exception {
+        Login login = new Login(driver);
         login.Login();
 
-        //COM
+    }
+
+    @Description("COM")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 2)
+    public void CustomerOrderManagement() throws IOException, InterruptedException {
+        Utility utility = new Utility(driver);
+        utility.DoclickWhenReady("com_XPATH", "comm_TEXT", 60);
+    }
+
+    @Description("Test Create Order")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 3)
+    public void CreateOrder() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("Createorderbtn_XPATH", 30);
+    }
+
+    @Description("Search Customer By Name")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 4)
+    public void SearchCustomerByName() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("SearchByName_XPATH", 30);
+        util.DoSendKeysWhenReady("SeaerchInput_XPATH", "CustomerName_TEXT", 20);
+        util.DoscrolltoViewClickWhenReady("Searchbtn_XPATH", 30);
+    }
+
+    @Description("View Customer By Name")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 5)
+    public void ViewCustomerDetails() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", 30);
+    }
+
+    @Description("Assert View Customer Details")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 6)
+    public void AssertViewCustomerDetails() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("com_XPATH"))).click();
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("AssertSearchByName_XPATH", "cot_TEXT", "searpass_TEXT", "searfail_TEXT", 20);
+    }
 
-        //CREATE ORDER BUTTON
+    @Description("Search Product By Name")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 7)
+    public void SearchProduct() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoSendKeysWhenReady("SearchProductinput_XPATH", "ID_TEXT", 20);
+        util.DoscrolltoViewClickWhenReady("SearchProductbtnq_XPATH", 30);
+    }
+
+    @Description("Add Product to Chart")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 8)
+    public void AddProducttoChart() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("AddBTN_XPATH", 30);
         Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("Createorderbtn_XPATH"))).click();
+        util.DoscrolltoViewClickWhenReady("AddBTN_XPATH", 30);
+    }
 
-        //SEARCH BY NAME
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchByName_XPATH"))).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SeaerchInput_XPATH"))).sendKeys(Utility.fetchLocator("CustomerName_TEXT"));
-        driver.findElement(By.xpath(Utility.fetchLocator("Searchbtn_XPATH"))).click();
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("ViewDetails_XPATH"))).click();
+    @Description("Delivery Rate")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 9)
+    public void DeliveryRate() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoscrolltoViewClickWhenReady("DeliveryDetails_XPATH", 30);
+    }
 
-        Thread.sleep(2000);
-        WebElement msg1 = driver.findElement(By.xpath(Utility.fetchLocator("AssertSearchByName_XPATH")));
-        String text1 = msg1.getText();
-        if (msg1.isEnabled() && text1.contains("Email Address")) {
-            test.log(Status.PASS, "Search By Name Success");
-        } else {
-            test.log(Status.FAIL, "Search By Name Failed");
-        }
+    @Description("Add Rate")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 10)
+    public void AddRate() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoclickWhenReady("AddDeliveryRate_XPATH", 30);
+        util.DoclickWhenReady("AddAdd_XPATH", 30);
+    }
 
-        //SEARCH PRODUCT
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductinput_XPATH"))).sendKeys(Utility.fetchLocator("ID_TEXT"));
+    @Description("Delivery Details")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 11)
+    public void DeliveryDetails() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DosendKeysRandomListwordsWhenReady("DliveryName_XPATH", 30);
+        util.DosendKeysRandomListwordsWhenReady("DeliveryStreet_XPATH", 30);
+        util.DosendKeysRandomListwordsWhenReady("DeliveryLandMark_XPATH", 30);
+    }
 
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("SearchProductbtnq_XPATH"))).click();
+    @Description("Country")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 12)
+    public void Country() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoSelectValuesByIndex("DeliveryCountry_XPATH", 3, 20);
+    }
 
-        //Add button
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("AddBTN_XPATH"))).click();
+    @Description("LGA")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 13)
+    public void State() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoSelectValuesByIndexRandom("DeliveryState_XPATH", 36, 20);
+    }
 
-        Thread.sleep(2000);
-        WebElement ti11 = driver.findElement(By.xpath(Utility.fetchLocator("DeliveryDetails_XPATH")));
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].scrollIntoView();", ti11);
-        ti11.click();
+    @Description("Add Product to Chart")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 15)
+    public void LGA() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoSelectValuesByIndexRandom("DeliveryLGA_XPATH", 6, 20);
+    }
 
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("AddDeliveryRate_XPATH")))).click();
+    @Description("Save Delivery Address")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 16)
+    public void SaveDeliveryAddress() throws IOException, InterruptedException {
+        ExcelUtil util = new ExcelUtil(driver);
+        util.DoclickWhenReady("SAveDeiveryAddress_XPATH", 20);
+    }
 
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("AddAdd_XPATH")))).click();
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("DliveryName_XPATH"))).sendKeys(randomstuff.ListRandom());
-        driver.findElement(By.xpath(Utility.fetchLocator("DeliveryStreet_XPATH"))).sendKeys(randomstuff.ListRandom());
-
-        Thread.sleep(2000);
-        driver.findElement(By.xpath(Utility.fetchLocator("DeliveryLandMark_XPATH"))).sendKeys(randomstuff.ListRandom());
-
-        WebElement ele11 = driver.findElement(By.xpath(Utility.fetchLocator("DeliveryCountry_XPATH")));
-        Select sel1 = new Select(ele11);
-        sel1.selectByIndex(3);
-
-        WebElement ele111 = driver.findElement(By.xpath(Utility.fetchLocator("DeliveryState_XPATH")));
-        Select sel11 = new Select(ele111);
-        sel11.selectByIndex(stt);
-
-        WebElement ele1111 = driver.findElement(By.xpath(Utility.fetchLocator("DeliveryLGA_XPATH")));
-        Select sel111 = new Select(ele1111);
-        sel111.selectByIndex(sttt);
-
-        Thread.sleep(2000);
-        (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("SAveDeiveryAddress_XPATH")))).click();
-
-        Thread.sleep(2000);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("as_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Merchant delivery address added successfully")) {
-            test.log(Status.PASS, "Delivery Details was Created");
-        } else {
-            test.log(Status.FAIL, "Delivery Details wasn't created");
-        }
-
+    @Description("Assert Save Delivery")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(priority = 17)
+    public void AssertSaveDelivery() throws IOException, InterruptedException {
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("as_XPATH", "CotnTest_TEXT", "DeliveryCreatedPass_TEXT", "DeliveryCreatedFailed_TEXT", 20);
     }
 }

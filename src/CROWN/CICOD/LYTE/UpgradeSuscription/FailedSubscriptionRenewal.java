@@ -44,7 +44,7 @@ public class FailedSubscriptionRenewal extends TestBase {
         JavascriptExecutor js111 = (JavascriptExecutor) driver;
         js111.executeScript("arguments[0].click();", element111);
 
-        Thread.sleep(2000);
+        Thread.sleep(2000000000);
         (new WebDriverWait(driver, 45)).until(ExpectedConditions.elementToBeClickable(By.xpath(Utility.fetchLocator("Paynow_XPATH")))).click();
 
         Thread.sleep(2000);

@@ -176,14 +176,13 @@ public class Utility extends TestBase {
         System.out.println("waited for " + Utility.fetchLocator(ObjectName) + " to be present on the page -->" + timeOut + " milliseconds");
     }
 
-    public void DosendKeysRandomNumberWhenReady(String locator, String ObjectName, int span, int timeOut) throws IOException, InterruptedException {
+    public void DosendKeysRandomNumberWhenReady(String locator, int span, int timeOut) throws IOException, InterruptedException {
         Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         SecureRandom rn = new SecureRandom();
         int resourcetype = rn.nextInt(span) + 1;
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(Utility.fetchLocator(locator))));
-        isElementDisplayedandEnabled(locator, ObjectName, timeOut);
         element.clear();
         String a = "";
         element.sendKeys(a + resourcetype);

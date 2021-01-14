@@ -57,18 +57,13 @@ public class PayAccount extends TestBase {
         util.DoscrolltoViewClickWhenReady("ViewDetails_XPATH", 30);
     }
 
-    @Description("Assert if Customer can be viewed")
-    @Severity(SeverityLevel.NORMAL)
+    @org.springframework.context.annotation.Description("Assert View Customer Details")
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 6)
     public void AssertViewCustomerDetails() throws IOException, InterruptedException {
         Thread.sleep(2000);
-        WebElement msg1 = driver.findElement(By.xpath(Utility.fetchLocator("AssertSearchByName_XPATH")));
-        String text1 = msg1.getText();
-        if (msg1.isEnabled() && text1.contains("Email Address")) {
-            test.log(Status.PASS, "Search By Name Success");
-        } else {
-            test.log(Status.FAIL, "Search By Name Failed");
-        }
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("AssertSearchByName_XPATH","cot_TEXT","searpass_TEXT","searfail_TEXT",20);
     }
 
     @Description("Search Product")
@@ -217,17 +212,11 @@ public class PayAccount extends TestBase {
         driver.findElement(By.xpath(Utility.fetchLocator("ConfirmPAymantPOS_XPATH"))).click();
     }
 
-    @Description("Assert POS")
-    @Severity(SeverityLevel.NORMAL)
+    @org.springframework.context.annotation.Description("Assert Pay POS")
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 23)
-    public void AssertPOS() throws IOException, InterruptedException {
-        Thread.sleep(200);
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("ComfirmPOSPayment_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Payment yet to be received on Order")) {
-            test.log(Status.PASS, "Pay with POS Functional");
-        } else {
-            test.log(Status.FAIL, "Pay with POS Failed");
-        }
+    public void AssertPayPOS() throws IOException, InterruptedException {
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("ComfirmPOSPayment_XPATH", "fr_TEXT", "frPass_TEXT", "frFail_TEXT", 20);
     }
 }

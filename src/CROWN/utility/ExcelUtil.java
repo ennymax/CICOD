@@ -235,7 +235,7 @@ public class ExcelUtil extends TestBase {
     }
 
     public void DoscrolltoViewClickWhenReady(String locator, int timeOut) throws IOException, InterruptedException {
-        Thread.sleep(1200);
+        Thread.sleep(1100);
         driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         WebElement ti11 = wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(Utility.fetchLocator(locator)))));
@@ -297,6 +297,16 @@ public class ExcelUtil extends TestBase {
         WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
         Select select = new Select(locat);
         select.selectByIndex(index);
+    }
+
+    public void DoSelectValuesByIndexRandom(String locator, int Range, int timeOut) throws IOException, InterruptedException {
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt((String) Utility.fetchProperty("implicit.wait")), TimeUnit.SECONDS);
+        Thread.sleep(1200);
+        SecureRandom rn = new SecureRandom();
+        int stt = rn.nextInt(Range) + 1;
+        WebElement locat = driver.findElement(By.xpath(Utility.fetchLocator(locator)));
+        Select select = new Select(locat);
+        select.selectByIndex(stt);
     }
 
     public void DoSelectValuesByValue(String locator, String value, int timeOut) throws IOException, InterruptedException {

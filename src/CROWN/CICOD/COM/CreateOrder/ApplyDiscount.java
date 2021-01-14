@@ -138,15 +138,7 @@ public class ApplyDiscount extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 13)
     public void AssertPayOnline() throws IOException, InterruptedException {
-        ScreenShot screenshot = new ScreenShot(driver);
-        Thread.sleep(2000);
-        screenshot.ScreenShotFullPage();
-        WebElement msg11 = driver.findElement(By.xpath(Utility.fetchLocator("Auth_XPATH")));
-        String text11 = msg11.getText();
-        if (msg11.isEnabled() && text11.contains("Enter your 4-digit card pin to authorize this payment")) {
-            test.log(Status.PASS, "Flutterwave Payment Portal Fully Functional");
-        } else {
-            test.log(Status.FAIL, "Payment Portal down");
-        }
+        Assertion assertion = new Assertion(driver);
+        assertion.DoAssertContainsWhenReady("Auth_XPATH","payon_TEXT","p11_TEXT","p12_TEXT",20);
     }
 }
